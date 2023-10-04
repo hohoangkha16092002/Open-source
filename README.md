@@ -4,4 +4,5 @@
 . Hạn 19/11/2023
 * Thành viên nhóm:
   - Hồ Hoàng Kha
+  - Ngô Trung Kiên
 * MÔ TẢ CHI TIẾT ĐỒ ÁN
