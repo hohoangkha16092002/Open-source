@@ -5,5 +5,5 @@
 * Thành viên nhóm:
   - Hồ Hoàng Kha
   - Ngô Trung Kiên
-  - Ngô Trung Kiên 2
+  - Kiên 1235
 * MÔ TẢ CHI TIẾT ĐỒ ÁN
