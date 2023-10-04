@@ -3,7 +3,7 @@
 Đề tài Website quản lý cửa hàng laptop
 . Hạn 19/11/2023
 * Thành viên nhóm:
-  - Hồ Hoàng Kha
+  - Hồ Hoàng Kha1
   - Ngô Trung Kiên
   - Phan Minh Tiến
 * MÔ TẢ CHI TIẾT ĐỒ ÁN
