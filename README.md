@@ -5,5 +5,5 @@
 * Thành viên nhóm:
   - Hồ Hoàng Kha
   - Ngô Trung Kiên
-  - Phan Minh Tiến
+  - Phan Minh Tiến :v
 * MÔ TẢ CHI TIẾT ĐỒ ÁN
