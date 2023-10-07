@@ -5,6 +5,7 @@
 * Thành viên nhóm:
   - Hồ Hoàng Kha
   - Ngô Trung Kiên
-  - Phan Minh Tiến1
+  - Phan Minh Tiến
   - Nguyễn Thị Diễm Kiều
+  - Phùng Thị Phượng
 * MÔ TẢ CHI TIẾT ĐỒ ÁN
