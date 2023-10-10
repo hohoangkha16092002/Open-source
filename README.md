@@ -22,10 +22,10 @@ Hạn nộp 19/11/2023
   <input name="n_submit">
   <input name="n_lastName">
   ```
-- Đặt tên class html: Chữ đầu ghi hoa
+- Đặt tên class html: ghi thường có gạch nối ở giữa
   ```
-  <div class="InfoShop">...</div>
-  <div class="Product">...</div>
+  <div class="info-shop">...</div>
+  <div class="products">...</div>
   ```
 - Đặt tên hằng số: Ghi hoa
   ```
