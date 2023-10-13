@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- FILE CSS -->
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="pages/header-footer-navigator/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -33,67 +33,6 @@
             </div>
         </a>
     </div>
-    <!-- END BANNER -->
-    <!-- BEGIN HEADER -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
-                            <button class="css-button-container">
-                                <i style="color: white" class="fa-solid fa-house"></i>
-                                <span class="css-add-width-gap"></span>
-                                <div type="body" style="color: white" class="">Trang chủ</div>
-                            </button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
-                            <button class="css-button-container">
-                                <i style="color: white" class="fa-solid fa-book"></i>
-                                <span class="css-add-width-gap"></span>
-                                <div type="body" style="color: white">Bài tập</div>
-                            </button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
-                            <button class="css-button-container">
-                                <i style="color: white" class="fa-sharp fa-solid fa-bag-shopping"></i>
-                                <span class="css-add-width-gap"></span>
-                                <div type="body" style="color: white">Tư vấn doanh nghiệp</div>
-                            </button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
-                            <button class="css-button-container">
-                                <i style="color: white" class="fa-solid fa-user"></i>
-                                <span class="css-add-width-gap"></span>
-                                <div type="body" style="color: white">Thông tin cá nhân</div>
-                            </button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
-                            <button class="css-button-container">
-                                <i style="color: white" class="fa-solid fa-user"></i>
-                                <span class="css-add-width-gap"></span>
-                                <div type="body" style="color: white">Thông tin cá nhân</div>
-                            </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-
     <nav class="navbar navbar-expand-lg navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -104,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
+                        <a target="_self" class="css-no-underline clickable" href="index.php">
                             <button class="css-button-container">
                                 <i style="color: white" class="fa-solid fa-house"></i>
                                 <span class="css-add-width-gap"></span>
@@ -122,11 +61,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a target="_self" class="css-no-underline clickable" href="">
+                        <a class="css-no-underline clickable" href="pages/send-mail/send-mail.php">
                             <button class="css-button-container">
                                 <i style="color: white" class="fa-sharp fa-solid fa-bag-shopping"></i>
                                 <span class="css-add-width-gap"></span>
-                                <div type="body" style="color: white">Tư vấn doanh nghiệp</div>
+                                <div type="body" style="color: white">CHĂM SÓC KHÁCH HÀNG</div>
                             </button>
                         </a>
                     </li>

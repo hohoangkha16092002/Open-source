@@ -9,12 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FILE CSS -->
-    <link rel="stylesheet" href="css/header-footer-navigator.css">
-    <link rel="stylesheet" href="css/navigator.css">
+    <link rel="stylesheet" href="pages/header-footer-navigator/css/navigator.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <div id="mainNavigationBar" class="nav-main">
         <div class="teko-row teko-row-center nav-navbar">
