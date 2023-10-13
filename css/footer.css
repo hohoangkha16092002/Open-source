@@ -1,0 +1,74 @@
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 0px 0px;
+}
+
+.fontsize-14 {
+  font-size: 14px !important;
+}
+
+.margin-bottom-20 {
+  margin: 0px 0 20px 0 !important;
+}
+
+.fontsize-12 {
+  font-size: 12px !important;
+  margin: 3px 0 3px 0 !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.container-fluid-custom {
+  max-width: 100%;
+}
+
+@media (min-width: 792px) {
+  .footer-row-top {
+    width: 100%;
+    padding: 30px 200px 30px 150px;
+  }
+  .footer-row-bottom {
+    width: 100%;
+    padding: 30px 200px 30px 150px;
+  }
+}
+
+@media (max-width: 791px) {
+  .footer-row-top {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .footer-row-bottom {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+  }
+}
+
+
+
+.footer-row-bottom-main {
+  width: 100%;
+}
+
+.css-no-underline {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: unset;
+}
+
+.footer-payment .icon {
+  font-size: 20px;
+}
+
+.hover-blue {
+  display: inline-block;
+}
+
+.hover-blue:hover {
+  color: blue;
+}
