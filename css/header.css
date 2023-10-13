@@ -1,0 +1,645 @@
+.css-banner {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: unset;
+  z-index: 0;
+  margin: auto;
+  border-radius: 0px;
+  height: 100% !important;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #1435c3;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  width: 80%;
+}
+
+.nav-item {
+  margin-left: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.nav-item:last-child {
+  margin-right: 20; /* Loại bỏ khoảng cách bên phải của phần tử cuối cùng */
+}
+
+.css-navigator {
+  background-color: #1435c3;
+  height: 42px;
+}
+
+.css-button-container {
+  padding: 0rem 1.25rem;
+  height: 100%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  height: 42px;
+}
+
+.css-button-container:focus {
+  outline: none;
+}
+
+.css-no-underline {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: unset;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.css-add-width-gap {
+  width: 0.5rem;
+}
+
+body {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.css-mainNavigationBar {
+  background-color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+@media print {
+  .css-mainNavigationBar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .css-mainNavigationBar {
+    height: auto !important;
+  }
+}
+
+.teko-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+@media (min-width: 1024px) {
+  .teko-row {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+.teko-row:before,
+.teko-row:after {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.teko-row-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.teko-col {
+  padding-left: 8px;
+  padding-right: 8px;
+  flex: 0 0 auto;
+}
+
+.css-teko-col .teko-col {
+  position: relative;
+  max-width: 100%;
+  min-height: 1px;
+}
+.css-teko-col {
+  border-style: none;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+}
+
+.css-center-horizontal-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.css-icon-with-transition {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 35px;
+  width: 35px;
+  margin-right: 1rem;
+  margin-left: 0.4rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.css-cbrxda {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: unset;
+}
+
+.css-cbrxda:hover {
+  color: unset;
+}
+
+.teko-row-middle {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.teko-row-no-wrap {
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.css-width100 {
+  width: 100%;
+}
+
+.css-width100:focus {
+  outline: none;
+}
+
+.css-list-products {
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 1rem;
+  padding: 0.4rem 0.75rem;
+  text-align: center;
+  color: #82869e;
+}
+
+.css-list-products:hover {
+  background: rgb(245, 245, 245);
+}
+
+.css-hidden-list {
+  visibility: hidden;
+  z-index: 999;
+  -webkit-transform: translate(16px, 72px) !important;
+  -moz-transform: translate(16px, 72px) !important;
+  -ms-transform: translate(16px, 72px) !important;
+  transform: translate(16px, 72px) !important;
+}
+
+.css-hidden-list [data-popper-reference-hidden] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.css-background-transparent {
+  background-color: transparent;
+  opacity: 0;
+}
+
+.css-1a4hakp {
+  width: 204px;
+  border-radius: 0.5rem;
+}
+
+/* .css-cssveg {
+    position: relative;
+} */
+
+.css-container-box {
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  width: 12.375rem;
+  height: 28.5rem;
+  z-index: 980;
+}
+
+.css-container-box.active {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.css-menu-bar {
+  height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: start;
+  justify-content: start;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.css-menu-bar:hover {
+  background-color: #f3f5fc;
+  color: #1435c3;
+}
+
+.css-content-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.css-position-relative {
+  position: relative;
+}
+
+.css-search-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  padding: 1px;
+  border-radius: var(--search-bar-border-radius, 8px);
+  --button-icon-border-radius: var(--search-bar-border-radius, 8px);
+  border: 1px solid #eaeaea;
+}
+
+.css-search-display {
+  display: inline-block;
+  width: 100%;
+}
+
+.css-search {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  min-height: 16px;
+  border: 0;
+  background-color: transparent;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+}
+
+.css-search:focus {
+  outline: 0;
+}
+
+.css-search:-webkit-outer-spin-button,
+.css-search input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.css-search-button {
+  display: inline-block;
+}
+
+.css-search-icon {
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 1rem;
+  padding: 0.365rem 0.75rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+  color: #212121;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 8px;
+  padding: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+}
+
+.css-search-icon:focus {
+  outline: 0;
+}
+
+.css-popup-overlay {
+  position: absolute;
+  background: #fff;
+  width: 120%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0.8rem;
+  z-index: 1000;
+  display: none;
+}
+
+.css-list-nav {
+  min-width: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.css-list-nav-item {
+  color: gray;
+  font-size: 12px;
+}
+
+.css-list-nav-item:hover {
+  color: blue;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.css-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 90px;
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  color: #82869e;
+  width: 130px;
+  height: 45px;
+}
+
+.css-button a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: unset;
+}
+
+.css-button:hover {
+  color: #1435c3 !important;
+}
+
+.css-button:hover > :not(.noti) path {
+  fill: #1435c3;
+}
+
+.css-button:hover > .noti path {
+  stroke: #1435c3;
+}
+
+.css-button:hover .title,
+.css-button:hover .text-left .title {
+  color: #1435c3;
+}
+
+.css-button:hover .text-left {
+  text-align: left;
+}
+
+.css-information {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+
+.css-information:hover {
+  color: unset;
+}
+
+.css-container {
+  padding-left: 8px;
+  padding-right: 8px;
+  flex: 0 0 auto;
+}
+
+.css-notification {
+  width: 100%;
+  width: auto;
+}
+
+.css-hkiax3:hover > :not(.noti) path {
+  fill: #1435c3;
+}
+
+.css-hkiax3:hover > .noti path {
+  stroke: #1435c3;
+}
+
+.css-popup-notification {
+  visibility: hidden;
+  z-index: 999;
+}
+
+.css-popup-notification [data-popper-reference-hidden] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.css-cart {
+  width: 100%;
+  width: auto;
+  position: relative;
+}
+
+.css-hidden-popup {
+  visibility: hidden;
+  z-index: 999;
+}
+
+.css-hidden-popup [data-popper-reference-hidden] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.avatar-container {
+  width: 100px; /* Đặt chiều rộng của hình tròn */
+  height: 100px; /* Đặt chiều cao của hình tròn */
+  border-radius: 50%; /* Đặt bán kính để biến thành hình tròn */
+  overflow: hidden; /* Ẩn phần ngoài vùng hình tròn */
+}
+
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo hình ảnh lấp đầy vùng hình tròn */
+}
+
+/* CSS cho footer container */
+.lazy-component {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* CSS cho các tiêu đề trong footer */
+.css-uwn2d9 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* CSS cho các liên kết trong footer */
+.css-1l4xpub {
+  color: #fff;
+  text-decoration: none;
+  margin: 5px;
+  display: block;
+}
+
+/* CSS cho các cụm liên kết đặc biệt trong footer */
+.css-1icnabn {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* CSS cho hình ảnh ngân hàng */
+.css-1equo6g {
+  max-width: 100%;
+}
+
+/* CSS cho phần nội dung cuối cùng của footer */
+.css-nt4onc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* CSS cho biểu tượng xác minh và DMCA */
+.css-t5rvn4 {
+  max-width: 100px;
+  margin: 10px;
+}
+
+/* CSS cho danh sách ngân hàng */
+.css-2ig3pg {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* CSS cho phần tạo khoảng trống giữa các phần tử */
+.css-1x3u27e {
+  margin: 0 5px;
+}
+
+/* CSS cho một số biểu tượng */
+.css-zmasuu,
+.css-btiuvm,
+.css-oj6l12,
+.css-1vir8ad {
+  vertical-align: middle;
+}
+
+.css-title-footer {
+  font-size: 24px;
+  font-weight: 300;
+}
