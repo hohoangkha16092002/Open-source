@@ -1,54 +1,38 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-include "PHPMailer/src/DSNConfigurator.php";
-include "PHPMailer/src/PHPMailer.php";
-include "PHPMailer/src/Exception.php";
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gửi Email</title>
+  <link rel="stylesheet" href="style_send-mail.css">
+  <style></style>
+</head>
 
-include "PHPMailer/src/POP3.php";
-include "PHPMailer/src/SMTP.php";
+<body>
+  <img src="img/cskh-banner.png" width="100%" alt="Chăm sóc khách hàng">
+  <img src="img/cskh.png" alt="Chăm sóc khách hàng">
+  <form method="post" action="pages/send-mail/send-mail.php" enctype="multipart/form-data">
+    <label for="from_email">Email người gửi:</label>
+    <input type="email" id="from_email" name="from_email" class="mail-input" required><br><br>
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+    <label for="subject">Chủ đề:</label>
+    <input type="text" id="subject" name="subject" class="mail-input" required><br><br>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $from_email = $_POST["from_email"];
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
-    
-    $mail = new PHPMailer(true);
+    <label for="message">Nội dung:</label><br>
+    <textarea id="message" name="message" rows="5" class="mail-input" required></textarea><br><br>
 
-    try {
-        // Cài đặt máy chủ SMTP và thông tin tài khoản email
+    <label for="attachment">Đính kèm tệp (nếu cần):</label>
+    <input type="file" id="attachment" name="attachment" class="mail-input"><br><br>
 
-        $mail->SMTPDebug = 0; // chế độ debug
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'kha.hh.62cntt@ntu.edu.vn'; // SMTP username
-        $mail->Password = 'bkgq atpw qqab tvyv';   
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+    <div class="center-button">
+      <input type="submit" value="Gửi Email">
+    </div>
+  </form>
+  <img src="https://lh3.googleusercontent.com/UsEi_hesb8CfR7G0PQ6gPP4hT7oExxvLe-sADipaiY9qzGdq9K-LF_E0DYm6d6-NlLzWasC670gWcboz9L2EZtKogx2z0mOp=rw-w1233" alt="" decoding="async" class="lazyload" loading="lazy">
+  <img src="https://lh3.googleusercontent.com/rOs33f5-oBSFhgbV_N8KHJ2SIGkQRXiRAymp9Q9DJFmq77uEyhf19UghdfUUQRh8kY5xyZI6QW-kw3xebo6bPnh_MjB3ygwh=rw-w1233" alt="" decoding="async" class="lazyload css-63903r" loading="lazy">
+  <img src="https://lh3.googleusercontent.com/TPa_Y2rJGMVV_4W1SUIQDn-2q2jLu41yUUn4BZOp6jU_0nLxPm5WgPB1m8KewFU0JSA5baeL_qvaCgE6ZCWiBHElDZhA6JH7=rw-w1233" alt="" decoding="async" class="lazyload css-63903r" loading="lazy">
+  <img src="https://lh3.googleusercontent.com/935_Rwng3W3dUQ-rvtqHWEVACdcCQOysJYFbn4pAceIzjw0DnA-DutdEEaPcXZ3hRquq5DafSNopGCKlMmrE5SvzwqAZKFOO=rw-w1233" alt="" decoding="async" class="lazyload css-63903r" loading="lazy">
+</body>
 
-        $mail->CharSet = 'UTF-8';
-
-        $mail->setFrom($from_email, 'Phong Vũ - Chăm sóc khách hàng');
-        $mail->addAddress('kha.hh.62cntt@ntu.edu.vn', 'Hoàng Kha');
-        $mail->addAddress('tien.pm.62cntt@ntu.edu.vn', 'Minh Tiến');
-        
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body = "Email người gửi: " . $from_email . " - Nội dung: " . $message;
-        
-        // Xử lý tệp đính kèm nếu được chọn
-        if (!empty($_FILES['attachment']['name'])) {
-            $attachment = $_FILES['attachment']['tmp_name'];
-            $mail->addAttachment($attachment, $_FILES['attachment']['name']);
-        }
-
-        $mail->send();
-        echo 'Email đã được gửi thành công!';
-    } catch (Exception $e) {
-        echo 'Không thể gửi email. Lỗi: ' . $mail->ErrorInfo;
-    }
-}
-?>
+</html>

@@ -35,21 +35,28 @@ textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
   font-size: 16px;
+  border-radius: 4px;
+  border-color: rgba(33, 150, 243, 1);
+  border-width: 2px;
 }
-
+.center-button {
+  display: flex;
+  justify-content: center;
+}
 /* Style the submit button */
 input[type="submit"] {
-  background-color: #0077b6;
-  color: #fff;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
   margin-top: 10px;
+  line-height: 16px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 1);
+  height: 40px;
+  width: 200px;
+  background-color: rgba(37, 141, 255, 1);
+  
 }
 
 /* Style the submit button on hover */
@@ -76,4 +83,18 @@ h1 {
   background-color: #0077b6;
   color: #fff;
   padding: 20px;
+}
+.css-63903r {
+  max-width: 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+}
+.css-63903r:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
