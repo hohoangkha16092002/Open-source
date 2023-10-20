@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/navigator.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-page.css">
     <link rel="stylesheet" href="send-mail/style_send-mail.css">
 
     <!-- Tải các tệp CSS của Bootstrap từ CDN -->
