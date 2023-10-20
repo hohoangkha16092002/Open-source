@@ -479,7 +479,7 @@
                     </div>
                     <div class="nav-cart-popup"
                         style="position: absolute; inset: 0px 0px auto auto; transform: translate3d(0px, 40px, 0px);">
-                        <div origin="center top" class="nav-cart-popup-main">
+                        <div origin="center top" class="nav-cart-popup">
                             <div class="nav-cart-popup-main">
                                 <div class="nav-cart-popup-child">
                                     <div class="css-mb-16">
@@ -498,9 +498,10 @@
                                                     </picture>
                                                 </div>
                                             </div>
-                                            <div class="css-f0vs3e"><a target="_blank"
+                                            <div class="css-mg1rem">
+                                                <a target="_blank"
                                                     href="/may-tinh-xach-tay-laptop-acer-nitro-16-phoenix-an16-41-r5m4-nh-qkbsv-003-amd-ryzen-5-7535hs-den-s230402670.html"
-                                                    aria-label="Image" class="css-587jha">
+                                                    aria-label="Image" class="nav-cart-popup-a">
                                                     <div type="body" color="textPrimary" class="css-1h5tj4c">Máy
                                                         tính xách tay/ Laptop Acer Nitro 16 Phoenix AN16-41-R5M4
                                                         (NH.QKBSV.003) (AMD Ryzen 5-7535HS) (Đen)</div>
@@ -600,9 +601,9 @@
                                                     </picture>
                                                 </div>
                                             </div>
-                                            <div class="css-f0vs3e"><a target="_blank"
+                                            <div class="css-mg1rem"><a target="_blank"
                                                     href="/bo-nho-ram-team-t-force-delta-black-rgb-8gb-1x8gb-ddr4-3200-mhz-tf3d48g3200hc16c01-s230904040.html"
-                                                    aria-label="Image" class="css-587jha">
+                                                    aria-label="Image" class="nav-cart-popup-a">
                                                     <div type="body" color="textPrimary" class="css-1h5tj4c">Bộ nhớ/
                                                         RAM Team T-Force Delta Black RGB 8GB (1x8GB) DDR4 3200 Mhz
                                                         (TF3D48G3200HC16C01)</div>
