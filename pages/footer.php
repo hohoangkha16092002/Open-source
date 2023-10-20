@@ -1,11 +1,12 @@
-<hr>
+<hr style="border: 1px solid blue;
+    font-weight: bold; opacity: 1; margin: 20px 0 0 0; background-color: white !important">
 <footer>
-    <div class="container container-fluid-custom">
+    <div class="container container-fluid-custom" style="min-width: 100% !important;">
         <div class="footer-row-top">
             <div class="footer-top">
                 <div class="footer-top-boxcenter row margin-bottom-20">
                     <div class="footer-top-boxcenter1 col-xl-2.4 col-lg">
-                        <h5 class="fontsize-14 margin-bottom-20 block">Hỗ trợ Khách hàng</h5>
+                        <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Hỗ trợ Khách hàng</h5>
                         <a href="https://help.phongvu.vn/dich-vu-khach-hang/the-thanh-vien" target="_blank"
                             rel="noreferrer noopener" class="css-no-underline fontsize-12 block hover-blue ">Thẻ ưu đãi
                         </a>
@@ -29,7 +30,7 @@
                         </a>
                     </div>
                     <div class="footer-top-boxcenter2 col-xl-2.4 col-lg ">
-                        <h5 class="fontsize-14 margin-bottom-20 block">Chính sách mua hàng</h5>
+                        <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Chính sách mua hàng</h5>
                         <a href="https://help.phongvu.vn/chinh-sach-ban-hang/dieu-kien-giao-dich" target="_blank"
                             rel="noreferrer noopener" class="css-no-underline fontsize-12 block hover-blue">Điều kiện
                             giao dịch
@@ -62,7 +63,7 @@
                         </a>
                     </div>
                     <div class="footer-top-boxcenter3 col-xl-2.4 col-lg ">
-                        <h5 class="fontsize-14 margin-bottom-20 block">Thông tin Phong Vũ</h5>
+                        <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Thông tin Phong Vũ</h5>
                         <a href="https://help.phongvu.vn/" target="_blank" rel="noreferrer noopener"
                             class="css-no-underline fontsize-12 block hover-blue">Giới thiệu Phong Vũ
                         </a>
@@ -88,8 +89,8 @@
                             class="css-no-underline fontsize-12 block hover-blue">Tuyển dụng
                         </a>
                     </div>
-                    <div class="footer-top-boxcenter4 col-xl-2.4 col-lg inline-block">
-                        <h5 class="fontsize-14 margin-bottom-20 block">Cộng đồng Phong Vũ</h5>
+                    <div class="footer-top-boxcenter4 col-xl-2.4 col-lg inline-block ">
+                        <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Cộng đồng Phong Vũ</h5>
                         <div class="fontsize-12 ">Gọi mua hàng (miễn phí)
                             <a class="css-no-underline fontsize-12 " style="color:blue" href="tel:18006867"
                                 }="">18006867
@@ -130,7 +131,7 @@
                         </a>
                     </div>
                     <div class="footer-top-boxcenter5 col-xl-2.4 col-lg inline-block">
-                        <h5 class="fontsize-14 margin-bottom-20 block">Email liên hệ</h5>
+                        <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Email liên hệ</h5>
                         <div class="fontsize-12 block">Hỗ trợ Khách hàng:<br>
                             <a class="css-no-underline fontsize-12 block" style="color:blue"
                                 href="mailto:cskh@phongvu.vn">cskh@phongvu.vn
@@ -153,7 +154,7 @@
                 <div class="footer-bottom-boxcenter row">
                     <div class="footer-bottom-boxcenter-1 col-xl-4 col-lg">
                         <div class="bottom-boxcenter-1-top">
-                            <h5 class="fontsize-14 margin-bottom-20 block ">Phương thức thanh toán</h5>
+                            <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Phương thức thanh toán</h5>
                         </div>
                         <div class="bottom-boxcenter-1-bottom row ">
                             <div class="footer-payment clickable col-xl-3 col-lg">
@@ -181,7 +182,7 @@
                     </div>
                     <div class="footer-bottom-boxcenter-2 col-xl-8 col-lg">
                         <div class="footer-bottom-boxcenter-child">
-                            <h5 class="fontsize-14 margin-bottom-20 block">Danh sách các ngân hàng thanh toán online
+                            <h5 class="fontsize-14 margin-bottom-20 block css-fw-bold">Danh sách các ngân hàng thanh toán online
                             </h5>
                             <img src="https://shopfront-cdn.tekoapis.com/static/vnpay_banks.png" alt="" width="70%">
                         </div>

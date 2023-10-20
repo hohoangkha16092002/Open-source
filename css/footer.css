@@ -1,7 +1,5 @@
 .container {
   background-color: rgb(255, 255, 255);
-  padding: 0px 0px;
-  width: 100%;
 }
 
 footer {
@@ -26,6 +24,10 @@ footer {
   display: block !important;
 }
 
+.css-fw-bold {
+  font-weight: bold;
+}
+
 .container-fluid-custom {
   max-width: 100%;
 }
@@ -33,7 +35,7 @@ footer {
 @media (min-width: 792px) {
   .footer-row-top {
     width: 100%;
-    padding: 10px 200px 10px 150px;
+    padding: 30px 200px 10px 150px;
   }
   .footer-row-bottom {
     width: 100%;
