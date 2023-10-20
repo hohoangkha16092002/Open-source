@@ -21,7 +21,7 @@
     } elseif ($tam == 'cskh') {
         include 'main/send-mail/form-send-mail.php';
     } elseif ($tam == 'exercise') {
-        include 'main/bai-tap.php';
+        include 'main/exercise-page.php';
     } else {
         include 'main/home.php';
     }
