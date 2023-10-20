@@ -1,7 +1,7 @@
 /* Apply styles to the body */
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .mail-body {
   font-family: Arial, sans-serif;
