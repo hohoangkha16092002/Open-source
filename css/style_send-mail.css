@@ -3,15 +3,15 @@
   box-sizing: border-box;
 }
 
-body {
+.mail-body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }
 
 /* Style the form container */
-form {
+.mail-form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -21,7 +21,7 @@ form {
 }
 
 /* Style the form labels */
-label {
+.mail-label {
   display: block;
   margin-top: 10px;
   font-weight: bold;
@@ -29,9 +29,9 @@ label {
 }
 
 /* Style form input fields */
-input[type="email"],
-input[type="text"],
-textarea {
+.mail-input[type="email"],
+.mail-input[type="text"],
+.mail-textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -40,12 +40,14 @@ textarea {
   border-color: rgba(33, 150, 243, 1);
   border-width: 2px;
 }
-.center-button {
+
+.mail-center-button {
   display: flex;
   justify-content: center;
 }
+
 /* Style the submit button */
-input[type="submit"] {
+.mail-input-submit[type="submit"] {
   padding: 10px 20px;
   cursor: pointer;
   font-size: 18px;
@@ -56,16 +58,16 @@ input[type="submit"] {
   height: 40px;
   width: 200px;
   background-color: rgba(37, 141, 255, 1);
-  
+
 }
 
 /* Style the submit button on hover */
-input[type="submit"]:hover {
+.mail-input-submit[type="submit"]:hover {
   background-color: #005689;
 }
 
 /* Center the image */
-img {
+.mail-img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
@@ -73,17 +75,10 @@ img {
 }
 
 /* Center the form container */
-form {
+.mail-form {
   text-align: left;
 }
 
-/* Style the header (h1) */
-h1 {
-  text-align: center;
-  background-color: #0077b6;
-  color: #fff;
-  padding: 20px;
-}
 .css-63903r {
   max-width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
@@ -92,6 +87,7 @@ h1 {
   position: relative;
   object-fit: cover;
 }
+
 .css-63903r:hover {
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
