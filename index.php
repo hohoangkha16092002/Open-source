@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/home-page.css">
     <link rel="stylesheet" href="send-mail/style_send-mail.css">
+    <link rel="stylesheet" href="css/login-page.css">
 
     <!-- Tải các tệp CSS của Bootstrap từ CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
