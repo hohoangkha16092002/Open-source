@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a target="_self" class="css-no-underline clickable" href="">
+                    <a target="_self" class="css-no-underline clickable" href="?page=login">
                         <button class="css-button-container">
                             <i style="color: white" class="fa-solid fa-user"></i>
                             <span class="css-add-width-gap"></span>

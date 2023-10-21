@@ -22,7 +22,12 @@
         include 'main/send-mail/form-send-mail.php';
     } elseif ($tam == 'exercise') {
         include 'main/exercise-page.php';
-    } else {
+    } elseif ($tam == 'login') {
+        include 'login/login.php';
+    }elseif ($tam == 'register') {
+        include 'login/register.php';
+    }
+    else {
         include 'main/home.php';
     }
     ?>
