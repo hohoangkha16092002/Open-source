@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-:selection{
+:selection {
   background: #ff80bf;
-
 }
-.container{
+.container-login-signin {
   background: #fff;
-  max-width: 350px;
+  max-width: 500px !important;
   width: 100%;
+  margin: 2% auto;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
-.container form .title{
+.container-login-signin form .title {
   font-size: 30px;
   font-weight: 600;
   margin: 20px 0 10px 0;
   position: relative;
 }
-.container form .title:before{
-  content: '';
+.container-login-signin form .title:before {
+  content: "";
   position: absolute;
   height: 4px;
   width: 33px;
@@ -33,21 +33,21 @@
   border-radius: 5px;
   background: linear-gradient(to right, #0f0099 0%, #0077ff 100%);
 }
-.container form .input-box{
+.container-login-signin form .input-box {
   width: 100%;
   height: 45px;
   margin-top: 25px;
   position: relative;
 }
-.container form .input-box input{
+.container-login-signin form .input-box input {
   width: 100%;
   height: 100%;
   outline: none;
   font-size: 16px;
   border: none;
 }
-.container form .underline::before{
-  content: '';
+.container-login-signin form .underline::before {
+  content: "";
   position: absolute;
   height: 2px;
   width: 100%;
@@ -55,8 +55,8 @@
   left: 0;
   bottom: 0;
 }
-.container form .underline::after{
-  content: '';
+.container-login-signin form .underline::after {
+  content: "";
   position: absolute;
   height: 2px;
   width: 100%;
@@ -67,15 +67,15 @@
   transform-origin: left;
   transition: all 0.3s ease;
 }
-.container form .input-box input:focus ~ .underline::after,
-.container form .input-box input:valid ~ .underline::after{
+.container-login-signin form .input-box input:focus ~ .underline::after,
+.container-login-signin form .input-box input:valid ~ .underline::after {
   transform: scaleX(1);
   transform-origin: left;
 }
-.container form .button{
+.container-login-signin form .button {
   margin: 40px 0 20px 0;
 }
-.container .input-box input[type="submit"]{
+.container-login-signin .input-box input[type="submit"] {
   background: linear-gradient(to right, #0f0099 0%, #0077ff 100%);
   font-size: 17px;
   color: #fff;
@@ -83,16 +83,16 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.container .input-box input[type="submit"]:hover{
+.container-login-signin .input-box input[type="submit"]:hover {
   letter-spacing: 1px;
-  background: linear-gradient(to left,#0f0099 0%, #0077ff 100%);
+  background: linear-gradient(to left, #0f0099 0%, #0077ff 100%);
 }
-.container .option{
+.container-login-signin .option {
   font-size: 14px;
   text-align: center;
 }
-.container .facebook a,
-.container .twitter a{
+.container-login-signin .facebook a,
+.container-login-signin .twitter a {
   display: block;
   height: 45px;
   width: 100%;
@@ -105,24 +105,24 @@
   transition: all 0.3s ease;
 }
 
-.container .facebook i,
-.container .twitter i{
+.container-login-signin .facebook i,
+.container-login-signin .twitter i {
   padding-right: 12px;
-  font-size: 20px;
+  font-size: 20px; 
 }
-.container .twitter a{
-  background: linear-gradient(to right,  #ee0014 0%, #ff1a1a 100%);
+.container-login-signin .twitter a {
+  background: linear-gradient(to right, #ee0014 0%, #ff1a1a 100%);
   margin: 20px 0 15px 0;
 }
-.container .twitter a:hover{
-  background: linear-gradient(to left,  #ee0000 0%, #ff1a1a 100%);
+.container-login-signin .twitter a:hover {
+  background: linear-gradient(to left, #ee0000 0%, #ff1a1a 100%);
   margin: 20px 0 15px 0;
 }
-.container .facebook a{
-  background: linear-gradient( to right,  #3b5998 0%, #476bb8 100%);
+.container-login-signin .facebook a {
+  background: linear-gradient(to right, #3b5998 0%, #476bb8 100%);
   margin: 20px 0 50px 0;
 }
-.container .facebook a:hover{
-  background: linear-gradient( to left,  #3b5998 0%, #476bb8 100%);
+.container-login-signin .facebook a:hover {
+  background: linear-gradient(to left, #3b5998 0%, #476bb8 100%);
   margin: 20px 0 50px 0;
 }

@@ -23,9 +23,9 @@
     } elseif ($tam == 'exercise') {
         include 'main/exercise-page.php';
     } elseif ($tam == 'login') {
-        include 'login/login.php';
+        include 'main/login.php';
     }elseif ($tam == 'register') {
-        include 'login/register.php';
+        include 'main/register.php';
     }
     else {
         include 'main/home.php';

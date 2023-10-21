@@ -69,7 +69,7 @@
                         <button class="css-button-container">
                             <i style="color: white" class="fa-solid fa-user"></i>
                             <span class="css-add-width-gap"></span>
-                            <div type="body" style="color: white">Thông tin cá nhân</div>
+                            <div type="body" style="color: white">Đăng nhập</div>
                         </button>
                     </a>
                 </li>
