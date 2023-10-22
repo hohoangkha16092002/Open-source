@@ -194,7 +194,7 @@
                         <div
                             class="home-page--glide home-page--slide-main home-page--glide--swipeable home-page--glide--ltr home-page--glide--carousel">
                             <div class="home-page--glide__track" data-glide-el="track">
-                                <div class="home-page--glide__slides"
+                                <!-- <div class="home-page--glide__slides"
                                     style="transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 16380px; transform: translate3d(-11700px, 0px, 0px);">
                                     <div class="home-page--glide__slide home-page--glide__slide--clone"
                                         style="height: unset; width: 1160px; margin-right: 5px;">
@@ -475,6 +475,35 @@
                                         class="home-page--glide__bullet home-page--button home-page--glide__bullet--active"
                                         data-glide-dir="=8"></button>
                                     <button class="home-page--glide__bullet" data-glide-dir="=9"></button>
+                                </div> -->
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100"
+                                                src="https://lh3.googleusercontent.com/NEyGqAS4HkBmVGWbdLxRCJ7v4n7Xz-Xcfs6ffoxCNZMHBg0txwJk7L0FVyBvjZ9mwdFsV915-uAWlcX_JPHD1yJSq2EYfeV6=w1920-rw"
+                                                alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100"
+                                                src="https://lh3.googleusercontent.com/vkMMX2cvl_1ii0c_vw5TGy4ixhRc-l7OlMWnmx4-oxquqHo_A9aET_lWxDmxbh-GMZTr3O5JS4kGNa0Ka7hcctxo2lj0xoUR=w1920-rw"
+                                                alt="Second slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100"
+                                                src="https://lh3.googleusercontent.com/2KhPpjfZZKqDFENGxi16c-WAMcFLyhsnWcuwJzgX2Y9S-m2y9BCnrI6onJgds0lXXN0rFqWWCnzKj_l3qS5E80K_p-xBhGSqjw=w1920-rw"
+                                                alt="Third slide">
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                        data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                        data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -510,45 +539,51 @@
             </div>
             <div class="teko-row home-page--list-choose-container">
                 <div class="teko-col teko-col-12 home-page--list-choose">
-                    <div class="teko-row home-page--list-choose-main" style="margin-left: -8px; margin-right: -8px; row-gap: 16px;">
-                        <div class="teko-col teko-col-3 home-page--list-choose" style="padding-left: 8px; padding-right: 8px;"><a
-                                data-testid="TekoLink" class="home-page--main-child-left-main-child" href="/p/laptop-1">
-                                <div width="100%" class="home-page--list-choose-child" data-content-region-name="bottomBanner"
-                                    data-track-content="true" data-content-name="Laptop tháng 10" data-content-index="0"
+                    <div class="teko-row home-page--list-choose-main"
+                        style="margin-left: -8px; margin-right: -8px; row-gap: 16px;">
+                        <div class="teko-col teko-col-3 home-page--list-choose"
+                            style="padding-left: 8px; padding-right: 8px;"><a data-testid="TekoLink"
+                                class="home-page--main-child-left-main-child" href="/p/laptop-1">
+                                <div width="100%" class="home-page--list-choose-child"
+                                    data-content-region-name="bottomBanner" data-track-content="true"
+                                    data-content-name="Laptop tháng 10" data-content-index="0"
                                     data-content-target="https://phongvu.vn/p/laptop-1"><img
                                         src="https://lh3.googleusercontent.com/q6lovS2WzW4BMMGaBywk4Hdbmv9L_Yh84PWNkRyczxqgtFgALpiCb44s1VfdeaHXrixHWjr8XtX5Wgl0HfePwZvmHN1EObA=w308-rw"
                                         loading="eager" hover="zoom" decoding="async" alt="Laptop tháng 10"
                                         fetchpriority="high" name="Laptop tháng 10" style="width: 100%; height: auto;">
                                 </div>
                             </a></div>
-                        <div class="teko-col teko-col-3 home-page--list-choose" style="padding-left: 8px; padding-right: 8px;"><a
-                                data-testid="TekoLink" class="home-page--main-child-left-main-child"
-                                href="/p/thiet-bi-van-phong">
-                                <div width="100%" class="home-page--list-choose-child" data-content-region-name="bottomBanner"
-                                    data-track-content="true" data-content-name="Thiết bị văn phòng tháng 10"
-                                    data-content-index="1"
+                        <div class="teko-col teko-col-3 home-page--list-choose"
+                            style="padding-left: 8px; padding-right: 8px;"><a data-testid="TekoLink"
+                                class="home-page--main-child-left-main-child" href="/p/thiet-bi-van-phong">
+                                <div width="100%" class="home-page--list-choose-child"
+                                    data-content-region-name="bottomBanner" data-track-content="true"
+                                    data-content-name="Thiết bị văn phòng tháng 10" data-content-index="1"
                                     data-content-target="https://phongvu.vn/p/thiet-bi-van-phong"><img
                                         src="https://lh3.googleusercontent.com/2yhEgyBFQW5M47B7cszx-lChiW4BaHm2frYTsX-f0tW-hLaD7F246s-UqWxTGAlAgKVTHY7gj3z9hQDuI-fVYwEeX6LAQunz=w308-rw"
                                         loading="eager" hover="zoom" decoding="async" alt="Thiết bị văn phòng tháng 10"
                                         fetchpriority="high" name="Thiết bị văn phòng tháng 10"
                                         style="width: 100%; height: auto;"></div>
                             </a></div>
-                        <div class="teko-col teko-col-3 home-page--list-choose" style="padding-left: 8px; padding-right: 8px;"><a
-                                data-testid="TekoLink" class="home-page--main-child-left-main-child"
-                                href="/p/phong-vu-gaming">
-                                <div width="100%" class="home-page--list-choose-child" data-content-region-name="bottomBanner"
-                                    data-track-content="true" data-content-name="Gaming tháng 10" data-content-index="2"
+                        <div class="teko-col teko-col-3 home-page--list-choose"
+                            style="padding-left: 8px; padding-right: 8px;"><a data-testid="TekoLink"
+                                class="home-page--main-child-left-main-child" href="/p/phong-vu-gaming">
+                                <div width="100%" class="home-page--list-choose-child"
+                                    data-content-region-name="bottomBanner" data-track-content="true"
+                                    data-content-name="Gaming tháng 10" data-content-index="2"
                                     data-content-target="https://phongvu.vn/p/phong-vu-gaming"><img
                                         src="https://lh3.googleusercontent.com/NAL6SI3ErMnEySACqLpUSNfCF28AYVRPheYWufUcovyfmGjJUMXjKke_QJxnCKuCgz5sT2Cl6fPyI_TxS580_HVnvZefbs0=w308-rw"
                                         loading="eager" hover="zoom" decoding="async" alt="Gaming tháng 10"
                                         fetchpriority="high" name="Gaming tháng 10" style="width: 100%; height: auto;">
                                 </div>
                             </a></div>
-                        <div class="teko-col teko-col-3 home-page--list-choose" style="padding-left: 8px; padding-right: 8px;"><a
-                                data-testid="TekoLink" class="home-page--main-child-left-main-child" href="/p/dien-may">
-                                <div width="100%" class="home-page--list-choose-child" data-content-region-name="bottomBanner"
-                                    data-track-content="true" data-content-name="Điện máy tháng 10"
-                                    data-content-index="3" data-content-target="https://phongvu.vn/p/dien-may"><img
+                        <div class="teko-col teko-col-3 home-page--list-choose"
+                            style="padding-left: 8px; padding-right: 8px;"><a data-testid="TekoLink"
+                                class="home-page--main-child-left-main-child" href="/p/dien-may">
+                                <div width="100%" class="home-page--list-choose-child"
+                                    data-content-region-name="bottomBanner" data-track-content="true"
+                                    data-content-name="Điện máy tháng 10" data-content-index="3"
+                                    data-content-target="https://phongvu.vn/p/dien-may"><img
                                         src="https://lh3.googleusercontent.com/qXkOnaasWJ9E9TT2M3mHrVQK-gXoDFUzXV1Dho-Ya7XFlWMTkil3-gcdxtndiEBAhDC_gb1rbx-V-FR3Okrj7HHU4YXZJnYy=w308-rw"
                                         loading="eager" hover="zoom" decoding="async" alt="Điện máy tháng 10"
                                         fetchpriority="high" name="Điện máy tháng 10"
