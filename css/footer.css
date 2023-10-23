@@ -1,6 +1,10 @@
 .container {
   background-color: rgb(255, 255, 255);
-  padding: 0px 0px;
+}
+
+footer {
+  min-width: 100%;
+  background-color: blue;
 }
 
 .fontsize-14 {
@@ -20,6 +24,10 @@
   display: block !important;
 }
 
+.css-fw-bold {
+  font-weight: bold;
+}
+
 .container-fluid-custom {
   max-width: 100%;
 }
@@ -27,7 +35,7 @@
 @media (min-width: 792px) {
   .footer-row-top {
     width: 100%;
-    padding: 30px 200px 30px 150px;
+    padding: 30px 200px 10px 150px;
   }
   .footer-row-bottom {
     width: 100%;
@@ -41,15 +49,13 @@
     width: 100%;
     padding: 0;
   }
-  
+
   .footer-row-bottom {
     text-align: center;
     width: 100%;
     padding: 20px 0;
   }
 }
-
-
 
 .footer-row-bottom-main {
   width: 100%;

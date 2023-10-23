@@ -703,6 +703,11 @@
   position: relative;
 }
 
+.nav-cart-popup {
+  background-color: transparent;
+  opacity: 1;
+}
+
 .nav-cart-popup-main {
   background-color: #fff;
   padding: 1rem;
@@ -760,15 +765,19 @@
   visibility: visible;
 }
 
-.css-f0vs3e {
+.css-mg1rem {
   flex: 1 1 0%;
   margin-left: 1rem;
 }
 
-.css-587jha {
+.nav-cart-popup-a {
   color: unset;
   -webkit-text-decoration: unset;
   text-decoration: unset;
+}
+
+.nav-cart-popup-products a:hover {
+  color: #024dbc;
 }
 
 .css-1h5tj4c {

@@ -1,0 +1,96 @@
+/* Apply styles to the body */
+/* * {
+  box-sizing: border-box;
+} */
+
+.mail-body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the form container */
+.mail-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form labels */
+.mail-label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Style form input fields */
+.mail-input[type="email"],
+.mail-input[type="text"],
+.mail-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border-color: rgba(33, 150, 243, 1);
+  border-width: 2px;
+}
+
+.mail-center-button {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the submit button */
+.mail-input-submit[type="submit"] {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 16px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 1);
+  height: 40px;
+  width: 200px;
+  background-color: rgba(37, 141, 255, 1);
+
+}
+
+/* Style the submit button on hover */
+.mail-input-submit[type="submit"]:hover {
+  background-color: #005689;
+}
+
+/* Center the image */
+.mail-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Center the form container */
+.mail-form {
+  text-align: left;
+}
+
+.css-63903r {
+  max-width: 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+}
+
+.css-63903r:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
