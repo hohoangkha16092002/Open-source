@@ -26,6 +26,8 @@
         include 'main/login.php';
     }elseif ($tam == 'register') {
         include 'main/register.php';
+    }elseif ($tam == 'test') {
+        include 'main/test.php';
     }
     else {
         include 'main/home.php';
