@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "open-source";
+$dbname = "quanly_cuahang_laptop";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) {
     die("" . mysqli_connect_error());
@@ -403,7 +403,7 @@ if (mysqli_connect_errno()) {
                     <div class="teko-col teko-col-10 home-page--list-choose"
                         style="display: block; flex: 0 0 83.33%; max-width: 83.33%;">
                         <div class="css-gfmc8l">
-                            <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider">
+                            <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider" id="glideContainer">
                                 <div class="glide__track" data-glide-el="track">
                                     <div class="home-page--glide__slides"
                                         style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1772px; transform: translate3d(0px, 0px, 0px);">
@@ -533,7 +533,7 @@ if (mysqli_connect_errno()) {
                     <div class="teko-col teko-col-10 home-page--list-choose"
                         style="display: block; flex: 0 0 83.33%; max-width: 83.33%;">
                         <div class="css-gfmc8l">
-                            <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider">
+                            <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider" id="glideContainer1">
                                 <div class="glide__track" data-glide-el="track">
                                     <div class="home-page--glide__slides"
                                         style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1417.6px; transform: translate3d(0px, 0px, 0px);">
@@ -891,7 +891,7 @@ if (mysqli_connect_errno()) {
                                                             stroke-linecap="round" stroke-linejoin="round"></path>
                                                     </svg></div>
                                                 <div color="primary500" class="css-j9nr2k">
-                                                    <div type="subtitle" color="white" class="css-1t6n552">'.$i.'</div>
+                                                    <div type="subtitle" color="white" class="css-1t6n552">' . $i . '</div>
                                                 </div>
                                                 <div color="primary500" class="css-rk91ax"><svg fill="none" viewBox="0 0 24 24" size="16"
                                                         class="css-26qhcs" color="placeholder" height="16" width="16"
@@ -991,5 +991,34 @@ if (mysqli_connect_errno()) {
                     document.getElementById("demo").innerHTML = "EXPIRED";
                 }
             }, 1000);
+
+            document.addEventListener("DOMContentLoaded", function () {
+                new Glide("#glideContainer", {
+                    type: "slider", // Đặt loại trượt là "carousel" để hiển thị 5 sản phẩm một lần
+                    perView: 5, // Số lượng sản phẩm hiển thị trên mỗi trang
+                    focusAt: 0,
+                }).mount();
+
+                const nextButton = document.querySelector(".glide__arrow--right");
+
+                nextButton.addEventListener("click", function () {
+                    const glideInstance = document.querySelector("#glideContainer").glide;
+                    glideInstance.go(">"); // Điều này sẽ di chuyển sang trang tiếp theo
+                });
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                new Glide("#glideContainer1", {
+                    type: "slider", // Đặt loại trượt là "carousel" để hiển thị 5 sản phẩm một lần
+                    perView: 5, // Số lượng sản phẩm hiển thị trên mỗi trang
+                    focusAt: 0,
+                }).mount();
+
+                const nextButton = document.querySelector(".glide__arrow--right");
+
+                nextButton.addEventListener("click", function () {
+                    const glideInstance = document.querySelector("#glideContainer1").glide;
+                    glideInstance.go(">"); // Điều này sẽ di chuyển sang trang tiếp theo
+                });
+            });
         </script>
     </div>
