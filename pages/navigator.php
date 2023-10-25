@@ -10,21 +10,21 @@
                                 src="https://shopfront-cdn.tekoapis.com/static/phongvu/logo.svg" loading="lazy"
                                 decoding="async" alt="phongvu" style="width: 100%; height: 35px;"></div>
                     </a>
-                    <div class="" style="width: 100%;">
+                    <div style="width: 100%;">
                         <div class="" tabindex="0" style="width: 100%;">
                             <div class="nav-product-portfolio-2">
                                 <i class="fa-solid fa-grip-lines" href="/categories"></i>
-                                <a href="/categories" class="nav-product-portfolio-text">Danh mục sản phẩm</a>
+                                <a id="nav--product-portfolio" class="nav-product-portfolio-text">Danh mục sản phẩm</a>
                             </div>
                         </div>
-                        <div class="nav-product-subnav"
+                        <div class="nav-product-subnav" id="nav--product-portfolio-popup"
                             style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(65px, 37px, 0px);"
                             data-popper-reference-hidden="false" data-popper-escaped="false"
                             data-popper-placement="bottom-start">
                             <div origin="center top" class="nav-product-subnav-top">
                                 <div class="" style="width: 204px; border-radius: 0.5rem;">
                                     <div class="" style=" position: relative;">
-                                        <div class=" nav-product-subnav-main" width="12.375rem" height="28.5rem"><a
+                                        <div class="nav-product-subnav-main" width="12.375rem" height="28.5rem"><a
                                                 data-testid="TekoLink" target="_self" class="nav-products"
                                                 href="/c/laptop">
                                                 <div class="css-73wobg">
@@ -208,9 +208,9 @@
                 <div class="nav-search">
                     <div class="nav-search-main">
                         <div data-content-region-name="headerBar" data-track-content="true"
-                            data-content-name="searchBox" class="nav-search-input"><input
-                                class="search-input nav-search-input-text" placeholder="Nhập từ khoá cần tìm"
-                                role="searchbox" aria-label="Search" value="">
+                            data-content-name="searchBox" class="nav-search-input">
+                            <input id="nav-search-input" class="search-input nav-search-input-text"
+                                placeholder="Nhập từ khoá cần tìm" role="searchbox" aria-label="Search" value="">
                         </div>
                         <div data-content-region-name="headerBar" data-track-content="true"
                             data-content-name="searchButton" class="nav-search-icon-main">
@@ -219,7 +219,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="nav-search-popup">
+                    <div class="nav-search-popup" id="nav-search-popup">
                         <div class="nav-search-popup-delete">
                             <div font-weight="500" color="#82869E" class="nav-search-hictory">Lịch sử tìm kiếm</div>
                             <div data-content-region-name="recentSearch" data-track-content="true"
@@ -585,36 +585,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="css-mb-16">
-                                        <div class="nav-cart-popup-products">
-                                            <div>
-                                                <div height="80" width="80" class="nav-cart-popup-products-avt">
-                                                    <picture>
-                                                        <source
-                                                            srcset="https://lh3.googleusercontent.com/GJbFs1spv9RB77Epyl4BaRQuAsg4xqamaZmVzMIQPDcn0q_gLUw2z4CQsjyiXb5FKqNdymIChpcc9MPTTVjeHwtxuDQbIB4=rw"
-                                                            type="image/webp">
-                                                        <source
-                                                            srcset="https://lh3.googleusercontent.com/GJbFs1spv9RB77Epyl4BaRQuAsg4xqamaZmVzMIQPDcn0q_gLUw2z4CQsjyiXb5FKqNdymIChpcc9MPTTVjeHwtxuDQbIB4"
-                                                            type="image/png"><img class="lazyload img" alt="product"
-                                                            src="https://lh3.googleusercontent.com/GJbFs1spv9RB77Epyl4BaRQuAsg4xqamaZmVzMIQPDcn0q_gLUw2z4CQsjyiXb5FKqNdymIChpcc9MPTTVjeHwtxuDQbIB4=rw"
-                                                            loading="lazy" decoding="async">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                            <div class="css-mg1rem"><a target="_blank"
-                                                    href="/bo-nho-ram-team-t-force-delta-black-rgb-8gb-1x8gb-ddr4-3200-mhz-tf3d48g3200hc16c01-s230904040.html"
-                                                    aria-label="Image" class="nav-cart-popup-a">
-                                                    <div type="body" color="textPrimary" class="css-1h5tj4c">Bộ nhớ/
-                                                        RAM Team T-Force Delta Black RGB 8GB (1x8GB) DDR4 3200 Mhz
-                                                        (TF3D48G3200HC16C01)</div>
-                                                </a>
-                                                <div type="caption" color="textSecondary" class="css-1f5a6jh">Số
-                                                    lượng 1</div><span class="css-7ofbab">649.000<span
-                                                        class="css-1ul6wk9">đ</span></span>
-                                            </div>
-                                        </div>
-                                        <div class="nav-cart-popup-products"></div>
-                                    </div>
                                 </div>
                                 <div class="css-1vf48kp">
                                     <div class="css-sax00u"><span>Tổng tiền (2) sản phẩm</span><span
@@ -632,4 +602,37 @@
             </div>
         </div>
     </div>
+    <script>
+
+        // Lấy tham chiếu đến nút bấm và thẻ div
+        const showButton = document.getElementById("nav-search-input");
+        const myDiv = document.getElementById("nav-search-popup");
+
+        // Thêm sự kiện click cho nút bấm
+        showButton.addEventListener("click", function () {
+            // Kiểm tra nếu thẻ div hiện đang ẩn (display: none)
+            if (myDiv.style.display === "none") {
+                // Hiển thị thẻ div (display: block)
+                myDiv.style.display = "block";
+            } else {
+                // Ẩn thẻ div nếu đã hiển thị
+                myDiv.style.display = "none";
+            }
+        });
+
+
+        // Lấy tham chiếu đến nút bấm và thẻ div
+        const showProductPortfolio = document.getElementById("nav--product-portfolio");
+        const productPortfolioPopup = document.getElementById("nav--product-portfolio-popup");
+
+        // Thêm sự kiện click cho nút bấm
+        showProductPortfolio.addEventListener("click", function () {
+            if (productPortfolioPopup.style.visibility === "hidden") {
+                productPortfolioPopup.style.visibility = "visible";
+            } else {
+                productPortfolioPopup.style.visibility = "hidden";
+            }
+        });
+
+    </script>
 </div>

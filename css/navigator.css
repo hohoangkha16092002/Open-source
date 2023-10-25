@@ -147,7 +147,7 @@
 
 .nav-product-subnav-top {
   background-color: transparent;
-  opacity: 0;
+  opacity: 1;
 }
 
 .nav-product-subnav-main {
@@ -212,6 +212,14 @@
   -ms-flex: 1;
   flex: 1;
   height: 100%;
+}
+
+.nav-search-input-text:focus{
+  outline: 0;
+}
+
+.nav-search-input-text:active{
+  display: block;
 }
 
 .nav-search-icon-main {
@@ -826,4 +834,211 @@
   width: max-content;
   display: inline-block;
   font-weight: bold;
+}
+
+.css-1xjc5z {
+  margin-left: 3rem;
+}
+
+.css-1fmlnyw {
+  display: flex;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 0.5rem 0px;
+}
+
+.css-1axx38a {
+  display: flex;
+  -webkit-box-align: start;
+  align-items: start;
+  height: fit-content;
+  width: fit-content;
+}
+
+.css-xe0n85 {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex: 1 0 auto;
+  display: flex;
+  cursor: unset;
+  z-index: 0;
+  margin: auto;
+  border-radius: 2px;
+  width: 16px;
+  content-visibility: auto;
+  height: 16px !important;
+}
+
+.css-jdz5ak {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease 0s;
+}
+
+.css-5j9p1n {
+  flex: 1 1 0%;
+  font-size: 0.75rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+
+.css-1vf48kp {
+  padding: 0.5rem 0px;
+  border-top: 1px dashed rgb(224, 224, 224);
+}
+
+.css-sax00u {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  line-height: 26px;
+}
+
+.css-19une5m {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.css-htm2b9 {
+  width: max-content;
+  display: inline-block;
+}
+
+.css-1dyo6sn {
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 1rem;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(20, 53, 195);
+  border-color: rgb(20, 53, 195);
+  border-width: 1px;
+  border-style: solid;
+  user-select: none;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255) !important;
+}
+
+.css-nloqo5 {
+  margin: 8px 0px 4px;
+}
+
+.css-1f38okd {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 4px 0px;
+}
+
+.css-ox2ez2 {
+  color: rgb(130, 134, 158);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.css-1xhsr74 {
+  padding-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  background: rgb(255, 255, 255);
+}
+
+.css-crf5cq {
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 16px;
+  border-radius: 999px;
+  background: rgb(245, 245, 245);
+  color: rgb(51, 51, 51);
+  margin: 0px 4px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  display: none; /* Ẩn ban đầu */
+  z-index: 1; /* Đảm bảo lớp này nằm trên tất cả */
+}
+
+.css-73wobg {
+  height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: start;
+  justify-content: start;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.css-b1gs45 {
+  width: 22px;
+  height: 22px;
+}
+
+.css-b6tybp {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.css-13yxnyc {
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: unset;
+  font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  max-width: unset;
+  min-width: unset;
+  transition: color 0.3s ease 0s;
 }
