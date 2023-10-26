@@ -84,7 +84,7 @@ if (isset($_GET['maMH'])) {
                     <div>
                       <h1 class="css-4kh4rf"><?php echo $row['TenMH']; ?></h1>
                       <div>
-                        <div type="caption" color="textSecondary" class="css-1f5a6jh" style="font-size: 14px; margin-top: -4px;">Thương hiệu: <a target="_self" class="css-cbrxda" href="/dreame-brand.dreame"><span class="css-n67qkj"><?php echo $row['TenHSX']; ?></span></a><span class="css-1qgvt7n"></span>  || MaMH: <?php echo $row['MaMH']; ?><span class="css-1qgvt7n"></span></div>
+                        <div type="caption" color="textSecondary" class="css-1f5a6jh" style="font-size: 14px; margin-top: -4px;">Thương hiệu: <a target="_self" class="css-cbrxda" href="/dreame-brand.dreame"><span class="css-n67qkj"><?php echo $row['TenHSX']; ?></span></a><span class="css-1qgvt7n"></span> || MaMH: <?php echo $row['MaMH']; ?><span class="css-1qgvt7n"></span></div>
                       </div>
                     </div>
                     <div class="css-qmrpdk"></div>
@@ -114,7 +114,7 @@ if (isset($_GET['maMH'])) {
                         </div>
                       </div>
                     </div>
-                    <div class="css-f7zc9t">
+                    <!-- <div class="css-f7zc9t">
                       <div data-content-region-name="descriptionDetail" data-track-content="true" data-content-name="buyNow" data-content-target="cart" data-content-payload="{&quot;sku&quot;:&quot;230803500&quot;,&quot;screenName&quot;:&quot;productDetail&quot;}" class="css-yp9swi"><button height="2.5rem" color="white" class="att-detail-page-buy-now-button css-f7nwna" type="button">
                           <div type="subtitle" class="css-fdtrln">MUA NGAY</div><span style="margin-left: 0px;">
                             <div class="css-157jl91"></div>
@@ -125,7 +125,7 @@ if (isset($_GET['maMH'])) {
                             <div class="css-157jl91"></div>
                           </span>
                         </button></div>
-                    </div>
+                    </div> -->
                     <div class="css-9eazwe">
                       <div width="100%" color="divider" class="css-1fm9yfq"></div>
                     </div>
@@ -190,6 +190,26 @@ if (isset($_GET['maMH'])) {
                             <p>Cam kết hàng chính hãng 100%&nbsp;</p>
                           </div>
                         </div>
+                        <div class="css-15eranj">
+                          <div height="24" width="24" class="css-1a6hohg"><img src="https://lh3.googleusercontent.com/TECKlw8DFChVXu_FAYdNjbCuaDVhmOhbqsKLnayhIgx5Pvv0EX051qHWJR7vUgxiUXN5heAlx4bIDYsoES7X8pby5Pn9LXWN=rw" loading="lazy" decoding="async" style="width: 100%; height: 24px;"></div>
+                          <div class="att-policy-content-2 css-9yb8e7">
+                            <p>Đổi trả trong vòng 10 ngày&nbsp; <a href="https://help.phongvu.vn/chinh-sach-ban-hang/doi-tra-va-hoan-tien">Xem chi tiết</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div direction="row" class="css-1ata8it"></div>
+                    </div>
+                  </div>
+                  <div class="att-product-detail-other-services css-1e1b11p">
+                    <div type="subtitle" class="css-zamej5">Dịch vụ khác</div>
+                    <div>
+                      <div>
+                        <div class="css-15eranj">
+                          <div height="24" width="24" class="css-1a6hohg"><img src="https://lh3.googleusercontent.com/cjYniX0PTM1twy6bUEw4nSG47EEsTcFf7O6NRgWfdrq7JpNTccsNkqxnBExVVTGeocVdkUVbupp17dLNFn-E2gG2V-_aejU=rw" loading="lazy" decoding="async" style="width: 100%; height: 24px;"></div>
+                          <div class="att-policy-content-0 css-9yb8e7">
+                            <p>Gói dịch vụ bảo hành/ Sửa chữa tận nơi <a href="https://help.phongvu.vn/dich-vu-khach-hang/dich-vu-sua-chua-va-bao-tri">Xem chi tiết</a></p>
+                          </div>
+                        </div>
                       </div>
                       <div direction="row" class="css-1ata8it"></div>
                     </div>
@@ -220,7 +240,7 @@ if (isset($_GET['maMH'])) {
                 <div class="css-tizzf5">
                   <div class="css-1i3ajxp">
                     <div type="body" class="css-1lchwqw" style="flex: 2 1 0%;">Thương hiệu</div>
-                    <div type="body" class="css-1lchwqw" style="flex: 3 1 0%;"><?php echo $row['TenHSX']; ?></div>
+                    <div type="body" class="css-1lchwqw" style="flex: 3 1 5%;"><?php echo $row['TenHSX']; ?></div>
                   </div>
                   <div class="css-1i3ajxp">
                     <div type="body" class="css-1lchwqw" style="flex: 2 1 0%;">Bảo hành</div>
@@ -229,7 +249,7 @@ if (isset($_GET['maMH'])) {
                   <div type="body" color="textSecondary" class="css-1geo7k4">Thông tin chung</div>
                   <div class="css-1i3ajxp">
                     <div type="body" class="css-1lchwqw" style="flex: 2 1 0%;">Tên sản phẩm</div>
-                    <div type="body" class="css-1lchwqw" style="flex: 3 1 0%;">AHD6A-RS</div>
+                    <div type="body" class="css-1lchwqw" style="flex: 3 1 0%;"><?php echo $row['TenMH']; ?></div>
                   </div>
                   <div class="css-1i3ajxp">
                     <div type="body" class="css-1lchwqw" style="flex: 2 1 0%;">Màu sắc</div>
