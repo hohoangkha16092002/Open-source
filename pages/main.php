@@ -29,6 +29,9 @@
     }elseif ($tam == 'test') {
         include 'main/test.php';
     }
+    elseif ($tam == 'personal-information') {
+        include 'main/personal-information.php';
+    }
     else {
         include 'main/home.php';
     }
