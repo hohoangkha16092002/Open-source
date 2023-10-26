@@ -30,6 +30,9 @@
     }elseif ($tam == 'test') {
         include 'main/search-page.php';
     }
+    elseif ($tam == 'personal-information') {
+        include 'main/personal-information.php';
+    }
     else {
         include 'main/home.php';
     }
