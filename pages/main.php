@@ -24,10 +24,11 @@
         include 'main/exercise-page.php';
     } elseif ($tam == 'login') {
         include 'main/login.php';
-    }elseif ($tam == 'register') {
+    }elseif ($tam == 'regis
+    ter') {
         include 'main/register.php';
     }elseif ($tam == 'test') {
-        include 'main/test.php';
+        include 'main/search-page.php';
     }
     else {
         include 'main/home.php';
