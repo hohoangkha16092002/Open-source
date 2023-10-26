@@ -29,6 +29,9 @@
     }elseif ($tam == 'test') {
         include 'main/test.php';
     }
+    elseif ($tam == 'cart-page') {
+        include 'main/cart-page.php';
+    }
     else {
         include 'main/home.php';
     }
