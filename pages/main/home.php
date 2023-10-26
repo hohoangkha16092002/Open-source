@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "open-source";
+include("config.php");
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) {
     die("" . mysqli_connect_error());
@@ -420,6 +417,7 @@ if (mysqli_connect_errno()) {
                                                 $product_brand = $row_products["TenHSX"];
                                                 $product_price = number_format($product_price, 0, '.', '.');
                                                 $product_image = $row_products['DLAnh'];
+                                                $product_id = $row_products['MaMH'];
 
                                                 echo "<div class='home-page--glide__slide glide__slide--active'
                                                 style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
@@ -428,7 +426,7 @@ if (mysqli_connect_errno()) {
                                                         data-track-content='true' data-content-name='230803500'
                                                         data-content-target='productDetail'><a target='_self'
                                                             class='css-pxdb0j'
-                                                            href='/may-say-toc-dreame-hair-glory-ahd6a-rs-rose--s230803500'>
+                                                            href='?page=detail&maMH=$product_id'>
                                                             <div class='css-4rhdrh'>
                                                                 <div class='css-1v97aik'>
                                                                     <div class='css-798fc'>
@@ -557,7 +555,7 @@ if (mysqli_connect_errno()) {
                                                         data-track-content='true' data-content-name='230803500'
                                                         data-content-target='productDetail'><a target='_self'
                                                             class='css-pxdb0j'
-                                                            href='/may-say-toc-dreame-hair-glory-ahd6a-rs-rose--s230803500'>
+                                                            href='pages/main/detail.php?maMH=$product_id'>
                                                             <div class='css-4rhdrh'>
                                                                 <div class='css-1v97aik'>
                                                                     <div class='css-798fc'>
@@ -720,7 +718,7 @@ if (mysqli_connect_errno()) {
                                     <div class='css-1ei4kcr'>
                                         <div class='product-card css-1msrncq' data-track-content='true'
                                             data-content-name='221101761' data-content-target='productDetail'><a
-                                                target='_self' class='css-pxdb0j' href='/hp-15s-fq2712tu--s221101761'>
+                                                target='_self' class='css-pxdb0j' href='pages/main/detail.php?maMH=$product_id'>
                                                 <div class='css-4rhdrh'>
                                                     <div class='css-1v97aik'>
                                                         <div class='css-798fc'>
@@ -827,7 +825,7 @@ if (mysqli_connect_errno()) {
                                         <div class='product-card css-1msrncq' data-content-region-name='forYouListProduct'
                                             data-track-content='true' data-content-name='220303205' data-content-index='0'
                                             data-content-target='productDetail'><a target='_self' class='css-pxdb0j'
-                                                href='/may-in-epson-l3250--s220303205'>
+                                                href='pages/main/detail.php?maMH=$product_id'>
                                                 <div class='css-4rhdrh'>
                                                     <div class='css-1v97aik'>
                                                         <div class='css-798fc'>
