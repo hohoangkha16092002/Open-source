@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <!-- <link rel="stylesheet" href="css/style_send-mail.css"> -->
 </head>
 
 <body>
@@ -24,6 +22,12 @@
         include 'main/exercise-page.php';
     } elseif ($tam == 'login') {
         include 'main/login.php';
+    } elseif ($tam == 'register') {
+        include 'main/register.php';
+    }elseif ($tam == 'test') {
+        include 'main/search-page.php';
+    } elseif ($tam == 'personal-information') {
+        include 'main/personal-information.php';
     } elseif ($tam == 'register') {
         include 'main/register.php';
     } elseif ($tam == 'detail' && isset($_GET['maMH'])) {
