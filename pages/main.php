@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    
     <link rel="stylesheet" href="css/style_send-mail.css">
 </head>
 
@@ -24,10 +24,9 @@
         include 'main/exercise-page.php';
     } elseif ($tam == 'login') {
         include 'main/login.php';
-    }elseif ($tam == 'register') {
+    } elseif ($tam == 'register') {
         include 'main/register.php';
-    }
-    else {
+    } else {
         include 'main/home.php';
     }
     ?>
