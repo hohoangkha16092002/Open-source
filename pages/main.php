@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    <link rel="stylesheet" href="css/style_send-mail.css">
+
+    <!-- <link rel="stylesheet" href="css/style_send-mail.css"> -->
 </head>
 
 <body>
@@ -26,10 +26,13 @@
         include 'main/login.php';
     } elseif ($tam == 'register') {
         include 'main/register.php';
+    } elseif ($tam == 'detail' && isset($_GET['maMH'])) {
+        include 'main/detail.php';
     } else {
         include 'main/home.php';
     }
     ?>
+
 </body>
 
 </html>

@@ -8,7 +8,12 @@ if ($conn->connect_error) {
 if (isset($_GET['maMH'])) {
   $maMH = $_GET['maMH'];
 
-  $sql = "SELECT * FROM `mathang` WHERE `MaMH` = '$maMH'";
+  $sql = "SELECT mathang.*, dmhangsanxuat.TenHSX, dmloaimathang.TenLoai, anhmh.DLAnh 
+        FROM `mathang`
+        JOIN dmhangsanxuat ON mathang.MaHSX = dmhangsanxuat.MaHSX
+        JOIN dmloaimathang ON mathang.MaLMH = dmloaimathang.MaLMH
+        JOIN anhmh ON mathang.MaMH = anhmh.MaMH
+        WHERE mathang.MaMH = '$maMH'";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -21,7 +26,6 @@ if (isset($_GET['maMH'])) {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title><?php echo $row['TenMH']; ?></title>
-      <link rel="stylesheet" href="css/detail.css">
     </head>
 
     <body>
@@ -35,12 +39,12 @@ if (isset($_GET['maMH'])) {
             <div class="css-889chh"><svg fill="none" viewBox="0 0 24 24" size="16" class="css-26qhcs" color="placeholder" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.49976 19.0001L15.4998 12.0001L8.49976 5.00012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></div><a href="https://phongvu.vn/p/dien-gia-dung" class="breadcrumb-item css-1s8chay">
-              <div type="body" class="css-kwe6s1">Điện máy - Điện gia dụng</div>
+              <div type="body" class="css-kwe6s1"><?php echo $row['TenHSX']; ?></div>
             </a>
             <div class="css-889chh"><svg fill="none" viewBox="0 0 24 24" size="16" class="css-26qhcs" color="placeholder" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.49976 19.0001L15.4998 12.0001L8.49976 5.00012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></div><a href="/c/do-gia-dung-thiet-bi-gia-dinh" class="breadcrumb-item css-1s8chay">
-              <div type="body" class="css-kwe6s1">Thiết bị gia đình</div>
+              <div type="body" class="css-kwe6s1"><?php echo $row['TenLoai']; ?></div>
             </a>
           </div>
           <div class="css-6l7rf5">
@@ -50,14 +54,14 @@ if (isset($_GET['maMH'])) {
                   <div class="css-1i1dodm">
                     <div data-content-region-name="imgProductDetail" data-track-content="true" data-content-name="viewImage" data-content-target="productImage" data-content-payload="{&quot;sku&quot;:&quot;230803500&quot;,&quot;screenName&quot;:&quot;productDetail&quot;,&quot;index&quot;:0}">
                       <div class="productDetailPreview" style="cursor: pointer; position: relative; margin-bottom: 0.5rem;">
-                        <div width="100%" class="css-j4683g"><img src="https://lh3.googleusercontent.com/VlOzSHLWV2iCGXYgLr3Mgi9JR_rV20NFUqZQzM0AYd7VSXXmnAkst1tnlE5jKxrN9n-KNyMlE_0bF205dxn8o3ZJjnXiCFJTvg=w500-rw" loading="lazy" hover="" decoding="async" alt="Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)" fetchpriority="low" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
+                        <div width="100%" class="css-j4683g"><img src="<?php echo $row['DLAnh']; ?>" loading="lazy" hover="" decoding="async" alt="Laptop Acer" fetchpriority="low" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
                       </div>
                       <div class="css-12isv00">
                         <div class="css-1qorxog">
-                          <div height="50px" width="50px" class="css-1dje825"><img src="https://lh3.googleusercontent.com/VlOzSHLWV2iCGXYgLr3Mgi9JR_rV20NFUqZQzM0AYd7VSXXmnAkst1tnlE5jKxrN9n-KNyMlE_0bF205dxn8o3ZJjnXiCFJTvg=rw" loading="lazy" decoding="async" alt="Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)" style="width: 100%; height: 50px; object-fit: contain;"></div>
+                          <div height="50px" width="50px" class="css-1dje825"><img src="" loading="lazy" decoding="async" alt="Laptop Acer" style="width: 100%; height: 50px; object-fit: contain;"></div>
                         </div>
                         <div class="css-4ok7dy">
-                          <div height="50px" width="50px" class="css-1dje825"><img src="https://lh3.googleusercontent.com/4qXLp1Z3QLNEYkQuGCTtwMWFP581S3dK8ZE3UUBMFUYnG2gMn5_uNeAE-YG__CBeS9TuzTbDUg2Tbo80OZ93sAHhqBzDtxab9Q=rw" loading="lazy" decoding="async" alt="Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)" style="width: 100%; height: 50px; object-fit: contain;"></div>
+                          <div height="50px" width="50px" class="css-1dje825"><img src="" loading="lazy" decoding="async" alt="Laptop Acer" style="width: 100%; height: 50px; object-fit: contain;"></div>
                         </div>
                       </div>
                     </div>
@@ -78,14 +82,14 @@ if (isset($_GET['maMH'])) {
                   </div>
                   <div class="css-6b3ezu">
                     <div>
-                      <h1 class="css-4kh4rf">Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)</h1>
+                      <h1 class="css-4kh4rf"><?php echo $row['TenMH']; ?></h1>
                       <div>
-                        <div type="caption" color="textSecondary" class="css-1f5a6jh" style="font-size: 14px; margin-top: -4px;">Thương hiệu <a target="_self" class="css-cbrxda" href="/dreame-brand.dreame"><span class="css-n67qkj">Dreame</span></a><span class="css-1qgvt7n"></span> SKU: 230803500<span class="css-1qgvt7n"></span> Mã vạch: &nbsp;684256</div>
+                        <div type="caption" color="textSecondary" class="css-1f5a6jh" style="font-size: 14px; margin-top: -4px;">Thương hiệu: <a target="_self" class="css-cbrxda" href="/dreame-brand.dreame"><span class="css-n67qkj"><?php echo $row['TenHSX']; ?></span></a><span class="css-1qgvt7n"></span>  || MaMH: <?php echo $row['MaMH']; ?><span class="css-1qgvt7n"></span></div>
                       </div>
                     </div>
                     <div class="css-qmrpdk"></div>
                     <div class="css-2zf5gn">
-                      <div type="title" class="att-product-detail-latest-price css-roachw" color="primary500">2.490.000₫</div>
+                      <div type="title" class="att-product-detail-latest-price css-roachw" color="primary500"><?php echo number_format($row['DonGia'], 0, '.', '.'); ?>₫</div>
                       <div class="css-3mjppt">
                         <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">4.990.000₫</div>
                         <div type="caption" color="primary500" class="css-2rwx6s">-50.1%</div>
@@ -216,7 +220,7 @@ if (isset($_GET['maMH'])) {
                 <div class="css-tizzf5">
                   <div class="css-1i3ajxp">
                     <div type="body" class="css-1lchwqw" style="flex: 2 1 0%;">Thương hiệu</div>
-                    <div type="body" class="css-1lchwqw" style="flex: 3 1 0%;">Dreame</div>
+                    <div type="body" class="css-1lchwqw" style="flex: 3 1 0%;"><?php echo $row['TenHSX']; ?></div>
                   </div>
                   <div class="css-1i3ajxp">
                     <div type="body" class="css-1lchwqw" style="flex: 2 1 0%;">Bảo hành</div>
