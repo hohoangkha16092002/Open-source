@@ -1,3 +1,10 @@
+body {
+  background-color: #f8f8fc !important;
+  font-family: 'Roboto',sans-serif;
+  line-height: 1.25rem;
+  color: #333333;
+  padding-bottom: 2px;
+}
 .css-rf24tk {
   padding-right: 16px;
   padding-left: 16px;
@@ -46,8 +53,12 @@
 }
 .css-6l7rf5 {
   box-sizing: border-box;
-  margin: 0px 0px 24px;
-  min-width: 0px;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 .css-1hwtax5 {
@@ -541,12 +552,6 @@
   margin: 0px 0px 24px;
   min-width: 0px;
   display: flex;
-}
-.css-1hwtax5 {
-  box-sizing: border-box;
-  margin: 0px 16px 0px 0px;
-  min-width: 0px;
-  width: 75.6%;
 }
 .css-29qdu.teko-row {
   display: flex;

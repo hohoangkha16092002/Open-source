@@ -221,7 +221,7 @@ if (isset($_GET['maMH'])) {
           <div class="css-6l7rf5">
             <div class="css-1hwtax5"></div>
           </div>
-          <div class="lazy-component">
+          <div class="">
             <div class="teko-row css-29qdu">
               <div class="teko-col teko-col-8 css-a5pz1h">
                 <div class="css-1wr68sm">
@@ -270,7 +270,7 @@ if (isset($_GET['maMH'])) {
               </div>
             </div>
           </div>
-          <div class="lazy-component">
+          <div class="">
             <div class="css-rfz8yf" style="margin-bottom: 24px;">
               <div class="css-ftpi71">
                 <div type="title" color="textTitle" class="title css-1dlj6qw">Sản phẩm liên quan</div>
