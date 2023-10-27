@@ -885,7 +885,7 @@
 
 .css-17ajfcv.teko-col {
     position: relative;
-    /* max-width: 100%; */
+    max-width: 100%;
     min-height: 1px;
 }
 
@@ -1779,6 +1779,20 @@
     padding-right: 0.75rem;
 }
 
+.css-1q4g17t.teko-col {
+    position: relative;
+    max-width: 100%;
+    min-height: 1px;
+}
+
+.css-1q4g17t {
+    border-style: none;
+    border-width: 1px;
+    border-color: unset;
+    opacity: 1;
+    padding-right: 0.75rem;
+}
+
 .css-11m9qpq {
     position: relative;
     display: inline-block;
@@ -1878,18 +1892,6 @@
     text-decoration: none;
     color: rgb(25, 144, 255) !important;
 }
-/*------------------------------------------------------*/
-.css-kfv2zc {
-    border-style: none;
-    border-width: 1px;
-    border-color: unset;
-    opacity: 1;
-    display: inline;
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(25, 144, 255) !important;
-}
-/*------------------------------------------------------*/
 
 .css-twos5s {
     font-size: 15px;

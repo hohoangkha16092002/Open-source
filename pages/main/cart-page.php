@@ -1,3 +1,18 @@
+<?php
+include("config.php");
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Kết nối tới cơ sở dữ liệu thất bại: " . $conn->connect_error);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <div>
     <div class="css-cssveg">
         <div class=" css-27abj6">
@@ -239,3 +254,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

@@ -366,7 +366,7 @@
                                     <h3 class="name">Tiến Phan Minh</h3>
                                     <h5 class="extra">tiennennakenki@gmail.com</h5>
                                 </div>
-                            </div><a target="_self" class="nav-ip-popup-child" href="/account">
+                            </div><a target="_self" class="nav-ip-popup-child" href="?page=personal-information">
                                 <div data-content-region-name="headerBar" data-track-content="true"
                                     data-content-name="viewAccountInfo" class="nav-ip-popup-child-main">
                                     <div class="icon">
