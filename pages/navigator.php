@@ -462,7 +462,7 @@
                 <div class="nav-cart" data-content-region-name="headerBar" data-track-content="true"
                     data-content-name="cartItem" data-content-target="shoppingCart">
                     <div class="nav-notify-cart " tabindex="0">
-                        <a target="_self" class="nav-ip-popup-child" href="/cart">
+                        <a target="_self" class="nav-ip-popup-child" href="?page=cart-page">
                             <div class="nav-cart-main">
                                 <i class="fa-solid fa-cart-shopping clickable" style="font-size: 30px;"></i>
                                 <div class="ml-6 text-left">
