@@ -423,13 +423,14 @@
                             </a>
                             <div data-content-region-name="headerBar" data-track-content="true"
                                 data-content-name="logOut" class="nav-ip-popup-logout-button">
+                                <a href="?page=confirm-logout">
                                 <button height="2.5rem" color="white" class="logout-button" type="button">
                                     <div type="body" class="button-text logout-button-text" color="white">Đăng xuất
                                     </div>
                                     <span style="margin-left: 0px;">
                                         <div class="nav-ip-popup-logout"> </div>
                                     </span>
-                                </button>
+                                </button></a>
                             </div>
                         </div>
                     </span>

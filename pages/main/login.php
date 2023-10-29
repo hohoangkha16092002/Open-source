@@ -14,18 +14,20 @@
   if (isset($_POST['submit-login'])) {
     $input_email = $_POST['input_email'];
     $input_password = $_POST['input_password'];
+    $action = "#";
 
-    $check_email = "SELECT Email, MatKhau FROM `khachhang` WHERE Email = '$input_email'";
+    $check_email = "SELECT * FROM `khachhang` WHERE Email = '$input_email'";
     $result_email = mysqli_query($conn, $check_email);
 
     if ($result_email) {
       if (mysqli_num_rows($result_email) > 0) {
         $row = mysqli_fetch_assoc($result_email);
         $hashedPassword = $row['MatKhau'];
-  
-        if (password_verify($password, $hashedPassword)) {
-        header("Location: form.php");
 
+        if (password_verify($input_password, $hashedPassword)) {
+          $_SESSION['loggedin'] = true; // Lưu trạng thái đăng nhập
+          $_SESSION['email'] = $row['Email']; // Lưu email của người dùng
+          header("Location: index.php");
         } else {
           $msg = "Mật khẩu không đúng";
         }
@@ -39,8 +41,14 @@
   ?>
   <div class="container">
     <div class="container-login-signin">
-      <form action="#" method="post">
+      <form action="" method="post">
         <div class="title">Đăng nhập</div>
+        <div>
+          <?php
+          if (isset($msg))
+            echo $msg;
+          ?>
+        </div>
         <div class="input-box underline">
           <input type="text" name="input_email" placeholder="Nhập email của bạn" required value="<?php
           if (isset($input_email))
@@ -58,12 +66,7 @@
         <div class="input-box button">
           <input type="submit" name="submit-login" value="ĐĂNG NHẬP">
         </div>
-        <div>
-          <?php
-          if (isset($msg))
-            echo $msg;
-          ?>
-        </div>
+
         <div class="option">Bạn chưa có tài khoản? Hãy đăng ký tại <a href="?page=register">đây</a></div>
         <div class="twitter">
           <a href="#">
@@ -77,7 +80,6 @@
             <span>Đăng nhập với Facebook</span>
           </a>
         </div>
-
       </form>
     </div>
   </div>
