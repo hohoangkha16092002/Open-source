@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +32,7 @@
 
 <body>
     <?php
+    include 'pages/config.php';
     include 'pages/header.php';
     include 'pages/navigator.php';
     include 'pages/main.php';
