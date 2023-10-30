@@ -24,7 +24,7 @@
         include 'main/login.php';
     } elseif ($tam == 'register') {
         include 'main/register.php';
-    }elseif ($tam == 'test') {
+    }elseif ($tam == 'search') {
         include 'main/search-page.php';
     } elseif ($tam == 'personal-information') {
         include 'main/personal-information.php';
