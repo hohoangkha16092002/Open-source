@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!-- BEGIN BANNER -->
 <div data-content-region-name="topBanner" data-track-content="true">
     <a target="_self" href="#" aria-label="Image">
