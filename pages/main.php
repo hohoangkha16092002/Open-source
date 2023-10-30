@@ -32,8 +32,6 @@
         include 'main/register.php';
     } elseif ($tam == 'detail' && isset($_GET['maMH'])) {
         include 'main/detail.php';
-    } elseif ($tam == 'cart-page') {
-        include 'main/cart-page.php';
     } else {
         include 'main/home.php';
     }
