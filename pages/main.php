@@ -34,6 +34,8 @@
         include 'main/detail.php';
     } elseif ($tam == 'cart-page') {
         include 'main/cart-page.php';
+    } elseif ($tam == 'checkout') {
+        include 'main/checkout.php';
     } else {
         include 'main/home.php';
     }
