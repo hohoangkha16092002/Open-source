@@ -404,7 +404,6 @@ if (mysqli_connect_errno()) {
                                 <div class="glide__track" data-glide-el="track">
                                     <div class="home-page--glide__slides"
                                         style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1772px; transform: translate3d(0px, 0px, 0px);">
-
                                         <?php
                                         $sql_products = "SELECT * FROM `mathang` 
                                         join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 

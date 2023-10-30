@@ -24,7 +24,7 @@
         include 'main/login.php';
     } elseif ($tam == 'register') {
         include 'main/register.php';
-    }elseif ($tam == 'test') {
+    } elseif ($tam == 'test') {
         include 'main/search-page.php';
     } elseif ($tam == 'personal-information') {
         include 'main/personal-information.php';
@@ -34,6 +34,10 @@
         include 'main/detail.php';
     } elseif ($tam == 'cart-page') {
         include 'main/cart-page.php';
+    } elseif ($tam == 'confirm-logout') {
+        include 'main/confirm-logout.php';
+    } elseif ($tam == 'logout') {
+        include 'main/logout.php';
     } else {
         include 'main/home.php';
     }
