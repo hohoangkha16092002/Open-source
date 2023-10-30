@@ -622,20 +622,6 @@ if (isset($_GET['timKiem'])) {
         // Lấy tham chiếu đến nút bấm và thẻ div
         const showButton = document.getElementById("nav-search-input");
         const myDiv = document.getElementById("nav-search-popup");
-
-        // Thêm sự kiện click cho nút bấm
-        // showButton.addEventListener("click", function () {
-        //     // Kiểm tra nếu thẻ div hiện đang ẩn (display: none)
-        //     if (myDiv.style.display === "none") {
-        //         // Hiển thị thẻ div (display: block)
-        //         myDiv.style.display = "block";
-        //     } else {
-        //         // Ẩn thẻ div nếu đã hiển thị
-        //         myDiv.style.display = "none";
-        //     }
-        // });
-
-
         // Lấy tham chiếu đến nút bấm và thẻ div
         const showProductPortfolio = document.getElementById("nav--product-portfolio");
         const productPortfolioPopup = document.getElementById("nav--product-portfolio-popup");
@@ -650,38 +636,10 @@ if (isset($_GET['timKiem'])) {
         });
         document.getElementById('search-link').addEventListener('click', function () {
             var searchKeyword = document.getElementById('search-input').value;
-            // Thực hiện chuyển hướng đến trang kết quả tìm kiếm dựa trên searchKeyword
             window.location.href = '?page=search&search-product=' + searchKeyword;
         });
 
-        // // Khi người dùng nhấn nút tìm kiếm
-        // // Đọc lịch sử tìm kiếm từ local storage khi trang được tải
-        // var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
-        // // Trường nhập tìm kiếm
-        // var searchInput = document.getElementById('search-input');
-
-        // // Khi người dùng nhập dữ liệu
-        // searchInput.addEventListener('keyup', function () {
-        //     var inputValue = searchInput.value.toLowerCase();
-        //     var suggestions = document.getElementById('search-suggestions');
-        //     suggestions.innerHTML = '';
-
-        //     // Tìm kiếm trong lịch sử và hiển thị các gợi ý
-        //     searchHistory.forEach(function (keyword) {
-        //         if (keyword.toLowerCase().includes(inputValue)) {
-        //             var suggestionItem = document.createElement('li');
-        //             suggestionItem.textContent = keyword;
-        //             suggestions.appendChild(suggestionItem);
-        //         }
-        //     });
-        // });
-
-
-
-        // Thực hiện tìm kiếm hoặc chuyển đến trang tìm kiếm dựa trên searchKeyword
-        // Ví dụ: window.location.href = 'search-page.php?search-product=' + searchKeyword;
-
+       
 
     </script>
 </div>
