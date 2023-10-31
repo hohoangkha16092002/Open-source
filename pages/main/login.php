@@ -26,7 +26,7 @@
 
         if (password_verify($input_password, $hashedPassword)) {
           $_SESSION['loggedin'] = true; // Lưu trạng thái đăng nhập
-          $_SESSION['email'] = $row['Email']; // Lưu email của người dùng
+          $_SESSION['MaKH'] = $row['MaKH'];
           header("Location: index.php");
         } else {
           $msg = "Mật khẩu không đúng";
