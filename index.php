@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +18,16 @@
     <link rel="stylesheet" href="css/cart-page.css">
     <link rel="stylesheet" href="css/personal-information.css">
     <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <link rel="stylesheet" href="css/search-page.css">
     <link rel="stylesheet" href="css/address.css">
     <link rel="stylesheet" href="css/consignee-information.css">
+    <link rel="stylesheet" href="css/confirm-logout.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <!-- Tải các tệp CSS của Bootstrap từ CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,6 +38,7 @@
 
 <body>
     <?php
+    include 'pages/config.php';
     include 'pages/header.php';
     include 'pages/navigator.php';
     include 'pages/main.php';

@@ -1,3 +1,30 @@
+<?php
+if (isset($_SESSION['loggedin'])) {
+    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+    }
+}
+
+if (isset($_POST['update'])) {
+    $ho_ten_KH = $_POST['ho_ten_KH'];
+    $email = $_POST['email'];
+    $sdt = $_POST['sdt'];
+    $ngay_sinh = $_POST['ngay_sinh'];
+
+    $sql = "UPDATE khachhang SET HoTenKH='$ho_ten_KH', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' WHERE  MaKH = '" . $_SESSION['MaKH'] . "'";
+
+    if ($conn->query($sql) === TRUE) {
+        $msg = '<div class="css-1tj8dpi">
+                    <div class="css-rac23i" style="text-align: center;">Cập nhật thành công</div>
+                </div>';
+    } else {
+        echo "Lỗi: " . $conn->error;
+    }
+}
+?>
+
 <div style="    background-color: #ececec;">
     <div class="css-gjf6g1">
         <div class="css-z54kij">
@@ -7,22 +34,20 @@
                         <div>
                             <div height="44" width="44" class="css-9bi3ip">
                                 <picture>
-                                    <source
-                                        srcset="https://lh3.googleusercontent.com/a/ACg8ocLIDhqUZEbJcK1T1iqH2ad3pQWZsu60lia15ull7Gh0SKs=s96-c-rw"
-                                        type="image/webp">
-                                    <source
-                                        srcset="https://lh3.googleusercontent.com/a/ACg8ocLIDhqUZEbJcK1T1iqH2ad3pQWZsu60lia15ull7Gh0SKs=s96-c"
-                                        type="image/png"><img class="lazyload css-hv3z8f" alt=""
-                                        src="https://lh3.googleusercontent.com/a/ACg8ocLIDhqUZEbJcK1T1iqH2ad3pQWZsu60lia15ull7Gh0SKs=s96-c-rw"
-                                        loading="lazy" decoding="async">
+                                    <source srcset="./img/icon-login.jpg" type="image/webp">
+                                    <source srcset="./img/icon-login.jpg" type="image/png"><img
+                                        class="lazyload css-hv3z8f" alt="" src="./img/icon-login.jpg" loading="lazy"
+                                        decoding="async">
 
                                 </picture>
-                                
+
                             </div>
                         </div>
                         <div class="css-tubh1u">
                             <h6 class="css-9x44fd">Tài khoản của</h6>
-                            <h5 class="css-11aljab">Kiều Nguyễn Thị Diễm</h5>
+                            <h5 class="css-11aljab">
+                                <?php echo $info['HoTenKH'] ?>
+                            </h5>
                         </div>
                     </div>
                     <ul class="css-zzskb3"><a class="css-11g9kr1">
@@ -77,22 +102,26 @@
                                 <div class="teko-row teko-row-space-between css-1qrgscw">
                                     <div type="title" class="css-1w9reh3">Thông tin tài khoản</div>
                                 </div>
-                                <form>
+                                <form action="#" method="post">
                                     <div name="name" value="Kiều Nguyễn Thị Diễm" class="css-1umbfo7">
-                                        <div class="form-input__label css-1270aei">Họ tên</div><input name="name"
-                                            class="form-input__input css-90j4a3" value="Kiều Nguyễn Thị Diễm">
+                                        <div class="form-input__label css-1270aei">Họ tên</div>
+                                        <input name="ho_ten_KH" class="form-input__input css-90j4a3"
+                                            value="<?php echo $info['HoTenKH'] ?>">
                                     </div>
                                     <div name="email" value="ntdkieu2207@gmail.com" class="css-1umbfo7">
-                                        <div class="form-input__label css-1270aei">Email</div><input name="email"
-                                            class="form-input__input css-90j4a3" value="ntdkieu2207@gmail.com">
+                                        <div class="form-input__label css-1270aei">Email</div>
+                                        <input name="email" class="form-input__input css-90j4a3"
+                                            value="<?php echo $info['Email'] ?>">
                                     </div>
                                     <div name="telephone" value="" class="css-1umbfo7">
-                                        <div class="form-input__label css-1270aei">Số điện thoại</div><input
-                                            name="telephone" class="form-input__input css-90j4a3" value="">
+                                        <div class="form-input__label css-1270aei">Số điện thoại</div>
+                                        <input name="sdt" class="form-input__input css-90j4a3"
+                                            value="<?php echo $info['SDT'] ?>">
                                     </div>
                                     <div name="dob" value="" type="date" class="css-1umbfo7">
-                                        <div class="form-input__label css-1270aei">Ngày sinh</div><input name="dob"
-                                            type="date" class="form-input__input css-90j4a3" value="">
+                                        <div class="form-input__label css-1270aei">Ngày sinh</div>
+                                        <input name="ngay_sinh" type="date" class="form-input__input css-90j4a3"
+                                            value="<?php echo $info['NgaySinh'] ?>">
                                     </div>
                                     <div name="sex" value="" class="css-1umbfo7">
                                         <div class="form-input__label css-1270aei">Giới tính</div><label
@@ -101,13 +130,22 @@
                                                 type="radio" value="F">Nữ</label><label class="css-ekrzeo"><input
                                                 name="sex" type="radio" value="O">Khác</label>
                                     </div>
-                                    <div class="css-1ago99h"><button height="2.5rem" color="border" disabled=""
-                                            class="css-qpwo5p" type="submit" width="">
-                                            <div type="body" class="button-text css-zuesqn" color="placeholder">Cập nhật
-                                            </div><span style="margin-left: 0px;">
+                                    <div class="css-1ago99h">
+                                        <button height="2.5rem" name="update" color="border" class="css-qpwo5p"
+                                            type="submit" width="">
+                                            <div type="body" name="update" class="button-text css-zuesqn"
+                                                color="placeholder">Cập nhật
+                                            </div>
+                                            <span style="margin-left: 0px;">
                                                 <div class="css-157jl91"></div>
                                             </span>
-                                        </button></div>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <?php
+                                        if(isset($msg)) echo $msg;
+                                         ?>
+                                    </div>
                                 </form>
                                 <div class="css-1x6y1s9"></div>
                             </div>

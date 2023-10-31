@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!-- BEGIN BANNER -->
 <div data-content-region-name="topBanner" data-track-content="true">
     <a target="_self" href="#" aria-label="Image">
@@ -61,15 +64,6 @@
                             <i style="color: white" class="fa-solid fa-user"></i>
                             <span class="css-add-width-gap"></span>
                             <div type="body" style="color: white">Thông tin cá nhân</div>
-                        </button>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a target="_self" class="css-no-underline clickable" href="?page=login">
-                        <button class="css-button-container">
-                            <i style="color: white" class="fa-solid fa-user"></i>
-                            <span class="css-add-width-gap"></span>
-                            <div type="body" style="color: white">Đăng nhập</div>
                         </button>
                     </a>
                 </li>

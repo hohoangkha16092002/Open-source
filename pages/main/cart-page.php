@@ -105,7 +105,7 @@ if ($conn->connect_error) {
                                             <div class="teko-col teko-col-6 css-17ajfcv">
                                                 <div class="css-1j4ksfn">
                                                     <div>
-                                                        <div type="subtitle" class="css-4eq9p2">CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ PHONG VŨ</div>
+                                                        <div type="subtitle" class="css-4eq9p2"><b>CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ PHONG VŨ</b></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -244,7 +244,11 @@ if ($conn->connect_error) {
                                 </div>
                             </div>
                             <div class="card-footer css-0">
-                                <div data-content-region-name="bottomShoppingCart" data-track-content="true" data-content-name="createOrder" class="css-0"><button class="att-shopping-btn css-v463h2">TIẾP TỤC</button></div>
+                                <div data-content-region-name="bottomShoppingCart" data-track-content="true" data-content-name="createOrder" class="css-0">
+                                    <a target="_self" class="nav-ip-popup-child" href="?page=checkout">
+                                        <button class="att-shopping-btn css-v463h2">TIẾP TỤC</button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="cartInlineBox"></div>

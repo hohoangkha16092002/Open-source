@@ -23,8 +23,8 @@
     } elseif ($tam == 'login') {
         include 'main/login.php';
     } elseif ($tam == 'register') {
-        include 'main/register.php';
-    }elseif ($tam == 'test') {
+        include 'main/register.php'; 
+    } elseif ($tam == 'search') {
         include 'main/search-page.php';
     } elseif ($tam == 'personal-information') {
         include 'main/personal-information.php';
@@ -40,7 +40,14 @@
     } 
     elseif ($tam == 'address') {
         include 'main/address.php';
-    }else {
+    }
+     elseif ($tam == 'checkout') {
+        include 'main/checkout.php';
+    } elseif ($tam == 'confirm-logout') {
+        include 'main/confirm-logout.php';
+    } elseif ($tam == 'logout') {
+        include 'main/logout.php';
+    } else {
         include 'main/home.php';
     }
     ?>

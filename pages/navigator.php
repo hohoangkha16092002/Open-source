@@ -1,3 +1,19 @@
+<?php
+if (isset($_GET['timKiem'])) {
+    $search = $_GET['search-input'];
+}
+
+if (isset($_SESSION['loggedin'])) {
+    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+    }
+}
+
+
+?>
+
 <div id="mainNavigationBar" class="nav-main">
     <div class="teko-row teko-row-center nav-navbar">
         <div class="teko-row teko-row-no-wrap teko-row-middle nav-subnav"
@@ -5,7 +21,7 @@
             <div class="teko-col nav-product-portfolio" style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
                 <div data-content-region-name="headerBar" data-track-content="true" data-content-name="logoPhongVu"
                     data-content-target="homepage" class="nav-product-portfolio-main">
-                    <a target="_self" class="nav-product-portfolio-icon" href="/">
+                    <a target="_self" class="nav-product-portfolio-icon" href="?page=home">
                         <div height="35px" width="35px" class="nav-product-portfolio-icon-main"><img
                                 src="https://shopfront-cdn.tekoapis.com/static/phongvu/logo.svg" loading="lazy"
                                 decoding="async" alt="phongvu" style="width: 100%; height: 35px;"></div>
@@ -209,16 +225,23 @@
                     <div class="nav-search-main">
                         <div data-content-region-name="headerBar" data-track-content="true"
                             data-content-name="searchBox" class="nav-search-input">
-                            <input id="nav-search-input" class="search-input nav-search-input-text"
-                                placeholder="Nhập từ khoá cần tìm" role="searchbox" aria-label="Search" value="">
+                            <input id="search-input" class="search-input nav-search-input-text"
+                                placeholder="Nhập từ khoá cần tìm" role="searchbox" aria-label="Search"
+                                name="search-product">
                         </div>
                         <div data-content-region-name="headerBar" data-track-content="true"
                             data-content-name="searchButton" class="nav-search-icon-main">
-                            <button class="search-icon nav-search-icon" aria-label="Search">
-                                <i class="fa-solid fa-magnifying-glass clickable"></i>
-                            </button>
+                            <a href="javascript:void(0);" id="search-link">
+                                <button class="search-icon nav-search-icon" aria-label="Search">
+                                    <i class="fa-solid fa-magnifying-glass clickable"></i>
+                                </button>
+                            </a>
                         </div>
                     </div>
+
+
+
+
                     <div class="nav-search-popup" id="nav-search-popup">
                         <div class="nav-search-popup-delete">
                             <div font-weight="500" color="#82869E" class="nav-search-hictory">Lịch sử tìm kiếm</div>
@@ -231,7 +254,9 @@
                             data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:0}"
                             class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
                             <div style="margin: 0px 0.6rem;">
-                                <div class="css-1488rru">laptop</div>
+                                <div class="css-1488rru" id="search-suggestions">
+
+                                </div>
                             </div>
                         </div>
                         <div data-content-region-name="recentSearch" data-track-content="true"
@@ -334,7 +359,10 @@
                     </a>
                 </p>
             </div>
-            <div class="teko-col nav-common-form nav-ip--has-popup"
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                echo '
+                <div class="teko-col nav-common-form nav-ip--has-popup"
                 style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
                 <div>
                     <div>
@@ -342,7 +370,7 @@
                             data-content-name="profileIcon">
                             <div class="nav-ip-form-avt">
                                 <div height="100%" width="100%" class="nav-ip-avt">
-                                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJ2eIWDECzXYZ7EgSIzeIFbzYhpqLERuHtUKa6tWTF9wA=s96-c-rw"
+                                    <img src="./img/icon-login.jpg"
                                         loading="lazy" hover="" decoding="async" alt="" fetchpriority="low"
                                         aria-label="Current User Avatar"
                                         style="width: 100%; height: 100%; object-fit: inherit; position: absolute; top: 0px; left: 0px;">
@@ -350,7 +378,7 @@
                             </div>
                             <div class="ml-12 text-left">
                                 <div type="body" color="textSecondary" class="nav-common-text">Xin chào,</div>
-                                <div type="body" color="textSecondary" class="nav-ip-name">Tiến Phan Minh</div>
+                                <div type="body" color="textSecondary" class="nav-ip-name">' . $info['HoTenKH'] . '</div>
                             </div>
                         </div>
                     </div><span class="nav-ip-popup"
@@ -359,12 +387,12 @@
                         <div class="nav-ip-popup-main">
                             <div class="nav-ip-popup-top">
                                 <div class="nav-ip-popup-avt"><img
-                                        src="https://lh3.googleusercontent.com/a/ACg8ocJ2eIWDECzXYZ7EgSIzeIFbzYhpqLERuHtUKa6tWTF9wA=s96-c"
+                                        src="./img/icon-login.jpg"
                                         alt="Avatar" style="width: 100%;">
                                 </div>
                                 <div class="nav-ip-popup-info">
-                                    <h3 class="name">Tiến Phan Minh</h3>
-                                    <h5 class="extra">tiennennakenki@gmail.com</h5>
+                                <h3 class="name">' . $info['HoTenKH'] . '</h3>
+                                    <h5 class="extra">' . $info['Email'] . '</h5>
                                 </div>
                             </div><a target="_self" class="nav-ip-popup-child" href="?page=personal-information">
                                 <div data-content-region-name="headerBar" data-track-content="true"
@@ -420,18 +448,39 @@
                             </a>
                             <div data-content-region-name="headerBar" data-track-content="true"
                                 data-content-name="logOut" class="nav-ip-popup-logout-button">
+                                <a href="?page=confirm-logout">
                                 <button height="2.5rem" color="white" class="logout-button" type="button">
                                     <div type="body" class="button-text logout-button-text" color="white">Đăng xuất
                                     </div>
                                     <span style="margin-left: 0px;">
                                         <div class="nav-ip-popup-logout"> </div>
                                     </span>
-                                </button>
+                                </button></a>
                             </div>
                         </div>
                     </span>
                 </div>
-            </div>
+            </div>';
+            } else {
+                echo '<a href="?page=login" style="text-decoration: unset;">
+                <div class="teko-col css-17ajfcv" style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
+                    <div class="button css-12qbrtd" data-content-region-name="headerBar" data-track-content="true"
+                        data-content-name="loginIcon"><svg fill="none" viewBox="0 0 24 24" size="36" class="css-11md2ba"
+                            color="textSecondary" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 3.5C7.30558 3.5 3.5 7.30558 3.5 12C3.5 13.9895 4.18351 15.8194 5.32851 17.2676C5.58317 16.4856 6.12054 15.8107 6.85621 15.3914L8.76361 14.2968C8.1448 13.5615 7.772 12.6122 7.772 11.5759V9.83689C7.772 7.50167 9.66479 5.60889 12 5.60889C14.3349 5.60889 16.229 7.50139 16.229 9.83689V11.5759C16.229 12.6132 15.8554 13.5631 15.2354 14.2986L17.1437 15.3908L17.1444 15.3912C17.8805 15.8106 18.4173 16.4856 18.6716 17.2674C19.8165 15.8192 20.5 13.9894 20.5 12C20.5 7.30558 16.6944 3.5 12 3.5ZM10.0133 15.3091C10.6056 15.6249 11.2819 15.8039 12 15.8039C12.7169 15.8039 13.3922 15.6255 13.984 15.3106L16.3999 16.6934L16.4013 16.6942C16.9789 17.0231 17.3365 17.6396 17.3365 18.3075V18.6164C16.8532 19.0067 16.3263 19.3451 15.7642 19.6232C14.9127 19.9671 13.6909 20.2625 12.0005 20.2625C10.3078 20.2625 9.08478 19.9663 8.23289 19.6217C7.67189 19.3439 7.14595 19.006 6.6635 18.6164V18.3075C6.6635 17.6402 7.0216 17.0234 7.59965 16.6942L7.6018 16.693L10.0133 15.3091ZM13.4184 13.9069C14.2043 13.428 14.729 12.5631 14.729 11.5759V9.83689C14.729 8.33038 13.5071 7.10889 12 7.10889C10.4932 7.10889 9.272 8.3301 9.272 9.83689V11.5759C9.272 12.5628 9.79594 13.4273 10.5809 13.9062C10.6523 13.9484 10.7542 14.0035 10.8812 14.0593C11.1657 14.1842 11.5558 14.3035 12.0005 14.3035C12.445 14.3035 12.8341 14.1846 13.1176 14.0602C13.2451 14.0042 13.3472 13.9489 13.4184 13.9069ZM2 12C2 14.9959 3.31741 17.684 5.40452 19.5168L5.42841 19.5438C5.49553 19.6189 5.59114 19.7182 5.71841 19.8332C5.97322 20.0636 6.35385 20.3562 6.88471 20.6435C7.10268 20.7615 7.34486 20.878 7.6128 20.9888C8.93735 21.6364 10.4262 22 12 22C13.5724 22 15.06 21.6371 16.3837 20.9905C16.6532 20.8792 16.8968 20.7621 17.1159 20.6435C17.6466 20.3561 18.0271 20.0635 18.2819 19.8331C18.4091 19.7181 18.5047 19.6187 18.5718 19.5437L18.5956 19.5167C20.6826 17.6839 22 14.9958 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z"
+                                fill="#82869E"></path>
+                        </svg>
+                        <div class="ml-6 text-left">
+                            <div type="body" color="textSecondary" class="css-1ajy8lg">Đăng nhập</div>
+                            <div type="body" color="textSecondary" class="css-1ajy8lg">Đăng ký</div>
+                        </div>
+                    </div>
+                </div></a>';
+            }
+            ?>
+
+
             <div class="teko-col nav-common-form nav-notify--has-popup "
                 style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
                 <div class="nav-notify" data-content-region-name="headerBar" data-track-content="true"
@@ -607,20 +656,6 @@
         // Lấy tham chiếu đến nút bấm và thẻ div
         const showButton = document.getElementById("nav-search-input");
         const myDiv = document.getElementById("nav-search-popup");
-
-        // Thêm sự kiện click cho nút bấm
-        showButton.addEventListener("click", function () {
-            // Kiểm tra nếu thẻ div hiện đang ẩn (display: none)
-            if (myDiv.style.display === "none") {
-                // Hiển thị thẻ div (display: block)
-                myDiv.style.display = "block";
-            } else {
-                // Ẩn thẻ div nếu đã hiển thị
-                myDiv.style.display = "none";
-            }
-        });
-
-
         // Lấy tham chiếu đến nút bấm và thẻ div
         const showProductPortfolio = document.getElementById("nav--product-portfolio");
         const productPortfolioPopup = document.getElementById("nav--product-portfolio-popup");
@@ -633,6 +668,12 @@
                 productPortfolioPopup.style.visibility = "hidden";
             }
         });
+        document.getElementById('search-link').addEventListener('click', function () {
+            var searchKeyword = document.getElementById('search-input').value;
+            window.location.href = '?page=search&search-product=' + searchKeyword;
+        });
+
+
 
     </script>
 </div>
