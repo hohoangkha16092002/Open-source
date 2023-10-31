@@ -1,3 +1,9 @@
+<?php
+if (isset($_GET['timKiem'])) {
+    $search = $_GET['search-input'];
+}
+?>
+
 <div id="mainNavigationBar" class="nav-main">
     <div class="teko-row teko-row-center nav-navbar">
         <div class="teko-row teko-row-no-wrap teko-row-middle nav-subnav"
@@ -209,16 +215,23 @@
                     <div class="nav-search-main">
                         <div data-content-region-name="headerBar" data-track-content="true"
                             data-content-name="searchBox" class="nav-search-input">
-                            <input id="nav-search-input" class="search-input nav-search-input-text"
-                                placeholder="Nhập từ khoá cần tìm" role="searchbox" aria-label="Search" value="">
+                            <input id="search-input" class="search-input nav-search-input-text"
+                                placeholder="Nhập từ khoá cần tìm" role="searchbox" aria-label="Search"
+                                name="search-product">
                         </div>
                         <div data-content-region-name="headerBar" data-track-content="true"
                             data-content-name="searchButton" class="nav-search-icon-main">
-                            <button class="search-icon nav-search-icon" aria-label="Search">
-                                <i class="fa-solid fa-magnifying-glass clickable"></i>
-                            </button>
+                            <a href="javascript:void(0);" id="search-link">
+                                <button class="search-icon nav-search-icon" aria-label="Search">
+                                    <i class="fa-solid fa-magnifying-glass clickable"></i>
+                                </button>
+                            </a>
                         </div>
                     </div>
+
+
+
+
                     <div class="nav-search-popup" id="nav-search-popup">
                         <div class="nav-search-popup-delete">
                             <div font-weight="500" color="#82869E" class="nav-search-hictory">Lịch sử tìm kiếm</div>
@@ -231,7 +244,9 @@
                             data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:0}"
                             class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
                             <div style="margin: 0px 0.6rem;">
-                                <div class="css-1488rru">laptop</div>
+                                <div class="css-1488rru" id="search-suggestions">
+
+                                </div>
                             </div>
                         </div>
                         <div data-content-region-name="recentSearch" data-track-content="true"
@@ -631,20 +646,6 @@
         // Lấy tham chiếu đến nút bấm và thẻ div
         const showButton = document.getElementById("nav-search-input");
         const myDiv = document.getElementById("nav-search-popup");
-
-        // Thêm sự kiện click cho nút bấm
-        showButton.addEventListener("click", function () {
-            // Kiểm tra nếu thẻ div hiện đang ẩn (display: none)
-            if (myDiv.style.display === "none") {
-                // Hiển thị thẻ div (display: block)
-                myDiv.style.display = "block";
-            } else {
-                // Ẩn thẻ div nếu đã hiển thị
-                myDiv.style.display = "none";
-            }
-        });
-
-
         // Lấy tham chiếu đến nút bấm và thẻ div
         const showProductPortfolio = document.getElementById("nav--product-portfolio");
         const productPortfolioPopup = document.getElementById("nav--product-portfolio-popup");
@@ -657,6 +658,12 @@
                 productPortfolioPopup.style.visibility = "hidden";
             }
         });
+        document.getElementById('search-link').addEventListener('click', function () {
+            var searchKeyword = document.getElementById('search-input').value;
+            window.location.href = '?page=search&search-product=' + searchKeyword;
+        });
+
+       
 
     </script>
 </div>
