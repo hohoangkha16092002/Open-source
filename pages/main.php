@@ -34,7 +34,13 @@
         include 'main/detail.php';
     } elseif ($tam == 'cart-page') {
         include 'main/cart-page.php';
-    } else {
+    } 
+    elseif ($tam == 'consignee-information') {
+        include 'main/consignee-information.php';
+    } 
+    elseif ($tam == 'address') {
+        include 'main/address.php';
+    }else {
         include 'main/home.php';
     }
     ?>
