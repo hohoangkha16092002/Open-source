@@ -2,6 +2,16 @@
 if (isset($_GET['timKiem'])) {
     $search = $_GET['search-input'];
 }
+
+if (isset($_SESSION['loggedin'])) {
+    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+    }
+}
+
+
 ?>
 
 <div id="mainNavigationBar" class="nav-main">
@@ -360,7 +370,7 @@ if (isset($_GET['timKiem'])) {
                             data-content-name="profileIcon">
                             <div class="nav-ip-form-avt">
                                 <div height="100%" width="100%" class="nav-ip-avt">
-                                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJ2eIWDECzXYZ7EgSIzeIFbzYhpqLERuHtUKa6tWTF9wA=s96-c-rw"
+                                    <img src="./img/icon-login.jpg"
                                         loading="lazy" hover="" decoding="async" alt="" fetchpriority="low"
                                         aria-label="Current User Avatar"
                                         style="width: 100%; height: 100%; object-fit: inherit; position: absolute; top: 0px; left: 0px;">
@@ -368,7 +378,7 @@ if (isset($_GET['timKiem'])) {
                             </div>
                             <div class="ml-12 text-left">
                                 <div type="body" color="textSecondary" class="nav-common-text">Xin chào,</div>
-                                <div type="body" color="textSecondary" class="nav-ip-name">Tiến Phan Minh</div>
+                                <div type="body" color="textSecondary" class="nav-ip-name">' . $info['HoTenKH'] . '</div>
                             </div>
                         </div>
                     </div><span class="nav-ip-popup"
@@ -377,12 +387,12 @@ if (isset($_GET['timKiem'])) {
                         <div class="nav-ip-popup-main">
                             <div class="nav-ip-popup-top">
                                 <div class="nav-ip-popup-avt"><img
-                                        src="https://lh3.googleusercontent.com/a/ACg8ocJ2eIWDECzXYZ7EgSIzeIFbzYhpqLERuHtUKa6tWTF9wA=s96-c"
+                                        src="./img/icon-login.jpg"
                                         alt="Avatar" style="width: 100%;">
                                 </div>
                                 <div class="nav-ip-popup-info">
-                                    <h3 class="name">Tiến Phan Minh</h3>
-                                    <h5 class="extra">tiennennakenki@gmail.com</h5>
+                                <h3 class="name">' . $info['HoTenKH'] . '</h3>
+                                    <h5 class="extra">' . $info['Email'] . '</h5>
                                 </div>
                             </div><a target="_self" class="nav-ip-popup-child" href="?page=personal-information">
                                 <div data-content-region-name="headerBar" data-track-content="true"
@@ -663,7 +673,7 @@ if (isset($_GET['timKiem'])) {
             window.location.href = '?page=search&search-product=' + searchKeyword;
         });
 
-       
+
 
     </script>
 </div>
