@@ -43,11 +43,14 @@
     }
      elseif ($tam == 'checkout') {
         include 'main/checkout.php';
-    } elseif ($tam == 'confirm-logout') {
+    }
+    elseif ($tam == 'confirm-logout') {
         include 'main/confirm-logout.php';
-    } elseif ($tam == 'logout') {
+    }
+    elseif ($tam == 'logout') {
         include 'main/logout.php';
-    } else {
+    }
+    else {
         include 'main/home.php';
     }
     ?>

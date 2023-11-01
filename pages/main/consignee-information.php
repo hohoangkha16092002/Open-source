@@ -2,12 +2,8 @@
     style="position: fixed; inset: 0px; z-index: 1051; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.1);">
     <div class="css-1272naz"></div>
     <div class="teko-modal teko-modal-show css-t2ptn2" style="opacity: 1; transform: translateY(0px);">
-        <div class="teko-modal-content"><svg fill="none" viewBox="0 0 24 24" class="teko-modal-close css-1qzn8fv"
-                size="24" color="#000000" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M6.81304 5.75263C6.52015 5.45974 6.04528 5.45974 5.75238 5.75263C5.45949 6.04552 5.45949 6.5204 5.75238 6.81329L10.8789 11.9398L5.75241 17.0663C5.45952 17.3592 5.45952 17.8341 5.75241 18.127C6.0453 18.4199 6.52018 18.4199 6.81307 18.127L11.9396 13.0005L17.0661 18.127C17.359 18.4199 17.8339 18.4199 18.1268 18.127C18.4196 17.8341 18.4196 17.3592 18.1268 17.0663L13.0002 11.9398L18.1268 6.81329C18.4197 6.5204 18.4197 6.04552 18.1268 5.75263C17.8339 5.45974 17.359 5.45974 17.0661 5.75263L11.9396 10.8792L6.81304 5.75263Z"
-                    fill="#82869E"></path>
-            </svg>
+        <div class="teko-modal-content">
+            <div class="teko-modal-close css-1qzn8fv"><i class="fa-solid fa-xmark"></i></div>
             <div class="teko-modal-header">
                 <div type="title" class="teko-modal-title css-1cp1h79">Thông tin người nhận hàng</div>
             </div>
@@ -92,21 +88,10 @@
                                                 <div id="provinceCode" tabindex="-1" class="css-1npt3uz">
                                                     <div class="css-cssveg">
                                                         <div class="css-cg6cr2">
-                                                            <div class="css-w9zq4w">
-                                                                <div class="input-container css-kwckz4" height="40">
-                                                                    <input type="text" placeholder="Chọn"
-                                                                        maxlength="255" class="css-1acir1a" value="">
-                                                                    <div height="40" class="css-10fj0sh"><svg
-                                                                            fill="none" viewBox="0 0 24 24" size="20"
-                                                                            class="css-11md2ba" color="textSecondary"
-                                                                            height="20" width="20"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M16.4767 10H7.52331C7.07668 10 6.83609 10.5267 7.12731 10.867L11.208 15.6348C11.6248 16.1217 12.3752 16.1217 12.792 15.6348L16.8727 10.867C17.1639 10.5267 16.9233 10 16.4767 10Z"
-                                                                                fill="#82869E"></path>
-                                                                        </svg></div>
-                                                                </div>
-                                                            </div>
+                                                            <select class="css-w9zq4w" placeholder="Chọn thanh pho">
+                                                                <option value="">Khanh Hoa</option>
+                                                                <option value="">Phu Yen</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="css-1ezclw1"></div>

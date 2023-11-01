@@ -23,7 +23,7 @@
                             <h5 class="css-11aljab">Kiều Nguyễn Thị Diễm</h5>
                         </div>
                     </div>
-                    <ul class="css-zzskb3"><a class="css-11g9kr1">
+                    <ul class="css-zzskb3"><a class="css-11g9kr1" href= "?page=personal-information">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"

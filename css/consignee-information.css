@@ -28,11 +28,17 @@
 }
 
 
-
 .css-1qzn8fv path:not([stroke]), .css-1qzn8fv rect:not([stroke]) {
     fill: rgb(0, 0, 0);
 }
 
+.css-t2ptn2 .teko-modal-content .teko-modal-close {
+    position: absolute;
+    z-index: 1000;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+}
 
 
 .css-t2ptn2 .teko-modal-content .teko-modal-header .teko-modal-title {
@@ -175,17 +181,19 @@
     
 }
 
-.css-1qrgscw.teko-row {
-    display: flex;
-    flex-flow: wrap;
-}
-
 .css-1qrgscw {
     border-style: none;
     border-width: 1px;
     border-color: unset;
     opacity: 1;
 }
+
+.css-1qrgscw.teko-row {
+    display: flex;
+    flex-flow: wrap;
+}
+
+
 .css-t2ptn2 .teko-modal-content .teko-modal-body {
     font-size: 13px;
     line-height: 20px;

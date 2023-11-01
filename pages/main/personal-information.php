@@ -50,7 +50,7 @@ if (isset($_POST['update'])) {
                             </h5>
                         </div>
                     </div>
-                    <ul class="css-zzskb3"><a class="css-11g9kr1">
+                    <ul class="css-zzskb3"><a class="css-11g9kr1" href="?page=personal-information">
                             <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -68,7 +68,7 @@ if (isset($_POST['update'])) {
                                 </svg>
                                 <div class="css-rac23i">Quản lý đơn hàng</div>
                             </div>
-                        </a><a class="css-11g9kr1">
+                        </a><a class="css-11g9kr1" href="?page=address">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -161,23 +161,20 @@ if (isset($_POST['update'])) {
                                     mặc định. Vui lòng chọn Thêm địa chỉ nhận hàng.</div>
                                 <div class="css-1veiyrs">
                                     <div width="100%" color="divider" class="css-yae08c"></div>
-                                </div><a target="_blank" rel="noopener noreferrer" class="css-15wdjv3"
-                                    color="link500"><svg fill="none" viewBox="0 0 24 24" class="css-zzrru3"
-                                        color="link500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                </div>
+                                <a class="css-15wdjv3" color="link500" href="?page=consignee-information">
+                                    <svg
+                                        fill="none" viewBox="0 0 24 24" class="css-zzrru3" color="link500" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M12.75 4C12.75 3.58579 12.4142 3.25 12 3.25C11.5858 3.25 11.25 3.58579 11.25 4V11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H11.25V20C11.25 20.4142 11.5858 20.75 12 20.75C12.4142 20.75 12.75 20.4142 12.75 20V12.75H20C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25H12.75V4Z"
                                             fill="#82869E"></path>
                                     </svg>
-                                    <div type="body" color="link500" class="css-jxvxz7">Thêm địa chỉ nhận hàng</div>
-                                    <a target="_self" class="nav-ip-popup-child" href="?page=consignee-information">
-                                                <div data-content-region-name="headerBar" data-track-content="true"
-                                                    data-content-name="viewNotification" class="nav-ip-popup-child-main">
-                                                </div>
-                                    </a>
+                                    <span>Thêm địa chỉ nhận hàng</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>F
+    </div>F
