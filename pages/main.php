@@ -34,13 +34,23 @@
         include 'main/detail.php';
     } elseif ($tam == 'cart-page') {
         include 'main/cart-page.php';
-    } elseif ($tam == 'checkout') {
+    } 
+    elseif ($tam == 'consignee-information') {
+        include 'main/consignee-information.php';
+    } 
+    elseif ($tam == 'address') {
+        include 'main/address.php';
+    }
+     elseif ($tam == 'checkout') {
         include 'main/checkout.php';
-    } elseif ($tam == 'confirm-logout') {
+    }
+    elseif ($tam == 'confirm-logout') {
         include 'main/confirm-logout.php';
-    } elseif ($tam == 'logout') {
+    }
+    elseif ($tam == 'logout') {
         include 'main/logout.php';
-    } else {
+    }
+    else {
         include 'main/home.php';
     }
     ?>

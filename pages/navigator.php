@@ -418,7 +418,7 @@ if (isset($_SESSION['loggedin'])) {
                                         </svg></div>
                                     <div type="body" class="popup-text">Quản lý đơn hàng</div>
                                 </div>
-                            </a><a target="_self" class="nav-ip-popup-child" href="/account/addresses">
+                            </a><a target="_self" class="nav-ip-popup-child" href="?page=address">
                                 <div data-content-region-name="headerBar" data-track-content="true"
                                     data-content-name="viewAddressList" class="nav-ip-popup-child-main">
                                     <div class="icon"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
