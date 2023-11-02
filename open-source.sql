@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2023 at 02:39 PM
+-- Generation Time: Nov 02, 2023 at 03:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -339,6 +339,7 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`MaKH`, `HoTenKH`, `DiaChi`, `Email`, `MatKhau`, `NgaySinh`, `Gioi_Tinh`, `SDT`) VALUES
+('', 'Phùng Thị Phượng', '', 'phuongphung301020@gmail.com', '$2y$12$xd7nmzVIf4BYeOdlU0sV0.lzcGxUQfbLYIQpb.Py.Qnm9hsqBX2gG', '2002-10-30', b'0', '0858043593'),
 ('KH001', 'Lê Thành Bảo', '2 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'thanhbao123@gmail.com', 'Lethanhbao123@', '2002-08-18', b'0', '0941499426'),
 ('KH002', 'Nguyễn Minh Chiến', '22 Đặng Tất, Vĩnh Hải, Nha Trang', 'nmchien238@gmail.com', 'Minhchien123@', '2000-09-29', b'0', '0639369418'),
 ('KH003', 'Nguyễn Lưu Quang Đạt', '28 Bắc Sơn, Vĩnh Hải, Nha Trang', 'quangdat636@gmail.com', '123abc', '2001-06-20', b'0', '0163682648'),
@@ -374,7 +375,7 @@ CREATE TABLE `khuyenmai` (
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `MoTaKM`, `GiamGia`, `DieuKien`, `PhamVi`, `NgayBD`, `NgayKT`) VALUES
 ('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', 0.20, 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
 ('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', 0.25, 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
-('KM003', 'Giảm giá đặc biệt', 'Giảm 500.000đ cho các sản phẩm đặc biệt', 500000.00, 'Không có yêu cầu đặc biệt', 'Một nhóm sản phẩm', '2023-10-20 00:00:00', '2023-10-30 00:00:00'),
+('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', 0.00, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
 ('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', 0.40, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
 
 -- --------------------------------------------------------
@@ -393,6 +394,7 @@ CREATE TABLE `mathang` (
   `IDAnhMH` varchar(10) NOT NULL,
   `Mau_SP` varchar(10) NOT NULL,
   `MoTaMH` varchar(200) NOT NULL,
+  `MaKM` varchar(5) NOT NULL,
   `CPU` varchar(50) NOT NULL,
   `RAM` varchar(50) NOT NULL,
   `LuuTru` varchar(50) NOT NULL,
@@ -408,19 +410,19 @@ CREATE TABLE `mathang` (
 -- Dumping data for table `mathang`
 --
 
-INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`, `DonGia`, `MaHSX`, `IDAnhMH`, `Mau_SP`, `MoTaMH`, `CPU`, `RAM`, `LuuTru`, `HDH`, `ManHinh`, `DoHoa`, `PIN`, `KhoiLuong`, `PhuKien`) VALUES
-('LT001', 'ACER Aspire 3', 'BSLT', 10, 11990000, 'AC', 'HASP001', '', 'Không phím số, Không đèn, HD webcam', 'AMD Ryzen 5 7520U', '8GB Onboard LPDDR5 5200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard AMD Radeon 610', '40 Wh', 1.4, 'Không'),
-('LT002', 'ACER Nitro 5 Tiger', 'GMLT', 10, 25990000, 'AC', 'HASP002', '', 'Có phím số, RGB, không đèn, HD webcam', 'Intel Core i5-12450H', '1 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '4 cell 60 Wh', 2.5, 'Adapter, dây nguồn'),
-('LT003', 'MacBook Air 2023', 'BSLT', 10, 32290000, 'AP', 'HASP003', '', 'Không phím số, LED, bảo mật vân tay', 'Apple M2', '1x8GB', '256GB SSD', 'macOS', '15.3\" (2880 x 1864)', NULL, NULL, 1.5, 'Không'),
-('LT004', 'ASUS TUF Gaming F15', 'GMLT', 10, 28690000, 'AS', 'HASP004', '', 'Có phím số, RBG, có đèn,, HD webcam', ' Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel Iris Xe Graphics', '4 cell 90 Wh', 2.2, 'Không'),
-('LT005', 'Dell Vostro 3530', 'BSLT', 10, 16890000, 'DE', 'HASP005', '', 'Có phím số, không đèn, HD webcam, màn hình chống lóa', 'Intel Core i5-1335U', '1 x 8GB DDR4 2666MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6\" WVA (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.6, 'Không'),
-('LT006', 'Dell Inspiron 3530', 'GMLT', 10, 23990000, 'DE', 'HASP006', '', 'Có phím số, LED, không đèn, bảo mật vân tay', 'Intel Core i7-1355U', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6\" WVA (1920 x 1080)', 'GeForce MX550 2GB GDDR6 / Intel Iris Xe Graphics', '4 cell 54 Wh', 1.6, 'Adapter'),
-('LT007', 'HP Pavilion 15', 'BSLT', 10, 24690000, 'HP', 'HASP007', '', 'Có phím số, không đèn, Màn hình chống lóa, HD webcam', 'Intel Core i7-1355U', ' 2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.7, 'Không'),
-('LT008', ' Lenovo IdeaPad Slim 3', 'BSLT', 10, 14490000, 'LE', 'HASP008', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật vân tay', ' Intel Core i5-12450H', '16GB Onboard LPDDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '14\" IPS (1920 x 1080)', 'Onboard Intel UHD Graphics', '47 Wh', 1.4, 'Không'),
-('LT009', 'Lenovo IdeaPad Gaming 3', 'GMLT', 10, 17390000, 'LE', 'HASP009', '', 'Có phím số, RBG, màn hình chống lóa, HD webcam, bảo mật vân tay', ' Intel Core i5-11320H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'RTX 3050 4GB GDDR6 / Intel Iris Xe Graphics', '3 cell 45 Wh', 2.2, 'Adapter,dây nguồn'),
-('LT010', 'LG Gram 2023', 'BSLT', 10, 40890000, 'LG', 'HASP010', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật khuôn mặt', ' Intel Core i5-1340P', ' 16GB Onboard LPDDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" OLED (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '60 Wh', 1, 'Không'),
-('LT011', 'MSI Modern 14 ', 'BSLT', 10, 15990000, 'MS', 'HASP011', '', 'Không phím số, LED, HD webcam', ' Intel Core i5-1335U', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 54 Wh', 1.4, 'Không'),
-('LT012', 'MSI Crosshair 15', 'GMLT', 10, 32990000, 'MS', 'HASP012', '', 'Có phím số, LED, không đèn, HD webcam', 'Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 3060 6GB GDDR6 / Intel Iris Xe Graphics', '3 cell 53 Wh', 2.3, 'Adapter, dây nguồn, Balo');
+INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`, `DonGia`, `MaHSX`, `IDAnhMH`, `Mau_SP`, `MoTaMH`, `MaKM`, `CPU`, `RAM`, `LuuTru`, `HDH`, `ManHinh`, `DoHoa`, `PIN`, `KhoiLuong`, `PhuKien`) VALUES
+('LT001', 'ACER Aspire 3', 'BSLT', 10, 11990000, 'AC', 'HASP001', '', 'Không phím số, Không đèn, HD webcam', 'KM001', 'AMD Ryzen 5 7520U', '8GB Onboard LPDDR5 5200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard AMD Radeon 610', '40 Wh', 1.4, 'Không'),
+('LT002', 'ACER Nitro 5 Tiger', 'GMLT', 10, 25990000, 'AC', 'HASP002', '', 'Có phím số, RGB, không đèn, HD webcam', 'KM001', 'Intel Core i5-12450H', '1 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '4 cell 60 Wh', 2.5, 'Adapter, dây nguồn'),
+('LT003', 'MacBook Air 2023', 'BSLT', 10, 32290000, 'AP', 'HASP003', '', 'Không phím số, LED, bảo mật vân tay', 'KM001', 'Apple M2', '1x8GB', '256GB SSD', 'macOS', '15.3\" (2880 x 1864)', NULL, NULL, 1.5, 'Không'),
+('LT004', 'ASUS TUF Gaming F15', 'GMLT', 10, 28690000, 'AS', 'HASP004', '', 'Có phím số, RBG, có đèn,, HD webcam', 'KM001', ' Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel Iris Xe Graphics', '4 cell 90 Wh', 2.2, 'Không'),
+('LT005', 'Dell Vostro 3530', 'BSLT', 10, 16890000, 'DE', 'HASP005', '', 'Có phím số, không đèn, HD webcam, màn hình chống lóa', 'KM001', 'Intel Core i5-1335U', '1 x 8GB DDR4 2666MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6\" WVA (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.6, 'Không'),
+('LT006', 'Dell Inspiron 3530', 'GMLT', 10, 23990000, 'DE', 'HASP006', '', 'Có phím số, LED, không đèn, bảo mật vân tay', 'KM001', 'Intel Core i7-1355U', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6\" WVA (1920 x 1080)', 'GeForce MX550 2GB GDDR6 / Intel Iris Xe Graphics', '4 cell 54 Wh', 1.6, 'Adapter'),
+('LT007', 'HP Pavilion 15', 'BSLT', 10, 24690000, 'HP', 'HASP007', '', 'Có phím số, không đèn, Màn hình chống lóa, HD webcam', 'KM001', 'Intel Core i7-1355U', ' 2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.7, 'Không'),
+('LT008', ' Lenovo IdeaPad Slim 3', 'BSLT', 10, 14490000, 'LE', 'HASP008', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật vân tay', 'KM001', ' Intel Core i5-12450H', '16GB Onboard LPDDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '14\" IPS (1920 x 1080)', 'Onboard Intel UHD Graphics', '47 Wh', 1.4, 'Không'),
+('LT009', 'Lenovo IdeaPad Gaming 3', 'GMLT', 10, 17390000, 'LE', 'HASP009', '', 'Có phím số, RBG, màn hình chống lóa, HD webcam, bảo mật vân tay', 'KM001', ' Intel Core i5-11320H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'RTX 3050 4GB GDDR6 / Intel Iris Xe Graphics', '3 cell 45 Wh', 2.2, 'Adapter,dây nguồn'),
+('LT010', 'LG Gram 2023', 'BSLT', 10, 40890000, 'LG', 'HASP010', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật khuôn mặt', 'KM001', ' Intel Core i5-1340P', ' 16GB Onboard LPDDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" OLED (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '60 Wh', 1, 'Không'),
+('LT011', 'MSI Modern 14 ', 'BSLT', 10, 15990000, 'MS', 'HASP011', '', 'Không phím số, LED, HD webcam', 'KM001', ' Intel Core i5-1335U', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 54 Wh', 1.4, 'Không'),
+('LT012', 'MSI Crosshair 15', 'GMLT', 10, 32990000, 'MS', 'HASP012', '', 'Có phím số, LED, không đèn, HD webcam', 'KM001', 'Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 3060 6GB GDDR6 / Intel Iris Xe Graphics', '3 cell 53 Wh', 2.3, 'Adapter, dây nguồn, Balo');
 
 -- --------------------------------------------------------
 
@@ -435,7 +437,7 @@ CREATE TABLE `nhanvien` (
   `Email` varchar(50) NOT NULL,
   `DiaChi` varchar(200) NOT NULL,
   `TenDN` varchar(5) NOT NULL,
-  `MatKhau` varchar(10) NOT NULL,
+  `MatKhau` varchar(100) NOT NULL,
   `GioiTinh` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -444,16 +446,16 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`MaNV`, `HotenNV`, `SDT`, `Email`, `DiaChi`, `TenDN`, `MatKhau`, `GioiTinh`) VALUES
-('NV001', 'Nguyễn Thị Diễm Kiều', '0987654321', 'diemkieunv001@gmail.com', '2 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV001', '0987654321', b'1'),
-('NV002', 'Phan Minh Tiến', '0123456789', 'minhtiennv002@gmail.com', '3 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV002', '0123456789', b'0'),
-('NV003', 'Ngô Trung Kiên', '0214365879', 'trungkiennv003@gmail.com', '4 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV003', '0214365879', b'0'),
-('NV004', 'Phùng Thị Phượng', '0896745231', 'thiphuongnv004@gmail.com', '5 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV004', '0896745231', b'1'),
-('NV005', 'Hồ Hoàng Kha', '0978563412', 'hoangkhanv005@gmail.com', '6 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV005', '0978563412', b'0'),
-('NV006', 'Võ Thanh Tùng', '0987641235', 'thanhtungnv006@gmail.com', '7 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV006', '0987641235', b'0'),
-('NV007', 'Trần Thanh Tâm', '0136789654', 'thanhtamnv007@gmail.com', '8 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV007', '0136789654', b'1'),
-('NV008', 'Võ Mạnh Hùng', '0643215879', 'manhhungnv008@gmail.com', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV008', '0643215879', b'0'),
-('NV009', 'Trần Ngọc Quyên', '0998543561', 'ngocquyennv009@gmail.com', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV009', '0998543561', b'1'),
-('NV010', 'Trần Minh Khang', '0342477659', 'minhkhangnv010@gmail.com', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV010', '0342477659', b'0');
+('NV001', 'Nguyễn Thị Diễm Kiều', '0987654321', 'diemkieunv001@gmail.com', '2 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV001', '6fb42da0e32e07b61c9f0251fe627a9c', b'1'),
+('NV002', 'Phan Minh Tiến', '0123456789', 'minhtiennv002@gmail.com', '3 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV002', '781e5e245d69b566979b86e28d23f2c7', b'0'),
+('NV003', 'Ngô Trung Kiên', '0214365879', 'trungkiennv003@gmail.com', '4 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV003', '30e60a520cda5aba2bf754ee12532573', b'0'),
+('NV004', 'Phùng Thị Phượng', '0896745231', 'thiphuongnv004@gmail.com', '5 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV004', '8e080f7d6746493211974e6e5fdb438e', b'1'),
+('NV005', 'Hồ Hoàng Kha', '0978563412', 'hoangkhanv005@gmail.com', '6 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV005', '1974381b8051b06378964767aab904e5', b'0'),
+('NV006', 'Võ Thanh Tùng', '0987641235', 'thanhtungnv006@gmail.com', '7 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV006', '72b625e7b423ebff2fbd41c195622b13', b'0'),
+('NV007', 'Trần Thanh Tâm', '0136789654', 'thanhtamnv007@gmail.com', '8 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV007', '124bc06ec0910e5ebdf81e100f5fb0de', b'1'),
+('NV008', 'Võ Mạnh Hùng', '0643215879', 'manhhungnv008@gmail.com', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV008', 'cecdfadf5a454ee007fd91c2dd1bf694', b'0'),
+('NV009', 'Trần Ngọc Quyên', '0998543561', 'ngocquyennv009@gmail.com', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV009', '6528c3ae9b73584ec74de4d49df9a11f', b'1'),
+('NV010', 'Trần Minh Khang', '0342477659', 'minhkhangnv010@gmail.com', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'NV010', '04b986b6d6e0a6181a06cb942ed5d52c', b'0');
 
 --
 -- Indexes for dumped tables
@@ -542,7 +544,8 @@ ALTER TABLE `mathang`
   ADD PRIMARY KEY (`MaMH`),
   ADD KEY `FK_MaLMH` (`MaLMH`),
   ADD KEY `FK_MaHSX` (`MaHSX`),
-  ADD KEY `FK_IDAnhMH` (`IDAnhMH`);
+  ADD KEY `FK_IDAnhMH` (`IDAnhMH`),
+  ADD KEY `FK_MaKM_MatHang` (`MaKM`);
 
 --
 -- Indexes for table `nhanvien`
@@ -600,6 +603,7 @@ ALTER TABLE `hoadon`
 ALTER TABLE `mathang`
   ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`),
   ADD CONSTRAINT `FK_MaHSX` FOREIGN KEY (`MaHSX`) REFERENCES `dmhangsanxuat` (`MaHSX`),
+  ADD CONSTRAINT `FK_MaKM_MatHang` FOREIGN KEY (`MaKM`) REFERENCES `khuyenmai` (`MaKM`),
   ADD CONSTRAINT `FK_MaLMH` FOREIGN KEY (`MaLMH`) REFERENCES `dmloaimathang` (`MaLMH`);
 COMMIT;
 
