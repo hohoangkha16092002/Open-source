@@ -14,19 +14,32 @@
   if (isset($_POST['submit-login'])) {
     $input_email = $_POST['input_email'];
     $input_password = $_POST['input_password'];
-    $action = "#";
 
-    $check_email = "SELECT * FROM `khachhang` WHERE Email = '$input_email'";
-    $result_email = mysqli_query($conn, $check_email);
+    $check_email_customer = "SELECT * FROM `khachhang` WHERE Email = '$input_email'";
+    $result_email_customer = mysqli_query($conn, $check_email_customer);
 
-    if ($result_email) {
-      if (mysqli_num_rows($result_email) > 0) {
-        $row = mysqli_fetch_assoc($result_email);
+    $check_email_employee = "SELECT * FROM `nhanvien` WHERE Email = '$input_email'";
+    $result_email_employee = mysqli_query($conn, $check_email_employee);
+
+    if ($result_email_customer) {
+      if (mysqli_num_rows($result_email_customer) > 0) {
+        $row = mysqli_fetch_assoc($result_email_customer);
         $hashedPassword = $row['MatKhau'];
 
         if (password_verify($input_password, $hashedPassword)) {
-          $_SESSION['loggedin'] = true; // Lưu trạng thái đăng nhập
+          $_SESSION['loggedin_customer'] = true; // Lưu trạng thái đăng nhập
           $_SESSION['MaKH'] = $row['MaKH'];
+          header("Location: index.php");
+        } else {
+          $msg = "Mật khẩu không đúng";
+        }
+      } elseif (mysqli_num_rows($result_email_employee) > 0) {
+        $row = mysqli_fetch_assoc($result_email_employee);
+        $hashedPassword = $row['MatKhau'];
+
+        if (password_verify($input_password, $hashedPassword)) {
+          $_SESSION['loggedin_employee'] = true; // Lưu trạng thái đăng nhập
+          $_SESSION['MaNV'] = $row['MaNV'];
           header("Location: index.php");
         } else {
           $msg = "Mật khẩu không đúng";

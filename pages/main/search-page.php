@@ -256,7 +256,7 @@ if (isset($_GET['filter'])) {
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
-                            <input type="submit" name="filter" value="LỌC">
+                            <input type="submit" value="LỌC">
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
@@ -267,7 +267,6 @@ if (isset($_GET['filter'])) {
         <div class="teko-col teko-col-10 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
             <div class="teko-row teko-row-start teko-row-baseline css-17jbfbn">
                 <h1 class="css-7nrxrf">Tìm kiếm:
-                    <?php echo $_GET['search-input'] ?>
                     <?php echo $search ?>
                 </h1>
                 <div type="title" color="textSecondary" class="css-18xfrv"></div>
