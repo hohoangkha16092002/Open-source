@@ -1,9 +1,5 @@
 <?php
-unset($_SESSION['loggedin']);
-unset($_SESSION['HoTenKH']);
-unset($_SESSION['DiaChi']);
-unset($_SESSION['Email']);
-unset($_SESSION['NgaySinh']);
-unset($_SESSION['SDT']);
+unset($_SESSION['loggedin_customer']);
+unset($_SESSION['loggedin_employee']);
 header("Location: index.php");
 ?>

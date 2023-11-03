@@ -288,6 +288,7 @@ if (isset($_GET['filter'])) {
         <div class="teko-col teko-col-10 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
             <div class="teko-row teko-row-start teko-row-baseline css-17jbfbn">
                 <h1 class="css-7nrxrf">Tìm kiếm:
+                    <?php echo $search ?>
                     <?php echo "$searchvalue" ?>
                     <?php if ($namepd == 'AC') {
                         echo 'Acer';
