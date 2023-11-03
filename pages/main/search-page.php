@@ -15,10 +15,20 @@
     </style>
 </head>
 
+<?php
+include("config.php");
+$search = $_GET['search-input'];
+if (isset($_GET['filter'])) {
+    $search = $_GET['Asus'];
+    header("Location: ?page=search&search-input=$search");
+}
+?>
+
 <body>
     <div style="background-color: #ececec;">
         <div class="css-rf24tk">
-            <div class="css-tqzoy9"><a href="/" class="breadcrumb-item css-1s8chay">
+            <div class="css-tqzoy9">
+                <a href="/" class="breadcrumb-item css-1s8chay">
                     <div type="body" class="css-kwe6s1"><svg fill="none" viewBox="0 0 24 24" size="24"
                             class="css-26qhcs" color="placeholder" height="24" width="24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +46,7 @@
                 </a>
             </div>
         </div>
-        <form method="post">
+        <form method="get" action="?page=search">
             <div class="css-rf24tk">
                 <div class="teko-row css-ezmamy" style="margin-left: -8px; margin-right: -8px; row-gap: 16px;">
                     <div class="teko-col teko-col-2 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
@@ -70,132 +80,77 @@
                                 <div class="active css-1i3vt0z">
                                     <div direction="row" class="css-1skvw03">
                                         <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class=""><input type="checkbox" name="products[]" value="AC">
-                                                    <div class="checkbox-inner css-gfk8lf"><svg fill="none"
-                                                            viewBox="0 0 24 24" size="12" class="css-u5ggi9"
-                                                            color="transparent" height="12" width="12"
-                                                            xmlns="http://www.w3.org/2000/svg">
+                                                <div class="">
+                                                    <input type="checkbox" name="products[]" value="AC">
+                                                    <div class="checkbox-inner css-gfk8lf">
+                                                        <svg fill="none" viewBox="0 0 24 24" size="12"
+                                                            class="css-u5ggi9" color="transparent" height="12"
+                                                            width="12" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
                                                                 stroke-width="1.5" stroke-linecap="round"
                                                                 stroke-linejoin="round"></path>
-                                                        </svg></div>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                                 <div type="body" class="checkbox-label css-6r3s23"
                                                     style="flex: 1 1 0%;">
-                                                    <span><span style="display: flex;">
+                                                    <span>
+                                                        <span style="display: flex;">
                                                             <div>ACER</div>
-                                                        </span><span class="css-22xpbp"
-                                                            data-popper-reference-hidden="false"
+                                                        </span>
+                                                        <span class="css-22xpbp" data-popper-reference-hidden="false"
                                                             data-popper-escaped="true" data-popper-placement="right"
                                                             style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(106px, 150px, 0px);"><span
                                                                 class="arrow-left css-3mq3j4" data-placement="auto"
                                                                 style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
                                                             <div type="body" color="white" class="css-2h64mz">ACER</div>
-                                                        </span></span>
+                                                        </span>
+                                                    </span>
                                                 </div>
-                                            </label></div>
-                                        <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class=""><input type="checkbox" name="products[]" value="DE">
-                                                    <div class="checkbox-inner css-gfk8lf"><svg fill="none"
-                                                            viewBox="0 0 24 24" size="12" class="css-u5ggi9"
-                                                            color="transparent" height="12" width="12"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round"></path>
-                                                        </svg></div>
-                                                </div>
-                                                <div type="body" class="checkbox-label css-6r3s23"
-                                                    style="flex: 1 1 0%;">
-                                                    <span><span style="display: flex;">
-                                                            <div>DELL</div>
-                                                        </span><span class="css-22xpbp"
-                                                            data-popper-reference-hidden="false"
-                                                            data-popper-escaped="true" data-popper-placement="right"
-                                                            style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(93px, 172px, 0px);"><span
-                                                                class="arrow-left css-3mq3j4" data-placement="auto"
-                                                                style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
-                                                            <div type="body" color="white" class="css-2h64mz">DELL</div>
-                                                        </span></span>
-                                                </div>
-                                            </label></div>
-                                        <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class=""><input type="checkbox" name="products[]" value="AP">
-                                                    <div class="checkbox-inner css-gfk8lf"><svg fill="none"
-                                                            viewBox="0 0 24 24" size="12" class="css-u5ggi9"
-                                                            color="transparent" height="12" width="12"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round"></path>
-                                                        </svg></div>
-                                                </div>
-                                                <div type="body" class="checkbox-label css-6r3s23"
-                                                    style="flex: 1 1 0%;">
-                                                    <span><span style="display: flex;">
-                                                            <div>APPLE</div>
-                                                        </span><span class="css-22xpbp"
-                                                            data-popper-reference-hidden="false"
-                                                            data-popper-escaped="true" data-popper-placement="right"
-                                                            style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(90px, 195px, 0px);"><span
-                                                                class="arrow-left css-3mq3j4" data-placement="auto"
-                                                                style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
-                                                            <div type="body" color="white" class="css-2h64mz">APPLE
-                                                            </div>
-                                                        </span></span>
-                                                </div>
-                                            </label></div>
-                                        <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class=""><input type="checkbox" name="products[]" value="LE">
-                                                    <div class="checkbox-inner css-gfk8lf"><svg fill="none"
-                                                            viewBox="0 0 24 24" size="12" class="css-u5ggi9"
-                                                            color="transparent" height="12" width="12"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round"></path>
-                                                        </svg></div>
-                                                </div>
-                                                <div type="body" class="checkbox-label css-6r3s23"
-                                                    style="flex: 1 1 0%;">
-                                                    <span><span style="display: flex;">
-                                                            <div>Lenovo</div>
-                                                        </span><span class="css-22xpbp"
-                                                            data-popper-reference-hidden="false"
-                                                            data-popper-escaped="true" data-popper-placement="right"
-                                                            style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(90px, 195px, 0px);"><span
-                                                                class="arrow-left css-3mq3j4" data-placement="auto"
-                                                                style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
-                                                            <div type="body" color="white" class="css-2h64mz">Lenovo
-                                                            </div>
-                                                        </span></span>
-                                                </div>
-                                            </label></div>
-                                        <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class=""><input type="checkbox" name="products[]" value="HP">
-                                                    <div class="checkbox-inner css-gfk8lf"><svg fill="none"
-                                                            viewBox="0 0 24 24" size="12" class="css-u5ggi9"
-                                                            color="transparent" height="12" width="12"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round"></path>
-                                                        </svg></div>
-                                                </div>
-                                                <div type="body" class="checkbox-label css-6r3s23"
-                                                    style="flex: 1 1 0%;">
-                                                    <span><span style="display: flex;">
-                                                            <div>HP</div>
-                                                        </span><span class="css-22xpbp"
-                                                            data-popper-reference-hidden="false"
-                                                            data-popper-escaped="true" data-popper-placement="right"
-                                                            style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(66px, 218px, 0px);"><span
-                                                                class="arrow-left css-3mq3j4" data-placement="auto"
-                                                                style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
-                                                            <div type="body" color="white" class="css-2h64mz">HP</div>
-                                                        </span></span>
-                                                </div>
-                                            </label></div>
+                                            </label>
+                                        </div>
+
+                                        <!-- Begin Test -->
+                                        <?php
+                                        $sql_products_brands = "SELECT * FROM dmhangsanxuat";
+                                        $result_products_brands = mysqli_query($conn, $sql_products_brands);
+
+                                        while ($row_products_brands = mysqli_fetch_array($result_products_brands)) {
+                                            $MaHSX = $row_products_brands["MaHSX"];
+                                            $TenHSX = $row_products_brands["TenHSX"];
+                                            echo '<div style="min-width: 100%;"><label class="check-box css-1p9luqs">
+                                                    <div class="">
+                                                        <input type="checkbox" name="products[]" value="' . $MaHSX . '">
+                                                        <div class="checkbox-inner css-gfk8lf">
+                                                            <svg fill="none" viewBox="0 0 24 24" size="12"
+                                                                class="css-u5ggi9" color="transparent" height="12"
+                                                                width="12" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
+                                                                    stroke-width="1.5" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div type="body" class="checkbox-label css-6r3s23"
+                                                        style="flex: 1 1 0%;" name="' . $TenHSX . '">
+                                                        <span>
+                                                            <span style="display: flex;">
+                                                                <div>' . $TenHSX . '</div>
+                                                            </span>
+                                                            <span class="css-22xpbp" data-popper-reference-hidden="false"
+                                                                data-popper-escaped="true" data-popper-placement="right"
+                                                                style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(106px, 150px, 0px);"><span
+                                                                    class="arrow-left css-3mq3j4" data-placement="auto"
+                                                                    style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
+                                                                <div type="body" color="white" class="css-2h64mz">' . $TenHSX . '</div>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            </div>';
+                                        }
+                                        ?>
+                                        <!-- End Test -->
                                     </div>
 
                                 </div>
@@ -301,18 +256,20 @@
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
-                                        <input type="submit" value="LỌC">
-
+                            <input type="submit" name="filter" value="LỌC">
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
                         </div>
-                    
-                    </div>  
+
+                    </div>
         </form>
         <div class="teko-col teko-col-10 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
             <div class="teko-row teko-row-start teko-row-baseline css-17jbfbn">
-                <h1 class="css-7nrxrf"><?php echo $_GET['search-product']?></h1>
+                <h1 class="css-7nrxrf">Tìm kiếm:
+                    <?php echo $_GET['search-input'] ?>
+                    <?php echo $search ?>
+                </h1>
                 <div type="title" color="textSecondary" class="css-18xfrv"></div>
             </div>
             <div class="css-e7jx9s">
@@ -338,24 +295,18 @@
                 </div>
                 <div class="css-1y2krk0">
                     <?php
-                    include("config.php");
-                    $conn = mysqli_connect($servername, $username, $password, $dbname);
-                    if (mysqli_connect_errno()) {
-                        die("" . mysqli_connect_error());
-                    } else {
-                    }
 
                     // Sử dụng chuỗi đã chuyển đổi
                     
-                    if (isset($_GET['search-product'])) {
-                        $search = $_GET['search-product'];
-                        if (isset($_POST['products'])) {
-                            $selectedProducts = $_POST['products'];
+                    if (isset($_GET['search-input'])) {
+                        $search = $_GET['search-input'];
+                        if (isset($_GET['products'])) {
+                            $selectedProducts = $_GET['products'];
                         } else {
                             $selectedProducts = [];
                         }
-                        if (isset($_POST['MaLMH'])) {
-                            $selectedLMH = $_POST['MaLMH'];
+                        if (isset($_GET['MaLMH'])) {
+                            $selectedLMH = $_GET['MaLMH'];
                         } else {
                             $selectedLMH = []; // Gán một mảng rỗng nếu không tồn tại
                         }
@@ -366,7 +317,9 @@
                         if (empty($nameHSX) && empty($nameLMH)) {
                             $query = "SELECT * FROM `mathang` 
                                     join anhmh on mathang.MaMH = anhmh.MaMH
-                                    WHERE TenMH LIKE '%$search%'";
+                                    join dmhangsanxuat on mathang.MaHSX = dmhangsanxuat.MaHSX
+                                    join dmloaimathang on mathang.MaLMH = dmloaimathang.MaLMH
+                                    WHERE TenMH LIKE '%$search%' || TenLoai LIKE '%$search%' || TenHSX LIKE '%$search%'";
                         } elseif (!empty($nameHSX) && empty($nameLMH)) {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
@@ -478,11 +431,6 @@
     </div>
 </body>
 <script>
-    document.getElementById('search-link').addEventListener('click', function () {
-        var searchKeyword = document.getElementById('search-input').value;
-        // Thực hiện chuyển hướng đến trang kết quả tìm kiếm dựa trên searchKeyword
-        window.location.href = '?page=search&search-product=' + searchKeyword;
-    });
     $(function () {
         $(".slider-track").slider({
             range: true, // Cho phép chọn khoảng giá

@@ -1,3 +1,11 @@
+a {
+  text-decoration: none !important;
+}
+
+a:hover{
+  text-decoration: none !important;
+}
+
 .css-position-relative {
   position: relative;
 }
@@ -74,7 +82,7 @@
   border-radius: 0.5rem;
   background-color: #ffffff;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   width: 12.375rem;
   height: 28.5rem;
   z-index: 980;

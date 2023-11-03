@@ -21,18 +21,27 @@
       'cost' => 12,
     ];
 
-    if (preg_match("/^[a-zA-Z0-9.-_]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/", $email)) {
-      if (preg_match("/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/", $password)) {
+    //========= TẠO MÃ KHÁCH HÀNG TỰ ĐỘNG ==============
+    $sql_max_MaKH = "SELECT MAX(CAST(SUBSTRING(MaKH,  3) AS SIGNED)) AS max_MaKH FROM khachhang WHERE MaKH LIKE 'KH%';";
+    $result_max_MaKH = $conn->query($sql_max_MaKH);
+
+    $row = $result_max_MaKH->fetch_assoc();
+    $max_maKH = $row["max_MaKH"]; //Tìm mã khách hàng lớn nhất
+    $next_maKH = "KH" . str_pad($max_maKH + 1, 3, '0', STR_PAD_LEFT); //Tạo mã khách hàng tiếp theo dựa trên mã khách hàng lớn nhất đã tìm
+  
+    //========= TIẾN HÀNH THỰC HIỆN ĐĂNG KÝ ===========
+    if (preg_match("/^[a-zA-Z0-9.-_]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/", $email)) { //Kiểm tra email có hợp lệ không
+      if (preg_match("/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/", $password)) { //Kiểm tra password có hợp lệ không
         if ($password == $confirm_password) {
-          $emailAlready = "SELECT * FROM `khachhang` WHERE email = '$email'";
+          $emailAlready = "SELECT * FROM `khachhang` WHERE email = '$email'"; //Check email đã tồn tại chưa
           $result = mysqli_query($conn, $emailAlready);
 
           if (mysqli_num_rows($result) > 0) {
             $msg = "Email đã tồn tại";
           } else {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT, $options);
-            $sql = "INSERT INTO `khachhang`(`HoTenKH`,`Email`,  `MatKhau`) 
-                        VALUES ('$full_name','$email','$hashedPassword')";
+            $sql = "INSERT INTO `khachhang`(`MaKH`,`HoTenKH`,`Email`,  `MatKhau`) 
+                        VALUES ('$next_maKH','$full_name','$email','$hashedPassword')"; //Chèn thông tin khách hàng
             if (mysqli_query($conn, $sql)) {
               $msg = "Đăng ký thành công!";
             } else {

@@ -3,7 +3,7 @@
     <div class="css-1272naz"></div>
     <div class="teko-modal teko-modal-show css-t2ptn2" style="opacity: 1; transform: translateY(0px);">
         <div class="teko-modal-content">
-            <div class="teko-modal-close css-1qzn8fv"><i class="fa-solid fa-xmark"></i></div>
+            <div class="teko-modal-close css-1qzn8fv"><i onclick="window.history.back(-1);" class="fa-solid fa-xmark"></i></div>
             <div class="teko-modal-header">
                 <div type="title" class="teko-modal-title css-1cp1h79">Thông tin người nhận hàng</div>
             </div>
@@ -226,18 +226,21 @@
                         </div>
                     </form>
                     <div style="margin-top: 40px;"></div>
-                    <div class="teko-row teko-row-end css-1mfzix3"><button height="2.5rem" color="primary500"
+                    <div class="teko-row teko-row-end css-1mfzix3">
+                        <button onclick="window.history.back(-1);" height="2.5rem" color="primary500"
                             class="css-125hckg" type="button">
                             <div type="body" class="button-text css-uce8nc" color="primary500">Hủy bỏ</div><span
                                 style="margin-left: 0px;">
                                 <div class="css-157jl91"></div>
                             </span>
-                        </button><button height="2.5rem" color="white" class="css-oyymsr" type="button">
+                        </button>
+                        <button height="2.5rem" color="white" class="css-oyymsr" type="button">
                             <div type="body" class="button-text css-2h64mz" color="white">Lưu địa chỉ</div><span
                                 style="margin-left: 0px;">
                                 <div class="css-157jl91"></div>
                             </span>
-                        </button></div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
