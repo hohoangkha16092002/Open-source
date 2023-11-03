@@ -298,7 +298,6 @@ $product_type = "";
                                                 $product_image = $row_products['DLAnh'];
                                                 $product_id = $row_products['MaMH'];
                                                 $product_sale = $row_products['GiamGia'];
-
                                                 $price_sale = $product_price - $product_price * $product_sale; //Số tiền còn lại
                                                 $sale_rate = $product_sale * 100; //% khuyến mãi
                                                 $save_price = $product_price - $price_sale; //Số tiền tiết kiệm
@@ -742,7 +741,7 @@ $product_type = "";
                                         <div class='product-card css-1msrncq' data-content-region-name='forYouListProduct'
                                             data-track-content='true' data-content-name='220303205' data-content-index='0'
                                             data-content-target='productDetail'><a target='_self' class='css-pxdb0j'
-                                                href='pages/main/detail.php?maMH=$product_id'>
+                                                href='?page=detail&maMH=$product_id'>
                                                 <div class='css-4rhdrh'>
                                                     <div class='css-1v97aik'>
                                                         <div class='css-798fc'>

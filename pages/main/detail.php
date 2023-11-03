@@ -282,7 +282,7 @@ if (isset($_GET['maMH'])) {
                     $sql_products = "SELECT * FROM `mathang` 
                                         join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
                                         join anhmh on mathang.MaMH = anhmh.MaMH
-                                        join khuyenmai on mathang.MaMH = khuyenmai.MaMH";
+                                        join khuyenmai on mathang.MaKM = khuyenmai.MaKM";
                     $result_products = mysqli_query($conn, $sql_products);
                     if (mysqli_num_rows($result_products) <> 0) {
                       while ($row_products = mysqli_fetch_assoc($result_products)) {
@@ -291,7 +291,7 @@ if (isset($_GET['maMH'])) {
                         $product_brand = $row_products["TenHSX"];
                         $product_image = $row_products['DLAnh'];
                         $product_id = $row_products['MaMH'];
-                        $product_sale = isset($row_products['MoTaKM']) ? $row_products['MoTaKM'] : 0;
+                        $product_sale = isset($row_products['GiamGia']) ? $row_products['GiamGia'] : 0;
                         $price_sale = $product_price - $product_price * $product_sale - 500000;
                         $sale_rate = $product_sale * 100;
                         $save_price = $product_price - $price_sale + 500000;
