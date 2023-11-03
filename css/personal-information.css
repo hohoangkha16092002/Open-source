@@ -135,7 +135,7 @@
     height: 2.5rem;
     padding: 0rem 1.25rem;
     border-radius: 0.25rem;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(20, 53, 195);
     position: relative;
     display: flex;
     -webkit-box-align: center;
@@ -148,6 +148,10 @@
     cursor: not-allowed;
     transition-duration: 80ms;
     transition-property: background-color;
+}
+
+.css-qpwo5p:hover {
+    background-color: rgb(18, 48, 176);
 }
 
 .css-1ago99h {
@@ -292,9 +296,18 @@
     list-style: none;
 }
 
+.css-zzskb3 a{
+    color: black;
+}
+
 .css-11g9kr1 {
     text-decoration: none;
 }
+
+.css-11g9kr1:hover {
+    text-decoration: none;
+}
+
 
 .css-1jfhcvk {
     background-color: rgb(224, 224, 224);

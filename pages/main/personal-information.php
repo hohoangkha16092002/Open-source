@@ -12,20 +12,28 @@ if (isset($_POST['update'])) {
     $email = $_POST['email'];
     $sdt = $_POST['sdt'];
     $ngay_sinh = $_POST['ngay_sinh'];
+    $sex = $_POST['sex'];
 
-    $sql = "UPDATE khachhang SET HoTenKH='$ho_ten_KH', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' WHERE  MaKH = '" . $_SESSION['MaKH'] . "'";
+    // Chuyển đổi giới tính thành kiểu bit
+    $sexBit = ($sex === "1") ? 1 : 0;
 
+    $sql = "UPDATE khachhang SET HoTenKH='$ho_ten_KH', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' , Gioi_Tinh='$sexBit' WHERE  MaKH = '" . $_SESSION['MaKH'] . "'";
     if ($conn->query($sql) === TRUE) {
         $msg = '<div class="css-1tj8dpi">
                     <div class="css-rac23i" style="text-align: center;">Cập nhật thành công</div>
                 </div>';
+        $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $info = mysqli_fetch_assoc($result);
+        }
     } else {
         echo "Lỗi: " . $conn->error;
     }
 }
 ?>
 
-<div style="    background-color: #ececec;">
+<div style="background-color: #f8f8fc;">
     <div class="css-gjf6g1">
         <div class="css-z54kij">
             <div class="css-66d1qu">
@@ -38,19 +46,20 @@ if (isset($_POST['update'])) {
                                     <source srcset="./img/icon-login.jpg" type="image/png"><img
                                         class="lazyload css-hv3z8f" alt="" src="./img/icon-login.jpg" loading="lazy"
                                         decoding="async">
-
                                 </picture>
-
                             </div>
                         </div>
                         <div class="css-tubh1u">
                             <h6 class="css-9x44fd">Tài khoản của</h6>
                             <h5 class="css-11aljab">
-                                <?php echo $info['HoTenKH'] ?>
+                                <b>
+                                    <?php echo $info['HoTenKH'] ?>
+                                </b>
                             </h5>
                         </div>
                     </div>
-                    <ul class="css-zzskb3"><a class="css-11g9kr1" href="?page=personal-information">
+                    <ul class="css-zzskb3">
+                        <a class="css-11g9kr1" href="?page=personal-information">
                             <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -59,7 +68,8 @@ if (isset($_POST['update'])) {
                                 </svg>
                                 <div class="css-rac23i">Thông tin tài khoản</div>
                             </div>
-                        </a><a class="css-11g9kr1">
+                        </a>
+                        <a class="css-11g9kr1">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -68,7 +78,8 @@ if (isset($_POST['update'])) {
                                 </svg>
                                 <div class="css-rac23i">Quản lý đơn hàng</div>
                             </div>
-                        </a><a class="css-11g9kr1" href="?page=address">
+                        </a>
+                        <a class="css-11g9kr1" href="?page=address">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -124,12 +135,21 @@ if (isset($_POST['update'])) {
                                             value="<?php echo $info['NgaySinh'] ?>">
                                     </div>
                                     <div name="sex" value="" class="css-1umbfo7">
-                                        <div class="form-input__label css-1270aei">Giới tính</div><label
-                                            class="css-ekrzeo"><input name="sex" type="radio"
-                                                value="M">Nam</label><label class="css-ekrzeo"><input name="sex"
-                                                type="radio" value="F">Nữ</label><label class="css-ekrzeo"><input
-                                                name="sex" type="radio" value="O">Khác</label>
+                                        <div class="form-input__label css-1270aei">Giới tính</div>
+                                        <label class="css-ekrzeo">
+                                            <input name="sex" type="radio" value="1" <?php if ($info['Gioi_Tinh'] === "1")
+                                                echo "checked"; ?>>Nam
+                                        </label>
+                                        <label class="css-ekrzeo">
+                                            <input name="sex" type="radio" value="0" <?php if ($info['Gioi_Tinh'] === "0")
+                                                echo "checked"; ?>>Nữ
+                                        </label>
+                                        <label class="css-ekrzeo">
+                                            <input name="sex" type="radio" value="O" <?php if ($info['Gioi_Tinh'] === "O")
+                                                echo "checked"; ?>>Khác
+                                        </label>
                                     </div>
+
                                     <div class="css-1ago99h">
                                         <button height="2.5rem" name="update" color="border" class="css-qpwo5p"
                                             type="submit" width="">
@@ -143,8 +163,9 @@ if (isset($_POST['update'])) {
                                     </div>
                                     <div>
                                         <?php
-                                        if(isset($msg)) echo $msg;
-                                         ?>
+                                        if (isset($msg))
+                                            echo $msg;
+                                        ?>
                                     </div>
                                 </form>
                                 <div class="css-1x6y1s9"></div>
@@ -163,8 +184,7 @@ if (isset($_POST['update'])) {
                                     <div width="100%" color="divider" class="css-yae08c"></div>
                                 </div>
                                 <a class="css-15wdjv3" color="link500" href="?page=consignee-information">
-                                    <svg
-                                        fill="none" viewBox="0 0 24 24" class="css-zzrru3" color="link500" height="1em"
+                                    <svg fill="none" viewBox="0 0 24 24" class="css-zzrru3" color="link500" height="1em"
                                         width="1em" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M12.75 4C12.75 3.58579 12.4142 3.25 12 3.25C11.5858 3.25 11.25 3.58579 11.25 4V11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H11.25V20C11.25 20.4142 11.5858 20.75 12 20.75C12.4142 20.75 12.75 20.4142 12.75 20V12.75H20C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25H12.75V4Z"
@@ -177,4 +197,4 @@ if (isset($_POST['update'])) {
                 </div>
             </div>
         </div>
-    </div>F
+    </div>

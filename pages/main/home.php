@@ -1,198 +1,78 @@
 <?php
 include("config.php");
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (mysqli_connect_errno()) {
-    die("" . mysqli_connect_error());
-} else {
-}
+$product_type = "";
 ?>
-
-<div style="  background-color: #ececec;">
+<div style="  background-color: #f8f8fc;">
     <div class="home-page--container">
         <div class="home-page--main">
             <div class="teko-row teko-row-space-around home-page--main-child" style="height: 566px;">
                 <div class="teko-col teko-col-2 home-page--main-child-left">
                     <div class="css-position-relative">
                         <div class="home-page--main-child-left-main" width="12.375rem" height="28.5rem">
-                            <a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/laptop">
+                            <a class="home-page--main-child-left-main-child"
+                                href="?page=search&search-input=<?php echo urlencode($product_type); ?>">
                                 <div class="home-page--category-child">
                                     <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
+                                        <div height="100%" width="100%" class="home-page--category-child-icon">
+                                            <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
                                                 loading="lazy" decoding="async" style="width: 100%; height: 100%;">
                                         </div>
                                     </div>
                                     <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
                                         Laptop</div>
                                 </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/san-pham-apple">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/E7coVNI7mvCGp5GASzte71-stIZAYet_sozvQ0A1D_GJfvW1IFJGzymplqvm4A5upZV6ONPQtjgloVYzpHSG09lmQBrEDLU=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Sản phẩm Apple</div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/p/dien-gia-dung">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/gmlJNF13XO4tDpnup-D5e7oaomGDsPy5k0rKAzRf-RqIcCAnu2Yq3pnmkMoypBRB8SKtC697eKy2kgaJqQahPA3bkzV7TVCvXA=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Điện máy - Điện gia
-                                        dụng</div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/may-tinh-de-ban">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/Y7KEp2iUC1syVaF1SQuQ8ZPCLu8PVhCKqadoVKlI8ON-vKqxyvi0EbgM00Ky8Zb_wIcl9Q8HTLZkQj_MuTzqyJhGuLJz8mFTqw=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">PC
-                                        - Máy tính bộ</div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/man-hinh-may-tinh">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/1rbqboPNTH2Gyx3dS28kewywgX0ovZAZHBcstS4KjeJO8j6Qc6Kn19xJH0XpaiqCAj4a-xf_EeAZjlARKaI9mQNBhlHDp6o=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">PC
-                                        - Màn hình máy tính
-                                    </div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/linh-kien-may-tinh">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/0V32ezrE3Bn6r_lmv4YIyS7Y4QnfVAcjTQ8XjR-86cP_mAtiIzOPsWeEni-MpEklbR5jIfJvtXgD6K-eWhlO7sLsgbxBwsHduQ=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">PC
-                                        - Linh kiện máy
-                                        tính</div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/phu-kien-pc">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/JuVFuLJ2OmqyEO2mtZ0kJTWvACpFkXE_765ihiBIu8WQoHlS-jYXY8zsXDpZUBk26NqRulJ9U_u3DxLcBTxpPGY7n1uzGdKAuA=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">PC
-                                        - Phụ kiện máy tính
-                                    </div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/hi-end-gaming">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/qtC62XnXkTsyJbMok7Z7Uu5GOPvhqslzU5YscZZ0HvorTWRs0Qg5s8gWU6l6CTcmc-pQA2y1myJCZ92t9VDq=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Game &amp; Stream
-                                    </div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/dien-thoai-may-tinh-bang-phu-kien">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/dkzFFaKYmPLLkPnC-cyefC1u1Qh0Iy_6Loz7adsbIMs-KAK8FA_PwUOklM3gEppESc1uSeaTa63U4Vejifo=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Điện thoại &amp; Phụ
-                                        kiện</div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/phu-kien-chung">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/slg-pspnUXN25zVZdp_qRMwaTIj008i3gckyGvSYLepffuJZIHNvVo7unNfzkCJZdJw0Om4vMTDttW9z1LZ8ojgVerpfxxM=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Phụ kiện chung</div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/thiet-bi-am-thanh">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/5H5fwM3O8jhVpnNCQziLVok28E6e1c8hT3579MXy3UD4YxKBv7ybyGeRzYrFrPoqvXe20fGGD2wndnDx9EwO_B6yy4kErU8KUw=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Thiết bị âm thanh
-                                    </div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/thiet-bi-thong-minh">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/xFbV1RjiYbdvbqqqRNYPSvZtCa_BnS2eELCT84IKhC2-L2p1w6U58xAP7gBYJZUtPj7v12oZZUBBMUt10pq1rsG41cehjlMn=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Thiết bị thông minh
-                                    </div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/epson-ecotank">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/ZLE04QOE4IZuc-3xNfTvx5ekBXb8CGdTCWjoFy1fv4O35fthpkMQzE1aSFWt2gqRomuugbUO4VLFecQikR9f21kBMsvDHAgC=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Thiết bị văn phòng
-                                    </div>
-                                </div>
-                            </a><a data-testid="TekoLink" target="_self" class="home-page--main-child-left-main-child"
-                                href="/c/giai-phap-doanh-nghiep">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon"><img
-                                                src="https://lh3.googleusercontent.com/xQNTUsKuQP8S_IoRbjRIN28exoDh8lx7reM4I4XpGP7ZPqSDKN8gxhKemblPrKX_-INp9Wu1Q6MnWe3-hjgW=rw"
-                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
-                                        </div>
-                                    </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Giải pháp doanh nghiệp
-                                    </div>
-                                </div>
                             </a>
+                            <!-- Begin Test -->
+                            <?php
+
+                            // ======== Begin In danh sách loại mặt hàng =========
+                            $sql_products_type = "SELECT * FROM dmloaimathang";
+                            $result_products_type = mysqli_query($conn, $sql_products_type);
+
+                            while ($row_products_type = mysqli_fetch_array($result_products_type)) {
+                                $MaLMH = $row_products_type["MaLMH"];
+                                $TenLoai = $row_products_type["TenLoai"];
+                                echo '<a class="home-page--main-child-left-main-child"
+                                href="?page=search&search-input=' . $TenLoai . '">
+                                <div class="home-page--category-child">
+                                    <div class="css-w22-h22">
+                                        <div height="100%" width="100%" class="home-page--category-child-icon">
+                                            <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
+                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                        </div>
+                                    </div>
+                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
+                                        ' . $TenLoai . '</div>
+                                </div>
+                            </a>';
+                            }
+                            // ======== End In danh sách loại mặt hàng =========
+                            // ======== Begin In danh sách hãng sản xuất =========
+                            $sql_products_brands = "SELECT * FROM dmhangsanxuat";
+                            $result_products_brands = mysqli_query($conn, $sql_products_brands);
+
+                            while ($row_products_brands = mysqli_fetch_array($result_products_brands)) {
+                                $MaHSX = $row_products_brands["MaHSX"];
+                                $TenHSX = $row_products_brands["TenHSX"];
+                                echo '<a class="home-page--main-child-left-main-child"
+                                href="?page=search&search-input=' . $TenHSX . '">
+                                <div class="home-page--category-child">
+                                    <div class="css-w22-h22">
+                                        <div height="100%" width="100%" class="home-page--category-child-icon">
+                                            <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
+                                                loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                        </div>
+                                    </div>
+                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
+                                        ' . $TenHSX . '</div>
+                                </div>
+                            </a>';
+                            }
+                            // ======== End In danh sách hãng sản xuất =========
+                            
+                            ?>
+
+                            <!-- End Test -->
                         </div>
                     </div><img
                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC4zIiBkPSJNMCAwSDI0QzM3LjI1NDggMCA0OCAxMC43NDUyIDQ4IDI0QzQ4IDM3LjI1NDggMzcuMjU0OCA0OCAyNCA0OEgwVjBaIiBmaWxsPSIjMUIxRDI5Ii8+CjxwYXRoIGQ9Ik0yNi41IDE4TDIwLjUgMjRMMjYuNSAzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K"
@@ -408,7 +288,7 @@ if (mysqli_connect_errno()) {
                                         $sql_products = "SELECT * FROM `mathang` 
                                         join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
                                         join anhmh on mathang.MaMH = anhmh.MaMH
-                                        join khuyenmai on mathang.MaMH = khuyenmai.MaMH";
+                                        join khuyenmai on mathang.MaKM = khuyenmai.MaKM";
                                         $result_products = mysqli_query($conn, $sql_products);
                                         if (mysqli_num_rows($result_products) <> 0) {
                                             while ($row_products = mysqli_fetch_assoc($result_products)) {
@@ -417,14 +297,16 @@ if (mysqli_connect_errno()) {
                                                 $product_brand = $row_products["TenHSX"];
                                                 $product_image = $row_products['DLAnh'];
                                                 $product_id = $row_products['MaMH'];
-                                                $product_sale = $row_products['MoTaKM'];
-                                                $price_sale = $product_price - $product_price*$product_sale;
-                                                $sale_rate = $product_sale*100;
-                                                $save_price = $product_price - $price_sale;
+                                                $product_sale = $row_products['GiamGia'];
+
+                                                $price_sale = $product_price - $product_price * $product_sale; //Số tiền còn lại
+                                                $sale_rate = $product_sale * 100; //% khuyến mãi
+                                                $save_price = $product_price - $price_sale; //Số tiền tiết kiệm
                                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                 $product_price_format = number_format($product_price, 0, '.', '.');
                                                 $save_price_format = number_format($save_price, 0, '.', '.');
-                                                if( $product_sale >= 0.3) {
+
+                                                if ($product_sale >= 0.25) {
                                                     echo "<div class='home-page--glide__slide glide__slide--active'
                                                         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
                                                         <div class='css-1ei4kcr'>
@@ -555,14 +437,14 @@ if (mysqli_connect_errno()) {
                                                 $product_brand = $row_products["TenHSX"];
                                                 $product_image = $row_products['DLAnh'];
                                                 $product_id = $row_products['MaMH'];
-                                                $price_sale = $product_price - $product_price*$product_sale - 500000;
-                                                $sale_rate = $product_sale*100;
+                                                $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                                $sale_rate = $product_sale * 100;
                                                 $save_price = $product_price - $price_sale + 500000;
                                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                 $product_price_format = number_format($product_price, 0, '.', '.');
                                                 $save_price_format = number_format($save_price, 0, '.', '.');
 
-                                                if($row_products["MaHSX"] == "AC"){
+                                                if ($row_products["MaHSX"] == "AC") {
                                                     echo "<div class='home-page--glide__slide glide__slide--active'
                                                         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
                                                         <div class='css-1ei4kcr'>
@@ -570,7 +452,7 @@ if (mysqli_connect_errno()) {
                                                                 data-track-content='true' data-content-name='230803500'
                                                                 data-content-target='productDetail'><a target='_self'
                                                                     class='css-pxdb0j'
-                                                                    href='pages/main/detail.php?maMH=$product_id'>
+                                                                    href='?page=detail&maMH=$product_id'>
                                                                     <div class='css-4rhdrh'>
                                                                         <div class='css-1v97aik'>
                                                                             <div class='css-798fc'>
@@ -622,7 +504,7 @@ if (mysqli_connect_errno()) {
                                                         </div>
                                                     </div>";
                                                 }
-                                                
+
                                             }
                                         }
                                         ?>
@@ -725,24 +607,24 @@ if (mysqli_connect_errno()) {
                             if (mysqli_num_rows($result_products) <> 0) {
                                 while ($row_products = mysqli_fetch_assoc($result_products)) {
                                     $product_name = $row_products["TenMH"];
-                                        $product_price = $row_products["DonGia"];
-                                        $product_brand = $row_products["TenHSX"];
-                                        $product_image = $row_products['DLAnh'];
-                                        $product_id = $row_products['MaMH'];
-                                        $price_sale = $product_price - $product_price*$product_sale - 500000;
-                                        $sale_rate = $product_sale*100;
-                                        $save_price = $product_price - $price_sale;
-                                        $price_sale_format = number_format($price_sale, 0, '.', '.');
-                                        $product_price_format = number_format($product_price, 0, '.', '.');
-                                        $save_price_format = number_format($save_price, 0, '.', '.');
+                                    $product_price = $row_products["DonGia"];
+                                    $product_brand = $row_products["TenHSX"];
+                                    $product_image = $row_products['DLAnh'];
+                                    $product_id = $row_products['MaMH'];
+                                    $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                    $sale_rate = $product_sale * 100;
+                                    $save_price = $product_price - $price_sale;
+                                    $price_sale_format = number_format($price_sale, 0, '.', '.');
+                                    $product_price_format = number_format($product_price, 0, '.', '.');
+                                    $save_price_format = number_format($save_price, 0, '.', '.');
 
-                                    if($price_sale > 13990000) {
+                                    if ($price_sale > 13990000) {
                                         echo "<div class='glide__slide glide__slide--active'
                                             style='height: unset; width: 227.2px; margin-right: 5px; margin-left: 5px;'>
                                             <div class='css-1ei4kcr'>
                                                 <div class='product-card css-1msrncq' data-track-content='true'
                                                     data-content-name='221101761' data-content-target='productDetail'><a
-                                                        target='_self' class='css-pxdb0j' href='pages/main/detail.php?maMH=$product_id'>
+                                                        target='_self' class='css-pxdb0j' href='?page=detail&maMH=$product_id'>
                                                         <div class='css-4rhdrh'>
                                                             <div class='css-1v97aik'>
                                                                 <div class='css-798fc'>
@@ -792,7 +674,7 @@ if (mysqli_connect_errno()) {
                                             </div>
                                         </div>";
                                     }
-                                    
+
                                 }
                             }
                             ?>
@@ -850,8 +732,8 @@ if (mysqli_connect_errno()) {
                                 $product_brand = $row_products["TenHSX"];
                                 $product_image = $row_products['DLAnh'];
                                 $product_id = $row_products['MaMH'];
-                                $price_sale = $product_price - $product_price*$product_sale - 500000;
-                                $sale_rate = $product_sale*100;
+                                $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                $sale_rate = $product_sale * 100;
                                 $save_price = $product_price - $price_sale;
                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                 $product_price_format = number_format($product_price, 0, '.', '.');
@@ -861,7 +743,7 @@ if (mysqli_connect_errno()) {
                                         <div class='product-card css-1msrncq' data-content-region-name='forYouListProduct'
                                             data-track-content='true' data-content-name='220303205' data-content-index='0'
                                             data-content-target='productDetail'><a target='_self' class='css-pxdb0j'
-                                                href='pages/main/detail.php?maMH=$product_id'>
+                                            href='?page=detail&maMH=$product_id'>
                                                 <div class='css-4rhdrh'>
                                                     <div class='css-1v97aik'>
                                                         <div class='css-798fc'>

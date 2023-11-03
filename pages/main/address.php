@@ -1,3 +1,14 @@
+<?php
+if (isset($_SESSION['loggedin'])) {
+    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+    }
+}
+
+?>
+
 <div>
     <div class="css-gjf6g1">
         <div class="css-z54kij">
@@ -7,23 +18,21 @@
                         <div>
                             <div height="44" width="44" class="css-9bi3ip">
                                 <picture>
-                                    <source
-                                        srcset="https://lh3.googleusercontent.com/a/ACg8ocLIDhqUZEbJcK1T1iqH2ad3pQWZsu60lia15ull7Gh0SKs=s96-c-rw"
-                                        type="image/webp">
-                                    <source
-                                        srcset="https://lh3.googleusercontent.com/a/ACg8ocLIDhqUZEbJcK1T1iqH2ad3pQWZsu60lia15ull7Gh0SKs=s96-c"
-                                        type="image/png"><img class="lazyload css-hv3z8f" alt=""
-                                        src="https://lh3.googleusercontent.com/a/ACg8ocLIDhqUZEbJcK1T1iqH2ad3pQWZsu60lia15ull7Gh0SKs=s96-c-rw"
-                                        loading="lazy" decoding="async">
+                                    <source srcset="./img/icon-login.jpg" type="image/webp">
+                                    <source srcset="./img/icon-login.jpg" type="image/png"><img
+                                        class="lazyload css-hv3z8f" alt="" src="./img/icon-login.jpg" loading="lazy"
+                                        decoding="async">
                                 </picture>
                             </div>
                         </div>
                         <div class="css-tubh1u">
                             <h6 class="css-9x44fd">Tài khoản của</h6>
-                            <h5 class="css-11aljab">Kiều Nguyễn Thị Diễm</h5>
+                            <h5 class="css-11aljab">
+                                <b><?php echo $info['HoTenKH'] ?></b>
+                            </h5>
                         </div>
                     </div>
-                    <ul class="css-zzskb3"><a class="css-11g9kr1" href= "?page=personal-information">
+                    <ul class="css-zzskb3"><a class="css-11g9kr1" href="?page=personal-information">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -50,7 +59,7 @@
                                 </svg>
                                 <div class="css-rac23i">Sổ địa chỉ</div>
                             </div>
-                        
+
                         </a><a class="css-11g9kr1">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18"
                                     class="noti css-9w5ue6" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -70,10 +79,10 @@
             </div>
             <div class="css-hveu7a">
                 <h5>Sổ địa chỉ</h5><button class="css-vj7q1h"><span size="26" class="css-1fmhjdx"></span>
-                </a><a target="_self" class="nav-ip-popup-child" href="?page=consignee-information">
-                                <div data-content-region-name="headerBar" data-track-content="true"
-                                    data-content-name="viewNotification" class="nav-ip-popup-child-main">
-                    <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
+                    </a><a target="_self" class="nav-ip-popup-child" href="?page=consignee-information">
+                        <div data-content-region-name="headerBar" data-track-content="true"
+                            data-content-name="viewNotification" class="nav-ip-popup-child-main">
+                            <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
                 </button>
             </div>
         </div>
