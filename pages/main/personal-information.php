@@ -1,36 +1,72 @@
 <?php
-if (isset($_SESSION['loggedin'])) {
+if (isset($_SESSION['loggedin_customer'])) {
     $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
         $info = mysqli_fetch_assoc($result);
     }
-}
 
-if (isset($_POST['update'])) {
-    $ho_ten_KH = $_POST['ho_ten_KH'];
-    $email = $_POST['email'];
-    $sdt = $_POST['sdt'];
-    $ngay_sinh = $_POST['ngay_sinh'];
-    $sex = $_POST['sex'];
 
-    // Chuyển đổi giới tính thành kiểu bit
-    $sexBit = ($sex === "1") ? 1 : 0;
+    if (isset($_POST['update'])) {
+        $ho_ten = $_POST['ho_ten'];
+        $email = $_POST['email'];
+        $sdt = $_POST['sdt'];
+        $ngay_sinh = $_POST['ngay_sinh'];
+        $sex = $_POST['sex'];
 
-    $sql = "UPDATE khachhang SET HoTenKH='$ho_ten_KH', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' , Gioi_Tinh='$sexBit' WHERE  MaKH = '" . $_SESSION['MaKH'] . "'";
-    if ($conn->query($sql) === TRUE) {
-        $msg = '<div class="css-1tj8dpi">
+        // Chuyển đổi giới tính thành kiểu bit
+        //$sexBit = ($sex === "1") ? 1 : 0;
+
+        $sql = "UPDATE khachhang SET HoTenKH='$ho_ten', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' , GioiTinh='$sex' WHERE  MaKH = '" . $_SESSION['MaKH'] . "'";
+        if ($conn->query($sql) === TRUE) {
+            $msg = '<div class="css-1tj8dpi">
                     <div class="css-rac23i" style="text-align: center;">Cập nhật thành công</div>
                 </div>';
-        $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
-        $result = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            $info = mysqli_fetch_assoc($result);
+            $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                $info = mysqli_fetch_assoc($result);
+            }
+        } else {
+            echo "Lỗi: " . $conn->error;
         }
-    } else {
-        echo "Lỗi: " . $conn->error;
     }
 }
+
+if (isset($_SESSION['loggedin_employee'])) {
+    $sql = "SELECT * FROM nhanvien WHERE MaNV = '" . $_SESSION['MaNV'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+    }
+
+
+    if (isset($_POST['update'])) {
+        $ho_ten = $_POST['ho_ten'];
+        $email = $_POST['email'];
+        $sdt = $_POST['sdt'];
+        $ngay_sinh = $_POST['ngay_sinh'];
+        $sex = $_POST['sex'];
+
+        // Chuyển đổi giới tính thành kiểu bit
+        //$sexBit = ($sex === "1") ? 1 : 0;
+
+        $sql = "UPDATE nhanvien SET HotenNV='$ho_ten', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' , GioiTinh='$sex' WHERE  MaNV = '" . $_SESSION['MaNV'] . "'";
+        if ($conn->query($sql) === TRUE) {
+            $msg = '<div class="css-1tj8dpi">
+                    <div class="css-rac23i" style="text-align: center;">Cập nhật thành công</div>
+                </div>';
+            $sql = "SELECT * FROM nhanvien WHERE MaNV = '" . $_SESSION['MaNV'] . "'";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                $info = mysqli_fetch_assoc($result);
+            }
+        } else {
+            echo "Lỗi: " . $conn->error;
+        }
+    }
+}
+
 ?>
 
 <div style="background-color: #f8f8fc;">
@@ -53,7 +89,12 @@ if (isset($_POST['update'])) {
                             <h6 class="css-9x44fd">Tài khoản của</h6>
                             <h5 class="css-11aljab">
                                 <b>
-                                    <?php echo $info['HoTenKH'] ?>
+                                    <?php
+                                    if (isset($_SESSION['loggedin_customer']))
+                                        echo $info['HoTenKH'];
+                                    elseif (isset($_SESSION['loggedin_employee']))
+                                        echo $info['HoTenNV'];
+                                    ?>
                                 </b>
                             </h5>
                         </div>
@@ -76,7 +117,7 @@ if (isset($_POST['update'])) {
                                         d="M7.5328 3.5625C7.5328 3.14829 7.86859 2.8125 8.2828 2.8125H15.2308C15.645 2.8125 15.9808 3.14829 15.9808 3.5625V3.80501H19.201C19.6152 3.80501 19.951 4.14079 19.951 4.55501V20.4361C19.951 20.8503 19.6152 21.1861 19.201 21.1861H4.3125C3.89829 21.1861 3.5625 20.8503 3.5625 20.4361V4.55501C3.5625 4.14079 3.89829 3.80501 4.3125 3.80501H7.5328V3.5625ZM15.9808 7.53276V5.30501H18.451V19.6861H5.0625V5.30501H7.5328V7.53276C7.5328 7.94698 7.86859 8.28276 8.2828 8.28276H10.0198C10.434 8.28276 10.7698 7.94698 10.7698 7.53276C10.7698 7.30843 11.0628 6.87111 11.7568 6.87111C12.4508 6.87111 12.7438 7.30843 12.7438 7.53276C12.7438 7.94698 13.0796 8.28276 13.4938 8.28276H15.2308C15.645 8.28276 15.9808 7.94698 15.9808 7.53276ZM9.0328 4.3125V6.78276H9.41784C9.7871 5.89836 10.7889 5.37111 11.7568 5.37111C12.7247 5.37111 13.7265 5.89836 14.0957 6.78276H14.4808V4.3125H9.0328ZM15.4476 12.0333C15.7405 11.7404 15.7405 11.2655 15.4476 10.9726C15.1547 10.6797 14.6798 10.6797 14.3869 10.9726L11.0384 14.3211L9.80564 13.0883C9.51275 12.7954 9.03787 12.7954 8.74498 13.0883C8.45209 13.3812 8.45209 13.8561 8.74498 14.149L10.5081 15.9121C10.6487 16.0527 10.8395 16.1318 11.0384 16.1318C11.2373 16.1318 11.4281 16.0527 11.5688 15.9121L15.4476 12.0333Z"
                                         fill="#82869E"></path>
                                 </svg>
-                                <div class="css-rac23i">Quản lý đơn hàng</div>
+                                <div class="css-rac23i">Quản lý sản phẩm</div>
                             </div>
                         </a>
                         <a class="css-11g9kr1" href="?page=address">
@@ -116,13 +157,21 @@ if (isset($_POST['update'])) {
                                 <form action="#" method="post">
                                     <div name="name" value="Kiều Nguyễn Thị Diễm" class="css-1umbfo7">
                                         <div class="form-input__label css-1270aei">Họ tên</div>
-                                        <input name="ho_ten_KH" class="form-input__input css-90j4a3"
-                                            value="<?php echo $info['HoTenKH'] ?>">
+                                        <input name="ho_ten" class="form-input__input css-90j4a3" value="<?php
+                                        if (isset($_SESSION['loggedin_customer']))
+                                            echo $info['HoTenKH'];
+                                        elseif (isset($_SESSION['loggedin_employee']))
+                                            echo $info['HoTenNV'];
+                                        ?>">
                                     </div>
                                     <div name="email" value="ntdkieu2207@gmail.com" class="css-1umbfo7">
                                         <div class="form-input__label css-1270aei">Email</div>
-                                        <input name="email" class="form-input__input css-90j4a3"
-                                            value="<?php echo $info['Email'] ?>">
+                                        <input name="email" class="form-input__input css-90j4a3" value="<?php
+                                        if (isset($_SESSION['loggedin_customer']))
+                                            echo $info['Email'];
+                                        elseif (isset($_SESSION['loggedin_employee']))
+                                            echo $info['Email'];
+                                        ?>">
                                     </div>
                                     <div name="telephone" value="" class="css-1umbfo7">
                                         <div class="form-input__label css-1270aei">Số điện thoại</div>
@@ -131,21 +180,25 @@ if (isset($_POST['update'])) {
                                     </div>
                                     <div name="dob" value="" type="date" class="css-1umbfo7">
                                         <div class="form-input__label css-1270aei">Ngày sinh</div>
-                                        <input name="ngay_sinh" type="date" class="form-input__input css-90j4a3"
-                                            value="<?php echo $info['NgaySinh'] ?>">
+                                        <input name="ngay_sinh" type="date" class="form-input__input css-90j4a3" value="<?php
+                                        if (isset($_SESSION['loggedin_customer']))
+                                            echo $info['NgaySinh'];
+                                        elseif (isset($_SESSION['loggedin_employee']))
+                                            echo $info['NgaySinh'];
+                                        ?>">
                                     </div>
                                     <div name="sex" value="" class="css-1umbfo7">
                                         <div class="form-input__label css-1270aei">Giới tính</div>
                                         <label class="css-ekrzeo">
-                                            <input name="sex" type="radio" value="1" <?php if ($info['Gioi_Tinh'] === "1")
+                                            <input name="sex" type="radio" value="1" <?php if ($info['GioiTinh'] === "1")
                                                 echo "checked"; ?>>Nam
                                         </label>
                                         <label class="css-ekrzeo">
-                                            <input name="sex" type="radio" value="0" <?php if ($info['Gioi_Tinh'] === "0")
+                                            <input name="sex" type="radio" value="0" <?php if ($info['GioiTinh'] === "0")
                                                 echo "checked"; ?>>Nữ
                                         </label>
                                         <label class="css-ekrzeo">
-                                            <input name="sex" type="radio" value="O" <?php if ($info['Gioi_Tinh'] === "O")
+                                            <input name="sex" type="radio" value="O" <?php if ($info['GioiTinh'] === "O")
                                                 echo "checked"; ?>>Khác
                                         </label>
                                     </div>

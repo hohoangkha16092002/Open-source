@@ -46,7 +46,7 @@ if (isset($_GET['filter'])) {
                 </a>
             </div>
         </div>
-        <form method="get" action="?page=search">
+        <form method="post">
             <div class="css-rf24tk">
                 <div class="teko-row css-ezmamy" style="margin-left: -8px; margin-right: -8px; row-gap: 16px;">
                     <div class="teko-col teko-col-2 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
@@ -197,7 +197,7 @@ if (isset($_GET['filter'])) {
                                                 </div>
                                             </label></div>
                                         <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class=""><input type="checkbox" name="MaLMH[]" value="GMLT">
+                                                <div class=""><input type="checkbox" name="MaLMH[]" value="BSLT">
                                                     <div class="checkbox-inner css-gfk8lf"><svg fill="none"
                                                             viewBox="0 0 24 24" size="12" class="css-u5ggi9"
                                                             color="transparent" height="12" width="12"
@@ -256,7 +256,7 @@ if (isset($_GET['filter'])) {
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
-                            <input type="submit" name="filter" value="LỌC">
+                            <input type="submit" value="LỌC">
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
@@ -264,11 +264,61 @@ if (isset($_GET['filter'])) {
 
                     </div>
         </form>
+        <?php
+        if (isset($_GET['search-input'])){
+            $searchvalue = $_GET['search-input'];
+        }
+        if (isset($_POST['products'])) {
+            $valueproduct = $_POST['products'];
+            $searchvalue ='';
+        } else {
+            $valueproduct = [];
+        }
+
+        if (isset($_POST['MaLMH'])) {
+            $loaimh = $_POST['MaLMH'];
+        } else {
+            $loaimh = []; // Gán một mảng rỗng nếu không tồn tại
+        }
+
+        $nameloaimh = implode(',', $loaimh);
+        $namepd = implode(', ', $valueproduct);
+
+        ?>
         <div class="teko-col teko-col-10 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
             <div class="teko-row teko-row-start teko-row-baseline css-17jbfbn">
                 <h1 class="css-7nrxrf">Tìm kiếm:
-                    <?php echo $_GET['search-input'] ?>
                     <?php echo $search ?>
+                    <?php echo "$searchvalue" ?>
+                    <?php if ($namepd == 'AC') {
+                        echo 'Acer';
+                    }elseif($namepd == 'AP'){
+                        echo 'Apple';
+                    }elseif($namepd == 'HP'){
+                        echo 'HP';
+                    }elseif($namepd == 'DE'){
+                        echo 'DELL';
+                    }elseif($namepd == 'AS'){
+                        echo 'Asus';
+                    }elseif($namepd == 'LE'){
+                        echo 'Lenovo';
+                    }elseif($namepd == 'LG'){
+                        echo 'LG';
+                    }elseif($namepd == 'MI'){
+                        echo 'Microsoft';
+                    }elseif($namepd == 'MS'){
+                        echo 'MSI';
+                    }
+                    ?>
+                    <?php 
+                    if($nameloaimh == 'BSLT'){
+                         echo 'Laptop Văn Phòng';
+                    }elseif($nameloaimh == 'GMLT'){
+                        echo 'Laptop Gaming';
+                    }elseif($nameloaimh == 'TIOLT'){
+                        echo 'Laptop Cảm Ứng';
+                    }
+                    ?>
                 </h1>
                 <div type="title" color="textSecondary" class="css-18xfrv"></div>
             </div>
@@ -300,13 +350,14 @@ if (isset($_GET['filter'])) {
                     
                     if (isset($_GET['search-input'])) {
                         $search = $_GET['search-input'];
-                        if (isset($_GET['products'])) {
-                            $selectedProducts = $_GET['products'];
+                        if (isset($_POST['products'])) {
+                            $selectedProducts = $_POST['products'];
+                            $search = '';
                         } else {
                             $selectedProducts = [];
                         }
-                        if (isset($_GET['MaLMH'])) {
-                            $selectedLMH = $_GET['MaLMH'];
+                        if (isset($_POST['MaLMH'])) {
+                            $selectedLMH = $_POST['MaLMH'];
                         } else {
                             $selectedLMH = []; // Gán một mảng rỗng nếu không tồn tại
                         }
@@ -327,7 +378,7 @@ if (isset($_GET['filter'])) {
                         } elseif (empty($nameHSX) && !empty($nameLMH)) {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
-                            WHERE TenMH LIKE '%$search%' AND MaLMH = '$nameLMH'";
+                            WHERE MaLMH = '$nameLMH'";
                         } else {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
@@ -346,7 +397,7 @@ if (isset($_GET['filter'])) {
                                        <div class='product-card css-1msrncq' data-content-region-name='itemProductResult'
                                            data-track-content='true' data-content-name='231002080' data-content-index='0'
                                            data-content-target='productDetail'><a target='_self' class='css-pxdb0j'
-                                               href='/may-in-phun-mau-da-chuc-nang-epson-l3550-std--s231002080'>
+                                               href='?page=detail&maMH=$product_id'>
                                                <div class='css-4rhdrh'>
                                                    <div class='css-1v97aik'>
                                                        <div class='css-798fc'>
