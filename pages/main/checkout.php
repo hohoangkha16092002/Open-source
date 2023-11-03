@@ -31,11 +31,11 @@ if ($conn->connect_error) {
                         <div class="css-1ms22as">
                             <div type="subtitle" class="css-7mlvw6">Thông tin nhận hàng</div>
                             <div class="teko-row teko-row-start css-4sc7mn" style="margin-left: -8px; margin-right: -8px; row-gap: 16px;">
-                                <div data-content-region-name="addressShipping" data-track-content="true" data-content-name="addNewAddress" class="teko-col teko-col-6 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;"><button height="2.5rem" class="css-1pytm6y" type="button" style="color: rgb(132, 135, 136); min-height: 100px; flex-direction: column; height: 100%;"><svg fill="none" viewBox="0 0 24 24" size="25" class="css-1e44j4b" color="#848788" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
+                                <div data-content-region-name="addressShipping" data-track-content="true" data-content-name="addNewAddress" class="teko-col teko-col-6 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;" ><a height="2.5rem" class="css-1pytm6y" type="button" style="color: rgb(132, 135, 136); min-height: 100px; flex-direction: column; height: 100%;" href = "?page=consignee-information"><svg fill="none" viewBox="0 0 24 24" size="25" class="css-1e44j4b" color="#848788" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12.75 4C12.75 3.58579 12.4142 3.25 12 3.25C11.5858 3.25 11.25 3.58579 11.25 4V11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H11.25V20C11.25 20.4142 11.5858 20.75 12 20.75C12.4142 20.75 12.75 20.4142 12.75 20V12.75H20C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25H12.75V4Z" fill="#82869E"></path>
-                                        </svg>Thêm địa chỉ<span style="margin-left: 0px;">
+                                        </svg>Thêm địa chỉ<span style="margin-left: 0px;" >
                                             <div class="css-157jl91"></div>
-                                        </span></button></div>
+                                        </span></a></div>
                             </div>
                             <div type="subtitle" class="css-1e46hlx">Nhận Mã online, hóa đơn qua email</div>
                             <div id="delivery-email" class="css-14zmbe9">
@@ -116,7 +116,7 @@ if ($conn->connect_error) {
             <div class="css-14xqo9c">
                 <div class="card-header css-0">
                     <div class="css-1euuut5">
-                        <h5>Thông tin đơn hàng</h5><a href="/cart">Chỉnh sửa</a>
+                        <h5 style="font-size: 1.25rem">Thông tin đơn hàng</h5><a href="?page=cart-page">Chỉnh sửa</a>
                     </div>
                 </div>
                 <div class="card-body css-0">

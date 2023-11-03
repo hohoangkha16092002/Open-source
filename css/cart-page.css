@@ -51,8 +51,8 @@
 @media (min-width: 1024px)
 {
     .css-15z799l.teko-row {
-        /* -webkit-box-pack: center;
-        justify-content: center; */
+        -webkit-box-pack: center;
+        justify-content: center;
     }
 }
 
@@ -153,8 +153,8 @@
 @media (min-width: 1024px)
 {
     .css-taqq0j.teko-row {
-        /* -webkit-box-pack: center;
-        justify-content: center; */
+        -webkit-box-pack: center;
+        justify-content: center;
     }
 }
 
@@ -454,7 +454,7 @@
 }
 
 .css-er4drj {
-    /* -webkit-mask: url(https://shopfront-cdn.tekoapis.com/static/5a2fda8b57935427.svg) center center / contain no-repeat; */
+    -webkit-mask: url(https://shopfront-cdn.tekoapis.com/static/5a2fda8b57935427.svg) center center / contain no-repeat;
     mask: url(https://shopfront-cdn.tekoapis.com/static/5a2fda8b57935427.svg);
     display: inline-block;
     width: 12px;
@@ -1127,4 +1127,225 @@
     width: 100%;
     padding: 0.7rem 1rem;
     margin-top: 1rem;
+}
+
+.css-1272naz {
+    position: absolute;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1000;
+}
+
+.css-t2ptn2.teko-modal-show {
+    pointer-events: visible;
+    opacity: 1 !important;
+}
+
+.css-t2ptn2 {
+    width: 520px;
+    max-width: 95%;
+}
+
+.css-t2ptn2.teko-modal-show .teko-modal-content {
+    transform: translateY(0px);
+    z-index: 1050;
+}
+
+.css-t2ptn2 .teko-modal-content {
+    padding: 24px;
+    transition: all 0.2s ease-in-out 0s;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 16px, rgba(0, 0, 0, 0.05) 0px 8px 16px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.css-t2ptn2 .teko-modal-content .teko-modal-close {
+    position: absolute;
+    z-index: 1000;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+}
+
+.css-1qzn8fv path:not([stroke]){
+    fill: rgb(0, 0, 0);
+}
+
+.css-t2ptn2 .teko-modal-content .teko-modal-header .teko-modal-title.teko-modal-title-centered {
+    text-align: center;
+}
+
+.css-t2ptn2 .teko-modal-content .teko-modal-header .teko-modal-title {
+    margin-bottom: 24px;
+    color: rgb(27, 29, 41);
+}
+
+.css-1cp1h79 {
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+    border-width: 1px;
+    border-color: unset;
+    opacity: 1;
+    color: inherit;
+    font-weight: 700;
+    text-decoration: unset;
+    font-size: 24px;
+    line-height: 32px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: unset;
+    max-width: unset;
+    min-width: unset;
+    transition: color 0.3s ease 0s;
+}
+
+.css-t2ptn2 .teko-modal-content .teko-modal-body {
+    font-size: 13px;
+    line-height: 20px;
+    overflow-wrap: break-word;
+}
+
+.css-t2ptn2 .teko-modal-content .teko-modal-footer.teko-modal-footer-center {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.css-t2ptn2 .teko-modal-content .teko-modal-footer {
+    margin-top: 24px;
+}
+
+button:not(:disabled){
+    cursor: pointer;
+}
+
+.css-12b53wj {
+    opacity: 1;
+    height: 2.5rem;
+    margin-right: 0.75rem;
+    padding: 0rem 1.25rem;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    border: 1px solid rgb(228, 229, 240);
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    min-width: 2.5rem;
+    cursor: pointer;
+    transition-duration: 80ms;
+    transition-property: background-color;
+}
+
+.css-157jl91 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.css-fhio94 {
+    border-style: none;
+    border-width: 1px;
+    border-color: unset;
+    opacity: 1;
+    height: 2.5rem;
+    padding: 0rem 1.25rem;
+    border-radius: 0.25rem;
+    background-color: rgb(20, 53, 195);
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    min-width: 2.5rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition-duration: 80ms;
+    transition-property: background-color;
+}
+
+button:not(:disabled), [type='button']:not(:disabled){
+    cursor: pointer;
+}
+
+.css-2h64mz {
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+    border-width: 1px;
+    border-color: unset;
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    text-decoration: unset;
+    font-size: 13px;
+    line-height: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: unset;
+    max-width: unset;
+    min-width: unset;
+    transition: color 0.3s ease 0s;
+}
+
+.css-157jl91 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.css-gfk8lf {
+    position: absolute;
+    inset: 0px;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 1px solid rgb(228, 229, 240);
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.css-u5ggi9 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.css-lc01j1 {
+    position: absolute;
+    inset: 0px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.css-u5ggi9 path[stroke]{
+    stroke: transparent;
+}
+
+.css-u5ggi9 path {
+    stroke-width: 5;
 }
