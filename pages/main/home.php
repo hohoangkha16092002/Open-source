@@ -298,15 +298,13 @@ $product_type = "";
                                                 $product_image = $row_products['DLAnh'];
                                                 $product_id = $row_products['MaMH'];
                                                 $product_sale = $row_products['GiamGia'];
-
                                                 $price_sale = $product_price - $product_price * $product_sale; //Số tiền còn lại
                                                 $sale_rate = $product_sale * 100; //% khuyến mãi
                                                 $save_price = $product_price - $price_sale; //Số tiền tiết kiệm
                                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                 $product_price_format = number_format($product_price, 0, '.', '.');
                                                 $save_price_format = number_format($save_price, 0, '.', '.');
-
-                                                if ($product_sale >= 0.25) {
+                                                if($product_sale >= 0.3) {
                                                     echo "<div class='home-page--glide__slide glide__slide--active'
                                                         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
                                                         <div class='css-1ei4kcr'>
@@ -743,7 +741,7 @@ $product_type = "";
                                         <div class='product-card css-1msrncq' data-content-region-name='forYouListProduct'
                                             data-track-content='true' data-content-name='220303205' data-content-index='0'
                                             data-content-target='productDetail'><a target='_self' class='css-pxdb0j'
-                                            href='?page=detail&maMH=$product_id'>
+                                                href='?page=detail&maMH=$product_id'>
                                                 <div class='css-4rhdrh'>
                                                     <div class='css-1v97aik'>
                                                         <div class='css-798fc'>
