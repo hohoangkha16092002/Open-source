@@ -2,6 +2,20 @@
 if (isset($_GET['timKiem'])) {
     $search = $_GET['search-input'];
 }
+
+if (isset($_SESSION['loggedin'])) {
+    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+    }
+}
+
+if (isset($_GET['search'])) {
+    $search_input = $_GET["search-input"];
+    header("Location: ?page=search&search-input=$search_input");
+}
+
 ?>
 
 <div id="mainNavigationBar" class="nav-main">
@@ -30,8 +44,8 @@ if (isset($_GET['timKiem'])) {
                             <div origin="center top" class="nav-product-subnav-top">
                                 <div class="" style="width: 204px; border-radius: 0.5rem;">
                                     <div class="" style=" position: relative;">
-                                        <div class="nav-product-subnav-main" width="12.375rem" height="28.5rem"><a
-                                                data-testid="TekoLink" target="_self" class="nav-products"
+                                        <div class="nav-product-subnav-main" width="12.375rem" height="28.5rem">
+                                            <a data-testid="TekoLink" target="_self" class="nav-products"
                                                 href="/c/laptop">
                                                 <div class="css-73wobg">
                                                     <div class="css-b1gs45">
@@ -43,163 +57,56 @@ if (isset($_GET['timKiem'])) {
                                                     <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
                                                         Laptop</div>
                                                 </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/san-pham-apple">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/E7coVNI7mvCGp5GASzte71-stIZAYet_sozvQ0A1D_GJfvW1IFJGzymplqvm4A5upZV6ONPQtjgloVYzpHSG09lmQBrEDLU=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
+                                            </a>
+                                            <?php
+
+                                            // ======== Begin In danh sách loại mặt hàng =========
+                                            $sql_products_type = "SELECT * FROM dmloaimathang";
+                                            $result_products_type = mysqli_query($conn, $sql_products_type);
+
+                                            while ($row_products_type = mysqli_fetch_array($result_products_type)) {
+                                                $MaLMH = $row_products_type["MaLMH"];
+                                                $TenLoai = $row_products_type["TenLoai"];
+                                                echo '<a class="home-page--main-child-left-main-child"
+                                                    href="?page=search&search-input=' . $TenLoai . '">
+                                                    <div class="home-page--category-child">
+                                                        <div class="css-w22-h22">
+                                                            <div height="100%" width="100%" class="home-page--category-child-icon">
+                                                                <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
+                                                                    loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                                            </div>
+                                                        </div>
+                                                        <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
+                                                            ' . $TenLoai . '</div>
                                                     </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Sản phẩm Apple</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/p/dien-gia-dung">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/gmlJNF13XO4tDpnup-D5e7oaomGDsPy5k0rKAzRf-RqIcCAnu2Yq3pnmkMoypBRB8SKtC697eKy2kgaJqQahPA3bkzV7TVCvXA=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
+                                                </a>';
+                                            }
+                                            // ======== End In danh sách loại mặt hàng =========
+                                            // ======== Begin In danh sách hãng sản xuất =========
+                                            $sql_products_brands = "SELECT * FROM dmhangsanxuat";
+                                            $result_products_brands = mysqli_query($conn, $sql_products_brands);
+
+                                            while ($row_products_brands = mysqli_fetch_array($result_products_brands)) {
+                                                $MaHSX = $row_products_brands["MaHSX"];
+                                                $TenHSX = $row_products_brands["TenHSX"];
+                                                echo '<a class="home-page--main-child-left-main-child"
+                                                    href="?page=search&search-input=' . $TenHSX . '">
+                                                    <div class="home-page--category-child">
+                                                        <div class="css-w22-h22">
+                                                            <div height="100%" width="100%" class="home-page--category-child-icon">
+                                                                <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
+                                                                    loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                                            </div>
+                                                        </div>
+                                                        <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
+                                                            ' . $TenHSX . '</div>
                                                     </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Điện máy - Điện gia dụng</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/may-tinh-de-ban">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/Y7KEp2iUC1syVaF1SQuQ8ZPCLu8PVhCKqadoVKlI8ON-vKqxyvi0EbgM00Ky8Zb_wIcl9Q8HTLZkQj_MuTzqyJhGuLJz8mFTqw=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">PC
-                                                        - Máy tính bộ</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/man-hinh-may-tinh">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/1rbqboPNTH2Gyx3dS28kewywgX0ovZAZHBcstS4KjeJO8j6Qc6Kn19xJH0XpaiqCAj4a-xf_EeAZjlARKaI9mQNBhlHDp6o=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">PC
-                                                        - Màn hình máy tính</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/linh-kien-may-tinh">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/0V32ezrE3Bn6r_lmv4YIyS7Y4QnfVAcjTQ8XjR-86cP_mAtiIzOPsWeEni-MpEklbR5jIfJvtXgD6K-eWhlO7sLsgbxBwsHduQ=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">PC
-                                                        - Linh kiện máy tính</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/phu-kien-pc">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/JuVFuLJ2OmqyEO2mtZ0kJTWvACpFkXE_765ihiBIu8WQoHlS-jYXY8zsXDpZUBk26NqRulJ9U_u3DxLcBTxpPGY7n1uzGdKAuA=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">PC
-                                                        - Phụ kiện máy tính</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/hi-end-gaming">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/qtC62XnXkTsyJbMok7Z7Uu5GOPvhqslzU5YscZZ0HvorTWRs0Qg5s8gWU6l6CTcmc-pQA2y1myJCZ92t9VDq=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Game &amp; Stream</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/dien-thoai-may-tinh-bang-phu-kien">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/dkzFFaKYmPLLkPnC-cyefC1u1Qh0Iy_6Loz7adsbIMs-KAK8FA_PwUOklM3gEppESc1uSeaTa63U4Vejifo=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Điện thoại &amp; Phụ kiện</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/phu-kien-chung">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/slg-pspnUXN25zVZdp_qRMwaTIj008i3gckyGvSYLepffuJZIHNvVo7unNfzkCJZdJw0Om4vMTDttW9z1LZ8ojgVerpfxxM=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Phụ kiện chung</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/thiet-bi-am-thanh">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/5H5fwM3O8jhVpnNCQziLVok28E6e1c8hT3579MXy3UD4YxKBv7ybyGeRzYrFrPoqvXe20fGGD2wndnDx9EwO_B6yy4kErU8KUw=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Thiết bị âm thanh</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/thiet-bi-thong-minh">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/xFbV1RjiYbdvbqqqRNYPSvZtCa_BnS2eELCT84IKhC2-L2p1w6U58xAP7gBYJZUtPj7v12oZZUBBMUt10pq1rsG41cehjlMn=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Thiết bị thông minh</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/epson-ecotank">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/ZLE04QOE4IZuc-3xNfTvx5ekBXb8CGdTCWjoFy1fv4O35fthpkMQzE1aSFWt2gqRomuugbUO4VLFecQikR9f21kBMsvDHAgC=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Thiết bị văn phòng</div>
-                                                </div>
-                                            </a><a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/giai-phap-doanh-nghiep">
-                                                <div class="css-73wobg">
-                                                    <div class="css-b1gs45">
-                                                        <div height="100%" width="100%" class="css-b6tybp"><img
-                                                                src="https://lh3.googleusercontent.com/xQNTUsKuQP8S_IoRbjRIN28exoDh8lx7reM4I4XpGP7ZPqSDKN8gxhKemblPrKX_-INp9Wu1Q6MnWe3-hjgW=rw"
-                                                                loading="lazy" decoding="async"
-                                                                style="width: 100%; height: 100%;"></div>
-                                                    </div>
-                                                    <div type="caption" class="css-13yxnyc" style="flex: 1 1 0%;">
-                                                        Giải pháp doanh nghiệp</div>
-                                                </div>
-                                            </a></div>
+                                                </a>';
+                                            }
+                                            // ======== End In danh sách hãng sản xuất =========
+                                            
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -212,146 +119,140 @@ if (isset($_GET['timKiem'])) {
             <div class="teko-col nav-common-form nav-search--has-popup"
                 style="padding-left: 8px; padding-right: 8px; padding-top: 1.75rem; min-width: 0px; flex: 1 1 auto;">
                 <div class="nav-search">
-                    <div class="nav-search-main">
-                        <div data-content-region-name="headerBar" data-track-content="true"
-                            data-content-name="searchBox" class="nav-search-input">
-                            <input id="search-input" class="search-input nav-search-input-text"
-                                placeholder="Nhập từ khoá cần tìm" role="searchbox" aria-label="Search"
-                                name="search-product">
-                        </div>
-                        <div data-content-region-name="headerBar" data-track-content="true"
-                            data-content-name="searchButton" class="nav-search-icon-main">
-                            <a href="javascript:void(0);" id="search-link">
-                                <button class="search-icon nav-search-icon" aria-label="Search">
-                                    <i class="fa-solid fa-magnifying-glass clickable"></i>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="nav-search-popup" id="nav-search-popup">
-                        <div class="nav-search-popup-delete">
-                            <div font-weight="500" color="#82869E" class="nav-search-hictory">Lịch sử tìm kiếm</div>
+                    <form action="?page=search" method="get">
+                        <div class="nav-search-main">
+                            <div class="nav-search-input">
+                                <input class="search-input nav-search-input-text" placeholder="Nhập từ khoá cần tìm"
+                                    name="search-input" value="<?php if (isset($search_input))
+                                        echo $search_input ?>">
+                                </div>
+                                <div class="nav-search-icon-main">
+                                    <button name="search" class="search-icon nav-search-icon">
+                                        <i class="fa-solid fa-magnifying-glass clickable"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="nav-search-popup" id="nav-search-popup">
+                            <div class="nav-search-popup-delete">
+                                <div font-weight="500" color="#82869E" class="nav-search-hictory">Lịch sử tìm kiếm</div>
+                                <div data-content-region-name="recentSearch" data-track-content="true"
+                                    data-content-name="clearHistorySearch" data-content-target="searchProduct"
+                                    class="css-clickable">Xóa lịch sử</div>
+                            </div>
                             <div data-content-region-name="recentSearch" data-track-content="true"
-                                data-content-name="clearHistorySearch" data-content-target="searchProduct"
-                                class="css-clickable">Xóa lịch sử</div>
-                        </div>
-                        <div data-content-region-name="recentSearch" data-track-content="true"
-                            data-content-name="laptop" data-content-target="searchProductResult"
-                            data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:0}"
-                            class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
-                            <div style="margin: 0px 0.6rem;">
-                                <div class="css-1488rru" id="search-suggestions">
+                                data-content-name="laptop" data-content-target="searchProductResult"
+                                data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:0}"
+                                class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
+                                <div style="margin: 0px 0.6rem;">
+                                    <div class="css-1488rru" id="search-suggestions">
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div data-content-region-name="recentSearch" data-track-content="true"
-                            data-content-name="iphone 15" data-content-target="searchProductResult"
-                            data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:1}"
-                            class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
-                            <div style="margin: 0px 0.6rem;">
-                                <div class="css-1488rru">iphone 15</div>
-                            </div>
-                        </div>
-                        <div data-content-region-name="recentSearch" data-track-content="true" data-content-name="lap"
-                            data-content-target="searchProductResult"
-                            data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:2}"
-                            class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
-                            <div style="margin: 0px 0.6rem;">
-                                <div class="css-1488rru">lap</div>
-                            </div>
-                        </div>
-                        <div data-content-region-name="recentSearch" data-track-content="true" data-content-name="bàn"
-                            data-content-target="searchProductResult"
-                            data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:3}"
-                            class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
-                            <div style="margin: 0px 0.6rem;">
-                                <div class="css-1488rru">bàn</div>
-                            </div>
-                        </div>
-                        <div class="css-nloqo5">
-                            <div class="css-1f38okd">
-                                <div font-weight="500" color="#82869E" class="nav-search-hictory">Từ khóa phổ biến
+                            <div data-content-region-name="recentSearch" data-track-content="true"
+                                data-content-name="iphone 15" data-content-target="searchProductResult"
+                                data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:1}"
+                                class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
+                                <div style="margin: 0px 0.6rem;">
+                                    <div class="css-1488rru">iphone 15</div>
                                 </div>
                             </div>
-                            <div class="css-1xhsr74">
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="ma" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:0}"
-                                    class="css-crf5cq">ma</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="hdmi" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:1}"
-                                    class="css-crf5cq">hdmi</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="iphone 15" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:2}"
-                                    class="css-crf5cq">iphone 15</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="bàn" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:3}"
-                                    class="css-crf5cq">bàn</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="máy" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:4}"
-                                    class="css-crf5cq">máy</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="ram" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:5}"
-                                    class="css-crf5cq">ram</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="dell" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:6}"
-                                    class="css-crf5cq">dell</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="ssd" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:7}"
-                                    class="css-crf5cq">ssd</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="bàn phím không dây" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:8}"
-                                    class="css-crf5cq">bàn phím không dây</div>
-                                <div data-content-region-name="popularKeyword" data-track-content="true"
-                                    data-content-name="laptop" data-content-target="searchProductResult"
-                                    data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:9}"
-                                    class="css-crf5cq">laptop</div>
+                            <div data-content-region-name="recentSearch" data-track-content="true" data-content-name="lap"
+                                data-content-target="searchProductResult"
+                                data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:2}"
+                                class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
+                                <div style="margin: 0px 0.6rem;">
+                                    <div class="css-1488rru">lap</div>
+                                </div>
+                            </div>
+                            <div data-content-region-name="recentSearch" data-track-content="true" data-content-name="bàn"
+                                data-content-target="searchProductResult"
+                                data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:3}"
+                                class="nav-search-hictory-name"><span size="20" class="css-c1lbeq"></span>
+                                <div style="margin: 0px 0.6rem;">
+                                    <div class="css-1488rru">bàn</div>
+                                </div>
+                            </div>
+                            <div class="css-nloqo5">
+                                <div class="css-1f38okd">
+                                    <div font-weight="500" color="#82869E" class="nav-search-hictory">Từ khóa phổ biến
+                                    </div>
+                                </div>
+                                <div class="css-1xhsr74">
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="ma" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:0}"
+                                        class="css-crf5cq">ma</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="hdmi" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:1}"
+                                        class="css-crf5cq">hdmi</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="iphone 15" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:2}"
+                                        class="css-crf5cq">iphone 15</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="bàn" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:3}"
+                                        class="css-crf5cq">bàn</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="máy" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:4}"
+                                        class="css-crf5cq">máy</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="ram" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:5}"
+                                        class="css-crf5cq">ram</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="dell" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:6}"
+                                        class="css-crf5cq">dell</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="ssd" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:7}"
+                                        class="css-crf5cq">ssd</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="bàn phím không dây" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:8}"
+                                        class="css-crf5cq">bàn phím không dây</div>
+                                    <div data-content-region-name="popularKeyword" data-track-content="true"
+                                        data-content-name="laptop" data-content-target="searchProductResult"
+                                        data-content-payload="{&quot;screenName&quot;:&quot;searchProduct&quot;,&quot;index&quot;:9}"
+                                        class="css-crf5cq">laptop</div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <p class="nav-search-propose"><a data-testid="TekoLink" class="nav-search-propose-text"
+                            href="/acer-nitro-16-phoenix-an16-41-ryzen-5-rtx-4050--s230402670">Acer Nitro Phoenix
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop-acer-nitro-5">Acer
+                            Nitro 5
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text"
+                            href="/laptop-asus-vivobook-go-15-e1504fa-nj454w-amd-ryzen-5-7520u--s230500521">Asus
+                            Vivobook Go
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop-asus-rog-strix">Asus
+                            Rog Strix
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop-hp">Laptop HP
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop">Laptop
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/man-hinh-may-tinh">Màn hình
+                            máy tính
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/may-tinh-de-ban">PC
+                        </a>&nbsp;&nbsp;&nbsp;<a data-testid="TekoLink" class="nav-search-propose-text"
+                            href="/c/chuot-gaming">Chuột gaming
+                        </a>
+                    </p>
                 </div>
-                <p class="nav-search-propose"><a data-testid="TekoLink" class="nav-search-propose-text"
-                        href="/acer-nitro-16-phoenix-an16-41-ryzen-5-rtx-4050--s230402670">Acer Nitro Phoenix
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop-acer-nitro-5">Acer
-                        Nitro 5
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text"
-                        href="/laptop-asus-vivobook-go-15-e1504fa-nj454w-amd-ryzen-5-7520u--s230500521">Asus
-                        Vivobook Go
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop-asus-rog-strix">Asus
-                        Rog Strix
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop-hp">Laptop HP
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/laptop">Laptop
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/man-hinh-may-tinh">Màn hình
-                        máy tính
-                    </a>&nbsp;&nbsp;&nbsp;
-                    <a data-testid="TekoLink" class="nav-search-propose-text" href="/c/may-tinh-de-ban">PC
-                    </a>&nbsp;&nbsp;&nbsp;<a data-testid="TekoLink" class="nav-search-propose-text"
-                        href="/c/chuot-gaming">Chuột gaming
-                    </a>
-                </p>
-            </div>
-            <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                echo '
+                <?php
+                                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                                        echo '
                 <div class="teko-col nav-common-form nav-ip--has-popup"
                 style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
                 <div>
@@ -360,7 +261,7 @@ if (isset($_GET['timKiem'])) {
                             data-content-name="profileIcon">
                             <div class="nav-ip-form-avt">
                                 <div height="100%" width="100%" class="nav-ip-avt">
-                                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJ2eIWDECzXYZ7EgSIzeIFbzYhpqLERuHtUKa6tWTF9wA=s96-c-rw"
+                                    <img src="./img/icon-login.jpg"
                                         loading="lazy" hover="" decoding="async" alt="" fetchpriority="low"
                                         aria-label="Current User Avatar"
                                         style="width: 100%; height: 100%; object-fit: inherit; position: absolute; top: 0px; left: 0px;">
@@ -368,7 +269,7 @@ if (isset($_GET['timKiem'])) {
                             </div>
                             <div class="ml-12 text-left">
                                 <div type="body" color="textSecondary" class="nav-common-text">Xin chào,</div>
-                                <div type="body" color="textSecondary" class="nav-ip-name">Tiến Phan Minh</div>
+                                <div type="body" color="textSecondary" class="nav-ip-name">' . $info['HoTenKH'] . '</div>
                             </div>
                         </div>
                     </div><span class="nav-ip-popup"
@@ -377,12 +278,12 @@ if (isset($_GET['timKiem'])) {
                         <div class="nav-ip-popup-main">
                             <div class="nav-ip-popup-top">
                                 <div class="nav-ip-popup-avt"><img
-                                        src="https://lh3.googleusercontent.com/a/ACg8ocJ2eIWDECzXYZ7EgSIzeIFbzYhpqLERuHtUKa6tWTF9wA=s96-c"
+                                        src="./img/icon-login.jpg"
                                         alt="Avatar" style="width: 100%;">
                                 </div>
                                 <div class="nav-ip-popup-info">
-                                    <h3 class="name">Tiến Phan Minh</h3>
-                                    <h5 class="extra">tiennennakenki@gmail.com</h5>
+                                <h3 class="name">' . $info['HoTenKH'] . '</h3>
+                                    <h5 class="extra">' . $info['Email'] . '</h5>
                                 </div>
                             </div><a target="_self" class="nav-ip-popup-child" href="?page=personal-information">
                                 <div data-content-region-name="headerBar" data-track-content="true"
@@ -408,7 +309,7 @@ if (isset($_GET['timKiem'])) {
                                         </svg></div>
                                     <div type="body" class="popup-text">Quản lý đơn hàng</div>
                                 </div>
-                            </a><a target="_self" class="nav-ip-popup-child" href="/account/addresses">
+                            </a><a target="_self" class="nav-ip-popup-child" href="?page=address">
                                 <div data-content-region-name="headerBar" data-track-content="true"
                                     data-content-name="viewAddressList" class="nav-ip-popup-child-main">
                                     <div class="icon"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
@@ -451,8 +352,8 @@ if (isset($_GET['timKiem'])) {
                     </span>
                 </div>
             </div>';
-            } else {
-                echo '<a href="?page=login" style="text-decoration: unset;">
+                                    } else {
+                                        echo '<a href="?page=login" style="text-decoration: unset;">
                 <div class="teko-col css-17ajfcv" style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
                     <div class="button css-12qbrtd" data-content-region-name="headerBar" data-track-content="true"
                         data-content-name="loginIcon"><svg fill="none" viewBox="0 0 24 24" size="36" class="css-11md2ba"
@@ -467,8 +368,8 @@ if (isset($_GET['timKiem'])) {
                         </div>
                     </div>
                 </div></a>';
-            }
-            ?>
+                                    }
+                                    ?>
 
 
             <div class="teko-col nav-common-form nav-notify--has-popup "
@@ -630,9 +531,7 @@ if (isset($_GET['timKiem'])) {
                                             class="css-19une5m"><span class="css-htm2b9">28.639.000<span
                                                     class="css-1ul6wk9">đ</span></span></span></div>
                                 </div>
-                                <div data-content-region-name="miniCart" data-track-content="true"
-                                    data-content-name="viewCartFromMiniCart" data-content-target="shoppingCart"
-                                    href="/cart" class="css-0"><a class="css-1dyo6sn">Xem giỏ hàng</a></div>
+                                <div class="css-0"><a href="?page=cart-page" class="css-1dyo6sn">Xem giỏ hàng</a></div>
                             </div>
                         </div>
                         <div style="position: absolute; left: 0px; transform: translate3d(311px, 0px, 0px);"></div>
@@ -658,12 +557,9 @@ if (isset($_GET['timKiem'])) {
                 productPortfolioPopup.style.visibility = "hidden";
             }
         });
-        document.getElementById('search-link').addEventListener('click', function () {
-            var searchKeyword = document.getElementById('search-input').value;
-            window.location.href = '?page=search&search-product=' + searchKeyword;
-        });
-
-       
-
+        // document.getElementById('search-link').addEventListener('click', function () {
+        //     var searchKeyword = document.getElementById('search-input').value;
+        //     window.location.href = '?page=search&search-product=' + searchKeyword;
+        // });
     </script>
 </div>

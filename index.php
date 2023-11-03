@@ -18,8 +18,12 @@ session_start();
     <link rel="stylesheet" href="css/cart-page.css">
     <link rel="stylesheet" href="css/personal-information.css">
     <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <link rel="stylesheet" href="css/search-page.css">
+    <link rel="stylesheet" href="css/address.css">
+    <link rel="stylesheet" href="css/consignee-information.css">
     <link rel="stylesheet" href="css/confirm-logout.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
@@ -43,8 +47,7 @@ session_start();
     ?>
 </body>
 <!-- Tải các tệp JavaScript của Bootstrap từ CDN (đặt nó trước đó trước thẻ đóng </body>) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
     new Glide('.glide', {
         perView: 5
