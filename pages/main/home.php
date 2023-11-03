@@ -424,7 +424,7 @@ if (mysqli_connect_errno()) {
                                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                 $product_price_format = number_format($product_price, 0, '.', '.');
                                                 $save_price_format = number_format($save_price, 0, '.', '.');
-                                                if( $product_sale >= 0.3) {
+                                                if($product_sale >= 0.3) {
                                                     echo "<div class='home-page--glide__slide glide__slide--active'
                                                         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
                                                         <div class='css-1ei4kcr'>
@@ -570,7 +570,7 @@ if (mysqli_connect_errno()) {
                                                                 data-track-content='true' data-content-name='230803500'
                                                                 data-content-target='productDetail'><a target='_self'
                                                                     class='css-pxdb0j'
-                                                                    href='pages/main/detail.php?maMH=$product_id'>
+                                                                    href='?page=detail&maMH=$product_id'>
                                                                     <div class='css-4rhdrh'>
                                                                         <div class='css-1v97aik'>
                                                                             <div class='css-798fc'>
@@ -742,7 +742,7 @@ if (mysqli_connect_errno()) {
                                             <div class='css-1ei4kcr'>
                                                 <div class='product-card css-1msrncq' data-track-content='true'
                                                     data-content-name='221101761' data-content-target='productDetail'><a
-                                                        target='_self' class='css-pxdb0j' href='pages/main/detail.php?maMH=$product_id'>
+                                                        target='_self' class='css-pxdb0j' href='?page=detail&maMH=$product_id'>
                                                         <div class='css-4rhdrh'>
                                                             <div class='css-1v97aik'>
                                                                 <div class='css-798fc'>
@@ -861,7 +861,7 @@ if (mysqli_connect_errno()) {
                                         <div class='product-card css-1msrncq' data-content-region-name='forYouListProduct'
                                             data-track-content='true' data-content-name='220303205' data-content-index='0'
                                             data-content-target='productDetail'><a target='_self' class='css-pxdb0j'
-                                                href='pages/main/detail.php?maMH=$product_id'>
+                                                href='?page=detail&maMH=$product_id'>
                                                 <div class='css-4rhdrh'>
                                                     <div class='css-1v97aik'>
                                                         <div class='css-798fc'>

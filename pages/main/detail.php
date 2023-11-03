@@ -58,10 +58,10 @@ if (isset($_GET['maMH'])) {
                       </div>
                       <div class="css-12isv00">
                         <div class="css-1qorxog">
-                          <div height="50px" width="50px" class="css-1dje825"><img src="" loading="lazy" decoding="async" alt="Laptop Acer" style="width: 100%; height: 50px; object-fit: contain;"></div>
+                          <div height="50px" width="50px" class="css-1dje825"><img src="<?php echo $row['DLAnh']; ?>" loading="lazy" decoding="async" alt="Laptop Acer" style="width: 100%; height: 50px; object-fit: contain;"></div>
                         </div>
                         <div class="css-4ok7dy">
-                          <div height="50px" width="50px" class="css-1dje825"><img src="" loading="lazy" decoding="async" alt="Laptop Acer" style="width: 100%; height: 50px; object-fit: contain;"></div>
+                          <div height="50px" width="50px" class="css-1dje825"><img src="<?php echo $row['DLAnh']; ?>" loading="lazy" decoding="async" alt="Laptop Acer" style="width: 100%; height: 50px; object-fit: contain;"></div>
                         </div>
                       </div>
                     </div>
@@ -275,723 +275,97 @@ if (isset($_GET['maMH'])) {
               <div class="css-ftpi71">
                 <div type="title" color="textTitle" class="title css-1dlj6qw">Sản phẩm liên quan</div>
               </div>
-              <div class="glide css-npa7ru glide--ltr glide--slider glide--swipeable">
+              <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider" id="glideContainer1">
                 <div class="glide__track" data-glide-el="track">
-                  <div class="glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3692px; transform: translate3d(0px, 0px, 0px);">
-                    <div class="glide__slide glide__slide--active" style="height: unset; margin-right: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="200301204" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-say-toc-philips-hp8108-00--s200301204">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/RF-HdaI1VSnfOcV8d_gIUbsW7sDpEqbmUZDiEKhkI6qyAlX8VDyzhjhph9yoOYVrZYe9xUU43j22tizV85A=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy sấy tóc Philips HP8108/00" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">70.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">PHILIPS</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy sấy tóc Philips HP8108/00" class="css-1xdyrhj">Máy sấy tóc Philips HP8108/00</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">239.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">309.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-22.65%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="201200507" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-cao-rau-philips-pq206--s201200507">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/pvGz682GKTPJAIn2PTAala_HebsggB_TAGJ_DkqKiXHmXtJVdBxkPKijcTnFtHa0AL6mreJ9tZWaNBKw_YU3=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy cạo râu Philips PQ206" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">80.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">PHILIPS</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy cạo râu Philips PQ206" class="css-1xdyrhj">Máy cạo râu Philips PQ206</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">339.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">419.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-19.09%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220303983" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-say-toc-philips-bhd300-10--s220303983">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/lrWMnzhyxmQ0E5dGC4fJKIH8aL7GFxifjl3KgIPaW0ZtOiGgSzXu02HS-k32d7zqkfJMZ0qvgXxTjDNgiwFS1V63b_m72kC9=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy sấy tóc Philips BHD300/10" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">100.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">PHILIPS</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy sấy tóc Philips BHD300/10" class="css-1xdyrhj">Máy sấy tóc Philips BHD300/10</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">649.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">749.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-13.35%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220303984" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-say-toc-philips-bhd350-10--s220303984">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/DGnZiELa3fNhQ6yYHri0k_drScc20JR52tg_B5EIq9yZwsam35TFy9pkoWQPv9kFUaphLg2t5Hoc7VzZ_KTIauP7FpjfVEs5=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy sấy tóc Philips BHD350/10" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">221.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">PHILIPS</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy sấy tóc Philips BHD350/10" class="css-1xdyrhj">Máy sấy tóc Philips BHD350/10</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">669.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">890.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-24.83%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801557" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-va-massage-halio-facial-cleansing-&amp;-massaging-device-hot-pink--s220801557">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/PAJSd2veNrhrvum9M3rjMGzvPToFMcOlZz17s4-gg4aLHUtEW1z4kglOP9eJgoBdvZcd5N2VLA9SJkxKH6p47D-aC5kddAAz=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Hot Pink" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">130.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Hot Pink" class="css-1xdyrhj">Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Hot Pink</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">489.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">619.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-21%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801558" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-va-massage-halio-facial-cleansing-&amp;-massaging-device-grey-smoke--s220801558">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/oTTS68s_eWI0EzO12S9RagmWnw3EPCy0BSHvKpbgXyAP6Mhgoya4UX3dyFE8GmEHU8Bkcj7BQFm-25_IEUw3gbWWozUPBTgP=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Grey Smoke" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">130.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Grey Smoke" class="css-1xdyrhj">Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Grey Smoke</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">489.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">619.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-21%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801560" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-va-massage-halio-facial-cleansing-&amp;-massaging-device-mustard-vang--s220801560">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/0cAwLxIfvV-BdR1ywdI9QhkfQMNrZGAvfVmFTMpl5c8bvEChnlMI9kQ_dSc3WwFzfSg71B-MvkeGfgV0lix264bsovxjLjCO=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Mustard (vàng)" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">130.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Mustard (vàng)" class="css-1xdyrhj">Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Mustard (vàng)</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">489.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">619.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-21%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801561" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-va-massage-halio-facial-cleansing-&amp;-massaging-device-baby-pink--s220801561">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/D3_l2kbX_eFpcLb6TGiX1mAUEAfXdMShFOhLZ1fi8m7OlXeoJ3GWaJEawvkPBtNXT8ZCbGLfraSUcTiRiZc5P_IK0gZz8X6p=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Baby Pink" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">129.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Baby Pink" class="css-1xdyrhj">Máy rửa mặt và massage Halio Facial Cleansing &amp; Massaging Device - Baby Pink</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">490.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">619.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-20.84%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801562" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-halio-sensitive-facial-cleansing-&amp;-massaging-device-baby-pink--s220801562">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/lMpmTWM_EiCoR7-ukJgyPhR6hTPnDj4oMYQqMRAg2-fkCAg_F0PO4QUKIUvj4y2dGtuvv1FYFJRP7OnkIvb4vDJl6JNQrAeS=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Baby Pink" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">210.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Baby Pink" class="css-1xdyrhj">Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Baby Pink</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">619.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">829.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-25.33%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801563" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-halio-sensitive-facial-cleansing-&amp;-massaging-device-sweet-mint-xanh--s220801563">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/FqbzsVbKYpqhrgoUFJr1JjPQzTEaUrfXfngQV1mAZHN7-VjWnf373OtDMahpGpJ40u9xMWfoXEKLHjzAdkwYC6DH2X-1W3j7Eg=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Sweet Mint (xanh)" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">210.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Sweet Mint (xanh)" class="css-1xdyrhj">Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Sweet Mint (xanh)</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">619.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">829.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-25.33%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801564" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-rua-mat-halio-sensitive-facial-cleansing-&amp;-massaging-device-purple-rain-limited-edition--s220801564">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/xgfTw2RUAOuoGq0iSpz8mFxV7bTuV4Tf_Wn0tXbRvv9rDHE8vELswAmqbTInhT8QnGaJ89QAXvGQsvDmBhY943FMapPa300aqg=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Purple Rain Limited Edition" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">150.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Purple Rain Limited Edition" class="css-1xdyrhj">Máy rửa mặt Halio Sensitive Facial Cleansing &amp; Massaging Device Purple Rain Limited Edition</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">679.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">829.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-18.09%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801565" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-tam-nuoc-cam-tay-halio-ultraclean-oral-irrigator-periwinkle--s220801565">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/ULkal1Mp8EfbbuNKi-iosqq1go7BnfTI4bb4s6OwsrgCtB-STiG93NMQdponccPBDvJ_thNXpUj7a0fO8NVVE72Z06hKHWc=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy tăm nước cầm tay Halio UltraClean Oral Irrigator - Periwinkle" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">200.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy tăm nước cầm tay Halio UltraClean Oral Irrigator - Periwinkle" class="css-1xdyrhj">Máy tăm nước cầm tay Halio UltraClean Oral Irrigator - Periwinkle</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">1.090.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">1.290.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-15.5%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801566" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-triet-long-lanh-ca-nhan-halio-ipl-cooling-hair-removal-device--s220801566">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/pOj-qIpNot1wY3kfKfzX_wjrGImtHDG31ZFBZ0GZnsILHxMrMyydS4oxD1-B8bqs3xcGmOSg4rQNDxWGHvtFFWPtI1ytXGM=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy triệt lông lạnh cá nhân Halio IPL Cooling Hair Removal Device" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">951.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy triệt lông lạnh cá nhân Halio IPL Cooling Hair Removal Device" class="css-1xdyrhj">Máy triệt lông lạnh cá nhân Halio IPL Cooling Hair Removal Device</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">3.049.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">4.000.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-23.78%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801567" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-triet-long-ca-nhan-halio-ipl-hair-removal-device--s220801567">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/dS644moC7xX2uBLqKyzhX32aQQb5FgzVU0-VSBwSPOB7DN1_2MajPE0xh2tTj-bq6djBy43nW4AeCSGGgZD-5BDj4J4pDGc=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy triệt lông cá nhân Halio IPL Hair Removal Device" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">400.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy triệt lông cá nhân Halio IPL Hair Removal Device" class="css-1xdyrhj">Máy triệt lông cá nhân Halio IPL Hair Removal Device</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">2.790.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">3.190.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-12.54%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801568" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/ban-chai-dien-halio-sonic-whitening-toothbrush-pro-rose-gold--s220801568">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/ydqpbgWZTAwNE_KZ5pR4aCmTFCeVIs5_0tE_xoOw3IPNhzw6rAoyC0-jOCEBWiuMbVUdTRX9w0edRQyjM70ZP3Rc_rgA6wk=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Bàn chải điện Halio Sonic Whitening Toothbrush PRO Rose Gold" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">200.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Bàn chải điện Halio Sonic Whitening Toothbrush PRO Rose Gold" class="css-1xdyrhj">Bàn chải điện Halio Sonic Whitening Toothbrush PRO Rose Gold</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">1.090.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">1.290.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-15.5%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="220801569" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/bo-may-tao-kieu-toc-philips-bhp398-00--s220801569">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/IZtoRT5s4c-GgRtdoGYDZraE63vY1g7cD6YqgtKVcKP-MHl6YVz6KXiImfCHUfkrKABWhO0MjofwoNyD5SDBmWjHtFiZbz8=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Bộ Máy Tạo Kiểu Tóc PHILIPS BHP398/00" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">291.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">PHILIPS</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Bộ Máy Tạo Kiểu Tóc PHILIPS BHP398/00" class="css-1xdyrhj">Bộ Máy Tạo Kiểu Tóc PHILIPS BHP398/00</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">999.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">1.290.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-22.56%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="221003402" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/ban-chai-dien-halio-sonic-whitening-toothbrush-pro-mau-xanh--s221003402">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/P29DEWgDcCni_73IdkZdKfoRSPc6P-DJXb2OpCExRa5YvRJlukP8eyTXVbQpEppraBKThEFPRCTdkIEQ2Bw7QaNMbhu3yHvC=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Bàn chải điện Halio Sonic Whitening Toothbrush PRO - Màu xanh" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Bàn chải điện Halio Sonic Whitening Toothbrush PRO - Màu xanh" class="css-1xdyrhj">Bàn chải điện Halio Sonic Whitening Toothbrush PRO - Màu xanh</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">1.290.000&nbsp;₫</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="221003403" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-tam-nuoc-cam-tay-halio-ultraclean-oral-irrigator-sky-blue--s221003403">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/dAYyFx1vFzVK6kKc_Fx7z3V30hMe9M0tmDLFK5j02d5seT42aAbg7S0YVffilgs_qzvS4tbCg9XzVCMwcwCJqg6Fj9wx0C2vrA=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy tăm nước cầm tay Halio UltraClean Oral Irrigator - Sky Blue" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">241.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy tăm nước cầm tay Halio UltraClean Oral Irrigator - Sky Blue" class="css-1xdyrhj">Máy tăm nước cầm tay Halio UltraClean Oral Irrigator - Sky Blue</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">1.049.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">1.290.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-18.68%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-right: 5px; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="221003404" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-day-tinh-chat-duong-trang-nong-lanh-halio-ion-hot-cool-beauty-device-mau-trang--s221003404">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/0Y77JXd96419D9nwLfxCW16_jDZgYY1XdABmu9omG6IHSutEEI3C3acx_MZdauDHrO1mhYRuyE84FHHIjqdSkp29_WGuwLU6=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy đẩy tinh chất dưỡng trắng nóng lạnh Halio Ion Hot &amp; Cool Beauty Device - Màu trắng" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">600.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy đẩy tinh chất dưỡng trắng nóng lạnh Halio Ion Hot &amp; Cool Beauty Device - Màu trắng" class="css-1xdyrhj">Máy đẩy tinh chất dưỡng trắng nóng lạnh Halio Ion Hot &amp; Cool Beauty Device - Màu trắng</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">1.890.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">2.490.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-24.1%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                    <div class="glide__slide" style="height: unset; margin-left: 5px; width: 174.6px;">
-                      <div class="css-1ei4kcr">
-                        <div class="product-card css-1msrncq" data-content-region-name="relatedProducts" data-track-content="true" data-content-name="221100983" data-content-target="productDetail"><a target="_self" class="css-pxdb0j" href="/may-uon-toc-tu-xoay-ion-am-halio-auto-rotating-hair-curler--s221100983">
-                            <div class="css-4rhdrh">
-                              <div class="css-1v97aik">
-                                <div class="css-798fc">
-                                  <div height="100%" width="100%" class="css-1uzm8bv"><img src="https://lh3.googleusercontent.com/t7cGymgFqIHJlOweixULACQ8pDWnQ6agUn4OSMvD-HrzAvp22-QE2KHbZUDMOgNjtgWj_YlLe3yS-WBYEW9DntdVhkC7z_8U=w230-rw" loading="lazy" hover="zoom" decoding="async" alt="Máy Uốn Tóc Tự Xoay Ion Âm Halio Auto Rotating Hair Curler" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;"></div>
-                                </div>
-                                <div class="css-14q2k9d">
-                                  <div class="css-zb7zul">
-                                    <div class="css-1bqeu8f">TIẾT KIỆM</div>
-                                    <div class="css-1rdv2qd">241.000&nbsp;₫</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="css-68cx5s">
-                                <div type="body" color="textSecondary" class="product-brand-name css-90n0z6" style="text-transform: uppercase; display: inline;">Halio</div>
-                              </div>
-                              <div class="css-1ybkowq">
-                                <div type="caption" class="att-product-card-title css-1uunp2d" color="textPrimary">
-                                  <h3 title="Máy Uốn Tóc Tự Xoay Ion Âm Halio Auto Rotating Hair Curler" class="css-1xdyrhj">Máy Uốn Tóc Tự Xoay Ion Âm Halio Auto Rotating Hair Curler</h3>
-                                </div>
-                              </div>
-                              <div class="css-kgkvir">
-                                <div class="css-1co26wt">
-                                  <div type="subtitle" class="att-product-detail-latest-price css-do31rh" color="primary500">749.000&nbsp;₫</div>
-                                  <div class="css-3mjppt">
-                                    <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">990.000&nbsp;₫</div>
-                                    <div type="caption" color="primary500" class="css-2rwx6s">-24.34%</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
+                  <div class="home-page--glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1417.6px; transform: translate3d(0px, 0px, 0px);">
+                    <?php
+                    $sql_products = "SELECT * FROM `mathang` 
+                                        join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
+                                        join anhmh on mathang.MaMH = anhmh.MaMH
+                                        join khuyenmai on mathang.MaMH = khuyenmai.MaMH";
+                    $result_products = mysqli_query($conn, $sql_products);
+                    if (mysqli_num_rows($result_products) <> 0) {
+                      while ($row_products = mysqli_fetch_assoc($result_products)) {
+                        $product_name = $row_products["TenMH"];
+                        $product_price = $row_products["DonGia"];
+                        $product_brand = $row_products["TenHSX"];
+                        $product_image = $row_products['DLAnh'];
+                        $product_id = $row_products['MaMH'];
+                        $product_sale = isset($row_products['MoTaKM']) ? $row_products['MoTaKM'] : 0;
+                        $price_sale = $product_price - $product_price * $product_sale - 500000;
+                        $sale_rate = $product_sale * 100;
+                        $save_price = $product_price - $price_sale + 500000;
+                        $price_sale_format = number_format($price_sale, 0, '.', '.');
+                        $product_price_format = number_format($product_price, 0, '.', '.');
+                        $save_price_format = number_format($save_price, 0, '.', '.');
+
+
+                        echo "<div class='home-page--glide__slide glide__slide--active'
+                                                        style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
+                                                        <div class='css-1ei4kcr'>
+                                                            <div class='product-card css-1msrncq' data-content-region-name='hotDeal'
+                                                                data-track-content='true' data-content-name='230803500'
+                                                                data-content-target='productDetail'><a target='_self'
+                                                                    class='css-pxdb0j'
+                                                                    href='?page=detail&maMH=$product_id'>
+                                                                    <div class='css-4rhdrh'>
+                                                                        <div class='css-1v97aik'>
+                                                                            <div class='css-798fc'>
+                                                                                <div height='100%' width='100%' class='css-1uzm8bv'>
+                                                                                    <img src='$product_image'
+                                                                                        loading='lazy' hover='zoom' decoding='async'
+                                                                                        alt='$product_name'
+                                                                                        style='width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;'>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class='css-14q2k9d'>
+                                                                                <div class='css-zb7zul'>
+                                                                                    <div class='css-1bqeu8f'>TIẾT KIỆM</div>
+                                                                                    <div class='css-1rdv2qd'>$save_price_format&nbsp;₫</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class='css-68cx5s'>
+                                                                            <div type='body' color='textSecondary'
+                                                                                class='product-brand-name css-90n0z6'
+                                                                                style='text-transform: uppercase; display: inline;'>
+                                                                                $product_brand</div>
+                                                                        </div>
+                                                                        <div class='css-1ybkowq'>
+                                                                            <div type='caption'
+                                                                                class='att-product-card-title css-1uunp2d'
+                                                                                color='textPrimary'>
+                                                                                <h3 title='Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)'
+                                                                                    class='css-1xdyrhj'>$product_name</h3>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class='css-kgkvir'>
+                                                                            <div class='css-1co26wt'>
+                                                                                <div type='subtitle'
+                                                                                    class='att-product-detail-latest-price css-do31rh'
+                                                                                    color='primary500'>$price_sale_format&nbsp;₫</div>
+                                                                                <div class='css-3mjppt'>
+                                                                                    <div type='caption'
+                                                                                        class='att-product-detail-retail-price css-18z00w6'
+                                                                                        color='textSecondary'>$product_price_format&nbsp;₫</div>
+                                                                                    <div type='caption' color='primary500'
+                                                                                        class='css-2rwx6s'>-$sale_rate%</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>";
+                      }
+                    }
+                    ?>
                   </div>
-                  <div data-glide-el="controls" class="glide__arrows">
+                  <div data-glide-el="controls" class="home-page--glide__arrows">
                     <div class="glide__arrow--override glide__arrow--left glide__arrow--disabled" data-glide-dir="|<"></div>
-                    <div class="glide__arrow--override glide__arrow--right" data-glide-dir="|>"></div>
+                    <div class="glide__arrow--override glide__arrow--right" data-glide-dir="|>">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1004,9 +378,9 @@ if (isset($_GET['maMH'])) {
     </html>
 <?php
   } else {
-    echo "Không tìm thấy sản phẩm với SKU: $maMH";
+    echo "Không tìm thấy sản phẩm với MaMH: $maMH";
   }
 } else {
-  echo "SKU không được cung cấp";
+  echo "MaMH không được cung cấp";
 }
 ?>
