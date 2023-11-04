@@ -22,7 +22,6 @@ $product_type = "";
                                         Laptop</div>
                                 </div>
                             </a>
-                            <!-- Begin Test -->
                             <?php
 
                             // ======== Begin In danh sách loại mặt hàng =========
@@ -47,6 +46,7 @@ $product_type = "";
                             </a>';
                             }
                             // ======== End In danh sách loại mặt hàng =========
+
                             // ======== Begin In danh sách hãng sản xuất =========
                             $sql_products_brands = "SELECT * FROM dmhangsanxuat";
                             $result_products_brands = mysqli_query($conn, $sql_products_brands);
@@ -71,8 +71,6 @@ $product_type = "";
                             // ======== End In danh sách hãng sản xuất =========
                             
                             ?>
-
-                            <!-- End Test -->
                         </div>
                     </div><img
                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC4zIiBkPSJNMCAwSDI0QzM3LjI1NDggMCA0OCAxMC43NDUyIDQ4IDI0QzQ4IDM3LjI1NDggMzcuMjU0OCA0OCAyNCA0OEgwVjBaIiBmaWxsPSIjMUIxRDI5Ii8+CjxwYXRoIGQ9Ik0yNi41IDE4TDIwLjUgMjRMMjYuNSAzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K"
@@ -248,7 +246,7 @@ $product_type = "";
                     <div data-index="0" class="active css-12c5axd" data-content-region-name="hotDealTab"
                         data-track-content="true" data-content-name="Chọn Quà Đúng Gu">
                         <div type="title" class="css-1t4t2c9" style="text-align: center;">Chọn Quà Đúng Gu</div>
-                        <div type="subtitle" class="css-1rjvlsd" style="text-align: center;">Săn Deal Lên Đến 30%</div>
+                        <div type="subtitle" class="css-1rjvlsd" style="text-align: center;">Săn Deal Lên Đến 25%</div>
                     </div>
                     <div data-index="1" class=" css-12c5axd" data-content-region-name="hotDealTab"
                         data-track-content="true" data-content-name="Màn Hình Giá Sốc">
@@ -282,13 +280,16 @@ $product_type = "";
                         <div class="css-gfmc8l">
                             <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider" id="glideContainer">
                                 <div class="glide__track" data-glide-el="track">
+
+                                    <!-- Begin hiển thị sản phẩm sale 25% -->
                                     <div class="home-page--glide__slides"
                                         style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1772px; transform: translate3d(0px, 0px, 0px);">
                                         <?php
-                                        $sql_products = "SELECT * FROM `mathang` 
-                                        join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
+                                        $sql_products = "SELECT * FROM `mathang`
+                                        join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
                                         join anhmh on mathang.MaMH = anhmh.MaMH
-                                        join khuyenmai on mathang.MaKM = khuyenmai.MaKM";
+                                        join khuyenmai on mathang.MaKM = khuyenmai.MaKM
+                                        WHERE GiamGia >= 0.25";
                                         $result_products = mysqli_query($conn, $sql_products);
                                         if (mysqli_num_rows($result_products) <> 0) {
                                             while ($row_products = mysqli_fetch_assoc($result_products)) {
@@ -304,70 +305,69 @@ $product_type = "";
                                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                 $product_price_format = number_format($product_price, 0, '.', '.');
                                                 $save_price_format = number_format($save_price, 0, '.', '.');
-                                                if($product_sale >= 0.3) {
-                                                    echo "<div class='home-page--glide__slide glide__slide--active'
-                                                        style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
-                                                        <div class='css-1ei4kcr'>
-                                                            <div class='product-card css-1msrncq' data-content-region-name='hotDeal'
-                                                                data-track-content='true' data-content-name='230803500'
-                                                                data-content-target='productDetail'><a target='_self'
-                                                                    class='css-pxdb0j'
-                                                                    href='?page=detail&maMH=$product_id'>
-                                                                    <div class='css-4rhdrh'>
-                                                                        <div class='css-1v97aik'>
-                                                                            <div class='css-798fc'>
-                                                                                <div height='100%' width='100%' class='css-1uzm8bv'>
-                                                                                    <img src='$product_image'
-                                                                                        loading='lazy' hover='zoom' decoding='async'
-                                                                                        alt='$product_name'
-                                                                                        style='width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;'>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class='css-14q2k9d'>
-                                                                                <div class='css-zb7zul'>
-                                                                                    <div class='css-1bqeu8f'>TIẾT KIỆM</div>
-                                                                                    <div class='css-1rdv2qd'>$save_price_format&nbsp;₫</div>
-                                                                                </div>
+                                                echo "<div class='home-page--glide__slide glide__slide--active'
+                                                    style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
+                                                    <div class='css-1ei4kcr'>
+                                                        <div class='product-card css-1msrncq' data-content-region-name='hotDeal'
+                                                            data-track-content='true' data-content-name='230803500'
+                                                            data-content-target='productDetail'><a target='_self'
+                                                                class='css-pxdb0j'
+                                                                href='?page=detail&maMH=$product_id'>
+                                                                <div class='css-4rhdrh'>
+                                                                    <div class='css-1v97aik'>
+                                                                        <div class='css-798fc'>
+                                                                            <div height='100%' width='100%' class='css-1uzm8bv'>
+                                                                                <img src='$product_image'
+                                                                                    loading='lazy' hover='zoom' decoding='async'
+                                                                                    alt='$product_name'
+                                                                                    style='width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;'>
                                                                             </div>
                                                                         </div>
-                                                                        <div class='css-68cx5s'>
-                                                                            <div type='body' color='textSecondary'
-                                                                                class='product-brand-name css-90n0z6'
-                                                                                style='text-transform: uppercase; display: inline;'>
-                                                                                $product_brand</div>
-                                                                        </div>
-                                                                        <div class='css-1ybkowq'>
-                                                                            <div type='caption'
-                                                                                class='att-product-card-title css-1uunp2d'
-                                                                                color='textPrimary'>
-                                                                                <h3 title='Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)'
-                                                                                    class='css-1xdyrhj'>$product_name</h3>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class='css-kgkvir'>
-                                                                            <div class='css-1co26wt'>
-                                                                                <div type='subtitle'
-                                                                                    class='att-product-detail-latest-price css-do31rh'
-                                                                                    color='primary500'>$price_sale_format&nbsp;₫</div>
-                                                                                <div class='css-3mjppt'>
-                                                                                    <div type='caption'
-                                                                                        class='att-product-detail-retail-price css-18z00w6'
-                                                                                        color='textSecondary'>$product_price_format&nbsp;₫</div>
-                                                                                    <div type='caption' color='primary500'
-                                                                                        class='css-2rwx6s'>-$sale_rate%</div>
-                                                                                </div>
+                                                                        <div class='css-14q2k9d'>
+                                                                            <div class='css-zb7zul'>
+                                                                                <div class='css-1bqeu8f'>TIẾT KIỆM</div>
+                                                                                <div class='css-1rdv2qd'>$save_price_format&nbsp;₫</div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </a>
-                                                            </div>
+                                                                    <div class='css-68cx5s'>
+                                                                        <div type='body' color='textSecondary'
+                                                                            class='product-brand-name css-90n0z6'
+                                                                            style='text-transform: uppercase; display: inline;'>
+                                                                            $product_brand</div>
+                                                                    </div>
+                                                                    <div class='css-1ybkowq'>
+                                                                        <div type='caption'
+                                                                            class='att-product-card-title css-1uunp2d'
+                                                                            color='textPrimary'>
+                                                                            <h3 title='Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)'
+                                                                                class='css-1xdyrhj'>$product_name</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class='css-kgkvir'>
+                                                                        <div class='css-1co26wt'>
+                                                                            <div type='subtitle'
+                                                                                class='att-product-detail-latest-price css-do31rh'
+                                                                                color='primary500'>$price_sale_format&nbsp;₫</div>
+                                                                            <div class='css-3mjppt'>
+                                                                                <div type='caption'
+                                                                                    class='att-product-detail-retail-price css-18z00w6'
+                                                                                    color='textSecondary'>$product_price_format&nbsp;₫</div>
+                                                                                <div type='caption' color='primary500'
+                                                                                    class='css-2rwx6s'>-$sale_rate%</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
                                                         </div>
-                                                    </div>";
-                                                }
+                                                    </div>
+                                                </div>";
                                             }
                                         }
                                         ?>
                                     </div>
+                                    <!-- End hiển thị sản phẩm sale 25% -->
                                     <div data-glide-el="controls" class="home-page--glide__arrows">
                                         <div class="glide__arrow--override glide__arrow--left glide__arrow--disabled"
                                             data-glide-dir="|<"></div>
@@ -421,34 +421,132 @@ $product_type = "";
                             <div class="glide css-npa7ru glide--swipeable glide--ltr glide--slider"
                                 id="glideContainer1">
                                 <div class="glide__track" data-glide-el="track">
+
+                                    <!-- Begin hiển thị sản phẩm Acer giảm thêm 500k -->
                                     <div class="home-page--glide__slides"
                                         style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1417.6px; transform: translate3d(0px, 0px, 0px);">
                                         <?php
-                                        $sql_products = "SELECT * FROM `mathang` 
-                                        join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
+                                        $sql_products = "SELECT * FROM `mathang`
+                                        join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+                                        join khuyenmai on `mathang`.MaKM = khuyenmai.MaKM
                                         join anhmh on mathang.MaMH = anhmh.MaMH";
                                         $result_products = mysqli_query($conn, $sql_products);
-                                        if (mysqli_num_rows($result_products) <> 0) {
-                                            while ($row_products = mysqli_fetch_assoc($result_products)) {
-                                                $product_name = $row_products["TenMH"];
-                                                $product_price = $row_products["DonGia"];
-                                                $product_brand = $row_products["TenHSX"];
-                                                $product_image = $row_products['DLAnh'];
-                                                $product_id = $row_products['MaMH'];
-                                                $price_sale = $product_price - $product_price * $product_sale - 500000;
-                                                $sale_rate = $product_sale * 100;
-                                                $save_price = $product_price - $price_sale + 500000;
-                                                $price_sale_format = number_format($price_sale, 0, '.', '.');
-                                                $product_price_format = number_format($product_price, 0, '.', '.');
-                                                $save_price_format = number_format($save_price, 0, '.', '.');
 
-                                                if ($row_products["MaHSX"] == "AC") {
+                                        // $products = array(); // Mảng để lưu trữ thông tin về sản phẩm
+                                        
+                                        // if (mysqli_num_rows($result_products) > 0) {
+                                        //     while ($row_products = mysqli_fetch_assoc($result_products)) {
+                                        //         if ($row_products["MaHSX"] == "AC") {
+                                        //             $product_name = $row_products['TenMH'];
+                                        //             $product_price = $row_products["DonGia"];
+                                        //             $product_brand = $row_products["TenHSX"];
+                                        //             $product_image = $row_products['DLAnh'];
+                                        //             $product_id = $row_products['MaMH'];
+                                        //             $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                        //             $sale_rate = $product_sale * 100;
+                                        //             $save_price = $product_price - $price_sale;
+                                        //             $price_sale_format = number_format($price_sale, 0, '.', '.');
+                                        //             $product_price_format = number_format($product_price, 0, '.', '.');
+                                        //             $save_price_format = number_format($save_price, 0, '.', '.');
+
+                                        //             // Thêm thông tin sản phẩm vào mảng
+                                        //             $products[] = array(
+                                        //                 'name' => $product_name,
+                                        //                 'price' => $product_price,
+                                        //                 'brand' => $product_brand,
+                                        //                 'image' => $product_image,
+                                        //                 'id' => $product_id,
+                                        //                 'price_sale' => $price_sale_format,
+                                        //                 'product_price' => $product_price_format,
+                                        //                 'sale_rate' => $sale_rate,
+                                        //                 'save_price' => $save_price_format
+                                        //             );
+                                        //         }
+                                        //     }
+                                        //     // Hiển thị thông tin sản phẩm từ mảng
+                                        //     foreach ($products as $product) {
+                                        //         echo "<div class='home-page--glide__slide glide__slide--active'
+                                        //         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
+                                        //         <div class='css-1ei4kcr'>
+                                        //             <div class='product-card css-1msrncq' data-content-region-name='hotDeal'
+                                        //                 data-track-content='true' data-content-name='230803500'
+                                        //                 data-content-target='productDetail'><a target='_self'
+                                        //                     class='css-pxdb0j'
+                                        //                     href='?page=detail&maMH=" . $product['id'] . "'>
+                                        //                     <div class='css-4rhdrh'>
+                                        //                         <div class='css-1v97aik'>
+                                        //                             <div class='css-798fc'>
+                                        //                                 <div height='100%' width='100%' class='css-1uzm8bv'>
+                                        //                                     <img src='" . $product['image'] . "'
+                                        //                                         alt='" . $product['name'] . "'
+                                        //                                         style='width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;'>
+                                        //                                 </div>
+                                        //                             </div>
+                                        //                             <div class='css-14q2k9d'>
+                                        //                                 <div class='css-zb7zul'>
+                                        //                                     <div class='css-1bqeu8f'>TIẾT KIỆM</div>
+                                        //                                     <div class='css-1rdv2qd'>" . $product['save_price'] . "&nbsp;₫</div>
+                                        //                                 </div>
+                                        //                             </div>
+                                        //                         </div>
+                                        //                         <div class='css-68cx5s'>
+                                        //                             <div type='body' color='textSecondary'
+                                        //                                 class='product-brand-name css-90n0z6'
+                                        //                                 style='text-transform: uppercase; display: inline;'>
+                                        //                                 " . $product['brand'] . "</div>
+                                        //                         </div>
+                                        //                         <div class='css-1ybkowq'>
+                                        //                             <div type='caption'
+                                        //                                 class='att-product-card-title css-1uunp2d'
+                                        //                                 color='textPrimary'>
+                                        //                                 <h3 title='" . $product['name'] . "'
+                                        //                                     class='css-1xdyrhj'>" . $product['name'] . "</h3>
+                                        //                             </div>
+                                        //                         </div>
+                                        //                         <div class='css-kgkvir'>
+                                        //                             <div class='css-1co26wt'>
+                                        //                                 <div type='subtitle'
+                                        //                                     class='att-product-detail-latest-price css-do31rh'
+                                        //                                     color='primary500'>" . $product['price_sale'] . "&nbsp;₫</div>
+                                        //                                 <div class='css-3mjppt'>
+                                        //                                     <div type='caption'
+                                        //                                         class='att-product-detail-retail-price css-18z00w6'
+                                        //                                         color='textSecondary'>" . $product['product_price'] . "&nbsp;₫</div>
+                                        //                                     <div type='caption' color='primary500'
+                                        //                                         class='css-2rwx6s'>-" . $product['sale_rate'] . "%</div>
+                                        //                                 </div>
+                                        //                             </div>
+                                        //                         </div>
+                                        //                     </div>
+                                        //                 </a>
+                                        //             </div>
+                                        //         </div>
+                                        //     </div>";
+                                        //     }
+
+                                        // }
+
+
+                                        if (mysqli_num_rows($result_products) > 0) {
+                                            while ($row_products = mysqli_fetch_assoc($result_products)) {
+                                                if ($row_products["MaHSX"] == "DE") {
+                                                    $product_name = $row_products['TenMH'];
+                                                    $product_price = $row_products["DonGia"];
+                                                    $product_brand = $row_products["TenHSX"];
+                                                    $product_image = $row_products['DLAnh'];
+                                                    $product_sale = $row_products['GiamGia'];
+                                                    $product_id = $row_products['MaMH'];
+                                                    $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                                    $sale_rate = $product_sale * 100;
+                                                    $save_price = $product_price - $price_sale;
+                                                    $price_sale_format = number_format($price_sale, 0, '.', '.');
+                                                    $product_price_format = number_format($product_price, 0, '.', '.');
+                                                    $save_price_format = number_format($save_price, 0, '.', '.');
+                                        
                                                     echo "<div class='home-page--glide__slide glide__slide--active'
                                                         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
                                                         <div class='css-1ei4kcr'>
-                                                            <div class='product-card css-1msrncq' data-content-region-name='hotDeal'
-                                                                data-track-content='true' data-content-name='230803500'
-                                                                data-content-target='productDetail'><a target='_self'
+                                                            <div class='product-card css-1msrncq'><a target='_self'
                                                                     class='css-pxdb0j'
                                                                     href='?page=detail&maMH=$product_id'>
                                                                     <div class='css-4rhdrh'>
@@ -456,7 +554,6 @@ $product_type = "";
                                                                             <div class='css-798fc'>
                                                                                 <div height='100%' width='100%' class='css-1uzm8bv'>
                                                                                     <img src='$product_image'
-                                                                                        loading='lazy' hover='zoom' decoding='async'
                                                                                         alt='$product_name'
                                                                                         style='width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;'>
                                                                                 </div>
@@ -478,7 +575,7 @@ $product_type = "";
                                                                             <div type='caption'
                                                                                 class='att-product-card-title css-1uunp2d'
                                                                                 color='textPrimary'>
-                                                                                <h3 title='Máy sấy tóc Dreame Hair Glory AHD6A-RS (Rose Gold)'
+                                                                                <h3 title='$product_name'
                                                                                     class='css-1xdyrhj'>$product_name</h3>
                                                                             </div>
                                                                         </div>
@@ -502,11 +599,12 @@ $product_type = "";
                                                         </div>
                                                     </div>";
                                                 }
-
                                             }
                                         }
                                         ?>
                                     </div>
+                                    <!-- End hiển thị sản phẩm Acer giảm thêm 500k -->
+
                                     <div data-glide-el="controls" class="home-page--glide__arrows">
                                         <div class="glide__arrow--override glide__arrow--left glide__arrow--disabled"
                                             data-glide-dir="|<"></div>
@@ -598,8 +696,8 @@ $product_type = "";
                         <div class="glide__slides"
                             style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 4744px; transform: translate3d(0px, 0px, 0px);">
                             <?php
-                            $sql_products = "SELECT * FROM `mathang` 
-                            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
+                            $sql_products = "SELECT * FROM `mathang`
+                            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
                             join anhmh on mathang.MaMH = anhmh.MaMH";
                             $result_products = mysqli_query($conn, $sql_products);
                             if (mysqli_num_rows($result_products) <> 0) {
@@ -609,7 +707,7 @@ $product_type = "";
                                     $product_brand = $row_products["TenHSX"];
                                     $product_image = $row_products['DLAnh'];
                                     $product_id = $row_products['MaMH'];
-                                    $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                    $price_sale = $product_price - $product_price * $product_sale;
                                     $sale_rate = $product_sale * 100;
                                     $save_price = $product_price - $price_sale;
                                     $price_sale_format = number_format($price_sale, 0, '.', '.');
@@ -713,8 +811,9 @@ $product_type = "";
                         if (!isset($_GET['op_page']))
                             $_GET['op_page'] = 1;
                         $offset = ($_GET['op_page'] - 1) * $rowsPerPage;
-                        $sql_products = "SELECT * FROM `mathang` 
-                            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX 
+                        $sql_products = "SELECT * FROM `mathang`
+                            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+                            join khuyenmai on `mathang`.MaKM = khuyenmai.MaKM
                             join anhmh on mathang.MaMH = anhmh.MaMH LIMIT $offset, $rowsPerPage;";
                         $result_products = mysqli_query($conn, $sql_products);
 
@@ -726,11 +825,13 @@ $product_type = "";
                             $num = $temp - $rowsPerPage;
                         if (mysqli_num_rows($result_products) <> 0) {
                             while ($row_products = mysqli_fetch_assoc($result_products)) {
+                                $product_name = $row_products['TenMH'];
                                 $product_price = $row_products["DonGia"];
                                 $product_brand = $row_products["TenHSX"];
                                 $product_image = $row_products['DLAnh'];
                                 $product_id = $row_products['MaMH'];
-                                $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                $product_sale = $row_products['GiamGia'];
+                                $price_sale = $product_price - $product_price * $product_sale;
                                 $sale_rate = $product_sale * 100;
                                 $save_price = $product_price - $price_sale;
                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
@@ -909,7 +1010,7 @@ $product_type = "";
                 </div>`;
 
 
-                // If the count down is over, write some text 
+                // If the count down is over, write some text
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("demo").innerHTML = "EXPIRED";

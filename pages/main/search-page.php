@@ -68,6 +68,8 @@ if (isset($_GET['filter'])) {
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
+
+                            <!-- ======== Begin Hiển thị thương hiệu -->
                             <div class="css-0">
                                 <div class="css-gr7w3w">
                                     <div type="subtitle" class="css-q3day0">Thương hiệu</div><svg fill="none"
@@ -79,38 +81,7 @@ if (isset($_GET['filter'])) {
                                 </div>
                                 <div class="active css-1i3vt0z">
                                     <div direction="row" class="css-1skvw03">
-                                        <div style="min-width: 100%;"><label class="check-box css-1p9luqs">
-                                                <div class="">
-                                                    <input type="checkbox" name="products[]" value="AC">
-                                                    <div class="checkbox-inner css-gfk8lf">
-                                                        <svg fill="none" viewBox="0 0 24 24" size="12"
-                                                            class="css-u5ggi9" color="transparent" height="12"
-                                                            width="12" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div type="body" class="checkbox-label css-6r3s23"
-                                                    style="flex: 1 1 0%;">
-                                                    <span>
-                                                        <span style="display: flex;">
-                                                            <div>ACER</div>
-                                                        </span>
-                                                        <span class="css-22xpbp" data-popper-reference-hidden="false"
-                                                            data-popper-escaped="true" data-popper-placement="right"
-                                                            style="position: absolute; inset: 0px auto auto 0px; visibility: hidden; z-index: 999; transform: translate3d(106px, 150px, 0px);"><span
-                                                                class="arrow-left css-3mq3j4" data-placement="auto"
-                                                                style="position: absolute; top: 0px; transform: translate3d(0px, 15px, 0px);"></span>
-                                                            <div type="body" color="white" class="css-2h64mz">ACER</div>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </label>
-                                        </div>
 
-                                        <!-- Begin Test -->
                                         <?php
                                         $sql_products_brands = "SELECT * FROM dmhangsanxuat";
                                         $result_products_brands = mysqli_query($conn, $sql_products_brands);
@@ -150,14 +121,16 @@ if (isset($_GET['filter'])) {
                                             </div>';
                                         }
                                         ?>
-                                        <!-- End Test -->
                                     </div>
-
                                 </div>
                             </div>
+                            <!-- ======== End Hiển thị thương hiệu -->
+
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
+
+                            <!-- ======== Begin hiển thị nhu cầu -->
                             <div class="css-0">
                                 <div class="css-gr7w3w">
                                     <div type="subtitle" class="css-q3day0">Nhu cầu</div><svg fill="none"
@@ -253,6 +226,7 @@ if (isset($_GET['filter'])) {
                                 </div>
 
                             </div>
+                            <!-- ======== End hiển thị nhu cầu -->
                             <div class="css-1veiyrs">
                                 <div width="100%" color="border" class="css-yae08c"></div>
                             </div>
@@ -265,12 +239,12 @@ if (isset($_GET['filter'])) {
                     </div>
         </form>
         <?php
-        if (isset($_GET['search-input'])){
+        if (isset($_GET['search-input'])) {
             $searchvalue = $_GET['search-input'];
         }
         if (isset($_POST['products'])) {
             $valueproduct = $_POST['products'];
-            $searchvalue ='';
+            $searchvalue = '';
         } else {
             $valueproduct = [];
         }
@@ -288,37 +262,37 @@ if (isset($_GET['filter'])) {
         <div class="teko-col teko-col-10 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
             <div class="teko-row teko-row-start teko-row-baseline css-17jbfbn">
                 <h1 class="css-7nrxrf">Tìm kiếm:
-                    <?php echo $search ?>
-                    <?php echo "$searchvalue" ?>
                     <?php if ($namepd == 'AC') {
                         echo 'Acer';
-                    }elseif($namepd == 'AP'){
+                    } elseif ($namepd == 'AP') {
                         echo 'Apple';
-                    }elseif($namepd == 'HP'){
+                    } elseif ($namepd == 'HP') {
                         echo 'HP';
-                    }elseif($namepd == 'DE'){
+                    } elseif ($namepd == 'DE') {
                         echo 'DELL';
-                    }elseif($namepd == 'AS'){
+                    } elseif ($namepd == 'AS') {
                         echo 'Asus';
-                    }elseif($namepd == 'LE'){
+                    } elseif ($namepd == 'LE') {
                         echo 'Lenovo';
-                    }elseif($namepd == 'LG'){
+                    } elseif ($namepd == 'LG') {
                         echo 'LG';
-                    }elseif($namepd == 'MI'){
+                    } elseif ($namepd == 'MI') {
                         echo 'Microsoft';
-                    }elseif($namepd == 'MS'){
+                    } elseif ($namepd == 'MS') {
                         echo 'MSI';
                     }
                     ?>
-                    <?php 
-                    if($nameloaimh == 'BSLT'){
-                         echo 'Laptop Văn Phòng';
-                    }elseif($nameloaimh == 'GMLT'){
+                    <?php
+                    if ($nameloaimh == 'BSLT') {
+                        echo 'Laptop Văn Phòng';
+                    } elseif ($nameloaimh == 'GMLT') {
                         echo 'Laptop Gaming';
-                    }elseif($nameloaimh == 'TIOLT'){
+                    } elseif ($nameloaimh == 'TIOLT') {
                         echo 'Laptop Cảm Ứng';
                     }
                     ?>
+
+                    <?php if($namepd == null and $nameloaimh == null) echo "$searchvalue" ; ?>
                 </h1>
                 <div type="title" color="textSecondary" class="css-18xfrv"></div>
             </div>
@@ -370,18 +344,22 @@ if (isset($_GET['filter'])) {
                                     join anhmh on mathang.MaMH = anhmh.MaMH
                                     join dmhangsanxuat on mathang.MaHSX = dmhangsanxuat.MaHSX
                                     join dmloaimathang on mathang.MaLMH = dmloaimathang.MaLMH
+                                    join khuyenmai on mathang.MaKM = khuyenmai.MaKM
                                     WHERE TenMH LIKE '%$search%' || TenLoai LIKE '%$search%' || TenHSX LIKE '%$search%'";
                         } elseif (!empty($nameHSX) && empty($nameLMH)) {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
+                            join khuyenmai on mathang.MaKM = khuyenmai.MaKM
                             WHERE TenMH LIKE '%$search%' AND MaHSX = '$nameHSX'";
                         } elseif (empty($nameHSX) && !empty($nameLMH)) {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
+                            join khuyenmai on mathang.MaKM = khuyenmai.MaKM
                             WHERE MaLMH = '$nameLMH'";
                         } else {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
+                            join khuyenmai on mathang.MaKM = khuyenmai.MaKM
                             WHERE TenMH LIKE '%$search%' AND MaHSX = '$nameHSX' AND MaLMH = '$nameLMH'";
                         }
                         $result_products = mysqli_query($conn, $query);
@@ -390,9 +368,16 @@ if (isset($_GET['filter'])) {
                             while ($row_products = mysqli_fetch_assoc($result_products)) {
                                 $product_name = $row_products["TenMH"];
                                 $product_price = $row_products["DonGia"];
-                                $product_price = number_format($product_price, 0, '.', '.');
+                                $product_brand = $row_products["TenHSX"];
                                 $product_image = $row_products['DLAnh'];
                                 $product_id = $row_products['MaMH'];
+                                $product_sale = $row_products['GiamGia'];
+                                $price_sale = $product_price - $product_price * $product_sale;
+                                $sale_rate = $product_sale * 100;
+                                $save_price = $product_price - $price_sale;
+                                $price_sale_format = number_format($price_sale, 0, '.', '.');
+                                $product_price_format = number_format($product_price, 0, '.', '.');
+                                $save_price_format = number_format($save_price, 0, '.', '.');
                                 echo "<div type='grid' class='css-13w7uog'>
                                        <div class='product-card css-1msrncq' data-content-region-name='itemProductResult'
                                            data-track-content='true' data-content-name='231002080' data-content-index='0'
@@ -411,7 +396,7 @@ if (isset($_GET['filter'])) {
                                                        <div class='css-14q2k9d'>
                                                            <div class='css-zb7zul'>
                                                                <div class='css-1bqeu8f'>TIẾT KIỆM</div>
-                                                               <div class='css-1rdv2qd'>600.000&nbsp;₫</div>
+                                                               <div class='css-1rdv2qd'>$save_price_format&nbsp;₫</div>
                                                            </div>
                                                        </div>
                                                    </div>
@@ -430,12 +415,12 @@ if (isset($_GET['filter'])) {
                                                    <div class='css-kgkvir'>
                                                        <div class='css-1co26wt'>
                                                            <div type='subtitle' class='att-product-detail-latest-price css-do31rh'
-                                                               color='primary500'>$product_price.₫</div>
+                                                               color='primary500'>$product_price_format.₫</div>
                                                            <div class='css-3mjppt'>
                                                                <div type='caption'
                                                                    class='att-product-detail-retail-price css-18z00w6'
-                                                                   color='textSecondary'>6.590.000&nbsp;₫</div>
-                                                               <div type='caption' color='primary500' class='css-2rwx6s'>-9.1%
+                                                                   color='textSecondary'>$price_sale_format&nbsp;₫</div>
+                                                               <div type='caption' color='primary500' class='css-2rwx6s'>$sale_rate%
                                                                </div>
                                                            </div>
                                                        </div>
