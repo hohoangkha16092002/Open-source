@@ -1,28 +1,37 @@
+<?php
+
+$sql_province = "SELECT * FROM province";
+$result_province = mysqli_query($conn, $sql_province);
+?>
+
 <div id="teko-modal-lo9t136vm2jzjf9v1hs"
     style="position: fixed; inset: 0px; z-index: 1051; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.1);">
     <div class="css-1272naz"></div>
     <div class="teko-modal teko-modal-show css-t2ptn2" style="opacity: 1; transform: translateY(0px);">
         <div class="teko-modal-content">
-            <div class="teko-modal-close css-1qzn8fv"><i onclick="window.history.back(-1);" class="fa-solid fa-xmark"></i></div>
+            <div class="teko-modal-close css-1qzn8fv"><i onclick="window.history.back(-1);"
+                    class="fa-solid fa-xmark"></i></div>
             <div class="teko-modal-header">
                 <div type="title" class="teko-modal-title css-1cp1h79">Thông tin người nhận hàng</div>
             </div>
             <div class="teko-modal-body">
                 <div class="css-1g8ztiq">
-                    <form class="teko-form-vertical css-kxydk6">
+                    <form class="teko-form-vertical css-kxydk6" id="myForm" method="POST">
                         <div class="teko-row teko-form-item css-iu028d">
-                            <div class="teko-col teko-form-item-label css-1yvcaye"><label for="name"
-                                    class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                            <div class="teko-col teko-form-item-label css-1yvcaye">
+                                <label for="name" class="teko-form-item-no-colon teko-form-item-required css-15ognui"
                                     style="height: 40px;">
                                     <div type="body" color="textTitle" class="css-3mfztx">Họ tên</div>
-                                </label></div>
+                                </label>
+                            </div>
                             <div class="teko-col teko-form-item-control css-rznjps">
                                 <div class="teko-form-item-control-input">
                                     <div class="teko-form-item-control-input-content">
                                         <div class="css-1npt3uz">
-                                            <div class="input-container css-kwckz4" height="40"><input id="name"
-                                                    type="text" placeholder="Vui lòng nhập tên người nhận"
-                                                    maxlength="255" class="css-1acir1a" value=""></div>
+                                            <div class="input-container css-kwckz4" height="40">
+                                                <input id="name" type="text" placeholder="Vui lòng nhập tên người nhận"
+                                                    maxlength="255" class="css-1acir1a" value="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -81,16 +90,26 @@
                                             class="teko-form-item-no-colon teko-form-item-required css-15ognui"
                                             style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Tỉnh/Thành phố</div>
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="teko-col teko-form-item-control css-rznjps">
                                         <div class="teko-form-item-control-input">
                                             <div class="teko-form-item-control-input-content">
                                                 <div id="provinceCode" tabindex="-1" class="css-1npt3uz">
                                                     <div class="css-cssveg">
                                                         <div class="css-cg6cr2">
-                                                            <select class="css-w9zq4w" placeholder="Chọn thanh pho">
-                                                                <option value="">Khanh Hoa</option>
-                                                                <option value="">Phu Yen</option>
+                                                            <select id="province" name="province" class="form-control">
+                                                                <option value="">Chọn một tỉnh</option>
+                                                                <!-- populate options with data from your database or API -->
+                                                                <?php
+                                                                while ($row = mysqli_fetch_assoc($result_province)) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row['province_id'] ?>">
+                                                                        <?php echo $row['name'] ?>
+                                                                    </option>
+                                                                    <?php
+                                                                }
+                                                                ?>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -103,32 +122,24 @@
                             </div>
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="districtCode"
+                                    <div class="teko-col teko-form-item-label css-1yvcaye">
+                                        <label for="districtCode"
                                             class="teko-form-item-no-colon teko-form-item-required css-15ognui"
                                             style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Quận/Huyện</div>
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="teko-col teko-form-item-control css-rznjps">
                                         <div class="teko-form-item-control-input">
                                             <div class="teko-form-item-control-input-content">
-                                                <div id="districtCode" tabindex="-1" class="css-1npt3uz">
+                                                <div class="css-1npt3uz">
                                                     <div class="css-cssveg">
-                                                        <div disabled="" class="css-wds49r">
+                                                        <div class="css-wds49r">
                                                             <div class="css-w9zq4w">
-                                                                <div class="input-container css-zujl7w" height="40"
-                                                                    disabled=""><input type="text" placeholder="Chọn"
-                                                                        maxlength="255" disabled="" class="css-1acir1a"
-                                                                        value="">
-                                                                    <div height="40" class="css-10fj0sh"><svg
-                                                                            fill="none" viewBox="0 0 24 24" size="20"
-                                                                            class="css-11md2ba" color="textSecondary"
-                                                                            height="20" width="20"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M16.4767 10H7.52331C7.07668 10 6.83609 10.5267 7.12731 10.867L11.208 15.6348C11.6248 16.1217 12.3752 16.1217 12.792 15.6348L16.8727 10.867C17.1639 10.5267 16.9233 10 16.4767 10Z"
-                                                                                fill="#82869E"></path>
-                                                                        </svg></div>
-                                                                </div>
+                                                                <select id="district" name="district"
+                                                                    class="form-control">
+                                                                    <option value="">Chọn một quận/huyện</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,42 +153,34 @@
                         </div>
                         <div class="teko-row teko-row-space-between css-15vgeje">
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
-                                <div class="teko-row teko-form-item css-iu028d">
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="wardCode"
-                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
-                                            style="height: 40px;">
-                                            <div type="body" color="textTitle" class="css-3mfztx">Phường/Xã</div>
-                                        </label></div>
-                                    <div class="teko-col teko-form-item-control css-rznjps">
-                                        <div class="teko-form-item-control-input">
-                                            <div class="teko-form-item-control-input-content">
-                                                <div id="wardCode" tabindex="-1" class="css-1npt3uz">
-                                                    <div class="css-cssveg">
-                                                        <div disabled="" class="css-wds49r">
-                                                            <div class="css-w9zq4w">
-                                                                <div class="input-container css-zujl7w" height="40"
-                                                                    disabled=""><input type="text" placeholder="Chọn"
-                                                                        maxlength="255" disabled="" class="css-1acir1a"
-                                                                        value="">
-                                                                    <div height="40" class="css-10fj0sh"><svg
-                                                                            fill="none" viewBox="0 0 24 24" size="20"
-                                                                            class="css-11md2ba" color="textSecondary"
-                                                                            height="20" width="20"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M16.4767 10H7.52331C7.07668 10 6.83609 10.5267 7.12731 10.867L11.208 15.6348C11.6248 16.1217 12.3752 16.1217 12.792 15.6348L16.8727 10.867C17.1639 10.5267 16.9233 10 16.4767 10Z"
-                                                                                fill="#82869E"></path>
-                                                                        </svg></div>
+                                <form action="" method="get">
+                                    <div class="teko-row teko-form-item css-iu028d">
+                                        <div class="teko-col teko-form-item-label css-1yvcaye"><label for="wardCode"
+                                                class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                                style="height: 40px;">
+                                                <div type="body" color="textTitle" class="css-3mfztx">Phường/Xã</div>
+                                            </label></div>
+                                        <div class="teko-col teko-form-item-control css-rznjps">
+                                            <div class="teko-form-item-control-input">
+                                                <div class="teko-form-item-control-input-content">
+                                                    <div id="wardCode" tabindex="-1" class="css-1npt3uz">
+                                                        <div class="css-cssveg">
+                                                            <div disabled="" class="css-wds49r">
+                                                                <div class="css-w9zq4w">
+                                                                    <select id="wards" name="wards"
+                                                                        class="form-control">
+                                                                        <option value="">Chọn một xã</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="css-1ezclw1"></div>
                                                     </div>
-                                                    <div class="css-1ezclw1"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
@@ -185,7 +188,8 @@
                                             class="teko-form-item-no-colon teko-form-item-required css-15ognui"
                                             style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Địa chỉ cụ thể</div>
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="teko-col teko-form-item-control css-rznjps">
                                         <div class="teko-form-item-control-input">
                                             <div class="teko-form-item-control-input-content">
@@ -193,7 +197,8 @@
                                                     <div class="input-container css-kwckz4" height="40"><input
                                                             id="address" type="text"
                                                             placeholder="Số nhà, ngõ, tên đường..." maxlength="255"
-                                                            class="css-1acir1a" value=""></div>
+                                                            class="css-1acir1a" value="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -234,7 +239,7 @@
                                 <div class="css-157jl91"></div>
                             </span>
                         </button>
-                        <button height="2.5rem" color="white" class="css-oyymsr" type="button">
+                        <button height="2.5rem" color="white" name="add_sale" class="css-oyymsr" type="button">
                             <div type="body" class="button-text css-2h64mz" color="white">Lưu địa chỉ</div><span
                                 style="margin-left: 0px;">
                                 <div class="css-157jl91"></div>

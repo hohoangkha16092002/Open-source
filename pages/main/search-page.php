@@ -91,7 +91,7 @@ if (isset($_GET['filter'])) {
                                             $TenHSX = $row_products_brands["TenHSX"];
                                             echo '<div style="min-width: 100%;"><label class="check-box css-1p9luqs">
                                                     <div class="">
-                                                        <input type="checkbox" name="products[]" value="' . $MaHSX . '">
+                                                        <input type="checkbox" name="products[]" value="' . $TenHSX . '">
                                                         <div class="checkbox-inner css-gfk8lf">
                                                             <svg fill="none" viewBox="0 0 24 24" size="12"
                                                                 class="css-u5ggi9" color="transparent" height="12"
@@ -262,23 +262,23 @@ if (isset($_GET['filter'])) {
         <div class="teko-col teko-col-10 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
             <div class="teko-row teko-row-start teko-row-baseline css-17jbfbn">
                 <h1 class="css-7nrxrf">Tìm kiếm:
-                    <?php if ($namepd == 'AC') {
+                    <?php if ($namepd == 'Acer') {
                         echo 'Acer';
-                    } elseif ($namepd == 'AP') {
+                    } elseif ($namepd == 'Apple') {
                         echo 'Apple';
                     } elseif ($namepd == 'HP') {
                         echo 'HP';
-                    } elseif ($namepd == 'DE') {
-                        echo 'DELL';
-                    } elseif ($namepd == 'AS') {
+                    } elseif ($namepd == 'Dell') {
+                        echo 'Dell';
+                    } elseif ($namepd == 'Asus') {
                         echo 'Asus';
-                    } elseif ($namepd == 'LE') {
+                    } elseif ($namepd == 'Lenovo') {
                         echo 'Lenovo';
                     } elseif ($namepd == 'LG') {
                         echo 'LG';
-                    } elseif ($namepd == 'MI') {
+                    } elseif ($namepd == 'Microsoft') {
                         echo 'Microsoft';
-                    } elseif ($namepd == 'MS') {
+                    } elseif ($namepd == 'MSI') {
                         echo 'MSI';
                     }
                     ?>
@@ -350,17 +350,20 @@ if (isset($_GET['filter'])) {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
                             join khuyenmai on mathang.MaKM = khuyenmai.MaKM
-                            WHERE TenMH LIKE '%$search%' AND MaHSX = '$nameHSX'";
+                            join dmhangsanxuat on mathang.MaHSX = dmhangsanxuat.MaHSX
+                            WHERE TenHSX = '$nameHSX'";
                         } elseif (empty($nameHSX) && !empty($nameLMH)) {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
+                            join dmhangsanxuat on mathang.MaHSX = dmhangsanxuat.MaHSX
                             join khuyenmai on mathang.MaKM = khuyenmai.MaKM
                             WHERE MaLMH = '$nameLMH'";
                         } else {
                             $query = "SELECT * FROM `mathang` 
                             JOIN anhmh ON mathang.MaMH = anhmh.MaMH
+                            join dmhangsanxuat on mathang.MaHSX = dmhangsanxuat.MaHSX
                             join khuyenmai on mathang.MaKM = khuyenmai.MaKM
-                            WHERE TenMH LIKE '%$search%' AND MaHSX = '$nameHSX' AND MaLMH = '$nameLMH'";
+                            WHERE TenHSX = '$nameHSX' AND MaLMH = '$nameLMH'";
                         }
                         $result_products = mysqli_query($conn, $query);
 
@@ -402,7 +405,7 @@ if (isset($_GET['filter'])) {
                                                    </div>
                                                    <div class='css-68cx5s'>
                                                        <div type='body' color='textSecondary' class='product-brand-name css-90n0z6'
-                                                           style='text-transform: uppercase; display: inline;'>EPSON</div>
+                                                           style='text-transform: uppercase; display: inline;'>$product_brand</div>
                                                    </div>
                                                    <div class='css-1ybkowq'>
                                                        <div type='caption' class='att-product-card-title css-1uunp2d'

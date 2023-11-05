@@ -46,7 +46,7 @@ $product_type = "";
                             </a>';
                             }
                             // ======== End In danh sách loại mặt hàng =========
-
+                            
                             // ======== Begin In danh sách hãng sản xuất =========
                             $sql_products_brands = "SELECT * FROM dmhangsanxuat";
                             $result_products_brands = mysqli_query($conn, $sql_products_brands);
@@ -393,7 +393,8 @@ $product_type = "";
                 <div class="css-j8f2xf">
                     <div data-index="0" class="active css-12c5axd" data-content-region-name="hotDealTab"
                         data-track-content="true" data-content-name="Ưu đãi Samsung cho Học sinh sinh viên">
-                        <div type="title" class="css-1t4t2c9" style="text-align: center;">Ưu đãi Acer cho Học sinh
+                        <div type="title" class="css-1t4t2c9" style="text-align: center;">Ưu đãi Laptop Dell cho Học
+                            sinh
                             sinh viên</div>
                         <div type="subtitle" class="css-1rjvlsd" style="text-align: center;">Giảm thêm đến 500K</div>
                     </div>
@@ -448,7 +449,7 @@ $product_type = "";
                                         //             $price_sale_format = number_format($price_sale, 0, '.', '.');
                                         //             $product_price_format = number_format($product_price, 0, '.', '.');
                                         //             $save_price_format = number_format($save_price, 0, '.', '.');
-
+                                        
                                         //             // Thêm thông tin sản phẩm vào mảng
                                         //             $products[] = array(
                                         //                 'name' => $product_name,
@@ -523,9 +524,9 @@ $product_type = "";
                                         //         </div>
                                         //     </div>";
                                         //     }
-
+                                        
                                         // }
-
+                                        
 
                                         if (mysqli_num_rows($result_products) > 0) {
                                             while ($row_products = mysqli_fetch_assoc($result_products)) {
@@ -542,7 +543,7 @@ $product_type = "";
                                                     $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                     $product_price_format = number_format($product_price, 0, '.', '.');
                                                     $save_price_format = number_format($save_price, 0, '.', '.');
-                                        
+
                                                     echo "<div class='home-page--glide__slide glide__slide--active'
                                                         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
                                                         <div class='css-1ei4kcr'>
@@ -635,7 +636,7 @@ $product_type = "";
 
                             echo "
                             <div class='css-qikc2t'>
-                                <a target='_self' class='css-cbrxda' href='https://phongvu.vn/c/laptop'>
+                                <a target='_self' class='css-cbrxda' href='?page=search&search-input=$product_name'>
                                     <div height='56' width='56' class='css-1senw2f'><img
                                             src='https://lh3.googleusercontent.com/wOhcPJSPsA2l653-KPjmfodiem9y3NS6Mji6SZhkNCKsuyHK9Z3x0X-2l8gikfPI5n1DX0Fg9bBCHsOI0ACZD7n20XHN4e72=rw'
                                             loading='lazy' decoding='async' alt='Laptop'
@@ -792,13 +793,17 @@ $product_type = "";
                     <div class="css-ftpi71" style="padding-left: 16px;"><a target="_self" class="css-cbrxda"
                             href="/c/san-pham-hot">
                             <div type="title" color="textTitle" class="title css-1dlj6qw">SẢN PHẨM NỔI BẬT</div>
-                        </a><a target="_self" class="css-cbrxda" href="/c/san-pham-hot">
-                            <div color="" class="css-k6wbw">Xem tất cả<svg fill="none" viewBox="0 0 24 24"
-                                    class="css-9w5ue6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        </a>
+                        <a class="css-cbrxda" href="?page=search&search-input=<?php echo $product_type ?>">
+                            <div color="" class="css-k6wbw">Xem tất cả
+                                <svg fill="none" viewBox="0 0 24 24" class="css-9w5ue6" height="1em" width="1em"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.49976 19.0001L15.4998 12.0001L8.49976 5.00012" stroke="currentColor"
                                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg></div>
-                        </a></div>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
                     <div class="css-1y2krk01">
                         <?php
                         //phan trang
