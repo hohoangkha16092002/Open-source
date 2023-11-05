@@ -50,6 +50,9 @@
     elseif ($tam == 'logout') {
         include 'main/logout.php';
     }
+    elseif ($tam == 'ajax_get_district') {
+        include 'main/ajax_get_district.php';
+    }
     else {
         include 'main/home.php';
     }

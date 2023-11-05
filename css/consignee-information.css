@@ -168,19 +168,6 @@
     transition: color 0.3s ease 0s;
 }
 
-.css-1qrgscw.teko-row-space-between {
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-
-@media (min-width: 1024px){
-    .css-1qrgscw.teko-row {
-        -webkit-box-pack: center;
-        justify-content: center;
-    }
-    
-}
-
 .css-1qrgscw {
     border-style: none;
     border-width: 1px;
@@ -193,6 +180,13 @@
     flex-flow: wrap;
 }
 
+@media (min-width: 1024px){
+    .css-1qrgscw.teko-row {
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    
+}
 
 .css-t2ptn2 .teko-modal-content .teko-modal-body {
     font-size: 13px;
@@ -308,11 +302,11 @@
     transition: color 0.3s ease 0s;
 }
 
-.css-rznjps.teko-form-item-control {
-    display: flex;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    justify-content: center;
+.css-rznjps {
+    border-style: none;
+    border-width: 1px;
+    border-color: unset;
+    opacity: 1;
 }
 
 .css-rznjps.teko-col {
@@ -321,15 +315,24 @@
     min-height: 1px;
 }
 
+.css-rznjps.teko-form-item-control {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
 .css-rznjps.teko-form-item-control .teko-form-item-control-input {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
+
 .css-rznjps.teko-form-item-control .teko-form-item-control-input .teko-form-item-control-input-content {
     flex: 1 1 auto;
     max-width: 100%;
 }
+
 .css-kwckz4 {
     border-style: solid;
     border-radius: 0.25rem;
@@ -343,6 +346,9 @@
     border-color: rgb(224, 224, 224);
 }
 
+.css-1acir1a {
+    background-color: inherit;
+}
 
 .css-kwckz4 input {
     flex: 1 1 0%;
@@ -351,9 +357,7 @@
     font-size: 13px;
     color: rgb(67, 70, 87);
 }
-.css-1acir1a {
-    background-color: inherit;
-}
+
 
 .css-cssveg {
     position: relative;
@@ -520,17 +524,16 @@
     opacity: 1;
 }
 
-
-.css-15vgeje.teko-row-space-between {
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-
 @media (min-width: 1024px){
     .css-15vgeje.teko-row {
         -webkit-box-pack: center;
         justify-content: center;
     }
+}
+
+.css-15vgeje.teko-row-space-between {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
 }
 
 .css-15vgeje.teko-row {
@@ -592,16 +595,12 @@
     transition: transform 0.3s ease 0s;
     background: transparent;
 }
+
 .css-1qrgscw.teko-row-end {
     -webkit-box-pack: end;
     justify-content: flex-end;
 }
-@media (min-width: 1024px){
-    .css-1qrgscw.teko-row {
-        -webkit-box-pack: center;
-        justify-content: center;
-    }
-}
+
 
 .css-1u2186j {
     display: inline-flex;
@@ -692,4 +691,11 @@
     overflow: hidden;
     z-index: 0;
     border-radius: inherit;
+}
+
+
+
+.css-1qrgscw.teko-row-space-between {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
 }
