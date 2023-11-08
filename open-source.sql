@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2023 at 10:48 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Nov 08, 2023 at 09:37 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,7 @@ CREATE TABLE `anhmh` (
 
 INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
 ('HASP001', 'LT001', 'ACER Aspire 3', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw'),
-('HASP002', 'LT001', 'ACER Nitro 5 Tiger', 'https://lh3.googleusercontent.com/fXZQ5-Dps2ru-8lXOuMVr0-Md61rn131O041rNRli8657yKmkLOao90COa2KOkry-coVjpzl4oK9BZn-zRMsoEOJNvnGD38=w500-rw'),
+('HASP002', 'LT002', 'ACER Nitro 5 Tiger', 'https://lh3.googleusercontent.com/fXZQ5-Dps2ru-8lXOuMVr0-Md61rn131O041rNRli8657yKmkLOao90COa2KOkry-coVjpzl4oK9BZn-zRMsoEOJNvnGD38=w500-rw'),
 ('HASP003', 'LT003', 'MacBook Air 2023', 'https://lh3.googleusercontent.com/ynVxOa_n1ROHtX-zLGJOshMz99v5dwEKMf9Ikqj3v4KsCbH75NxVZEkmGjuzhM-_8L023MN3UpRigBFQr2YHLw0ptoox-G0=w500-rw'),
 ('HASP004', 'LT004', 'ASUS TUF Gaming F15', 'https://lh3.googleusercontent.com/RyacFxZhVBMlVbIHzZW5xFcYutS4jZofTji-dBtvqbmlcIDdR1mVtNInpvcoMJ-4KMeFBiZy3BoeiNVEq7PVjHSNqSt3sYP4=w500-rw'),
 ('HASP005', 'LT005', 'Dell Vostro 3530', 'https://lh3.googleusercontent.com/RjwgHOpZEdYxUSA7IeT8Obit-W8nsixvqL-3eTNfxmDhqhbpaqugwY_gCC3l0ACGcfwJecu7EGMsbeepP3D4zoxmJzUxmWyDEg=w500-rw'),
@@ -51,7 +51,7 @@ INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
 ('HASP010', 'LT010', 'LG Gram 2023 ', 'https://lh3.googleusercontent.com/YU9mkLDYdLTI8xCTQYtIxa3x7RB-NP3s9WaZo9KdxzeNe1lpkCbSWRgc51rAUBhv54IRTbN2PBYhS6AG-btSTCG0i-pwfpVM=w500-rw'),
 ('HASP011', 'LT011', 'MSI Modern 14 ', 'https://lh3.googleusercontent.com/dLxlPSOY5wfN31JvRBLyXYqm3L2ClO_sAKhWgpTA0C10vcsH96HwiCVA6xUftryPyNCSEvutgdw4ZXeDDQIz91Ob4yAxCjH3=w500-rw'),
 ('HASP012', 'LT012', 'MSI Crosshair 15', 'https://lh3.googleusercontent.com/JWq7Iiz0C1H8Re9XAz_O_tiWVWj5uPB1pOFJdND8RTDCrz1KzqGQj1E3kmzcGYpzS2BWfU3NOqaWj0i1bUrTF2SMmkDPoJI=w500-rw'),
-('HASP013', 'LT001', 'ACER Nitro 16 Phoenix', 'https://lh3.googleusercontent.com/YSGzzyiivz6GBZi825qGOEyePXHoz4hDb_Vj3PnVe9qiSGxQZViXQPSiFs8JkL5VKogBs0z9bX-49tgqR1Tj2jaSZOpxEL8=w1000-rw'),
+('HASP013', 'LT013', 'ACER Nitro 16 Phoenix', 'https://lh3.googleusercontent.com/YSGzzyiivz6GBZi825qGOEyePXHoz4hDb_Vj3PnVe9qiSGxQZViXQPSiFs8JkL5VKogBs0z9bX-49tgqR1Tj2jaSZOpxEL8=w1000-rw'),
 ('HASP014', 'LT014', 'ACER Aspire 7', 'https://lh3.googleusercontent.com/dCqW-zZTnJGZpwOWA2BLf1REZ9ByOVI2kCRaX59glpGP7uvGpxmmeU8y738rLJxQrFTwxHRx5wbq561efeBp-gfT3j99jRvx=w1000-rw'),
 ('HASP015', 'LT015', 'ACER Predator Helios Neo', 'https://lh3.googleusercontent.com/h-EWHWR_wCMw8aztkdEK87yJdy93R5rrSkOXfETF1poivXkyszo-pgDbV924uMCFFk08iMVQoth75Cc5xIxC-uPXRGc34A0=w1000-rw'),
 ('HASP016', 'LT016', 'ACER Gaming Aspire 7', 'https://lh3.googleusercontent.com/R9BDRN49AFG_XLBZHoagumHYR6KkFsspNHXCFZhDZLHVKOLDq4hC_HC39xx8S6btY7dFRuJzg2Xicc_eiOSZ9qp1DqFXJb1S=w1000-rw'),
@@ -63,11 +63,57 @@ INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
 ('HASP022', 'LT022', 'Macbook Pro 16 M2 MAX', 'https://lh3.googleusercontent.com/cPyVxwDbLfShad22xfK-dd2nlFWqTCSDMHXH7LffhPy37iGunzUM9VUtZCSiEgzzgPGcW3ZkGbImyjcVkf1RrjFr_plC_BjA=w500-rw'),
 ('HASP023', 'LT023', 'Macbook Pro 16 M2 PRO', 'https://lh3.googleusercontent.com/o6kepFHgK2LhfNW2oMPLApW3Ce-UpYn5VRREDjZfjrHBvXaiq_Lhd2pHHk93M6LDNv_PcDuLBMcqKatgHQKJ8BIAzD2sV91M=w500-rw'),
 ('HASP024', 'LT024', 'Macbook Pro 14 M2 MAX', 'https://lh3.googleusercontent.com/4Y5OpuMBlNhXl_Xw_AC9VqrDjWfcSvuSTx9LQiK3-NYPqBJBz538C1kYFiAwGVXEqqFpbH6lRvJKqzZAq2MbgsKQlMTdmKBL=w500-rw'),
-('HASP025', 'LT025', 'MacBook Air 2022 ', 'https://lh3.googleusercontent.com/URdEx8sfKyfR4lGGNIpkb7xfITR0_ijrXiCcxUgAuLpiSH2PPOEyng3nsq6zDT73P_ZALCTcJM9ZjsSKVYlX6Zb4CQc5C9UB=w500-rw'),
+('HASP025', 'LT025', 'MacBook Air 2022 ', 'https://lh3.googleusercontent.com/T4dQPx6nSJi3y147mwJH6kDJsxM6ULAAtIoZjgDDIi3yF5YpFYW7QbWh_nfT0Lhi2LxIDFuNPMamXlrBW-EcZ1NUGYBZ6VqbLw=w500-rw'),
 ('HASP026', 'LT026', 'MacBook Air 2020', 'https://lh3.googleusercontent.com/H748rHBN_hG0Mi8Fbx0bWQJTef7EATgL4nNhM55UoxzdEg8gZL5Uv0BFpd2iyyXJpmmtnZuFwgsusXjYdtzdt5f44yvF9JZN=w500-rw'),
 ('HASP027', 'LT027', 'MacBook Pro 2022', 'https://lh3.googleusercontent.com/g96Rlg2WtJiZpMUMnL_k1PfeM275LDfwasDbb6_MWkdxFv27ASC8fdfCAUUf-S59YlHJEWhCyHsX2K176rJ5XGE4AFxYQZdv=w500-rw'),
-('HASP028', 'LT028', 'Macbook Pro 16 M2 MAX', 'https://phongvu.vn/macbook-pro-16-2-m2-max-12c-cpu-38c-gpu-96gb-1tb-ssd-space-grey-z1740009p--s231002211'),
-('HASP029', 'LT029', 'MacBook Air 15 M2', 'https://phongvu.vn/macbook-air-15-3-m2-8c-cpu-10c-gpu-16gb-256gb-ssd-starlight-z18r000yy--s231002847');
+('HASP028', 'LT028', 'Macbook Pro 16 M2 MAX', 'https://lh3.googleusercontent.com/-UlH7PcHU3-KSoUa60qL9sYe0ChC4DVCd_aXw881CE_BNFxVnXd3yTKL1jSmessVgvDe28NFQgGLMy3saA46WQbDpOS1vu4=w500-rw'),
+('HASP029', 'LT029', 'MacBook Air 15 M2', 'https://lh3.googleusercontent.com/mmmENBzj8tQraAF35TqCoZbHs6vtNHAbzDkTqUgOk-fvQR0HXfeAxkX-ndOlbHTMp0NdegknDaI_eDg_794546gWN8RbJd8=w500-rw'),
+('HASP030', 'LT030', 'ASUS Vivobook Go 15', 'https://lh3.googleusercontent.com/UleucPwM1Ht33PoUPD-5kmLohkc_E1xGvUApBkkyqrt-570vgu9jDaNEPjhNrxtBs6pKMEj0b2IcptoCCYqelbF0Ed6PLA7a=w1000-rw'),
+('HASP031', 'LT031', 'ASUS ROG Strix G', 'https://lh3.googleusercontent.com/wFaBZbSH4BXYvOzCWFAt3NO1HgblJ1ygVmXTUx1BCmd0qL_xZkkpcA9UEag8i79qneu2r0A9T526sXCbPzeFXkI4DGCtmbV-=w1000-rw'),
+('HASP032', 'LT032', 'ASUS Vivobook 16', 'https://lh3.googleusercontent.com/GBCMEXu9-VgSeUAO8fW-XlSD-9GGd5YYwOkH8yi3cQOn0rRXFvNbIkDhoQbcr0iI3aeO6PDS4hHS2ZbQDhA8Rwedz5u1VOnS=w500-rw'),
+('HASP033', 'LT033', 'ASUS Vivobook 14X OLED', 'https://lh3.googleusercontent.com/bys55xWqWtHZ6URymlKvISgKU-HwzMhXZLgbBprmdp8k7rmpp9dfHhTG3-mxE2TwF3Uiko53djClB7O6oF42bqrIuxiygGL9rA=w500-rw'),
+('HASP034', 'LT034', 'ASUS Vivobook Go 14', 'https://lh3.googleusercontent.com/HodVTjc5kT2mb0leJjHNNLCwBt6eJJQVWF05YjInokRFsu8ypTiP7JzSuHIN3yiOvCS1Yf5OUws9_xkMzfYE6aLX9_kHx3V1=w500-rw'),
+('HASP035', 'LT035', 'ASUS VivoBook 15X OLED', 'https://lh3.googleusercontent.com/TARCgjkeXCyLUDYnX3aXeFDNKXTclSEwYuJ3UXtVppapAEQZYstlUZityTWW4O3Egnhtbhjf6S8jZ5lLt9CfXNlGqV3jodPo1Q=w500-rw'),
+('HASP036', 'LT036', 'ASUS Zenbook 14 OLED', 'https://lh3.googleusercontent.com/OeeqnBtEP40hRUKksi-OkZgaITQWJd0eoY4LpmZWddLc53T_ZjnUHp9DVzILO2LjXW3j9CnUOPiLhCjfCHDLC94b455RD7yv=w500-rw'),
+('HASP037', 'LT037', 'ASUS Vivobook Pro 16X OLED', 'https://lh3.googleusercontent.com/tBWiiGmwXJoDRRy0UPIAExAhm6C7gcmFiJH2nHCTa_xE2dP7kpO7f8WutWDCNdSjNhL_cS6m_DRyYaW6hqJddGspKKGtGpE=w500-rw'),
+('HASP038', 'LT038', 'ASUS Gaming ROG', 'https://lh3.googleusercontent.com/4LsNH1Y8fo-jYHk7XfYwgmT7gmiTBxzpaDVB1GhR9Jp4F9s7X_ADnczla_T5yacX3HbWRV2WKIJRWb-b46e8NQ3iMcPeF8I=w500-rw'),
+('HASP039', 'LT039', 'Dell Inspiron 14 5430', 'https://lh3.googleusercontent.com/JzaLDtRkM112HJ0nqZ1SiIVOxSimMwOgmCx00Bbat3LXC7H-cCja3vJJg4Ac70UHfE2TVGCMp6loAqLMUT8VD0WSvxCqphM=w500-rw'),
+('HASP040', 'LT040', 'Dell Vostro 3430', 'https://lh3.googleusercontent.com/onskyBSkNmep8qQ7wk5B0uhQkzdI0A22YRsUIhbr6vdNRYblbpk3tIJ-6N-nWRRHoXoKUZVJVtZpdX8wYTSMENn5hWmCrYo=w500-rw'),
+('HASP041', 'LT041', 'Dell Inspiron 16 5630', 'https://lh3.googleusercontent.com/kC9I2-5m1WbJlbXYStTMIuVcLNj1Qex_Bae7GQ1iqEwBzj1GhQSUCy2IJXxL0qinWDyWFlO80JZcYVN1YXLEPnhmsW70t639ww=w500-rw'),
+('HASP042', 'LT042', 'Dell Vostro 5630', 'https://lh3.googleusercontent.com/T2SyY_8jZnhnHg9tNlVD1xPTEzuf7i4bLhT-tnGmKJkNOO4bbrA8_n61zfRlqYq_DQNtqFL-HEyBiBJR5q6Yq9FeGymW0Nu3bA=w500-rw'),
+('HASP043', 'LT043', 'Dell Latitude 5430', 'https://lh3.googleusercontent.com/4z_z6V1zkofnyU_AUZ_6du2b-fdJSLZGGe6yQi4_CTVOrJgJsBrwN5MTSNljDfcHeO9lDlmNa8q3NbZJdhyfMfPfaxa0E5soyw=w500-rw'),
+('HASP044', 'LT044', 'Dell Inspiron T7430', 'https://lh3.googleusercontent.com/JUlyXcHSbl0lABL4lUS1WlbCwZezxm9wUn4L-WEsVwLnWMwsVWgRPjClQwqrGZzsKY2hvRgtT0KJy8e63tqJvoIeU_hSe49SXQ=w500-rw'),
+('HASP045', 'LT045', 'Dell Gaming G15-5530', 'https://lh3.googleusercontent.com/iwljaX5N1Ierjni7yNldT4sMrG_npCbPJJxUgHyoXYNErgjqX3l3RYJr5TdfPl_4LH0lT6IJ1pHrUiwQ0pl5DdPF8rLopxA7=w500-rw'),
+('HASP046', 'LT046', 'Dell Vostro 5620-VWXVW', 'https://lh3.googleusercontent.com/TckbtpQeo4StYH391278SqLdt6lAn0WQomOOut9thQGPHlPvmi5VQnAXOG3oYJGOek_sS-A_MHo_xnP5E0Al2yfdpx05XwvO=w500-rw'),
+('HASP047', 'LT047', 'HP ProBook 450 G10', 'https://lh3.googleusercontent.com/wY8TEHeHsm8m3UBdezGWXluZesvHGcvSSm-MV0FpOwI_ibcaKApbtwd6Z0B3jNIOyorfaVHkJMa2ZYWWDm1djcHAEgmbKW_68w=w500-rw'),
+('HASP048', 'LT048', 'HP Pavilion X360 14', 'https://lh3.googleusercontent.com/hGxUPkcBgLFT2wS1pzuFMYqr9AiMer99g7M8ng6YQ243vrR7sRb_3Rz2UuteRXslC7mT4F0GWcaXC_yC8A_2IkCukPLqj3OD=w500-rw'),
+('HASP049', 'LT049', 'HP Elitebook 630 G10', 'https://lh3.googleusercontent.com/Gs9XVZLumEO7b9q_1ZECqmHKnuBsSvCiU361s0k6oxAil9pIUrmW4bDf5Zc7kH5kM1LPQtXqZXYu-t5ubkp3nLsaEI0ESZ3M=w500-rw'),
+('HASP050', 'LT050', 'HP Probook 450 G10', 'https://lh3.googleusercontent.com/afKa8jmZfGsLQb8YrXuakyB8nnivR2PMA1T4yE4GCc0VUgBKX1h8PSxsSU9ugK70JYGRujmjbK7kv77QHUuyB8MKODmgr31ydQ=w500-rw'),
+('HASP051', 'LT051', 'HP Victus 16', 'https://lh3.googleusercontent.com/3oi6i-7cIGLG3ShErIvi1cR8Jmk2pICXW8v7u6PKqTiYpE7VlUk2apn5bgMq-ec4zxmxp84w6gYebl45fDdUZkf9uZnNLbqP=w1000-rw'),
+('HASP052', 'LT052', 'HP ProBook 440 G9', 'https://lh3.googleusercontent.com/QT2QTju0ig0ZprlHHYBLEJzlbYWoJaGIHPcBqy8_ep8D_9-yYJAAsztz75MEMTrjGlJHTgYQaen90TYbIuuRROhAL17f4M3e=w500-rw'),
+('HASP053', 'LT053', 'HP Probook 450 G9', 'https://lh3.googleusercontent.com/8FecSldH7JLOp0ak_fceKa7uwb0BYa1WcUr5fmiXfYEN7lsq6j_p_WCSPfYrE96nSp7gfc4qLYUJq9it4IehZ6NB5XVNUA=w500-rw'),
+('HASP054', 'LT054', 'HP Victus 15', 'https://lh3.googleusercontent.com/HFt0xwUBOfQUytnxl-4eZebvAje29jIwQtW7UQC_FLw3LsEcVlYBZ4OrFtYNdCYkdK3iAS-QRXQQ1FBuYH4sgDqGWeu7HTj7=w500-rw'),
+('HASP055', 'LT055', 'HP Envy x360 13', 'https://lh3.googleusercontent.com/yJCvE-14wXXcu1QfQM-JyYth6m-qxCMNL0hwdxCZQxtTe2F0d0oyCgFTD7DRpysSNR-FdE9I9A0AS4Fk3oGA7eLF4xSx50VQ=w500-rw'),
+('HASP056', 'LT056', 'Lenovo Yoga Pro 9', 'https://lh3.googleusercontent.com/tnjxnDkTkSO9Iq-nIX6ewRMFIlefx8g0L6Bfvg9LeaH9P9y8lbYDcazC3qJsG7JorJ4jPhguoQPcaKU4oaCk5TBZvmyXJTNQ=w500-rw'),
+('HASP057', 'LT057', 'Lenovo IdeaPad 5', 'https://lh3.googleusercontent.com/cWdWI-s8xyw0dOKn7jyart8ppq4TmGKz_dOYe-CB0RxzUp6t9cKkOqF3mwNsVoBw_vBk4L2AAxUNLLowsNYrITPIvW6s8Tq-qg=w1000-rw'),
+('HASP058', 'LT058', 'Lenovo Ideapad Slim 5 Light', 'https://lh3.googleusercontent.com/raYiLpZ3TFqdew7g947Bn9aS3uidC9-ZnkNcF3kelxlUqsRGeb2empjFZQouIesVQmeS8V0jVw3aT1CjKeGIBJ-m0KTdkJqq=w500-rw'),
+('HASP059', 'LT059', 'Lenovo LOQ ', 'https://lh3.googleusercontent.com/FkxPJIPsodK0gGcrHEiaBAVj6cmFVpfj7yYF5Ux2iKFp3Ns6Zz41X2bLWOuOXjFjrfkGhIdIEzZEqzifx2CAF0AwL30oJSS5=w500-rw'),
+('HASP060', 'LT060', 'Lenovo Legion Slim 5', 'https://lh3.googleusercontent.com/siSH82A-oolqk802VP_LtvtuaAshfwIuOSVt2XqBQx9GEv5xLoQ5PxXhv5ZWV3KiX-0_8AIxfrUtYdioq_xDWPfiExaOuA9t=w1000-rw'),
+('HASP061', 'LT061', 'Lenovo Yoga 6', 'https://lh3.googleusercontent.com/hcMdH9paA8V690qPDhVfAXKzmqUOePRMlaDHM3-FsqF3RuTkWOYycPfZY08ALMDqAdCoWaH4epmI9DjTI2O4aHwvlGfqS1OQhA=w500-rw'),
+('HASP062', 'LT062', 'Lenovo Legion 5 Pro', 'https://lh3.googleusercontent.com/ErL2AH8eAWv5p1Qya1d76nYGNJfJEL-Nz7574JbJ6dwzEV_227oGHyTYUe1kQn-d3T2cSauJ4K6Vhbqs90XVPy3hRAm6p3c=w500-rw'),
+('HASP063', 'LT063', 'Lenovo Yoga 7', 'https://lh3.googleusercontent.com/xbN8vk0Hd3FPD7tIuVBYACdlHrh9scV6TvQYHZ1XbMezdXOYerE6GzK8rpOIoLCau09ykTI6nmvbaWQbo9s5atNZJaxPFj4=w1000-rw'),
+('HASP064', 'LT064', 'LG Gram 2023', 'https://lh3.googleusercontent.com/rKEW7_IphCRLvQkc2Aui_bAGnoSYTNxLdrggbHH0BvWUAZGsqhvonYFan-JO5NDHnx6lz0Vrnoz3ijOQ36UjGgslyg8ewZk=w1000-rw'),
+('HASP065', 'LT065', 'LG Gram 2023', 'https://lh3.googleusercontent.com/HiKvhjG-r3_Zj6BadOICfDtrgusekCYmaCefvFTG3u3GIa1v0aKk1L1f42CRbP-S47LDLz4wC1blDZydff4zFvD2TSMXVW38jg=w500-rw'),
+('HASP066', 'LT066', 'LG Gram 2023', 'https://lh3.googleusercontent.com/jWr3iW-FG4BQs2W7SY0Um9HT2u9DY6X2WpZSNl3427aqi0HmEfnnS9o46FuJ4edR_WA1OuWCsZd6AU6x_oxUdyQuz-RThLPjJw=w500-rw'),
+('HASP067', 'LT067', 'LG Gram ', 'https://lh3.googleusercontent.com/3KBAlA-RcLKb75rdKyhcWWMuhSsAf9w0bByZR8L0koCmQOAkwYs990G5pWhU5tj9EATjasG4KH-Mybk6Ppniy_55e4wBhYc_ag=w500-rw'),
+('HASP068', 'LT068', 'MSI Modern 15', 'https://lh3.googleusercontent.com/eIpy2-10XTFK9M6L7sJCyWHpPrMw2hLan-9HVOmXUiieE2alCcQSRxNVoOpggdCKQtPVQcI8wF-VnlIjn04JWax4ZzzZS6EM=w500-rw'),
+('HASP069', 'LT069', 'MSI GF63 ', 'https://lh3.googleusercontent.com/lmIDXwrR9Z0i45fCRZGEWHnl4pOjzwcCg3RJSSrJIqON0XmF-XDY8bKVhd02eqTcD75ztUCbWE94-mVEl1k8cbJnU0ZF2PI=w1000-rw'),
+('HASP070', 'LT070', 'MSI Stealth 16 Mercedes', 'https://lh3.googleusercontent.com/DugmkptbeX_M34BYPs3y0FAorLX6q_xB4mKejkLRCVx4MyKIbt0pTuLGL9Pj8Iphk_Y_b0YSuQt-OC2ofePRqDJ75RbCMvAM=w500-rw'),
+('HASP071', 'LT071', 'MSI Stealth 16 Studio', 'https://lh3.googleusercontent.com/YdZGSWwL2qP3Ifs6KUzLbRB06mqS9BjQh7Qq9shBAqteR_2-N59fYnfiLQQjdW0tiyc1W_lzp-fXGrbeehcbUiXyuJ3pyAie=w500-rw'),
+('HASP072', 'LT072', 'MSI Cyborg 15', 'https://lh3.googleusercontent.com/0ntdYBLyD-CqIQi3dRY8vD1BSp5jiuYPNC4aWv12_adS1uvzhxiVyi43ZSCDL65BWV557agLs-DOxsGVz6eY96ZDleW2CNkC=w1000-rw'),
+('HASP073', 'LT073', 'MSI GF63 Thin', 'https://lh3.googleusercontent.com/zAn8TTfwpvyqeOv9dLbekolioszCdFfyguJRN1XsYHI2OxPm9wPvhTRAPPcPg6Y_6mlgXj1wW5oI1KiwTr2hIEpxczjLaGUC=w500-rw'),
+('HASP074', 'LT074', 'MSI Raider', 'https://lh3.googleusercontent.com/z1_JlOSk723iTBKfUgcOsk2YdrxY0gFHSdNE5GiznEqKglkEBKkssKDYr8miHOEszpGOc1Cq_ZQsqDQRDnBmmitMQF19E3Yb=w500-rw'),
+('HASP075', 'LT075', 'MSI Katana 15', 'https://lh3.googleusercontent.com/rStk2E2ARbdre5tR89KQzIQkbbXJm0RdBJKl9MhpVR-WJJOBjhEl7fyP1Vm1sYQjCPIxugzG0J20wpCuXG6GrH0KlCpNon4=w1000-rw');
 
 -- --------------------------------------------------------
 
@@ -886,16 +932,16 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDH`, `MaKH`, `NgayDH`, `TongGiaTri`) VALUES
-('DH001', 'KH001', '2023-10-12', '11990000'),
-('DH002', 'KH002', '2023-10-13', '25990000'),
-('DH003', 'KH003', '2023-10-14', '32290000'),
-('DH004', 'KH004', '2023-10-15', '28690000'),
-('DH005', 'KH005', '2023-10-16', '16890000'),
-('DH006', 'KH006', '2023-10-17', '23990000'),
-('DH007', 'KH001', '2023-10-18', '24690000'),
-('DH008', 'KH002', '2023-10-19', '14490000'),
-('DH009', 'KH003', '2023-10-10', '17390000'),
-('DH010', 'KH004', '2023-10-21', '40890000');
+('DH001', 'KH001', '2023-10-12', 11990000),
+('DH002', 'KH002', '2023-10-13', 25990000),
+('DH003', 'KH003', '2023-10-14', 32290000),
+('DH004', 'KH004', '2023-10-15', 28690000),
+('DH005', 'KH005', '2023-10-16', 16890000),
+('DH006', 'KH006', '2023-10-17', 23990000),
+('DH007', 'KH001', '2023-10-18', 24690000),
+('DH008', 'KH002', '2023-10-19', 14490000),
+('DH009', 'KH003', '2023-10-10', 17390000),
+('DH010', 'KH004', '2023-10-21', 40890000);
 
 -- --------------------------------------------------------
 
@@ -916,16 +962,16 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaNV`, `NgayLap`, `TongGiaTri`, `MaKH`) VALUES
-('HD001', 'NV001', '2023-10-12', '11990000', 'KH001'),
-('HD002', 'NV002', '2023-10-13', '25990000', 'KH002'),
-('HD003', 'NV003', '2023-10-14', '32290000', 'KH003'),
-('HD004', 'NV004', '2023-10-15', '28690000', 'KH004'),
-('HD005', 'NV005', '2023-10-16', '16890000', 'KH005'),
-('HD006', 'NV006', '2023-10-17', '23990000', 'KH006'),
-('HD007', 'NV001', '2023-10-18', '24690000', 'KH007'),
-('HD008', 'NV002', '2023-10-19', '14490000', 'KH008'),
-('HD009', 'NV003', '2023-10-10', '17390000', 'KH009'),
-('HD010', 'NV004', '2023-10-21', '40890000', 'KH010');
+('HD001', 'NV001', '2023-10-12', 11990000, 'KH001'),
+('HD002', 'NV002', '2023-10-13', 25990000, 'KH002'),
+('HD003', 'NV003', '2023-10-14', 32290000, 'KH003'),
+('HD004', 'NV004', '2023-10-15', 28690000, 'KH004'),
+('HD005', 'NV005', '2023-10-16', 16890000, 'KH005'),
+('HD006', 'NV006', '2023-10-17', 23990000, 'KH006'),
+('HD007', 'NV001', '2023-10-18', 24690000, 'KH007'),
+('HD008', 'NV002', '2023-10-19', 14490000, 'KH008'),
+('HD009', 'NV003', '2023-10-10', 17390000, 'KH009'),
+('HD010', 'NV004', '2023-10-21', 40890000, 'KH010');
 
 -- --------------------------------------------------------
 
@@ -984,10 +1030,10 @@ CREATE TABLE `khuyenmai` (
 --
 
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `MoTaKM`, `GiamGia`, `DieuKien`, `PhamVi`, `NgayBD`, `NgayKT`) VALUES
-('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', '0.20', 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
-('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', '0.25', 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
-('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', '0.00', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
-('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', '0.40', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
+('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', 0.20, 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
+('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', 0.25, 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
+('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', 0.00, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
+('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', 0.40, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1014,7 +1060,7 @@ CREATE TABLE `mathang` (
   `DoHoa` varchar(100) DEFAULT NULL,
   `PIN` varchar(30) DEFAULT NULL,
   `KhoiLuong` float NOT NULL,
-  `PhuKien` varchar(50) NOT NULL
+  `PhuKien` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -1031,7 +1077,70 @@ INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`, `DonGia`, `MaHSX`, `
 ('LT009', 'Lenovo IdeaPad Gaming 3', 'GMLT', 10, 17390000, 'LE', 'HASP009', '', 'Có phím số, RBG, màn hình chống lóa, HD webcam, bảo mật vân tay', 'KM001', ' Intel Core i5-11320H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'RTX 3050 4GB GDDR6 / Intel Iris Xe Graphics', '3 cell 45 Wh', 2.2, 'Adapter,dây nguồn'),
 ('LT010', 'LG Gram 2023', 'BSLT', 10, 40890000, 'LG', 'HASP010', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật khuôn mặt', 'KM002', ' Intel Core i5-1340P', ' 16GB Onboard LPDDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" OLED (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '60 Wh', 1, 'Không'),
 ('LT011', 'MSI Modern 14 ', 'BSLT', 10, 15990000, 'MS', 'HASP011', '', 'Không phím số, LED, HD webcam', 'KM001', ' Intel Core i5-1335U', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 54 Wh', 1.4, 'Không'),
-('LT012', 'MSI Crosshair 15', 'GMLT', 10, 32990000, 'MS', 'HASP012', '', 'Có phím số, LED, không đèn, HD webcam', 'KM002', 'Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 3060 6GB GDDR6 / Intel Iris Xe Graphics', '3 cell 53 Wh', 2.3, 'Adapter, dây nguồn, Balo');
+('LT012', 'MSI Crosshair 15', 'GMLT', 10, 32990000, 'MS', 'HASP012', '', 'Có phím số, LED, không đèn, HD webcam', 'KM002', 'Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 3060 6GB GDDR6 / Intel Iris Xe Graphics', '3 cell 53 Wh', 2.3, 'Adapter, dây nguồn, Balo'),
+('LT013', 'ACER Nitro 16 Phoenix', 'GMLT', 15, 25990000, 'AC', 'HASP013', 'Đen', 'Có phím số, không đèn, RGB 4 vùng, HD webcam', 'KM001', 'AMD Ryzen 5 7535HS', '1 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '16\" IPS (1920 x 1200)', ' RTX 4050 6GB GDDR6 / AMD Radeon 660M', '4 cell 90 Wh', 2.6, 'Adapter, dây nguồn'),
+('LT014', 'ACER Aspire 7', 'BSLT', 10, 15990000, 'AC', 'HASP014', 'Đen', 'Có phím số, không đèn, LED, bảo mật vân tay, HD webcam', 'KM002', 'Intel Core i5-12450H', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'Onboard Intel UHD Graphics', '3 cell 50 Wh', 2.1, 'Cáp + Sạc'),
+('LT015', 'ACER Predator Helios Neo', 'GMLT', 15, 35990000, 'AC', 'HASP015', 'Đen', 'Có phím số, không đèn, RGB 4 vùng, HD webcam', 'KM003', 'Intel Core i5-13500HX', ' 2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16\" IPS (1920 x 1200)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 710', '4 cell 90 Wh', 2.6, 'Không có'),
+('LT016', 'ACER Gaming Aspire 7', 'GMLT', 15, 17990000, 'AC', 'HASP016', 'Đen', 'Có phím số, không đèn, LED, bảo mật vân tay, HD webcam', 'KM004', 'Intel Core i5-12450H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '5.6\" IPS (1920 x 1080)', 'RTX 2050 4GB GDDR6 / Intel UHD Graphics', '3 cell 50 Wh', 2.1, 'Adapter, dây nguồn'),
+('LT017', 'ACER Swift 3', 'BSLT', 20, 33490000, 'AC', 'HASP017', 'Vàng', 'Không phím số, LED, bảo mật vân tay, HD webcam', 'KM001', 'Intel Core i7-12700H', '16GB Onboard LPDDR5 6400MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '14\" OLED (2880 x 1800)', '16GB Onboard LPDDR5 6400MHz', ' 3 cell 57 Wh', 1.4, 'Không có'),
+('LT018', 'ACER Swift X', 'BSLT', 10, 23990000, 'AC', 'HASP018', 'Xám', 'Có phím số, không đèn, LED, bảo mật vân tay, HD webcam', 'KM002', ' Intel Core i5-11320H', '16GB Onboard LPDDR4X 4266MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16.1\" IPS (1920 x 1080)', 'RTX 3050 4GB GDDR6 / Intel Iris Xe Graphics', '59 Wh', 1.9, 'Không có'),
+('LT019', 'Acer Nitro 5 Eagle', 'BSLT', 5, 16990000, 'AC', 'HASP019', 'Đen', 'Có phím số, RGB 4 vùng, HD webcam', 'KM003', 'Intel Core i5-11400H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe', 'Windows 11 Home', '15.6\" ( 1920 x 1080 )', 'RTX 3050 4GB GDDR6 / Intel UHD Graphics', '4 Cell 57.5Wh', 2.2, 'Không có'),
+('LT020', 'ACER Swift 14', 'BSLT', 10, 39190000, 'AC', 'HASP020', 'Xanh', 'Không phím số, LED, bảo mật vân tay, HD webcam', 'KM004', 'Intel Core i7-13700H', '32GB LPDDR5 4800MHz', ' 1TB SSD M.2 NVMe /', 'Windows 11 Home', ' 14\" IPS (2560 x 1600)', 'Onboard Intel Iris Xe Graphics', '56 Wh', 1.2, 'Cáp + Sạc'),
+('LT021', 'MacBook Air 15 M2', 'BSLT', 5, 36490000, 'AP', 'HASP021', 'Midnight', 'Không phím số, không đèn, bảo mật vân tay, HD webcam', 'KM001', ' Apple M2', '16GB', '256GB SSD /', 'macOS', '15.3\" (2880 x 1864)', 'Onboard', NULL, 1.5, 'Adapter, dây nguồn'),
+('LT022', 'Macbook Pro 16 M2 MAX', 'BSLT', 5, 94690000, 'AP', 'HASP022', 'Bạc', 'Không phím số, không đèn, bảo mật vân tay, HD webcam', 'KM002', 'Apple M2 Max', '64GB', '1TB SSD /', 'macOS', '16.2\" (3456 x 2234)', 'Onboard', NULL, 2.1, ''),
+('LT023', 'Macbook Pro 16 M2 PRO', 'BSLT', 5, 64990000, 'AP', 'HASP023', 'Xám', 'Không phím số, không đèn, LED, bảo mật vân tay, HD webcam', 'KM003', 'Apple M2 Pro', '1 x 16GB', '1TB SSD /', 'macOS', '16.2\" (3456 x 2234)', 'Onboard', NULL, 2.1, 'Không có'),
+('LT024', 'Macbook Pro 14 M2 MAX', 'BSLT', 5, 75990000, 'AP', 'HASP024', 'Xám', 'Không phím số, LED, bảo mật vân tay, HD webcam', 'KM004', 'Apple M2 Max', ' 1 x 32GB', '1TB SSD /', 'macOS', '14.2\" (3024 x 1964)', NULL, NULL, 1.6, 'Không có'),
+('LT025', 'MacBook Air 2022', 'BSLT', 5, 26590000, 'AP', 'HASP025', 'Midnight', 'Không phím số, LED, HD webcam', 'KM002', 'Apple M2', '8GB', '256GB SSD /', 'macOS', '13.6\" IPS (2560 x 1664)', 'Onboard', NULL, 1.3, 'Không có'),
+('LT026', 'MacBook Air 2020', 'BSLT', 5, 18790000, 'AP', 'HASP026', 'Vàng', 'Không phím số, LED, bảo mật vân tay, HD webcam', 'KM001', 'Apple M1', '8GB Onboard LPDDR4 3733MHz', '256GB SSD /', 'macOS', '13.3\" IPS (2560 x 1600)', 'Onboard', NULL, 1.3, '30W USB-C Power Adapter USB-C Charge Cable (2 m)'),
+('LT027', 'MacBook Pro 2022', 'BSLT', 5, 35990000, 'AP', 'HASP027', 'Bạc', 'Touch Bar, Touch ID, Ambient Light sensor, LED', 'KM001', 'Apple M2', '1 x 16GB', '256GB SSD /', 'macOS', '13.3\" IPS (2560 x 1600)', 'Onboard', '58 Wh', 1.4, 'Cable và Adapter'),
+('LT028', 'Macbook Pro 16 M2 MAX', 'BSLT', 5, 110590000, 'AP', 'HASP028', 'Xám', 'Không phím số, không đèn, bảo mật vân tay, HD webcam', 'KM002', 'Apple M2 Max', '96GB', '1TB SSD /', 'macOS', '16.2\" (3456 x 2234)', 'Onboard', NULL, 2.1, 'Adapter, dây nguồn'),
+('LT029', 'MacBook Air 15 M2', 'BSLT', 5, 36490000, 'AP', 'HASP029', 'Starlight', 'Không phím số, không đèn, bảo mật vân tay', 'KM003', 'Apple M2', '16GB', '256GB SSD /', 'macOS', '15.3\" (2880 x 1864)', 'Onboard', NULL, 1.5, 'Adapter, dây nguồn'),
+('LT030', 'ASUS Vivobook Go 15', 'BSLT', 15, 13490000, 'AS', 'HASP030', 'Bạc', 'Có phím số, không đèn, HD webcam', 'KM004', 'AMD Ryzen 5 7520U', '16GB Onboard LPDDR5 5500MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" (1920 x 1080)', 'Onboard AMD Radeon 610M', '3 cell 42 Wh', 1.8, 'Không có'),
+('LT031', 'ASUS ROG Strix G', 'BSLT', 10, 22990000, 'AS', 'HASP031', 'Xám', 'Không phím số, RGB, HD webcam', 'KM001', 'AMD Ryzen 7 6800HS', '1 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', ' RTX 3050 4GB GDDR6 / AMD Radeon 680M', '4 cell 56 Wh', 2.1, 'Adapter'),
+('LT032', 'ASUS Vivobook 16', 'BSLT', 10, 15690000, 'AS', 'HASP032', 'Bạc', 'Có phím số, không đèn, bảo mật vân tay, HD webcam', 'KM001', 'AMD Ryzen 7 7730U', '16GB (8GB + 8GB Onboard) DDR4', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16\" IPS (1920 x 1200)', 'Onboard AMD Radeon Graphics', '3 cell 42 Wh', 1.9, 'Không có'),
+('LT033', 'ASUS Vivobook 14X OLED', 'BSLT', 10, 15490000, 'AS', 'HASP033', 'Xanh', 'Không phím số, không đèn, LED, HD webcam', 'KM002', 'Intel Core i5-12500H', '8GB Onboard DDR4', '512GB SSD M.2 NVMe /', 'Windows 11 Home', ' 14\" OLED (2880 x 1800)', 'Onboard Intel Iris Xe Graphics', '3 cell 70 Wh', 1.6, 'Không có'),
+('LT034', 'ASUS Vivobook Go 14', 'BSLT', 10, 8990000, 'AS', 'HASP034', 'Bạc', 'Không phím số, không đèn, bảo mật vân tay, HD webcam', 'KM003', 'AMD Ryzen 3 7320U', '8GB Onboard LPDDR5 5500MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" (1920 x 1080)', 'Onboard AMD Radeon 610M', '3 cell 42 Wh', 1.3, 'Không có'),
+('LT035', 'ASUS VivoBook 15X OLED', 'BSLT', 10, 18690000, 'AS', 'HASP035', 'Bạc', 'Có phím số, LED, bảo mật vân tay, HD webcam', 'KM004', 'Intel Core i5-1340P', '16GB (8GB + 8GB Onboard) DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 50 Wh', 1.7, 'Không có'),
+('LT036', 'ASUS Zenbook 14 OLED', 'BSLT', 10, 27990000, 'AS', 'HASP036', 'Xanh', 'Không phím số, không đèn, tích hợp bàn phím số trên Touchpad', 'KM004', 'Intel Core i7-1360P', '16GB Onboard LPDDR5', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" (2880 x 1800)', 'Onboard Intel Iris Xe Graphics', '4 cell 75 Wh', 1.4, 'Adapter, dây nguồn'),
+('LT037', 'ASUS Vivobook Pro 16X OLED', 'GMLT', 10, 45690000, 'AS', 'HASP037', 'Bạc', 'Có phím số, LED, bảo mật vân tay, FHD webcam', 'KM001', 'Intel Core i7-12700H', '16GB Onboard DDR5', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '16\" OLED (3200 x 2000)', 'RTX 3060 6GB GDDR6 / Intel Iris Xe Graphics', '4 cell 90 Wh', 2.3, 'Không có'),
+('LT038', 'ASUS Gaming ROG', 'GMLT', 10, 37990000, 'AS', 'HASP038', '', 'Không phím số, RGB, tích hợp bàn phím số trên Touchpad, màn hình chống lóa, HD webcam', 'KM003', ' Intel Core i7-13650HX', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16\" IPS (1920 x 1200)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics 710', '4 cell 90 Wh', 2.5, 'Không có'),
+('LT039', 'Dell Inspiron 14 5430', 'BSLT', 10, 30290000, 'DE', 'HASP039', 'Bạc', 'Không phím số, không đèn, FHD webcam', 'KM001', 'Intel Core i7-1360P', '16GB Onbard DDR5 4800MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '14\" WVA (2560 x 1600)', 'RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics', '4 cell', 1.8, 'Adapter, dây nguồn, HDSD,…'),
+('LT040', 'Dell Vostro 3430', 'BSLT', 10, 12690000, 'DE', 'HASP040', 'Xám', 'Không phím số, không đèn, FHD webcam', 'KM003', 'Intel Core i3-1305U', '1 x 8GB DDR4 2666MHz', '256GB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '14\" IPS (1920 x 1080)', 'Onboard Intel UHD Graphics', ' 3 cell', 1.5, 'Adapter, dây nguồn, HDSD,…'),
+('LT041', 'Dell Inspiron 16 5630', 'BSLT', 10, 28690000, 'DE', 'HASP041', 'Bạc', 'Không phím số, LED, bảo mật vân tay, màn hình chống lóa, FHD webcam', 'KM004', 'Intel Core i7-1360P', '2 x 8GB Onbard DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '16\" WVA (1920 x 1200)', 'RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics', '4 cell 54 Wh', 1.9, 'Adapter'),
+('LT042', 'Dell Vostro 5630', 'BSLT', 5, 24490000, 'DE', 'HASP042', 'Xám', 'Có phím số, LED, bảo mật vân tay, màn hình chống lóa, FHD webcam', 'KM001', 'Intel Core i5-1335U', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '16\" WVA (1920 x 1200)', 'Onboard Intel Iris Xe Graphics', '4 cell 54 Wh', 1.9, 'Adapter, dây nguồn, HDSD,…'),
+('LT043', 'Dell Latitude 5430', 'BSLT', 2, 28750000, 'DE', 'HASP043', 'Đen', 'Không phím số, không đèn, FHD webcam', 'KM002', 'Intel Core i7-1255U', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Ubuntu', '14\" (1920 x 1080)', 'Intel Iris Xe Graphics', '58 Wh', 1.36, 'Không có'),
+('LT044', 'Dell Inspiron T7430', 'BSLT', 5, 22890000, 'DE', 'HASP044', 'Bạc', 'Không phím số, LED, màn hình cảm ứng, FHD webcam', 'KM003', 'Intel Core i5-1335U', '8GB Onboard LPDDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '14\" WVA (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '4 cell 54 Wh', 1.6, 'Adapter'),
+('LT045', 'Dell Gaming G15-5530', 'GMLT', 5, 38990000, 'DE', 'HASP045', 'Xám', 'Có phím số, không đèn, RGB 4 vùng, HD webcam', 'KM004', 'Intel Core i7-13650HX', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '15.6\" IPS (1920 x 1080)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 710', '3 cell 66 Wh', 2.6, 'Adapter, dây nguồn, HDSD,…'),
+('LT046', 'Dell Vostro 5620-VWXVW', 'BSLT', 10, 23390000, 'DE', 'HASP046', 'Xám', 'Có phím số, không đèn, LED, bảo mật vân tay, màn hình chống lóa, FHD webcam', 'KM001', 'Intel Core i5-1240P', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '16\" WVA (1920 x 1200)', 'GeForce MX570 2GB GDDR6 / Intel Iris Xe Graphics', '4 cell 54 Wh', 1.9, 'Không có'),
+('LT047', 'HP ProBook 450 G10', 'BSLT', 10, 21990000, 'HP', 'HASP047', 'Bạc', 'Có phím số, không đèn, LED, màn hình cảm ứng, FHD webcam', 'KM001', 'Intel Core i5-1340P', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 51 Wh', 1.8, 'Adapter, dây nguồn'),
+('LT048', 'HP Pavilion X360 14', 'TIOLT', 10, 26490000, 'HP', 'HASP048', 'Xám', 'Không phím số, không đèn, màn hình cảm ứng, bảo mật vân tay, HD webcam', 'KM002', 'Intel Core i7-1355U', '16GB Onboard DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '14\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 43 Wh', 1.5, 'Adapter, dây nguồn'),
+('LT049', 'HP Elitebook 630 G10', 'BSLT', 10, 0, 'HP', 'HASP049', '', '', 'KM001', '', '', '', '', '', NULL, NULL, 0, ''),
+('LT050', 'HP Probook 450 G10', 'BSLT', 10, 26990000, 'HP', 'HASP050', 'Bạc', 'Không phím số, không đèn, LED, bảo mật vân tay, màn hình chống lóa, HD webcam', 'KM001', 'Intel Core i7-1335U', '1 x 16GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '13.3\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 43 Wh', 1.3, 'Không có'),
+('LT051', 'HP Victus 16', 'GMLT', 10, 36990000, 'HP', 'HASP051', 'Đen', 'Có phím số, không đèn, RGB, HD webcam', 'KM002', 'Intel Core i7-13700H', '2 x 8GB DDR5 5200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16.1\" IPS (1920 x 1200)', 'RTX 4060 8GB GDDR6 / Intel Iris Xe Graphics', '4 cell 70 Wh', 2.3, 'Adapter, dây nguồn'),
+('LT052', 'HP ProBook 440 G9', 'BSLT', 10, 19990000, 'HP', 'HASP052', 'Bạc', 'Không phím số, LED, bảo mật vân tay, HD webcam', 'KM003', 'Intel Core i5-1235U', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 51 Wh', 1.4, 'Adapter, dây nguồn'),
+('LT053', 'HP Probook 450 G9', 'BSLT', 15, 23490000, 'HP', 'HASP053', 'Bạc', 'Có phím số, LED, bảo mật vân tay, màn hình chống lóa, HD webcam', 'KM002', 'Intel Core i7-1255U', '1 x 16GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 52 Wh', 1.7, 'Không có'),
+('LT054', 'HP Victus 15', 'BSLT', 10, 19990000, 'HP', 'HASP054', 'Đen', 'Có phím số,không đèn, LED, màn hình chnxgs lóa, HD webcam', 'KM004', 'Intel Core i5-12500H', '1 x 8GB GDDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', ' RTX 3050 4GB GDDR6 / Intel Iris Xe Graphics', '4 cell 70 Wh', 2.4, 'Adapter, dây nguồn'),
+('LT055', 'HP Envy x360 13', 'TIOLT', 10, 20990000, 'HP', 'HASP055', 'Đen', 'Không phím số, không đèn, LED, màn hình cảm ứng, HD webcam', 'KM001', 'Intel Core i5-1230U', '8GB Onboard LPDDR4X 4266MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '13.3\" (2880 x 1800)', 'Onboard Intel Iris Xe Graphics', '4 cell 66 Wh', 1.3, 'Adapter, dây nguồn'),
+('LT056', 'Lenovo Yoga Pro 9', 'BSLT', 10, 51290000, 'LE', 'HASP056', 'Xanh', 'Không phím số, không đèn, LED, màn hình cảm ứng, HD webcam', 'KM001', 'Intel Core i9-13905H', '32GB Onboard LPDDR5x 6400MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home SL + Office Home & Student 2021', '14.5\" OLED (3072 x 1920)', ' RTX 4060 8GB GDDR6 / Intel Iris Xe Graphics', '75 Wh', 1.7, 'Adapter'),
+('LT057', 'Lenovo IdeaPad 5', 'GMLT', 10, 15490000, 'LE', 'HASP057', 'Xám', 'Không phím số, không đèn, LED, FHD webcam', 'KM002', 'Intel Core i5-12450H', '16GB Onboard LPDDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard Intel UHD Graphics', '3 cell', 1.5, 'Adapter, dây nguồn'),
+('LT058', 'Lenovo Ideapad Slim 5 Light', 'BSLT', 10, 15890000, 'LE', 'HASP058', 'Xám', 'Không đèn, LED, bảo mật vân tay, màn hình chống lóa, FHD webcam', 'KM001', 'AMD Ryzen 7 7730U', '8GB Onboard DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '14\" IPS (1920 x 1080)', 'AMD Radeon Graphics', '47 Wh', 1.2, 'Adapter'),
+('LT059', 'Lenovo LOQ ', 'GMLT', 5, 28990000, 'LE', 'HASP059', 'Xám', 'Có phím số, không đèn, RGB, FHD webcam', 'KM002', 'Intel Core i5-13420H', '1 x 8GB DDR5 5200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel Iris Xe Graphics', '4 cell', 2.4, 'Adapter, dây nguồn'),
+('LT060', 'Lenovo Legion Slim 5', 'GMLT', 5, 40990000, 'LE', 'HASP060', 'Xám', 'có phím số, không đèn, RGB, FHD webcam', 'KM004', 'Intel Core i7-13700H', '2 x 8GB DDR5 5200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16\" IPS (2560 x 1600)', 'RTX 4060 8GB GDDR6 / Intel Iris Xe Graphics', '4 cell', 2.4, 'Adapter, dây nguồn'),
+('LT061', 'Lenovo Yoga 6', 'BSLT', 15, 14590000, 'LE', 'HASP061', 'Xanh rêu', 'Không phím số, không đèn, LED, bảo mật khuôn mặt và vân tay, màn hình cảm ứng, FHD webcam', 'KM004', 'AMD Ryzen 5 5500U', '8GB Onboard LPDDR4X 4266MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '13.3\" IPS (1920 x 1200)', 'AMD Radeon Graphics', '4 cell 59 Wh', 1.4, 'Adapter, dây nguồn, bút cảm ứng'),
+('LT062', 'Lenovo Legion 5 Pro', 'BSLT', 5, 33990000, 'LE', 'HASP062', 'Trắng', 'Có phím số, không đèn, LED, màn hình chống lóa, HD webcam', 'KM001', 'Intel Core i7-12700H', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16\" IPS (2560 x 1600)', 'RTX 3060 6GB GDDR6 / Intel Iris Xe Graphics', '4 cell 80 Wh', 2.5, 'Adapter'),
+('LT063', 'Lenovo Yoga 7', 'BSLT', 5, 17090000, 'LE', 'HASP063', 'Đen', 'Không phím số, không đèn, LED, bảo mật vân tay, HD webcam\r\n', 'KM003', 'AMD Ryzen 5 5600U', '8GB Onboard LPDDR4X 4266MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" IPS (1920 x 1080)', 'Onboard AMD Radeon Graphics', '71 Wh', 1.5, 'Adapter + Digital Pen'),
+('LT064', 'LG Gram 2023', 'BSLT', 5, 34990000, 'LG', 'HASP064', 'Trắng', 'Không phím số, không đèn, bảo mật khuôn mặt, màn hình chống lóa', 'KM001', ' Intel Core i5-1340P', '16GB Onboard LPDDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '16\" OLED (3200 x 2000)', 'Onboard Intel Iris Xe Graphics', '80 Wh', 1.3, 'Không có'),
+('LT065', 'LG Gram 2023', 'BSLT', 5, 33990000, 'LG', 'HASP065', 'Trắng', 'Không phím số, không đèn, bảo mật khuôn mặt, màn hình chống lóa, FHD webcam', 'KM002', ' Intel Core i5-1340P', '16GB Onboard LPDDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '14\" OLED (2880 x 1800)', 'Onboard Intel Iris Xe Graphics', '72 Wh', 1, 'Không có'),
+('LT066', 'LG Gram 2023', 'BSLT', 5, 41990000, 'LG', 'HASP066', 'Đen', 'Không phím số, không đèn, bảo mật khuôn mặt, màn hình chống lóa', 'KM002', 'Intel Core i7-1360P', '16GB Onboard LPDDR5 6000MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '17\" IPS (2560 x 1600)', 'Onboard Intel Iris Xe Graphics', '80 Wh', 1.3, 'Không có'),
+('LT067', 'LG Gram', 'BSLT', 5, 31890000, 'LG', 'HASP067', 'Xám', 'Có phím số, LED, màn hình chống lóa, FHD webcam', 'KM001', 'Intel Core i7 1260P', '16GB LPDDR5 5200MHz', '256GB SSD M.2 NVMe /', 'Free DOS', ' 17\" IPS (2560 x 1600)', 'Onboard Intel Iris Xe Graphics', '80 Wh', 1.3, 'Không có'),
+('LT068', 'MSI Modern 15', 'GMLT', 10, 17490000, 'MS', 'HASP068', 'Đen', 'Có phím số, không đèn, LED, HD webcam', 'KM002', 'Intel Core i7-1255U', '16GB Onboard DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 40 Wh', 1.7, '65W Adapter, dây nguồn'),
+('LT069', 'MSI GF63', 'GMLT', 15, 16990000, 'MS', 'HASP069', 'Đen', 'Không phím số, không đèn, LED, HD webcam', 'KM001', 'Intel Core i5-12450H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics', '3 cell 53 Wh', 1.8, 'Adapter, dây nguồn'),
+('LT070', 'MSI Stealth 16 Mercedes', 'GMLT', 5, 77990000, 'MS', 'HASP070', 'Xám', 'Có phím số, không đèn, RGB, bảo mật vân tay, FHD webcam', 'KM004', 'Intel Core i9-13900H', '2 x 16GB DDR5 5200MHz', '2TB SSD M.2 NVMe /', 'Windows 11 Home', '16\" OLED (3840 x 2400)', 'RTX 4070 8GB GDDR6 / Intel Iris Xe Graphics', '4 cell 99 Wh', 1.9, 'Không có'),
+('LT071', 'MSI Stealth 16 Studio', 'GMLT', 5, 74990000, 'MS', 'HASP071', 'Xanh', 'Có phím số, không đèn, RGB, bảo mật vân tay, HD webcam', 'KM002', 'Intel Core i9-13900H', '2 x 16GB DDR5 5200MHz', '2TB SSD M.2 NVMe /', 'Windows 11 Home', '16\" IPS (3840 x 2400)', 'RTX 4070 8GB GDDR6 / Intel Iris Xe Graphics', '4 cell 99 Wh', 2, '240W Adapter, dây nguồn, Stealth Trooper Backpack '),
+('LT072', 'MSI Cyborg 15', 'GMLT', 10, 22990000, 'MS', 'HASP072', 'Đen', 'Có phím số, không đèn, LED, HD webcam', 'KM002', 'Intel Core i5-12450H', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '3 cell 54 Wh', 2, 'Balo, Adapter, dây nguồn,...'),
+('LT073', 'MSI GF63 Thin', 'GMLT', 10, 21490000, 'MS', 'HASP073', 'Đen', 'Không phím số, không đèn, LED, HD webcam', 'KM001', 'Intel Core i5-12450H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '3 cell 52 Wh', 1.8, 'Không có'),
+('LT074', 'MSI Raider', 'GMLT', 1, 106990000, 'MS', 'HASP074', 'Đen', 'Có phím số, RGB, FHD webcam', 'KM002', 'Intel Core i9-13980HX', '2 x 32GB DDR5 5600MHz', '4TB SSD M.2 NVMe /', 'Windows 11 Home', '17\" IPS (2560 x 1600)', 'RTX 4090 16GB GDDR6 / Intel UHD Graphics 770', '4 cell 99 Wh', 3.1, '330W Adapter, dây nguồn, Stealth Trooper Backpack II'),
+('LT075', 'MSI Katana 15', 'GMLT', 5, 31990000, 'MS', 'HASP075', 'Đen', 'Có phím số, không đèn, RGB, HD webcam', 'KM004', 'Intel Core i7-13620H', '2 x 8GB DDR5 5200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 770', '3 cell 54 Wh', 2.2, 'Balo, Adapter, dây nguồn,...');
 
 -- --------------------------------------------------------
 
