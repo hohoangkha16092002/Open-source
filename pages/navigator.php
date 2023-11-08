@@ -408,7 +408,7 @@ if (isset($_GET['search'])) {
                                                                     </div>
                                                                     <div type="body" class="popup-text">Thông tin tài khoản</div>
                                                                 </div>
-                                                            </a><a target="_self" class="nav-ip-popup-child" href="/account/orders">
+                                                            </a><a target="_self" class="nav-ip-popup-child" href="pages/admin/index.php">
                                                                 <div data-content-region-name="headerBar" data-track-content="true"
                                                                     data-content-name="viewOrder" class="nav-ip-popup-child-main">
                                                                     <div class="icon"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
