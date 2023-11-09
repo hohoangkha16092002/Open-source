@@ -26,6 +26,26 @@ if (isset($_GET['search'])) {
 
 ?>
 
+<?php
+if (!empty($_SESSION['cart'][$info['MaKH']])) {
+    $session_array = "'" . implode("','", array_keys($_SESSION['cart'][$info['MaKH']])) . "'";
+    $sql_cart = "SELECT * FROM mathang
+    join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+    join anhmh on mathang.MaMH = anhmh.MaMH
+    join khuyenmai on mathang.MaKM = khuyenmai.MaKM
+    WHERE mathang.MaMH IN ($session_array)";
+    $result_cart = mysqli_query($conn, $sql_cart);
+
+    if ($result_cart) {
+        // Xử lý kết quả truy vấn
+    } else {
+        echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
+    }
+} else {
+    echo "Giỏ hàng trống";
+}
+?>
+
 <div id="mainNavigationBar" class="nav-main">
     <div class="teko-row teko-row-center nav-navbar">
         <div class="teko-row teko-row-no-wrap teko-row-middle nav-subnav"
@@ -519,7 +539,8 @@ if (isset($_GET['search'])) {
                                     <div type="body" color="textSecondary" class="title nav-common-text">Giỏ hàng
                                         của
                                         bạn</div>
-                                    <div type="body" color="textSecondary" class="title nav-common-text">(2) sản
+                                    <div type="body" color="textSecondary" class="title nav-common-text">
+                                        (<?php echo mysqli_num_rows($result_cart) ?>) sản
                                         phẩm
                                     </div>
                                 </div>
@@ -534,26 +555,6 @@ if (isset($_GET['search'])) {
                                 <div class="nav-cart-popup-child">
                                     <div class="css-mb-16">
                                         <?php
-                                        if (!empty($_SESSION['cart'])) {
-                                            $session_array = "'" . implode("','", array_keys($_SESSION['cart'])) . "'";
-                                            $sql_cart = "SELECT * FROM mathang
-                                            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
-                                            join anhmh on mathang.MaMH = anhmh.MaMH
-                                            join khuyenmai on mathang.MaKM = khuyenmai.MaKM
-                                            WHERE mathang.MaMH IN ($session_array)";
-                                            $result_cart = mysqli_query($conn, $sql_cart);
-
-                                            if ($result_cart) {
-                                                // Xử lý kết quả truy vấn
-                                            } else {
-                                                echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
-                                            }
-                                        } else {
-                                            echo "Giỏ hàng trống";
-                                        }
-                                        ?>
-
-                                        <?php
                                         if (!empty($result_cart)) {
                                             $total_money = 0;
                                             while ($rows_cart = mysqli_fetch_assoc($result_cart)) {
@@ -563,7 +564,7 @@ if (isset($_GET['search'])) {
                                                 $product_image = $rows_cart['DLAnh'];
                                                 $product_id = $rows_cart['MaMH'];
                                                 $product_sale = $rows_cart['GiamGia'];
-                                                $quantity = $_SESSION["cart"][$product_id];
+                                                $quantity = $_SESSION['cart'][$info['MaKH']][$product_id];
                                                 $price_sale = $product_price - $product_price * $product_sale;
                                                 $money = ($product_price - $product_price * $product_sale) * $quantity; //Số tiền còn lại
                                                 $sale_rate = $product_sale * 100; //% khuyến mãi
@@ -634,11 +635,11 @@ if (isset($_GET['search'])) {
                                     </div>
                                 </div>
                                 <div class="css-1vf48kp">
-                                    <div class="css-sax00u"><span>Tổng tiền (2) sản phẩm</span><span
-                                            class="css-19une5m"><span class="css-htm2b9">
+                                    <div class="css-sax00u"><span>Tổng tiền
+                                            (<?php echo mysqli_num_rows($result_cart) ?>) sản phẩm
+                                        </span><span class="css-19une5m"><span class="css-htm2b9">
                                                 <?php if (isset($total_money_format))
-                                                    echo $total_money_format ?><span
-                                                        class="css-1ul6wk9">đ</span>
+                                                    echo $total_money_format ?><span class="css-1ul6wk9">đ</span>
                                                 </span></span></div>
                                     </div>
                                     <div class="css-0"><a href="?page=cart-page" class="css-1dyo6sn">Xem giỏ hàng</a></div>

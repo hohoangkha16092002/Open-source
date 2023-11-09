@@ -1,64 +1,72 @@
 <?php
 include('config.php');
 
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-
-if (isset($_GET["action"])) {
-    function update_cart($add = false)
-    {
-        foreach ($_POST['quantity'] as $MaMH => $quantity) {
-            if ($quantity == 0) {
-                unset($_SESSION['cart'][$MaMH]);
-            } else {
-                if ($add) {
-                    $_SESSION['cart'][$MaMH] += $quantity;
-                } else {
-                    $_SESSION['cart'][$MaMH] = $quantity;
+if (isset($_SESSION['loggedin_customer'])) {
+    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $info = mysqli_fetch_assoc($result);
+        if (!isset($_SESSION['cart'][$info['MaKH']])) {
+            $_SESSION['cart'][$info['MaKH']] = array();
+        }
+        if (isset($_GET["action"])) {
+            function update_cart($info, $add = false)
+            {
+                foreach ($_POST['quantity'] as $MaMH => $quantity) {
+                    if ($quantity == 0) {
+                        unset($_SESSION['cart'][$info['MaKH']][$MaMH]);
+                    } else {
+                        if ($add) {
+                            $_SESSION['cart'][$info['MaKH']][$MaMH] += $quantity;
+                        } else {
+                            $_SESSION['cart'][$info['MaKH']][$MaMH] = $quantity;
+                        }
+                    }
                 }
             }
+            switch ($_GET["action"]) {
+                case "add":
+                    update_cart($info, true);
+                    header('Location: ?page=cart-page');
+                    break;
+                case "delete":
+                    if (isset($_GET['MaMH'])) {
+                        unset($_SESSION['cart'][$info['MaKH']][$_GET['MaMH']]);
+                        header('Location: ?page=cart-page');
+                    }
+                    break;
+                case 'submit':
+                    if (isset($_POST['update_click'])) {
+                        update_cart($info);
+                        header('Location: ?page=cart-page');
+                    } elseif (isset($_POST['order_click'])) {
+
+                    }
+                    break;
+            }
+        }
+
+        if (!empty($_SESSION['cart'][$info['MaKH']])) {
+            $session_array = "'" . implode("','", array_keys($_SESSION['cart'][$info['MaKH']])) . "'";
+            $sql_cart = "SELECT * FROM mathang
+            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+            join anhmh on mathang.MaMH = anhmh.MaMH
+            join khuyenmai on mathang.MaKM = khuyenmai.MaKM
+            WHERE mathang.MaMH IN ($session_array)";
+            $result_cart = mysqli_query($conn, $sql_cart);
+
+            if ($result_cart) {
+                // Xử lý kết quả truy vấn
+            } else {
+                echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
+            }
+        } else {
+            echo "Giỏ hàng trống";
         }
     }
-    switch ($_GET["action"]) {
-        case "add":
-            update_cart(true);
-            header('Location: ?page=cart-page');
-            break;
-        case "delete":
-            if (isset($_GET['MaMH'])) {
-                unset($_SESSION['cart'][$_GET['MaMH']]);
-                header('Location: ?page=cart-page');
-            }
-            break;
-        case 'submit':
-            if (isset($_POST['update_click'])) {
-                update_cart();
-                header('Location: ?page=cart-page');
-            } elseif (isset($_POST['order_click'])) {
-
-            }
-            break;
-    }
 }
 
-if (!empty($_SESSION['cart'])) {
-    $session_array = "'" . implode("','", array_keys($_SESSION['cart'])) . "'";
-    $sql_cart = "SELECT * FROM mathang
-    join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
-    join anhmh on mathang.MaMH = anhmh.MaMH
-    join khuyenmai on mathang.MaKM = khuyenmai.MaKM
-    WHERE mathang.MaMH IN ($session_array)";
-    $result_cart = mysqli_query($conn, $sql_cart);
 
-    if ($result_cart) {
-        // Xử lý kết quả truy vấn
-    } else {
-        echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
-    }
-} else {
-    echo "Giỏ hàng trống";
-}
 
 ?>
 <!DOCTYPE html>
@@ -206,7 +214,7 @@ if (!empty($_SESSION['cart'])) {
                                                 $product_image = $rows_cart['DLAnh'];
                                                 $product_id = $rows_cart['MaMH'];
                                                 $product_sale = $rows_cart['GiamGia'];
-                                                $quantity = $_SESSION["cart"][$product_id];
+                                                $quantity = $_SESSION['cart'][$info['MaKH']][$product_id];
                                                 $price_sale = $product_price - $product_price * $product_sale;
                                                 $money = ($product_price - $product_price * $product_sale) * $quantity; //Số tiền còn lại
                                                 $sale_rate = $product_sale * 100; //% khuyến mãi
@@ -227,7 +235,7 @@ if (!empty($_SESSION['cart'])) {
                                                                 <div class="css-vhnop0"><a target="_self" class="css-cbrxda"
                                                                         href="">
                                                                         <div height="80" width="80" class="css-1i7enn7"><img
-                                                                                src="'.$product_image.'"
+                                                                                src="' . $product_image . '"
                                                                                 loading="lazy" decoding="async"
                                                                                 alt="product"
                                                                                 style="width: 100%; height: 80px;"></div>
