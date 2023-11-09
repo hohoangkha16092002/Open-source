@@ -32,6 +32,76 @@
   </head>
 
   <body>
+    <?php
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "open-source";
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+      if (mysqli_connect_errno()) {
+          die("" . mysqli_connect_error());
+      }
+
+      $product_id = "";
+      $product_name = "";
+      $product_type = "";
+      $product_numbers = "";
+      $product_brand = "";
+      $product_description = "";
+      $product_image = "";
+      $product_sale = "";
+      $cpu = "";
+      $ram = "";
+      $memories = "";
+      $operating_system = "";
+      $screen = "";
+      $vga = "";
+      $pin = "";
+      $mass = "";
+      $accessory = "";
+      
+
+      if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_product"])){
+        $product_id = $_POST["product_id"];
+        $product_name = $_POST["product_name"];
+        $product_type = $_POST["product_type"];
+        $product_brand = $_POST["product_brand"];
+        $product_numbers = $_POST["product_numbers"];
+        $product_description = $_POST["product_description"];
+        $product_image = $_POST["product_image"];
+        $product_sale = $_POST["product_sale"];
+        $cpu = $_POST["cpu"];
+        $ram = $_POST["ram"];
+        $memories = $_POST["memories"];
+        $operating_system = $_POST["operating_system"];
+        $screen = $_POST["screen"];
+        $vga = $_POST["vga"];
+        $pin = $_POST["pin"];
+        $mass = $_POST["mass"];
+        $accessory = $_POST["accessory"];
+
+      $check_product_type = "SELECT * FROM `dmloaimathang` WHERE MaLMH = '$product_type'";
+      $result_product_type = mysqli_query($conn, $check_product_type);
+
+      $check_product_brand = "SELECT * FROM `dmhangsanxuat` WHERE MaHSX = '$product_brand'";
+      $result_product_brand = mysqli_query($conn, $check_product_brand);
+
+      $check_product_sale = "SELECT * FROM `khuyenmai` WHERE MaKM = '$product_sale'";
+      $result_product_sale = mysqli_query($conn, $check_product_sale);
+
+      
+      if (mysqli_num_rows($result_product_type) > 0 && mysqli_num_rows($result_product_brand) > 0 && mysqli_num_rows($result_product_sale) > 0) {
+        $sql_add_product = "INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`,`MaHSX`, `IDAnhMH`, `MoTaMH`, `MaKM`, `CPU`, `RAM`, `LuuTru`, `HDH`, `ManHinh`, `DoHoa`, `PIN`, `KhoiLuong`, `PhuKien`)
+                VALUES ('$product_id', '$product_name', '$product_type', '$product_numbers','$product_brand', '$product_image', '$product_description', '$product_sale', '$cpu', '$ram', '$memories', '$operating_system','$screen', '$vga', '$pin', '$mass', '$accessory')";
+        
+        if(mysqli_query($conn,$sql_add_product)) {
+          echo "Thêm thành công";
+        } else {
+          echo "Error: " . mysqli_error($conn);
+        }  
+      } 
+    }
+    ?>
     <div class="wrapper">
       <nav id="sidebar" class="sidebar js-sidebar">
         <div class="sidebar-content js-simplebar">
@@ -124,7 +194,7 @@
           </a>
         </nav>
 
-        <main class="content">
+        <form class="content" method="post">
           <div class="container-fluid p-0">
             <div class="mb-3">
               <h1 class="h3 d-inline align-middle">THÊM MẶT HÀNG</h1>
@@ -139,42 +209,60 @@
                     <label class="form-label">Mã mặt hàng</label>
                     <input
                       type="text"
+                      name="product_id"
                       class="form-control"
                       placeholder="Mã mặt hàng"
+                      value="<?php
+                      echo $product_id;
+                      ?>"
                     />
                   </div>
                   <div class="card-body">
                     <label class="form-label">Tên mặt hàng</label>
                     <input
                       type="text"
+                      name="product_name"
                       class="form-control"
                       placeholder="Tên mặt hàng"
+                      value="<?php
+                      echo $product_name;
+                      ?>"
                     />
                   </div>
                   <div class="card-body">
                     <label class="form-label">Loại mặt hàng</label>
-                    <select class="form-select">
+                    <select class="form-select" name="product_type">
                       <option selected>Loại mặt hàng</option>
-                      <option>One</option>
-                      <option>Two</option>
-                      <option>Three</option>
+                      <option <?php echo ($product_brand == 'BSLT') ? 'selected' : ''; ?>>Văn phòng</option>
+                      <option <?php echo ($product_brand == 'GMLT') ? 'selected' : ''; ?>>Gaming</option>
+                      <option <?php echo ($product_brand == 'TIOLT') ? 'selected' : ''; ?>>Cảm ứng</option>
                     </select>
                   </div>
                   <div class="card-body">
                     <label class="form-label">Hãng sản xuất</label>
-                    <select class="form-select">
+                    <select class="form-select" name="product_brand">
                       <option selected>Hãng sản xuất mặt hàng</option>
-                      <option>One</option>
-                      <option>Two</option>
-                      <option>Three</option>
+                      <option <?php echo ($product_brand == 'AC') ? 'selected' : ''; ?>>Acer</option>
+                      <option <?php echo ($product_brand == 'AP') ? 'selected' : ''; ?>>Apple</option>
+                      <option <?php echo ($product_brand == 'AS') ? 'selected' : ''; ?>>Asus</option>
+                      <option <?php echo ($product_brand == 'DE') ? 'selected' : ''; ?>>Dell</option>
+                      <option <?php echo ($product_brand == 'HP') ? 'selected' : ''; ?>>HP</option>
+                      <option <?php echo ($product_brand == 'LE') ? 'selected' : ''; ?>>Lenovo</option>
+                      <option <?php echo ($product_brand == 'LG') ? 'selected' : ''; ?>>LG</option>
+                      <option <?php echo ($product_brand == 'MI') ? 'selected' : ''; ?>>Microsoft</option>
+                      <option <?php echo ($product_brand == 'MS') ? 'selected' : ''; ?>>MSI</option>
                     </select>
                   </div>
                   <div class="card-body">
                     <label class="form-label">Số lượng</label>
                     <input
                       type="text"
+                      name="product_numbers"
                       class="form-control"
                       placeholder="Số lượng"
+                      value="<?php
+                      echo $product_numbers;
+                      ?>"
                     />
                   </div>
                 </div>
@@ -185,8 +273,12 @@
 
                     <textarea
                       class="form-control"
+                      name="product_description"
                       rows="2"
                       placeholder="Mô tả"
+                      value="<?php
+                      echo $product_description;
+                      ?>"
                     ></textarea>
                   </div>
                 </div>
@@ -196,8 +288,12 @@
                     <label class="form-label">Ảnh sản phẩm</label>
                     <input
                       type="file"
+                      name="product_image"
                       class="form-control"
                       placeholder="Ảnh mặt hàng"
+                      value="<?php
+                      echo $product_image;
+                      ?>"
                     />
                   </div>
                 </div>
@@ -206,68 +302,97 @@
               <div class="col-12 col-lg-6">
                 <div class="card">
                   <div class="card-body">
-                    <label class="form-label">Khuyết mãi</label>
-                    <select class="form-select">
-                      <option selected>Khuyết mãi</option>
-                      <option>One</option>
-                      <option>Two</option>
-                      <option>Three</option>
+                    <label class="form-label">Khuyến mãi</label>
+                    <select class="form-select" name="product_sale">
+                      <option selected>Khuyến mãi</option>
+                      <option <?php echo ($product_sale == 'KM001') ? 'selected' : ''; ?>>Khách hàng thân thiết</option>
+                      <option <?php echo ($product_sale == 'KM002') ? 'selected' : ''; ?>>Giảm giá nhập học</option>
+                      <option <?php echo ($product_sale == 'KM003') ? 'selected' : ''; ?>>Không giảm giá</option>
+                      <option <?php echo ($product_sale == 'KM004') ? 'selected' : ''; ?>>Xả kho</option>
                     </select>
                   </div>
                   <div class="card-body">
                     <label class="form-label">CPU</label>
-                    <input type="text" class="form-control" placeholder="CPU" />
+                    <input type="text" name="cpu" class="form-control" placeholder="CPU" value="<?php
+                      echo $cpu;
+                      ?>"/>
                   </div>
                   <div class="card-body">
                     <label class="form-label">RAM</label>
-                    <input type="text" class="form-control" placeholder="RAM" />
+                    <input type="text" name="ram" class="form-control" placeholder="RAM" value="<?php
+                      echo $ram;
+                      ?>"/>
                   </div>
                   <div class="card-body">
                     <label class="form-label">Ổ đĩa</label>
                     <input
                       type="text"
+                      name="memories"
                       class="form-control"
                       placeholder="Ổ đĩa"
+                      value="<?php
+                      echo $memories;
+                      ?>"
                     />
                   </div>
                   <div class="card-body">
                     <label class="form-label">Hệ điều hành</label>
                     <input
                       type="text"
+                      name="operating_system"
                       class="form-control"
-                      placeholder="Hệ Điều Hành"
+                      placeholder="Hệ điều hành"
+                      value="<?php
+                      echo $operating_system;
+                      ?>"
                     />
                   </div>
                   <div class="card-body">
                     <label class="form-label">Màn hình</label>
                     <input
                       type="text"
+                      name="screen"
                       class="form-control"
                       placeholder="Màn hình"
+                      value="<?php
+                      echo $screen;
+                      ?>"
                     />
                   </div>
                   <div class="card-body">
                     <label class="form-label">VGA</label>
-                    <input type="text" class="form-control" placeholder="VGA" />
+                    <input type="text" name="vga" class="form-control" placeholder="VGA" value="<?php
+                      echo $vga;
+                      ?>"/>
                   </div>
                   <div class="card-body">
                     <label class="form-label">PIN</label>
-                    <input type="text" class="form-control" placeholder="PIN" />
+                    <input type="text" name="pin" class="form-control" placeholder="PIN" value="<?php
+                      echo $pin;
+                      ?>"/>
                   </div>
                   <div class="card-body">
                     <label class="form-label">Khối lượng</label>
                     <input
                       type="text"
+                      name="mass"
                       class="form-control"
                       placeholder="Khối lượng"
+                      value="<?php
+                      echo $mass;
+                      ?>"
                     />
                   </div>
                   <div class="card-body">
                     <label class="form-label">Phụ kiện</label>
                     <input
                       type="text"
+                      name="accessory"
                       class="form-control"
                       placeholder="Phụ Kiện"
+                      value="<?php
+                      echo $accessory;
+                      ?>"
                     />
                   </div>
                 </div>
@@ -276,16 +401,16 @@
                   <div class="card-body">
                     <input
                       type="submit"
-                      name="submit"
+                      name="add_product"
                       class="btn btn-success"
-                      value="THÊM"
+                      value="THÊM SẢN PHẨM"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </main>
+    </form>
 
         <footer class="footer">
           <div class="container-fluid">
