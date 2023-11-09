@@ -23,7 +23,7 @@
     } elseif ($tam == 'login') {
         include 'main/login.php';
     } elseif ($tam == 'register') {
-        include 'main/register.php'; 
+        include 'main/register.php';
     } elseif ($tam == 'search' && isset($_GET['search-input'])) {
         include 'main/search-page.php';
     } elseif ($tam == 'personal-information') {
@@ -34,26 +34,19 @@
         include 'main/detail.php';
     } elseif ($tam == 'cart-page') {
         include 'main/cart-page.php';
-    } 
-    elseif ($tam == 'consignee-information') {
+    } elseif ($tam == 'consignee-information') {
         include 'main/consignee-information.php';
-    } 
-    elseif ($tam == 'address') {
+    } elseif ($tam == 'address') {
         include 'main/address.php';
-    }
-     elseif ($tam == 'checkout') {
+    } elseif ($tam == 'checkout') {
         include 'main/checkout.php';
-    }
-    elseif ($tam == 'confirm-logout') {
+    } elseif ($tam == 'confirm-logout') {
         include 'main/confirm-logout.php';
-    }
-    elseif ($tam == 'logout') {
+    } elseif ($tam == 'logout') {
         include 'main/logout.php';
-    }
-    elseif ($tam == 'ajax_get_district') {
+    } elseif ($tam == 'ajax_get_district') {
         include 'main/ajax_get_district.php';
-    }
-    else {
+    } else {
         include 'main/home.php';
     }
     ?>
