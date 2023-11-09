@@ -26,6 +26,26 @@ if (isset($_GET['search'])) {
 
 ?>
 
+<?php
+if (!empty($_SESSION['cart'][$info['MaKH']])) {
+    $session_array = "'" . implode("','", array_keys($_SESSION['cart'][$info['MaKH']])) . "'";
+    $sql_cart = "SELECT * FROM mathang
+    join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+    join anhmh on mathang.MaMH = anhmh.MaMH
+    join khuyenmai on mathang.MaKM = khuyenmai.MaKM
+    WHERE mathang.MaMH IN ($session_array)";
+    $result_cart = mysqli_query($conn, $sql_cart);
+
+    if ($result_cart) {
+        // Xử lý kết quả truy vấn
+    } else {
+        echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
+    }
+} else {
+    echo "Giỏ hàng trống";
+}
+?>
+
 <div id="mainNavigationBar" class="nav-main">
     <div class="teko-row teko-row-center nav-navbar">
         <div class="teko-row teko-row-no-wrap teko-row-middle nav-subnav"
@@ -360,8 +380,7 @@ if (isset($_GET['search'])) {
                                                     </span>
                                                 </div>
                                             </div>';
-                                    }
-                                    elseif (isset($_SESSION['loggedin_employee']) && $_SESSION['loggedin_employee'] === true) {
+                                    } elseif (isset($_SESSION['loggedin_employee']) && $_SESSION['loggedin_employee'] === true) {
                                         echo '
                                                 <div class="teko-col nav-common-form nav-ip--has-popup"
                                                 style="padding-left: 8px; padding-right: 8px; flex: 0 0 auto;">
@@ -520,7 +539,8 @@ if (isset($_GET['search'])) {
                                     <div type="body" color="textSecondary" class="title nav-common-text">Giỏ hàng
                                         của
                                         bạn</div>
-                                    <div type="body" color="textSecondary" class="title nav-common-text">(2) sản
+                                    <div type="body" color="textSecondary" class="title nav-common-text">
+                                        (<?php echo mysqli_num_rows($result_cart) ?>) sản
                                         phẩm
                                     </div>
                                 </div>
@@ -534,7 +554,57 @@ if (isset($_GET['search'])) {
                             <div class="nav-cart-popup-main">
                                 <div class="nav-cart-popup-child">
                                     <div class="css-mb-16">
-                                        <div class="nav-cart-popup-products">
+                                        <?php
+                                        if (!empty($result_cart)) {
+                                            $total_money = 0;
+                                            while ($rows_cart = mysqli_fetch_assoc($result_cart)) {
+                                                $product_name = $rows_cart["TenMH"];
+                                                $product_price = $rows_cart["DonGia"];
+                                                $product_brand = $rows_cart["TenHSX"];
+                                                $product_image = $rows_cart['DLAnh'];
+                                                $product_id = $rows_cart['MaMH'];
+                                                $product_sale = $rows_cart['GiamGia'];
+                                                $quantity = $_SESSION['cart'][$info['MaKH']][$product_id];
+                                                $price_sale = $product_price - $product_price * $product_sale;
+                                                $money = ($product_price - $product_price * $product_sale) * $quantity; //Số tiền còn lại
+                                                $sale_rate = $product_sale * 100; //% khuyến mãi
+                                                $save_price = $product_price - $price_sale; //Số tiền tiết kiệm
+                                        
+                                                $total_money += $money; //Tính tổng  tiền của tất cả sản phẩm
+                                                $price_sale_format = number_format($price_sale, 0, '.', '.');
+                                                $product_price_format = number_format($product_price, 0, '.', '.');
+                                                $save_price_format = number_format($save_price, 0, '.', '.');
+                                                $money_format = number_format($money, 0, '.', '.');
+                                                $total_money_format = number_format($total_money, 0, '.', '.');
+
+                                                echo '<div class="nav-cart-popup-products">
+                                                <div>
+                                                    <div height="80" width="80" class="nav-cart-popup-products-avt">
+                                                    <picture>
+                                                        <source
+                                                            srcset="' . $product_image . '"
+                                                            type="image/png">
+                                                            <img class="lazyload css-jdz5ak" alt="product"
+                                                            src="' . $product_image . '"
+                                                            loading="lazy" decoding="async">
+                                                    </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="css-mg1rem">
+                                                    <a target="_blank"
+                                                        href="/may-tinh-xach-tay-laptop-acer-nitro-16-phoenix-an16-41-r5m4-nh-qkbsv-003-amd-ryzen-5-7535hs-den-s230402670.html"
+                                                        class="nav-cart-popup-a">
+                                                        <div type="body" color="textPrimary" class="css-1h5tj4c">' . $product_name . '</div>
+                                                    </a>
+                                                    <div type="caption" color="textSecondary" class="css-1f5a6jh">Sốlượng ' . $quantity . '</div>
+                                                        <span class="css-7ofbab">' . $price_sale_format . '<span
+                                                            class="css-1ul6wk9">đ</span></span>
+                                                </div>
+                                            </div>';
+                                            }
+                                        }
+                                        ?>
+                                        <!-- <div class="nav-cart-popup-products">
                                             <div>
                                                 <div height="80" width="80" class="nav-cart-popup-products-avt">
                                                     <picture>
@@ -561,116 +631,46 @@ if (isset($_GET['search'])) {
                                                     lượng 1</div><span class="css-7ofbab">27.990.000<span
                                                         class="css-1ul6wk9">đ</span></span>
                                             </div>
-                                        </div>
-                                        <div class="nav-cart-popup-products">
-                                            <div class="css-1xjc5z">
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">1x Ba lô Acer Gaming SUV</div>
-                                                </div>
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">1x Bàn phím cơ Acer PREDATOR Aethon 301
-                                                        TKL USB (Đen)(Quà tặng)</div>
-                                                </div>
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">1x 1x Mã ưu đãi mua chuột Logitech G903
-                                                        Hero với giá 1.5 Triệu đồng</div>
-                                                </div>
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">1x Mã giảm thêm 5% tối đa 300.000đ cho
-                                                        toàn bộ sản phẩm Điện Máy - Điện Gia Dụng</div>
-                                                </div>
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">1x Mã giảm thêm 150.000 cho một số chuột
-                                                        Logitech, MSI, Newmen, Asus, Tai nghe Zidli</div>
-                                                </div>
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">1x Bộ nhớ/ Ram Laptop Kingston 8GB DDR5
-                                                        4800MHz (KVR48S40BS6-8) (Quà tặng)</div>
-                                                </div>
-                                                <div class="css-1fmlnyw">
-                                                    <div class="css-1axx38a">
-                                                        <div height="16" width="16" class="css-xe0n85"><img
-                                                                class="lazyload img" alt=""
-                                                                src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"
-                                                                loading="lazy" decoding="async"></div>
-                                                    </div>
-                                                    <div class="css-5j9p1n">Giảm 2.000.000₫ (áp dụng vào giá sản
-                                                        phẩm)</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="css-1vf48kp">
-                                    <div class="css-sax00u"><span>Tổng tiền (2) sản phẩm</span><span
-                                            class="css-19une5m"><span class="css-htm2b9">28.639.000<span
-                                                    class="css-1ul6wk9">đ</span></span></span></div>
+                                    <div class="css-sax00u"><span>Tổng tiền
+                                            (<?php echo mysqli_num_rows($result_cart) ?>) sản phẩm
+                                        </span><span class="css-19une5m"><span class="css-htm2b9">
+                                                <?php if (isset($total_money_format))
+                                                    echo $total_money_format ?><span class="css-1ul6wk9">đ</span>
+                                                </span></span></div>
+                                    </div>
+                                    <div class="css-0"><a href="?page=cart-page" class="css-1dyo6sn">Xem giỏ hàng</a></div>
                                 </div>
-                                <div class="css-0"><a href="?page=cart-page" class="css-1dyo6sn">Xem giỏ hàng</a></div>
                             </div>
+                            <div style="position: absolute; left: 0px; transform: translate3d(311px, 0px, 0px);"></div>
                         </div>
-                        <div style="position: absolute; left: 0px; transform: translate3d(311px, 0px, 0px);"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+
+            // Lấy tham chiếu đến nút bấm và thẻ div
+            const showButton = document.getElementById("nav-search-input");
+            const myDiv = document.getElementById("nav-search-popup");
+            // Lấy tham chiếu đến nút bấm và thẻ div
+            const showProductPortfolio = document.getElementById("nav--product-portfolio");
+            const productPortfolioPopup = document.getElementById("nav--product-portfolio-popup");
+
+            // Thêm sự kiện click cho nút bấm
+            showProductPortfolio.addEventListener("click", function () {
+                if (productPortfolioPopup.style.visibility === "hidden") {
+                    productPortfolioPopup.style.visibility = "visible";
+                } else {
+                    productPortfolioPopup.style.visibility = "hidden";
+                }
+            });
+            // document.getElementById('search-link').addEventListener('click', function () {
+            //     var searchKeyword = document.getElementById('search-input').value;
+            //     window.location.href = '?page=search&search-product=' + searchKeyword;
+            // });
+        </script>
     </div>
-    <script>
-
-        // Lấy tham chiếu đến nút bấm và thẻ div
-        const showButton = document.getElementById("nav-search-input");
-        const myDiv = document.getElementById("nav-search-popup");
-        // Lấy tham chiếu đến nút bấm và thẻ div
-        const showProductPortfolio = document.getElementById("nav--product-portfolio");
-        const productPortfolioPopup = document.getElementById("nav--product-portfolio-popup");
-
-        // Thêm sự kiện click cho nút bấm
-        showProductPortfolio.addEventListener("click", function () {
-            if (productPortfolioPopup.style.visibility === "hidden") {
-                productPortfolioPopup.style.visibility = "visible";
-            } else {
-                productPortfolioPopup.style.visibility = "hidden";
-            }
-        });
-        // document.getElementById('search-link').addEventListener('click', function () {
-        //     var searchKeyword = document.getElementById('search-input').value;
-        //     window.location.href = '?page=search&search-product=' + searchKeyword;
-        // });
-    </script>
-</div>
