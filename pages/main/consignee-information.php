@@ -2,6 +2,22 @@
 
 $sql_province = "SELECT * FROM province";
 $result_province = mysqli_query($conn, $sql_province);
+
+if (isset($_GET["submit"])) {
+    switch ($_GET["submit"]) {
+        case "add":
+            $full_name = $_POST['full_name'];
+            $sdt = $_POST['sdt'];
+            $email = $_POST['email'];
+
+            $_SESSION['cart']['full_name'] = $full_name;
+            $_SESSION['cart']['sdt'] = $sdt;
+            $_SESSION['cart']['email'] = $email;
+            $_SESSION['cart']['address'];
+            header('Location: ?page=checkout');
+            break;
+    }
+}
 ?>
 
 <div id="teko-modal-lo9t136vm2jzjf9v1hs"
@@ -9,14 +25,16 @@ $result_province = mysqli_query($conn, $sql_province);
     <div class="css-1272naz"></div>
     <div class="teko-modal teko-modal-show css-t2ptn2" style="opacity: 1; transform: translateY(0px);">
         <div class="teko-modal-content">
-            <div class="teko-modal-close css-1qzn8fv"><i onclick="window.history.back(-1);"
-                    class="fa-solid fa-xmark"></i></div>
+            <div class="teko-modal-close css-1qzn8fv">
+                <i onclick="window.history.back(-1);" class="fa-solid fa-xmark"></i>
+            </div>
             <div class="teko-modal-header">
                 <div type="title" class="teko-modal-title css-1cp1h79">Thông tin người nhận hàng</div>
             </div>
             <div class="teko-modal-body">
                 <div class="css-1g8ztiq">
-                    <form class="teko-form-vertical css-kxydk6" id="myForm" method="POST">
+                    <form action="?page=checkout&checkout=submit" class="teko-form-vertical css-kxydk6" id="myForm"
+                        method="POST">
                         <div class="teko-row teko-form-item css-iu028d">
                             <div class="teko-col teko-form-item-label css-1yvcaye">
                                 <label for="name" class="teko-form-item-no-colon teko-form-item-required css-15ognui"
@@ -29,8 +47,9 @@ $result_province = mysqli_query($conn, $sql_province);
                                     <div class="teko-form-item-control-input-content">
                                         <div class="css-1npt3uz">
                                             <div class="input-container css-kwckz4" height="40">
-                                                <input id="name" type="text" placeholder="Vui lòng nhập tên người nhận"
-                                                    maxlength="255" class="css-1acir1a" value="">
+                                                <input name="full_name" required id="name" type="text"
+                                                    placeholder="Vui lòng nhập tên người nhận" maxlength="255"
+                                                    class="css-1acir1a" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -40,18 +59,22 @@ $result_province = mysqli_query($conn, $sql_province);
                         <div class="teko-row teko-row-space-between css-1qrgscw">
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="telephone"
+                                    <div class="teko-col teko-form-item-label css-1yvcaye">
+                                        <label for="telephone"
                                             class="teko-form-item-no-colon teko-form-item-required css-15ognui"
                                             style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Số điện thoại</div>
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="teko-col teko-form-item-control css-rznjps">
                                         <div class="teko-form-item-control-input">
                                             <div class="teko-form-item-control-input-content">
                                                 <div class="css-1npt3uz">
-                                                    <div class="input-container css-kwckz4" height="40"><input
-                                                            id="telephone" type="text" placeholder="Nhập số điện thoại"
-                                                            maxlength="255" class="css-1acir1a" value=""></div>
+                                                    <div class="input-container css-kwckz4" height="40">
+                                                        <input name="sdt" required id="telephone" type="text"
+                                                            placeholder="Nhập số điện thoại" maxlength="255"
+                                                            class="css-1acir1a" value="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,18 +83,22 @@ $result_province = mysqli_query($conn, $sql_province);
                             </div>
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
+
                                     <div class="teko-col teko-form-item-label css-1yvcaye"><label for="email"
                                             class="teko-form-item-no-colon teko-form-item-required css-15ognui"
                                             style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Email</div>
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="teko-col teko-form-item-control css-rznjps">
                                         <div class="teko-form-item-control-input">
                                             <div class="teko-form-item-control-input-content">
                                                 <div class="css-1npt3uz">
-                                                    <div class="input-container css-kwckz4" height="40"><input
-                                                            id="email" type="text" placeholder="Nhập email của bạn"
-                                                            maxlength="255" class="css-1acir1a" value=""></div>
+                                                    <div class="input-container css-kwckz4" height="40">
+                                                        <input name="email" required id="email" type="text"
+                                                            placeholder="Nhập email của bạn" maxlength="255"
+                                                            class="css-1acir1a" value="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,8 +221,8 @@ $result_province = mysqli_query($conn, $sql_province);
                                         <div class="teko-form-item-control-input">
                                             <div class="teko-form-item-control-input-content">
                                                 <div class="css-1npt3uz">
-                                                    <div class="input-container css-kwckz4" height="40"><input
-                                                            id="address" type="text"
+                                                    <div class="input-container css-kwckz4" height="40">
+                                                        <input required id="address" type="text"
                                                             placeholder="Số nhà, ngõ, tên đường..." maxlength="255"
                                                             class="css-1acir1a" value="">
                                                     </div>
@@ -224,28 +251,31 @@ $result_province = mysqli_query($conn, $sql_province);
                                                 </div>
                                                 <div type="body" class="checkbox-label css-6r3s23"
                                                     style="flex: 1 1 0%;">Đặt làm mặc định</div>
-                                            </label></div>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="teko-row teko-row-end css-1mfzix3">
+                            <a href="javascript:window.history.back()">
+                                <input name="cancel_click" height="2.5rem" color="primary500" class="css-125hckg"
+                                    type="submit" value="Hủy bỏ">
+                            </a>
+                            <input height="2.5rem" name="save_address_click" value="Lưu địa chỉ" color="white"
+                                class="css-oyymsr" type="submit">
+                        </div>
                     </form>
-                    <div style="margin-top: 40px;"></div>
-                    <div class="teko-row teko-row-end css-1mfzix3">
-                        <button onclick="window.history.back(-1);" height="2.5rem" color="primary500"
-                            class="css-125hckg" type="button">
-                            <div type="body" class="button-text css-uce8nc" color="primary500">Hủy bỏ</div><span
-                                style="margin-left: 0px;">
-                                <div class="css-157jl91"></div>
-                            </span>
-                        </button>
-                        <button height="2.5rem" color="white" name="add_sale" class="css-oyymsr" type="button">
-                            <div type="body" class="button-text css-2h64mz" color="white">Lưu địa chỉ</div><span
-                                style="margin-left: 0px;">
-                                <div class="css-157jl91"></div>
-                            </span>
-                        </button>
+                    <div style="margin-top: 40px;">
                     </div>
+                    <!-- <form action="#" method="post">
+                        <div class="teko-row teko-row-end css-1mfzix3">
+                            <input name="cancel_click" height="2.5rem" color="primary500" class="css-125hckg"
+                                type="submit" value="Hủy bỏ">
+                            <input height="2.5rem" name="save_address_click" value="Lưu địa chỉ" color="white"
+                                class="css-oyymsr" type="submit">
+                        </div>
+                    </form> -->
                 </div>
             </div>
         </div>

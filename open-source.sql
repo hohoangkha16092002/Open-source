@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2023 at 09:37 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Nov 09, 2023 at 01:06 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -932,46 +932,16 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDH`, `MaKH`, `NgayDH`, `TongGiaTri`) VALUES
-('DH001', 'KH001', '2023-10-12', 11990000),
-('DH002', 'KH002', '2023-10-13', 25990000),
-('DH003', 'KH003', '2023-10-14', 32290000),
-('DH004', 'KH004', '2023-10-15', 28690000),
-('DH005', 'KH005', '2023-10-16', 16890000),
-('DH006', 'KH006', '2023-10-17', 23990000),
-('DH007', 'KH001', '2023-10-18', 24690000),
-('DH008', 'KH002', '2023-10-19', 14490000),
-('DH009', 'KH003', '2023-10-10', 17390000),
-('DH010', 'KH004', '2023-10-21', 40890000);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hoadon`
---
-
-CREATE TABLE `hoadon` (
-  `MaHD` varchar(5) NOT NULL,
-  `MaNV` varchar(5) NOT NULL,
-  `NgayLap` date NOT NULL,
-  `TongGiaTri` decimal(10,0) DEFAULT NULL,
-  `MaKH` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `hoadon`
---
-
-INSERT INTO `hoadon` (`MaHD`, `MaNV`, `NgayLap`, `TongGiaTri`, `MaKH`) VALUES
-('HD001', 'NV001', '2023-10-12', 11990000, 'KH001'),
-('HD002', 'NV002', '2023-10-13', 25990000, 'KH002'),
-('HD003', 'NV003', '2023-10-14', 32290000, 'KH003'),
-('HD004', 'NV004', '2023-10-15', 28690000, 'KH004'),
-('HD005', 'NV005', '2023-10-16', 16890000, 'KH005'),
-('HD006', 'NV006', '2023-10-17', 23990000, 'KH006'),
-('HD007', 'NV001', '2023-10-18', 24690000, 'KH007'),
-('HD008', 'NV002', '2023-10-19', 14490000, 'KH008'),
-('HD009', 'NV003', '2023-10-10', 17390000, 'KH009'),
-('HD010', 'NV004', '2023-10-21', 40890000, 'KH010');
+('DH001', 'KH001', '2023-10-12', '11990000'),
+('DH002', 'KH002', '2023-10-13', '25990000'),
+('DH003', 'KH003', '2023-10-14', '32290000'),
+('DH004', 'KH004', '2023-10-15', '28690000'),
+('DH005', 'KH005', '2023-10-16', '16890000'),
+('DH006', 'KH006', '2023-10-17', '23990000'),
+('DH007', 'KH001', '2023-10-18', '24690000'),
+('DH008', 'KH002', '2023-10-19', '14490000'),
+('DH009', 'KH003', '2023-10-10', '17390000'),
+('DH010', 'KH004', '2023-10-21', '40890000');
 
 -- --------------------------------------------------------
 
@@ -1006,7 +976,8 @@ INSERT INTO `khachhang` (`MaKH`, `HoTenKH`, `DiaChi`, `Email`, `MatKhau`, `NgayS
 ('KH008', 'Tạ Đình Khánh', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'khanhta837@gmail.com', '123abc', '1995-01-24', 0, '0465422653'),
 ('KH009', 'Huỳnh Vũ Kiên', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'kienhuynh348@gmail.com', '123abc', '1999-11-19', 0, '0254456134'),
 ('KH010', 'Nguyễn Tấn Kiệt', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'tankiet100@gmail.com', '123abc', '1991-06-01', 0, '0353637381'),
-('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368');
+('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368'),
+('KH012', 'Phan Minh Tiến', '', 'tien2@gmail.com', '$2y$12$k/ajzkIWnNbXJUSc33ykDeGwIfyZUnrkRBUzSmcaIOkaelT05PkgS', '0000-00-00', 0, '');
 
 -- --------------------------------------------------------
 
@@ -1030,10 +1001,10 @@ CREATE TABLE `khuyenmai` (
 --
 
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `MoTaKM`, `GiamGia`, `DieuKien`, `PhamVi`, `NgayBD`, `NgayKT`) VALUES
-('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', 0.20, 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
-('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', 0.25, 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
-('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', 0.00, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
-('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', 0.40, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
+('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', '0.20', 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
+('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', '0.25', 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
+('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', '0.00', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
+('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', '0.40', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1174,6 +1145,46 @@ INSERT INTO `nhanvien` (`MaNV`, `HoTenNV`, `SDT`, `Email`, `DiaChi`, `NgaySinh`,
 ('NV008', 'Võ Mạnh Hùng', '0643215879', 'manhhungnv008@gmail.com', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', '0000-00-00', 'cecdfadf5a454ee007fd91c2dd1bf694', 0),
 ('NV009', 'Trần Ngọc Quyên', '0998543561', 'ngocquyennv009@gmail.com', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', '0000-00-00', '6528c3ae9b73584ec74de4d49df9a11f', 1),
 ('NV010', 'Trần Minh Khang', '0342477659', 'minhkhangnv010@gmail.com', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', '0000-00-00', '04b986b6d6e0a6181a06cb942ed5d52c', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `id` varchar(5) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `address` varchar(500) NOT NULL,
+  `note` text NOT NULL,
+  `total` int(11) NOT NULL,
+  `created_time` int(11) NOT NULL,
+  `last_updated` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `name`, `phone`, `address`, `note`, `total`, `created_time`, `last_updated`) VALUES
+('29', 'Andn', '0654654615', 'Ha Noi', 'Ghi chu', 8290000, 1587872426, 1587872426);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` varchar(5) NOT NULL,
+  `order_id` varchar(5) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `created_time` int(11) NOT NULL,
+  `last_updated` int(11) NOT NULL,
+  `product_id` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -11905,14 +11916,6 @@ ALTER TABLE `donhang`
   ADD KEY `FK_MaKH_DonHang` (`MaKH`);
 
 --
--- Indexes for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`MaHD`),
-  ADD KEY `FK_MaNV_HoaDon` (`MaNV`),
-  ADD KEY `FK_MaKH_HoaDon` (`MaKH`);
-
---
 -- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
@@ -11939,6 +11942,20 @@ ALTER TABLE `mathang`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `order_detail_ibfk_2` (`product_id`);
 
 --
 -- Indexes for table `province`
@@ -11991,20 +12008,20 @@ ALTER TABLE `donhang`
   ADD CONSTRAINT `FK_MaKH_DonHang` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`);
 
 --
--- Constraints for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD CONSTRAINT `FK_MaKH_HoaDon` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`),
-  ADD CONSTRAINT `FK_MaNV_HoaDon` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`);
-
---
 -- Constraints for table `mathang`
 --
 ALTER TABLE `mathang`
-  ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`),
+  ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_MaHSX` FOREIGN KEY (`MaHSX`) REFERENCES `dmhangsanxuat` (`MaHSX`),
   ADD CONSTRAINT `FK_MaKM_MatHang` FOREIGN KEY (`MaKM`) REFERENCES `khuyenmai` (`MaKM`),
   ADD CONSTRAINT `FK_MaLMH` FOREIGN KEY (`MaLMH`) REFERENCES `dmloaimathang` (`MaLMH`);
+
+--
+-- Constraints for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `mathang` (`MaMH`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
