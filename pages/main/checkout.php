@@ -1,6 +1,10 @@
 <?php
 include("config.php");
 
+if(!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])){
+    header('Location: ?page=login');
+}
+
 if (isset($_SESSION['loggedin_customer'])) {
     $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
     $result = mysqli_query($conn, $sql);

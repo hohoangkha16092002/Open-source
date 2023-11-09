@@ -8,6 +8,24 @@ if (isset($_SESSION['loggedin_customer'])) {
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
         $info = mysqli_fetch_assoc($result);
+        if (isset($_SESSION['cart'][$info['MaKH']])) {
+            $session_array = "'" . implode("','", array_keys($_SESSION['cart'][$info['MaKH']])) . "'";
+            $sql_cart = "SELECT * FROM mathang
+            join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+            join anhmh on mathang.MaMH = anhmh.MaMH
+            join khuyenmai on mathang.MaKM = khuyenmai.MaKM
+            WHERE mathang.MaMH IN ($session_array)";
+            $result_cart = mysqli_query($conn, $sql_cart);
+        
+            if ($result_cart) {
+                // Xử lý kết quả truy vấn
+            } else {
+                echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
+            }
+        } 
+        else {
+            echo "Giỏ hàng trống";
+        }
     }
 }
 
@@ -24,26 +42,6 @@ if (isset($_GET['search'])) {
     header("Location: ?page=search&search-input=$search_input");
 }
 
-?>
-
-<?php
-if (!empty($_SESSION['cart'][$info['MaKH']])) {
-    $session_array = "'" . implode("','", array_keys($_SESSION['cart'][$info['MaKH']])) . "'";
-    $sql_cart = "SELECT * FROM mathang
-    join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
-    join anhmh on mathang.MaMH = anhmh.MaMH
-    join khuyenmai on mathang.MaKM = khuyenmai.MaKM
-    WHERE mathang.MaMH IN ($session_array)";
-    $result_cart = mysqli_query($conn, $sql_cart);
-
-    if ($result_cart) {
-        // Xử lý kết quả truy vấn
-    } else {
-        echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
-    }
-} else {
-    echo "Giỏ hàng trống";
-}
 ?>
 
 <div id="mainNavigationBar" class="nav-main">
@@ -540,7 +538,11 @@ if (!empty($_SESSION['cart'][$info['MaKH']])) {
                                         của
                                         bạn</div>
                                     <div type="body" color="textSecondary" class="title nav-common-text">
-                                        (<?php echo mysqli_num_rows($result_cart) ?>) sản
+                                        (<?php
+                                                 if(isset($_SESSION['loggedin_customer']) and isset($_SESSION['cart'][$info['MaKH']] )) {
+                                                    echo mysqli_num_rows($result_cart);
+                                                 }
+                                            ?>) sản
                                         phẩm
                                     </div>
                                 </div>
@@ -604,43 +606,25 @@ if (!empty($_SESSION['cart'][$info['MaKH']])) {
                                             }
                                         }
                                         ?>
-                                        <!-- <div class="nav-cart-popup-products">
-                                            <div>
-                                                <div height="80" width="80" class="nav-cart-popup-products-avt">
-                                                    <picture>
-                                                        <source
-                                                            srcset="https://lh3.googleusercontent.com/YSGzzyiivz6GBZi825qGOEyePXHoz4hDb_Vj3PnVe9qiSGxQZViXQPSiFs8JkL5VKogBs0z9bX-49tgqR1Tj2jaSZOpxEL8=rw"
-                                                            type="image/webp">
-                                                        <source
-                                                            srcset="https://lh3.googleusercontent.com/YSGzzyiivz6GBZi825qGOEyePXHoz4hDb_Vj3PnVe9qiSGxQZViXQPSiFs8JkL5VKogBs0z9bX-49tgqR1Tj2jaSZOpxEL8"
-                                                            type="image/png"><img class="lazyload img" alt="product"
-                                                            src="https://lh3.googleusercontent.com/YSGzzyiivz6GBZi825qGOEyePXHoz4hDb_Vj3PnVe9qiSGxQZViXQPSiFs8JkL5VKogBs0z9bX-49tgqR1Tj2jaSZOpxEL8=rw"
-                                                            loading="lazy" decoding="async">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                            <div class="css-mg1rem">
-                                                <a target="_blank"
-                                                    href="/may-tinh-xach-tay-laptop-acer-nitro-16-phoenix-an16-41-r5m4-nh-qkbsv-003-amd-ryzen-5-7535hs-den-s230402670.html"
-                                                    aria-label="Image" class="nav-cart-popup-a">
-                                                    <div type="body" color="textPrimary" class="css-1h5tj4c">Máy
-                                                        tính xách tay/ Laptop Acer Nitro 16 Phoenix AN16-41-R5M4
-                                                        (NH.QKBSV.003) (AMD Ryzen 5-7535HS) (Đen)</div>
-                                                </a>
-                                                <div type="caption" color="textSecondary" class="css-1f5a6jh">Số
-                                                    lượng 1</div><span class="css-7ofbab">27.990.000<span
-                                                        class="css-1ul6wk9">đ</span></span>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="css-1vf48kp">
                                     <div class="css-sax00u"><span>Tổng tiền
-                                            (<?php echo mysqli_num_rows($result_cart) ?>) sản phẩm
-                                        </span><span class="css-19une5m"><span class="css-htm2b9">
+                                            (
+                                            <?php
+                                                 if(isset($_SESSION['loggedin_customer']) and isset($_SESSION['cart'][$info['MaKH']] )) {
+                                                    echo mysqli_num_rows($result_cart);
+                                                 }
+                                            ?>) sản phẩm
+                                        </span>
+                                        <span class="css-19une5m">
+                                            <span class="css-htm2b9">
                                                 <?php if (isset($total_money_format))
-                                                    echo $total_money_format ?><span class="css-1ul6wk9">đ</span>
-                                                </span></span></div>
+                                                    echo $total_money_format ?>
+                                                    <span class="css-1ul6wk9">đ</span>
+                                                </span>
+                                            </span>
+                                        </div>
                                     </div>
                                     <div class="css-0"><a href="?page=cart-page" class="css-1dyo6sn">Xem giỏ hàng</a></div>
                                 </div>

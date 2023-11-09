@@ -28,9 +28,9 @@
 
         if (password_verify($input_password, $hashedPassword)) {
           $_SESSION['loggedin_customer'] = true; // Lưu trạng thái đăng nhập
-          // if (!isset($_SESSION[$row['MaKH']])) {
-          //   $_SESSION['cart'][$row['MaKH']] = array();
-          // }
+          if (!isset($_SESSION['cart'][$row['MaKH']])) {
+            $_SESSION['cart'][$row['MaKH']] = array();
+          }
           $_SESSION['MaKH'] = $row['MaKH'];
           header("Location: index.php");
         } else {
