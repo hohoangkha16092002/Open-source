@@ -1,9 +1,9 @@
 <?php
-    
+
 $sql_province = "SELECT * FROM province";
 $result_province = mysqli_query($conn, $sql_province);
 
-if (isset($_POST["save_address_click"])) {
+if (isset($_POST["submit"])) {
     $full_name = htmlspecialchars($_POST['full_name']);
     // var_dump($full_name); exit;
     $sdt = htmlspecialchars($_POST['sdt']);
@@ -14,7 +14,8 @@ if (isset($_POST["save_address_click"])) {
     $address_detail = htmlspecialchars($_POST['address']);
     // $is_default = isset($_POST['isDefault']) ? 1 : 0;
     $maKH = $_SESSION['MaKH'];
-    var_dump($full_name, $sdt, $email, $province, $district, $wards, $address_detail, $maKH);
+    // var_dump($full_name, $sdt, $email, $province, $district, $wards, $address_detail, $maKH);
+    // exit();
     // Thực hiện truy vấn SQL để chèn dữ liệu vào bảng diachinhanhang
     $sql_insert_address = "INSERT INTO `diachinhanhang` (`MaKH`, `TenNguoiNhan`, `DiaChi`, `ThanhPho`, `QuanHuyen`, `PhuongXa`, `SoDienThoai`, `Email`)
                                                 VALUES ('$maKH','$full_name', '$address_detail', $province, $district,  $wards, '$sdt', '$email')";
@@ -27,6 +28,7 @@ if (isset($_POST["save_address_click"])) {
     } else {
         // Nếu có lỗi, hiển thị thông báo hoặc xử lý theo ý của bạn
         echo "Error: " . $sql_insert_address . "<br>" . mysqli_error($conn);
+        header('Location: ?page=checkout');
     }
 }
 ?>
@@ -173,31 +175,29 @@ if (isset($_POST["save_address_click"])) {
                         </div>
                         <div class="teko-row teko-row-space-between css-15vgeje">
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
-                                <form action="" method="get">
-                                    <div class="teko-row teko-form-item css-iu028d">
-                                        <div class="teko-col teko-form-item-label css-1yvcaye"><label for="wardCode" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
-                                                <div type="body" color="textTitle" class="css-3mfztx">Phường/Xã</div>
-                                            </label></div>
-                                        <div class="teko-col teko-form-item-control css-rznjps">
-                                            <div class="teko-form-item-control-input">
-                                                <div class="teko-form-item-control-input-content">
-                                                    <div id="wardCode" tabindex="-1" class="css-1npt3uz">
-                                                        <div class="css-cssveg">
-                                                            <div disabled="" class="css-wds49r">
-                                                                <div class="css-w9zq4w">
-                                                                    <select id="wards" name="wards" class="form-control">
-                                                                        <option value="">Chọn một xã</option>
-                                                                    </select>
-                                                                </div>
+                                <div class="teko-row teko-form-item css-iu028d">
+                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="wardCode" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                            <div type="body" color="textTitle" class="css-3mfztx">Phường/Xã</div>
+                                        </label></div>
+                                    <div class="teko-col teko-form-item-control css-rznjps">
+                                        <div class="teko-form-item-control-input">
+                                            <div class="teko-form-item-control-input-content">
+                                                <div id="wardCode" tabindex="-1" class="css-1npt3uz">
+                                                    <div class="css-cssveg">
+                                                        <div disabled="" class="css-wds49r">
+                                                            <div class="css-w9zq4w">
+                                                                <select id="wards" name="wards" class="form-control">
+                                                                    <option value="">Chọn một xã</option>
+                                                                </select>
                                                             </div>
                                                         </div>
-                                                        <div class="css-1ezclw1"></div>
                                                     </div>
+                                                    <div class="css-1ezclw1"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
@@ -219,7 +219,7 @@ if (isset($_POST["save_address_click"])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="teko-row teko-row-end css-1qrgscw">
+                        <!-- <div class="teko-row teko-row-end css-1qrgscw">
                             <div class="teko-row teko-form-item css-iu028d">
                                 <div class="teko-col teko-form-item-control css-rznjps">
                                     <div class="teko-form-item-control-input">
@@ -235,12 +235,12 @@ if (isset($_POST["save_address_click"])) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="teko-row teko-row-end css-1mfzix3">
                             <a href="javascript:window.history.back()">
                                 <input name="cancel_click" height="2.5rem" color="primary500" class="css-125hckg" type="submit" value="Hủy bỏ">
                             </a>
-                            <input height="2.5rem" name="save_address_click" value="Lưu địa chỉ" color="white" class="css-oyymsr" type="submit">
+                            <input height="2.5rem" name="submit" value="Lưu địa chỉ" color="white" class="css-oyymsr" type="submit">
                         </div>
                     </form>
                     <div style="margin-top: 40px;">
