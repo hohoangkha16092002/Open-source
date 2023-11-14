@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2023 at 01:06 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Nov 12, 2023 at 04:32 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `anhmh` (
 --
 
 INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
-('HASP001', 'LT001', 'ACER Aspire 3', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw'),
+('HASP001', 'LT079', 'Lenovo IdeaPad Gaming 3', 'https://lh3.googleusercontent.com/tWmoVHKQMc1GJa8FpoUzQfUxZlX0jUoFuVVjYTRUzonsIQtL1MW0wG5S9diSyqN1Ff2xAf8MCz0BNKDzrCzVK3QBqTbjN7zX=w500-rw'),
 ('HASP002', 'LT002', 'ACER Nitro 5 Tiger', 'https://lh3.googleusercontent.com/fXZQ5-Dps2ru-8lXOuMVr0-Md61rn131O041rNRli8657yKmkLOao90COa2KOkry-coVjpzl4oK9BZn-zRMsoEOJNvnGD38=w500-rw'),
 ('HASP003', 'LT003', 'MacBook Air 2023', 'https://lh3.googleusercontent.com/ynVxOa_n1ROHtX-zLGJOshMz99v5dwEKMf9Ikqj3v4KsCbH75NxVZEkmGjuzhM-_8L023MN3UpRigBFQr2YHLw0ptoox-G0=w500-rw'),
 ('HASP004', 'LT004', 'ASUS TUF Gaming F15', 'https://lh3.googleusercontent.com/RyacFxZhVBMlVbIHzZW5xFcYutS4jZofTji-dBtvqbmlcIDdR1mVtNInpvcoMJ-4KMeFBiZy3BoeiNVEq7PVjHSNqSt3sYP4=w500-rw'),
@@ -113,7 +113,11 @@ INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
 ('HASP072', 'LT072', 'MSI Cyborg 15', 'https://lh3.googleusercontent.com/0ntdYBLyD-CqIQi3dRY8vD1BSp5jiuYPNC4aWv12_adS1uvzhxiVyi43ZSCDL65BWV557agLs-DOxsGVz6eY96ZDleW2CNkC=w1000-rw'),
 ('HASP073', 'LT073', 'MSI GF63 Thin', 'https://lh3.googleusercontent.com/zAn8TTfwpvyqeOv9dLbekolioszCdFfyguJRN1XsYHI2OxPm9wPvhTRAPPcPg6Y_6mlgXj1wW5oI1KiwTr2hIEpxczjLaGUC=w500-rw'),
 ('HASP074', 'LT074', 'MSI Raider', 'https://lh3.googleusercontent.com/z1_JlOSk723iTBKfUgcOsk2YdrxY0gFHSdNE5GiznEqKglkEBKkssKDYr8miHOEszpGOc1Cq_ZQsqDQRDnBmmitMQF19E3Yb=w500-rw'),
-('HASP075', 'LT075', 'MSI Katana 15', 'https://lh3.googleusercontent.com/rStk2E2ARbdre5tR89KQzIQkbbXJm0RdBJKl9MhpVR-WJJOBjhEl7fyP1Vm1sYQjCPIxugzG0J20wpCuXG6GrH0KlCpNon4=w1000-rw');
+('HASP075', 'LT075', 'MSI Katana 15', 'https://lh3.googleusercontent.com/rStk2E2ARbdre5tR89KQzIQkbbXJm0RdBJKl9MhpVR-WJJOBjhEl7fyP1Vm1sYQjCPIxugzG0J20wpCuXG6GrH0KlCpNon4=w1000-rw'),
+('HASP076', 'LT076', 'LG Gram 2021', 'https://lh3.googleusercontent.com/laD07B8iGpQ5R-ohBroK2sc8lwDDZ4ZAX2c9FtvAOXpUMd77QtFM59stgU4oVaG3-NBLlsyhVxZPtZaPVJsZ9huZvCVcsjnfWg=w1000-rw'),
+('HASP077', 'LT077', 'Dell XPS 13 Plus', 'https://lh3.googleusercontent.com/wJDw_XmJO234DJGRUId-YeZAG-anfR9yq6GyApBXERKSXfCh9wOJqNDtQWmcPOG-56Uo9FtWKJLQgS20I0B9m9-7r4f6Zn7m=w500-rw'),
+('HASP078', 'LT078', 'ACER Aspire 3', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw'),
+('HASP079', 'LT079', 'ACER Aspire 7', 'https://lh3.googleusercontent.com/ITuM-86ObB_Q_pELdb6s3xjIvvECtOl2IxJJ9_4RUSaYmzOMEprg8EOQ-VKdFOeI3SFNL-fpnFL7KQggDoo84bXE2WIB_cDe=w500-rw');
 
 -- --------------------------------------------------------
 
@@ -932,16 +936,46 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDH`, `MaKH`, `NgayDH`, `TongGiaTri`) VALUES
-('DH001', 'KH001', '2023-10-12', '11990000'),
-('DH002', 'KH002', '2023-10-13', '25990000'),
-('DH003', 'KH003', '2023-10-14', '32290000'),
-('DH004', 'KH004', '2023-10-15', '28690000'),
-('DH005', 'KH005', '2023-10-16', '16890000'),
-('DH006', 'KH006', '2023-10-17', '23990000'),
-('DH007', 'KH001', '2023-10-18', '24690000'),
-('DH008', 'KH002', '2023-10-19', '14490000'),
-('DH009', 'KH003', '2023-10-10', '17390000'),
-('DH010', 'KH004', '2023-10-21', '40890000');
+('DH001', 'KH001', '2023-10-12', 11990000),
+('DH002', 'KH002', '2023-10-13', 25990000),
+('DH003', 'KH003', '2023-10-14', 32290000),
+('DH004', 'KH004', '2023-10-15', 28690000),
+('DH005', 'KH005', '2023-10-16', 16890000),
+('DH006', 'KH006', '2023-10-17', 23990000),
+('DH007', 'KH001', '2023-10-18', 24690000),
+('DH008', 'KH002', '2023-10-19', 14490000),
+('DH009', 'KH003', '2023-10-10', 17390000),
+('DH010', 'KH004', '2023-10-21', 40890000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hoadon`
+--
+
+CREATE TABLE `hoadon` (
+  `MaHD` varchar(5) NOT NULL,
+  `MaNV` varchar(5) NOT NULL,
+  `NgayLap` date NOT NULL,
+  `TongGiaTri` decimal(10,0) DEFAULT NULL,
+  `MaKH` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `hoadon`
+--
+
+INSERT INTO `hoadon` (`MaHD`, `MaNV`, `NgayLap`, `TongGiaTri`, `MaKH`) VALUES
+('HD001', 'NV001', '2023-10-12', 11990000, 'KH001'),
+('HD002', 'NV002', '2023-10-13', 25990000, 'KH002'),
+('HD003', 'NV003', '2023-10-14', 32290000, 'KH003'),
+('HD004', 'NV004', '2023-10-15', 28690000, 'KH004'),
+('HD005', 'NV005', '2023-10-16', 16890000, 'KH005'),
+('HD006', 'NV006', '2023-10-17', 23990000, 'KH006'),
+('HD007', 'NV001', '2023-10-18', 24690000, 'KH007'),
+('HD008', 'NV002', '2023-10-19', 14490000, 'KH008'),
+('HD009', 'NV003', '2023-10-10', 17390000, 'KH009'),
+('HD010', 'NV004', '2023-10-21', 40890000, 'KH010');
 
 -- --------------------------------------------------------
 
@@ -976,8 +1010,7 @@ INSERT INTO `khachhang` (`MaKH`, `HoTenKH`, `DiaChi`, `Email`, `MatKhau`, `NgayS
 ('KH008', 'Tạ Đình Khánh', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'khanhta837@gmail.com', '123abc', '1995-01-24', 0, '0465422653'),
 ('KH009', 'Huỳnh Vũ Kiên', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'kienhuynh348@gmail.com', '123abc', '1999-11-19', 0, '0254456134'),
 ('KH010', 'Nguyễn Tấn Kiệt', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'tankiet100@gmail.com', '123abc', '1991-06-01', 0, '0353637381'),
-('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368'),
-('KH012', 'Phan Minh Tiến', '', 'tien2@gmail.com', '$2y$12$k/ajzkIWnNbXJUSc33ykDeGwIfyZUnrkRBUzSmcaIOkaelT05PkgS', '0000-00-00', 0, '');
+('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368');
 
 -- --------------------------------------------------------
 
@@ -1001,10 +1034,10 @@ CREATE TABLE `khuyenmai` (
 --
 
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `MoTaKM`, `GiamGia`, `DieuKien`, `PhamVi`, `NgayBD`, `NgayKT`) VALUES
-('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', '0.20', 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
-('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', '0.25', 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
-('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', '0.00', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
-('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', '0.40', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
+('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', 0.20, 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
+('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', 0.25, 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
+('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', 0.00, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
+('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', 0.40, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1111,7 +1144,9 @@ INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`, `DonGia`, `MaHSX`, `
 ('LT072', 'MSI Cyborg 15', 'GMLT', 10, 22990000, 'MS', 'HASP072', 'Đen', 'Có phím số, không đèn, LED, HD webcam', 'KM002', 'Intel Core i5-12450H', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '3 cell 54 Wh', 2, 'Balo, Adapter, dây nguồn,...'),
 ('LT073', 'MSI GF63 Thin', 'GMLT', 10, 21490000, 'MS', 'HASP073', 'Đen', 'Không phím số, không đèn, LED, HD webcam', 'KM001', 'Intel Core i5-12450H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '3 cell 52 Wh', 1.8, 'Không có'),
 ('LT074', 'MSI Raider', 'GMLT', 1, 106990000, 'MS', 'HASP074', 'Đen', 'Có phím số, RGB, FHD webcam', 'KM002', 'Intel Core i9-13980HX', '2 x 32GB DDR5 5600MHz', '4TB SSD M.2 NVMe /', 'Windows 11 Home', '17\" IPS (2560 x 1600)', 'RTX 4090 16GB GDDR6 / Intel UHD Graphics 770', '4 cell 99 Wh', 3.1, '330W Adapter, dây nguồn, Stealth Trooper Backpack II'),
-('LT075', 'MSI Katana 15', 'GMLT', 5, 31990000, 'MS', 'HASP075', 'Đen', 'Có phím số, không đèn, RGB, HD webcam', 'KM004', 'Intel Core i7-13620H', '2 x 8GB DDR5 5200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 770', '3 cell 54 Wh', 2.2, 'Balo, Adapter, dây nguồn,...');
+('LT075', 'MSI Katana 15', 'GMLT', 5, 31990000, 'MS', 'HASP075', 'Đen', 'Có phím số, không đèn, RGB, HD webcam', 'KM004', 'Intel Core i7-13620H', '2 x 8GB DDR5 5200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 770', '3 cell 54 Wh', 2.2, 'Balo, Adapter, dây nguồn,...'),
+('LT076', 'LG Gram 2021', 'BSLT', 10, 39290000, 'LG', 'HASP076', 'Bạc', 'Có phím số, không đèn, bảo mật vân tay, HD webcam', 'KM001', 'Intel Core i7-1165G7', '16GB DDR4 4266MHz', '256GB SSD M.2 NVMe /', 'Windows 10 Home 64-bit', '16\" IPS (2560 x 1600)', 'Onboard Intel Iris Xe Graphics', '80 Wh', 1.9, 'Không'),
+('LT077', 'Dell XPS 13 Plus', 'BSLT', 5, 49890000, 'DE', 'HASP077', 'Bạc', 'Không phím số, không đèn, LED, bảo mật vân tay, HD webcam', 'KM001', 'Intel Core i5-1340P', '16GB Onboard DDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '13.4\" WVA (3456 x 2160)', 'Onboard Intel Iris Xe Graphics', '3 cell', 1.2, 'Adapter, dây nguồn');
 
 -- --------------------------------------------------------
 
@@ -1145,46 +1180,6 @@ INSERT INTO `nhanvien` (`MaNV`, `HoTenNV`, `SDT`, `Email`, `DiaChi`, `NgaySinh`,
 ('NV008', 'Võ Mạnh Hùng', '0643215879', 'manhhungnv008@gmail.com', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', '0000-00-00', 'cecdfadf5a454ee007fd91c2dd1bf694', 0),
 ('NV009', 'Trần Ngọc Quyên', '0998543561', 'ngocquyennv009@gmail.com', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', '0000-00-00', '6528c3ae9b73584ec74de4d49df9a11f', 1),
 ('NV010', 'Trần Minh Khang', '0342477659', 'minhkhangnv010@gmail.com', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', '0000-00-00', '04b986b6d6e0a6181a06cb942ed5d52c', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order`
---
-
-CREATE TABLE `order` (
-  `id` varchar(5) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `address` varchar(500) NOT NULL,
-  `note` text NOT NULL,
-  `total` int(11) NOT NULL,
-  `created_time` int(11) NOT NULL,
-  `last_updated` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`id`, `name`, `phone`, `address`, `note`, `total`, `created_time`, `last_updated`) VALUES
-('29', 'Andn', '0654654615', 'Ha Noi', 'Ghi chu', 8290000, 1587872426, 1587872426);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order_detail`
---
-
-CREATE TABLE `order_detail` (
-  `id` varchar(5) NOT NULL,
-  `order_id` varchar(5) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
-  `created_time` int(11) NOT NULL,
-  `last_updated` int(11) NOT NULL,
-  `product_id` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -11916,6 +11911,14 @@ ALTER TABLE `donhang`
   ADD KEY `FK_MaKH_DonHang` (`MaKH`);
 
 --
+-- Indexes for table `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD PRIMARY KEY (`MaHD`),
+  ADD KEY `FK_MaNV_HoaDon` (`MaNV`),
+  ADD KEY `FK_MaKH_HoaDon` (`MaKH`);
+
+--
 -- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
@@ -11942,20 +11945,6 @@ ALTER TABLE `mathang`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
-
---
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `order_detail`
---
-ALTER TABLE `order_detail`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `order_id` (`order_id`),
-  ADD KEY `order_detail_ibfk_2` (`product_id`);
 
 --
 -- Indexes for table `province`
@@ -12008,20 +11997,20 @@ ALTER TABLE `donhang`
   ADD CONSTRAINT `FK_MaKH_DonHang` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`);
 
 --
+-- Constraints for table `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD CONSTRAINT `FK_MaKH_HoaDon` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`),
+  ADD CONSTRAINT `FK_MaNV_HoaDon` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`);
+
+--
 -- Constraints for table `mathang`
 --
 ALTER TABLE `mathang`
-  ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`),
   ADD CONSTRAINT `FK_MaHSX` FOREIGN KEY (`MaHSX`) REFERENCES `dmhangsanxuat` (`MaHSX`),
   ADD CONSTRAINT `FK_MaKM_MatHang` FOREIGN KEY (`MaKM`) REFERENCES `khuyenmai` (`MaKM`),
   ADD CONSTRAINT `FK_MaLMH` FOREIGN KEY (`MaLMH`) REFERENCES `dmloaimathang` (`MaLMH`);
-
---
--- Constraints for table `order_detail`
---
-ALTER TABLE `order_detail`
-  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `mathang` (`MaMH`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
