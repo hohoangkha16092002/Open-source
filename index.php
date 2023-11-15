@@ -20,7 +20,7 @@ session_start();
     <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="css/checkout.css">
     <link rel="stylesheet" href="css/search-page.css">
-    <link rel="stylesheet" href="css/address.css">
+    <link rel="stylesheet" href="css/adress.css">
     <link rel="stylesheet" href="css/consignee-information.css">
     <link rel="stylesheet" href="css/confirm-logout.css">
 

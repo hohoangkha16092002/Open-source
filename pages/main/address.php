@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 if (isset($_SESSION['loggedin'])) {
     $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
     $result = mysqli_query($conn, $sql);
@@ -86,12 +87,68 @@ if (isset($_SESSION['loggedin'])) {
                 </div>
             </div>
             <div class="css-hveu7a">
-                <h5>Sổ địa chỉ</h5><button class="css-vj7q1h"><span size="26" class="css-1fmhjdx"></span>
-                    </a><a target="_self" class="nav-ip-popup-child" href="?page=consignee-information">
-                        <div data-content-region-name="headerBar" data-track-content="true"
-                            data-content-name="viewNotification" class="nav-ip-popup-child-main">
-                            <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
+                <h5>Sổ địa chỉ</h5>
+                <button class="css-vj7q1h"><span size="26" class="css-1fmhjdx"></span>
+                    <a target="_self" class="nav-ip-popup-child" href="?page=consignee-information"></a>
+                    <div data-content-region-name="headerBar" data-track-content="true"
+                        data-content-name="viewNotification" class="nav-ip-popup-child-main">
+                        <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
                 </button>
+                <?php
+                $sql_address = "SELECT * FROM `diachinhanhang` WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+                $result_address = mysqli_query($conn, $sql_address);
+                if (mysqli_num_rows($result_address) > 0) {
+                    while ($row_address = mysqli_fetch_assoc($result_address)) {
+                        $receiver_name = $row_address['TenNguoiNhan'];
+                        $receiver_sdt = $row_address['SoDienThoai'];
+                        $thanhpho = $row_address['ThanhPho'];
+                        $quanhuyen = $row_address['QuanHuyen'];
+                        $phuongxa = $row_address['PhuongXa'];
+
+                        $sql_province = "SELECT * FROM province WHERE province_id = '" . $thanhpho . "'";
+                        $result_province = mysqli_query($conn, $sql_province);
+                        $row_province = mysqli_fetch_assoc($result_province);  // removed [0]
+                
+                        $sql_district = "SELECT * FROM district WHERE district_id = '" . $quanhuyen . "'";
+                        $result_district = mysqli_query($conn, $sql_district);
+                        $row_district = mysqli_fetch_assoc($result_district);
+
+                        $sql_wards = "SELECT * FROM wards WHERE wards_id = '" . $phuongxa . "'";
+                        $result_wards = mysqli_query($conn, $sql_wards);
+                        $row_wards = mysqli_fetch_assoc($result_wards);
+
+                        echo '<div class="teko-card css-8mjjgr">
+                            <div class="teko-card-body css-0">
+                                <div class="teko-row teko-row-space-between teko-row-middle css-1qrgscwe">
+                                    <div class="teko-col css-17ajfcv" style="flex: 0 0 65%;">
+                                        <div class="teko-row teko-row-start teko-row-middle css-1qrgscwe">
+                                            <div type="subtitle" class="css-lzq1g0">'.$receiver_name.'</div>
+                                        </div>
+                                        <div type="body" color="textSecondary" class="css-1lihu4j">Địa chỉ: 
+                                        ' . $row_address['DiaChi'] . ", " . $row_wards['name'] . ", " . $row_district['name'] . ", " . $row_province['name'].'</div>
+                                        <div type="body" color="textSecondary" class="css-1npqwgp">Điện thoại: '.$receiver_sdt.'</div>
+                                    </div>
+                                    <div class="teko-col css-17ajfcv" style="flex: 0 0 35%;">
+                                        <div class="teko-row teko-row-end css-1qrgscwe"><button height="2rem"
+                                                class="css-1j6k1oa" type="button">
+                                                <div type="body" color="error500" class="css-1sjnqcx">Chỉnh sửa</div><span
+                                                    style="margin-left: 0px;">
+                                                    <div class="css-157jl91"></div>
+                                                </span>
+                                            </button><button height="2rem" class="css-1wblz1b" type="button">
+                                                <div type="body" color="textPrimary" class="css-ughm7k">Xóa</div><span
+                                                    style="margin-left: 0px;">
+                                                    <div class="css-157jl91"></div>
+                                                </span>
+                                            </button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                    }
+                }
+                ?>
+                
             </div>
         </div>
     </div>
