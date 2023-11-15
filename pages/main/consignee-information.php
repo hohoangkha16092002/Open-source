@@ -33,7 +33,8 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<div id="teko-modal-lo9t136vm2jzjf9v1hs" style="position: fixed; inset: 0px; z-index: 1051; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.1);">
+<div id="teko-modal-lo9t136vm2jzjf9v1hs"
+    style="position: fixed; inset: 0px; z-index: 1051; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.1);">
     <div class="css-1272naz"></div>
     <div class="teko-modal teko-modal-show css-t2ptn2" style="opacity: 1; transform: translateY(0px);">
         <div class="teko-modal-content">
@@ -48,7 +49,8 @@ if (isset($_POST["submit"])) {
                     <form action="" class="teko-form-vertical css-kxydk6" id="myForm" method="POST">
                         <div class="teko-row teko-form-item css-iu028d">
                             <div class="teko-col teko-form-item-label css-1yvcaye">
-                                <label for="name" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                <label for="name" class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                    style="height: 40px;">
                                     <div type="body" color="textTitle" class="css-3mfztx">Họ tên</div>
                                 </label>
                             </div>
@@ -57,7 +59,9 @@ if (isset($_POST["submit"])) {
                                     <div class="teko-form-item-control-input-content">
                                         <div class="css-1npt3uz">
                                             <div class="input-container css-kwckz4" height="40">
-                                                <input name="full_name" required id="name" type="text" placeholder="Vui lòng nhập tên người nhận" maxlength="255" class="css-1acir1a" value="">
+                                                <input name="full_name" required id="name" type="text"
+                                                    placeholder="Vui lòng nhập tên người nhận" maxlength="255"
+                                                    class="css-1acir1a" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -68,7 +72,9 @@ if (isset($_POST["submit"])) {
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
                                     <div class="teko-col teko-form-item-label css-1yvcaye">
-                                        <label for="telephone" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                        <label for="telephone"
+                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                            style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Số điện thoại</div>
                                         </label>
                                     </div>
@@ -77,7 +83,9 @@ if (isset($_POST["submit"])) {
                                             <div class="teko-form-item-control-input-content">
                                                 <div class="css-1npt3uz">
                                                     <div class="input-container css-kwckz4" height="40">
-                                                        <input name="sdt" required id="telephone" type="text" placeholder="Nhập số điện thoại" maxlength="255" class="css-1acir1a" value="">
+                                                        <input name="sdt" required id="telephone" type="text"
+                                                            placeholder="Nhập số điện thoại" maxlength="255"
+                                                            class="css-1acir1a" value="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +96,9 @@ if (isset($_POST["submit"])) {
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
 
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="email" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="email"
+                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                            style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Email</div>
                                         </label>
                                     </div>
@@ -97,7 +107,9 @@ if (isset($_POST["submit"])) {
                                             <div class="teko-form-item-control-input-content">
                                                 <div class="css-1npt3uz">
                                                     <div class="input-container css-kwckz4" height="40">
-                                                        <input name="email" required id="email" type="text" placeholder="Nhập email của bạn" maxlength="255" class="css-1acir1a" value="">
+                                                        <input name="email" required id="email" type="text"
+                                                            placeholder="Nhập email của bạn" maxlength="255"
+                                                            class="css-1acir1a" value="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +125,9 @@ if (isset($_POST["submit"])) {
                         <div class="teko-row teko-row-space-between css-1qrgscw">
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="provinceCode" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="provinceCode"
+                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                            style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Tỉnh/Thành phố</div>
                                         </label>
                                     </div>
@@ -128,11 +142,11 @@ if (isset($_POST["submit"])) {
                                                                 <!-- populate options with data from your database or API -->
                                                                 <?php
                                                                 while ($row = mysqli_fetch_assoc($result_province)) {
-                                                                ?>
+                                                                    ?>
                                                                     <option value="<?php echo $row['province_id'] ?>">
                                                                         <?php echo $row['name'] ?>
                                                                     </option>
-                                                                <?php
+                                                                    <?php
                                                                 }
                                                                 ?>
                                                             </select>
@@ -148,7 +162,9 @@ if (isset($_POST["submit"])) {
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
                                     <div class="teko-col teko-form-item-label css-1yvcaye">
-                                        <label for="districtCode" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                        <label for="districtCode"
+                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                            style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Quận/Huyện</div>
                                         </label>
                                     </div>
@@ -159,7 +175,8 @@ if (isset($_POST["submit"])) {
                                                     <div class="css-cssveg">
                                                         <div class="css-wds49r">
                                                             <div class="css-w9zq4w">
-                                                                <select id="district" name="district" class="form-control">
+                                                                <select id="district" name="district"
+                                                                    class="form-control">
                                                                     <option value="">Chọn một quận/huyện</option>
                                                                 </select>
                                                             </div>
@@ -176,7 +193,9 @@ if (isset($_POST["submit"])) {
                         <div class="teko-row teko-row-space-between css-15vgeje">
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="wardCode" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="wardCode"
+                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                            style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Phường/Xã</div>
                                         </label></div>
                                     <div class="teko-col teko-form-item-control css-rznjps">
@@ -201,7 +220,9 @@ if (isset($_POST["submit"])) {
                             </div>
                             <div class="teko-col css-17ajfcv" style="flex: 0 0 49%;">
                                 <div class="teko-row teko-form-item css-iu028d">
-                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="address" class="teko-form-item-no-colon teko-form-item-required css-15ognui" style="height: 40px;">
+                                    <div class="teko-col teko-form-item-label css-1yvcaye"><label for="address"
+                                            class="teko-form-item-no-colon teko-form-item-required css-15ognui"
+                                            style="height: 40px;">
                                             <div type="body" color="textTitle" class="css-3mfztx">Địa chỉ cụ thể</div>
                                         </label>
                                     </div>
@@ -210,7 +231,9 @@ if (isset($_POST["submit"])) {
                                             <div class="teko-form-item-control-input-content">
                                                 <div class="css-1npt3uz">
                                                     <div class="input-container css-kwckz4" height="40">
-                                                        <input required id="address" name="address" type="text" placeholder="Số nhà, ngõ, tên đường..." maxlength="255" class="css-1acir1a" value="">
+                                                        <input required id="address" name="address" type="text"
+                                                            placeholder="Số nhà, ngõ, tên đường..." maxlength="255"
+                                                            class="css-1acir1a" value="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -237,10 +260,11 @@ if (isset($_POST["submit"])) {
                             </div>
                         </div> -->
                         <div class="teko-row teko-row-end css-1mfzix3">
-                            <a href="javascript:window.history.back()">
-                                <input name="cancel_click" height="2.5rem" color="primary500" class="css-125hckg" type="submit" value="Hủy bỏ">
+                            <a name="cancel_click" height="2.5rem" color="primary500" class="css-125hckg"
+                                href="javascript:window.history.back()">Hủy bỏ
                             </a>
-                            <input height="2.5rem" name="submit" value="Lưu địa chỉ" color="white" class="css-oyymsr" type="submit">
+                            <input height="2.5rem" name="submit" value="Lưu địa chỉ" color="white" class="css-oyymsr "
+                                type="submit">
                         </div>
                     </form>
                     <div style="margin-top: 40px;">
