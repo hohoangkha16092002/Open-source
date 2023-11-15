@@ -81,8 +81,8 @@
 
             <li class="sidebar-item">
               <a class="sidebar-link" href="ui-buttons.php">
-                <i class="align-middle" data-feather="square"></i>
-                <span class="align-middle">Buttons</span>
+                <i class="align-middle" data-feather="plus"></i>
+                <span class="align-middle">THÊM ẢNH SẢN PHẨM</span>
               </a>
             </li>
 

@@ -32,7 +32,6 @@
   }
 
   if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_product"])) {
-    //$product_id = $_POST["product_id"];
     $product_name = $_POST["product_name"];
     $product_type = $_POST["product_type"];
     $product_brand = $_POST["product_brand"];
@@ -51,19 +50,6 @@
     $pin = $_POST["pin"];
     $mass = $_POST["mass"];
     $accessory = $_POST["accessory"];
-
-
-    $check_product_type = "SELECT * FROM `dmloaimathang` WHERE MaLMH = '$product_type'";
-    $result_product_type = mysqli_query($conn, $check_product_type);
-
-    $check_product_brand = "SELECT * FROM `dmhangsanxuat` WHERE MaHSX = '$product_brand'";
-    $result_product_brand = mysqli_query($conn, $check_product_brand);
-
-    $check_product_sale = "SELECT * FROM `khuyenmai` WHERE MaKM = '$product_sale'";
-    $result_product_sale = mysqli_query($conn, $check_product_sale);
-
-    $check_product_image = "SELECT * FROM `anhmh` WHERE IDAnhMH = '$product_image'";
-    $result_product_image = mysqli_query($conn, $check_product_image);
 
     $sql_max_MaMH = "SELECT MAX(CAST(SUBSTRING(MaMH,  3) AS SIGNED)) AS max_MaMH FROM mathang WHERE MaMH LIKE 'LT%';";
     $result_max_MaMH = $conn->query($sql_max_MaMH);
@@ -131,8 +117,8 @@
 
           <li class="sidebar-item">
             <a class="sidebar-link" href="ui-buttons.php">
-              <i class="align-middle" data-feather="square"></i>
-              <span class="align-middle">Buttons</span>
+              <i class="align-middle" data-feather="plus"></i>
+              <span class="align-middle">THÊM ẢNH SẢN PHẨM</span>
             </a>
           </li>
 
