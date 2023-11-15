@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Nov 12, 2023 at 04:32 AM
+=======
+-- Generation Time: Nov 14, 2023 at 04:17 PM
+>>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -148,6 +152,33 @@ INSERT INTO `baohanh` (`MaBH`, `MaMH`, `MaKH`, `NgayBH`, `LyDo`) VALUES
 ('BH008', 'LT008', 'KH008', '2023-11-05', 'Lỗi phần mềm'),
 ('BH009', 'LT009', 'KH009', '2023-11-15', 'Lỗi cổng sạc'),
 ('BH010', 'LT010', 'KH010', '2023-11-28', 'Lỗi màn hình');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `diachinhanhang`
+--
+
+CREATE TABLE `diachinhanhang` (
+  `MaDC` int(5) NOT NULL,
+  `MaKH` varchar(5) NOT NULL,
+  `TenNguoiNhan` varchar(100) NOT NULL,
+  `DiaChi` varchar(200) NOT NULL,
+  `ThanhPho` varchar(100) NOT NULL,
+  `QuanHuyen` varchar(100) NOT NULL,
+  `PhuongXa` varchar(100) NOT NULL,
+  `SoDienThoai` varchar(10) NOT NULL,
+  `Email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `diachinhanhang`
+--
+
+INSERT INTO `diachinhanhang` (`MaDC`, `MaKH`, `TenNguoiNhan`, `DiaChi`, `ThanhPho`, `QuanHuyen`, `PhuongXa`, `SoDienThoai`, `Email`) VALUES
+(1, 'KH001', '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]'),
+(2, 'KH013', 'Hồ Hoàng Kha', '2 Nguyễn Đình Chiểu', '37', '414', '7080', '0934833527', 'matcova337@gmail.com'),
+(3, 'KH013', 'Kha', '2 123', '1', '11', '165', '123345678', 'matcova333@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -946,6 +977,7 @@ INSERT INTO `donhang` (`MaDH`, `MaKH`, `NgayDH`, `TongGiaTri`) VALUES
 ('DH008', 'KH002', '2023-10-19', 14490000),
 ('DH009', 'KH003', '2023-10-10', 17390000),
 ('DH010', 'KH004', '2023-10-21', 40890000);
+<<<<<<< HEAD
 
 -- --------------------------------------------------------
 
@@ -976,6 +1008,8 @@ INSERT INTO `hoadon` (`MaHD`, `MaNV`, `NgayLap`, `TongGiaTri`, `MaKH`) VALUES
 ('HD008', 'NV002', '2023-10-19', 14490000, 'KH008'),
 ('HD009', 'NV003', '2023-10-10', 17390000, 'KH009'),
 ('HD010', 'NV004', '2023-10-21', 40890000, 'KH010');
+=======
+>>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 
 -- --------------------------------------------------------
 
@@ -1010,7 +1044,13 @@ INSERT INTO `khachhang` (`MaKH`, `HoTenKH`, `DiaChi`, `Email`, `MatKhau`, `NgayS
 ('KH008', 'Tạ Đình Khánh', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'khanhta837@gmail.com', '123abc', '1995-01-24', 0, '0465422653'),
 ('KH009', 'Huỳnh Vũ Kiên', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'kienhuynh348@gmail.com', '123abc', '1999-11-19', 0, '0254456134'),
 ('KH010', 'Nguyễn Tấn Kiệt', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'tankiet100@gmail.com', '123abc', '1991-06-01', 0, '0353637381'),
+<<<<<<< HEAD
 ('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368');
+=======
+('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368'),
+('KH012', 'Phan Minh Tiến', '', 'tien2@gmail.com', '$2y$12$k/ajzkIWnNbXJUSc33ykDeGwIfyZUnrkRBUzSmcaIOkaelT05PkgS', '0000-00-00', 0, ''),
+('KH013', 'Hồ Hoàng Kha', '', 'matcova337@gmail.com', '$2y$12$YY/McYlE0UmfXgSEES9MS.ffUPig/XG53KlLFsf2h6gqqI60cYnNm', '0000-00-00', 0, '');
+>>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 
 -- --------------------------------------------------------
 
@@ -1184,6 +1224,39 @@ INSERT INTO `nhanvien` (`MaNV`, `HoTenNV`, `SDT`, `Email`, `DiaChi`, `NgaySinh`,
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `id` varchar(5) NOT NULL,
+  `TenNguoiNhan` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `address` varchar(500) NOT NULL,
+  `total` int(11) NOT NULL,
+  `created_time` int(11) NOT NULL,
+  `MaKH` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` varchar(5) NOT NULL,
+  `order_id` varchar(5) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `product_id` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+>>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 -- Table structure for table `province`
 --
 
@@ -11886,6 +11959,13 @@ ALTER TABLE `baohanh`
   ADD KEY `FK_MaKH_BaoHanh` (`MaKH`);
 
 --
+-- Indexes for table `diachinhanhang`
+--
+ALTER TABLE `diachinhanhang`
+  ADD PRIMARY KEY (`MaDC`),
+  ADD KEY `F_KEY_MaKH` (`MaKH`);
+
+--
 -- Indexes for table `district`
 --
 ALTER TABLE `district`
@@ -11947,6 +12027,24 @@ ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
+<<<<<<< HEAD
+=======
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `F_KEY_MaKH1` (`MaKH`);
+
+--
+-- Indexes for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `order_detail_ibfk_2` (`product_id`);
+
+--
+>>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 -- Indexes for table `province`
 --
 ALTER TABLE `province`
@@ -11961,6 +12059,12 @@ ALTER TABLE `wards`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `diachinhanhang`
+--
+ALTER TABLE `diachinhanhang`
+  MODIFY `MaDC` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -11991,6 +12095,12 @@ ALTER TABLE `baohanh`
   ADD CONSTRAINT `FK_MaKH_BaoHanh` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`);
 
 --
+-- Constraints for table `diachinhanhang`
+--
+ALTER TABLE `diachinhanhang`
+  ADD CONSTRAINT `F_KEY_MaKH` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `donhang`
 --
 ALTER TABLE `donhang`
@@ -12011,6 +12121,22 @@ ALTER TABLE `mathang`
   ADD CONSTRAINT `FK_MaHSX` FOREIGN KEY (`MaHSX`) REFERENCES `dmhangsanxuat` (`MaHSX`),
   ADD CONSTRAINT `FK_MaKM_MatHang` FOREIGN KEY (`MaKM`) REFERENCES `khuyenmai` (`MaKM`),
   ADD CONSTRAINT `FK_MaLMH` FOREIGN KEY (`MaLMH`) REFERENCES `dmloaimathang` (`MaLMH`);
+<<<<<<< HEAD
+=======
+
+--
+-- Constraints for table `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `F_KEY_MaKH1` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `mathang` (`MaMH`) ON DELETE CASCADE ON UPDATE CASCADE;
+>>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

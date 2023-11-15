@@ -121,26 +121,41 @@
             <table class="table table-hover my-0">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th class="d-none d-xl-table-cell">Start Date</th>
-                  <th class="d-none d-xl-table-cell">End Date</th>
-                  <th>Status</th>
-                  <th class="d-none d-md-table-cell">Assignee</th>
+                  <th class="d-none d-md-table-cell">Mã</th>
+                  <th class="d-none d-md-table-cell">Tên mặt hàng</th>
+                  <th class="d-none d-xl-table-cell">Loại mặt hàng</th>
+                  <th class="d-none d-xl-table-cell">Số lượng</th>
+                  <th class="d-none d-md-table-cell">Đơn giá</th>
+                  <th class="d-none d-md-table-cell">Hãng sản xuất</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Project Apollo</td>
-                  <td class="d-none d-xl-table-cell">01/01/2021</td>
-                  <td class="d-none d-xl-table-cell">31/06/2021</td>
-                  <td><span class="badge bg-success">Done</span></td>
-                  <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+
+                <?php
+                include '../config.php';
+                $sql = "SELECT TenMH, TenLoai, SoLuong, DonGia, TenHSX, MaMH from mathang
+                join dmhangsanxuat on mathang.MaHSX = dmhangsanxuat.MaHSX
+                join dmloaimathang on mathang.MaLMH = dmloaimathang.MaLMH";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) <> 0) {
+                  while ($rows = mysqli_fetch_row($result)) {
+                    echo '<tr>
+                  <td class="d-none d-xl-table-cell">' . $rows[5] . '</td>
+                  <td class="d-none d-xl-table-cell">' . $rows[0] . '</td>
+                  <td class="d-none d-xl-table-cell">' . $rows[1] . '</td>
+                  <td class="d-none d-xl-table-cell">' . $rows[2] . '</td>
+                  <td class="d-none d-md-table-cell">' . number_format($rows[3], 0, '.', '.') . 'đ</td>
+                  <td class="d-none d-md-table-cell">' . $rows[4] . '</td>
                   <td>
-                    <button class="btn btn-primary">Primary</button>
-                    <button class="btn btn-primary">Primary</button>
+                  <a class="btn btn-primary" href="pages-blank-edit.php?MaMH=' . $rows[5] . '">Chỉnh sửa</a>
+                    <a class="btn btn-primary" href="delete.php?MaMH=' . $rows[5] . '">Xóa</a>
                   </td>
-                </tr>
+                </tr>';
+                  }
+                }
+                ?>
               </tbody>
             </table>
           </div>

@@ -42,6 +42,8 @@
         include 'main/checkout.php';
     } elseif ($tam == 'confirm-logout') {
         include 'main/confirm-logout.php';
+    } elseif ($tam == 'change-password') {
+        include 'main/change_password.php';
     } elseif ($tam == 'logout') {
         include 'main/logout.php';
     } elseif ($tam == 'ajax_get_district') {

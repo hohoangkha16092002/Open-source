@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 
-if(!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])){
+if (!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])) {
     header('Location: ?page=login');
 }
 
@@ -64,7 +64,7 @@ if (isset($_SESSION['loggedin_customer'])) {
             } else {
                 echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
             }
-        } 
+        }
         // else {
         //     echo "Giỏ hàng trống";
         // }

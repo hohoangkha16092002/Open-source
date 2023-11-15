@@ -22,9 +22,6 @@ if (isset($_SESSION['loggedin_customer'])) {
             } else {
                 echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
             }
-        } 
-        else {
-            echo "Giỏ hàng trống";
         }
     }
 }
@@ -346,7 +343,7 @@ if (isset($_GET['search'])) {
                                                                         </svg></div>
                                                                     <div type="body" class="popup-text">Sổ địa chỉ</div>
                                                                 </div>
-                                                            </a><a target="_self" class="nav-ip-popup-child" href="/notification">
+                                                            </a><a target="_self" class="nav-ip-popup-child" href="?page=change-password">
                                                                 <div data-content-region-name="headerBar" data-track-content="true"
                                                                     data-content-name="viewNotification" class="nav-ip-popup-child-main">
                                                                     <div class="icon">
@@ -360,7 +357,7 @@ if (isset($_GET['search'])) {
                                                                                 stroke-linecap="round" stroke-linejoin="round"></path>
                                                                         </svg>
                                                                     </div>
-                                                                    <div type="body" class="popup-text">Thông báo</div>
+                                                                    <div type="body" class="popup-text">Đổi mật khẩu</div>
                                                                 </div>
                                                             </a>
                                                             <div data-content-region-name="headerBar" data-track-content="true"
