@@ -22,9 +22,6 @@ if (isset($_SESSION['loggedin_customer'])) {
             } else {
                 echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
             }
-        } 
-        else {
-            echo "Giỏ hàng trống";
         }
     }
 }
