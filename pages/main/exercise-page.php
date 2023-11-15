@@ -109,7 +109,7 @@
                         "Nguyễn Thị Diễm Kiều" => ["kieu_exercises", "img/exercise-ntdk.jpg"],
                         "Hồ Hoàng Kha" => ["kha_exercises", "img/exercise-hhk.jpg"],
                         "Phùng Thị Phượng" => ["phuong_exercises", "img/exercise-ptp.jpg"],
-                        "Phan Minh Tiến" => ["tien_exercises", "img/exercise-pmt.jpg"],
+                        "Phan Minh Tiến" => ["pages/main/tien_exercises", "img/exercise-pmt.jpg"],
                     ];
 
                     foreach ($exerciseData as $name => $data) {

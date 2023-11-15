@@ -61,16 +61,16 @@ if (isset($_GET['MaMH'])) {
                 WHERE  MaMH = '$MaMH'";
         $result_update = mysqli_query($conn, $sql_update);
         // var_dump($sql_update);exit;
-        if ($result_update === true) {
-            header('Location: ?MaMH=' . $MaMH . '');
+        if ($result_update) {
+            echo "<script>
+                    setTimeout(function(){
+                        alert('Cập nhật thành công');
+                        window.location.href = 'pages-blank.php';
+                    }, 0);
+                </script>";
+            // header('Location: ?MaMH=' . $MaMH . '');
         } else {
             echo 'Error';
-        }
-
-        if (mysqli_query($conn, $result_update)) {
-            echo "update thành công";
-        } else {
-            echo "Error: " . mysqli_error($conn);
         }
     }
 }

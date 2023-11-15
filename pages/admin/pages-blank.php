@@ -150,7 +150,7 @@
                   <td class="d-none d-md-table-cell">' . $rows[4] . '</td>
                   <td>
                   <a class="btn btn-primary" href="pages-blank-edit.php?MaMH=' . $rows[5] . '">Chỉnh sửa</a>
-                    <a class="btn btn-primary" href="delete.php?MaMH=' . $rows[5] . '">Xóa</a>
+                    <a class="btn btn-primary" href="pages-blank-delete.php?MaMH=' . $rows[5] . '">Xóa</a>
                   </td>
                 </tr>';
                   }

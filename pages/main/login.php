@@ -11,7 +11,6 @@
 
 <body>
   <?php
-  include 'google_source.php';
   if (isset($_POST['submit-login'])) {
     $input_email = $_POST['input_email'];
     $input_password = $_POST['input_password'];
@@ -86,12 +85,10 @@
 
         <div class="option">Bạn chưa có tài khoản? Hãy đăng ký tại <a href="?page=register">đây</a></div>
         <div class="twitter">
-          <?php if (isset($authUrl)) { ?>
-            <a href="<?php $authUrl ?>">
+            <a href="#">
               <i class="fab fa-google"></i>
               <span>Đăng nhập với Google</span>
             </a>
-          <?php } ?>
         </div>
         <div class="facebook">
           <a href="#">

@@ -50,9 +50,9 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="pages-profile.php">
+              <a class="sidebar-link" href="./../index.php">
                 <i class="align-middle" data-feather="user"></i>
-                <span class="align-middle">Profile</span>
+                <span class="align-middle">Phong Vũ</span>
               </a>
             </li>
 
