@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5" />
   <meta name="author" content="AdminKit" />
-  <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
+  <meta name="keywords"
+    content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
@@ -53,7 +54,12 @@
     VALUES ('$next_IDAnhMH', '$next_maMH_anhmh', '$product_name_image', '$product_data_image')";
 
     if (mysqli_query($conn, $sql_add_product_data_image)) {
-      echo "";
+      echo "<script>
+              setTimeout(function(){
+                  alert('Thêm ảnh thành công');
+                  window.location.href = 'pages-blank.php';
+              }, 0);
+          </script>";
     } else {
       echo "Error: " . $sql_add_product_data_image . mysqli_error($conn);
     }
@@ -162,15 +168,19 @@
                 </div>
                 <div class="card-body">
                   <label class="form-label">Tên ảnh</label>
-                  <input type="text" name="product_name_image" class="form-control" placeholder="Tên mặt hàng" required value="<?php
-                                                                                                                                if (isset($product_name_image)) echo $product_name_image;
-                                                                                                                                ?>" />
+                  <input type="text" name="product_name_image" class="form-control" placeholder="Tên mặt hàng" required
+                    value="<?php
+                    if (isset($product_name_image))
+                      echo $product_name_image;
+                    ?>" />
                 </div>
                 <div class="card-body">
                   <label class="form-label">Dữ liệu ảnh</label>
-                  <input type="text" name="product_data_image" class="form-control" placeholder="Dữ liệu ảnh" required value="<?php
-                                                                                                                              if (isset($product_data_image)) echo $product_data_image;
-                                                                                                                              ?>" />
+                  <input type="text" name="product_data_image" class="form-control" placeholder="Dữ liệu ảnh" required
+                    value="<?php
+                    if (isset($product_data_image))
+                      echo $product_data_image;
+                    ?>" />
                 </div>
               </div>
             </div>
@@ -181,8 +191,8 @@
                   <input type="submit" name="add_product_image" class="btn btn-success" value="THÊM ẢNH SẢN PHẨM" />
                 </div>
               </div>
+            </div>
           </div>
-        </div>
       </form>
 
       <footer class="footer">

@@ -1,15 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Nov 12, 2023 at 04:32 AM
-=======
--- Generation Time: Nov 14, 2023 at 04:17 PM
->>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Nov 15, 2023 at 05:39 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +39,7 @@ CREATE TABLE `anhmh` (
 --
 
 INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
-('HASP001', 'LT079', 'Lenovo IdeaPad Gaming 3', 'https://lh3.googleusercontent.com/tWmoVHKQMc1GJa8FpoUzQfUxZlX0jUoFuVVjYTRUzonsIQtL1MW0wG5S9diSyqN1Ff2xAf8MCz0BNKDzrCzVK3QBqTbjN7zX=w500-rw'),
+('HASP001', 'LT001', 'ACER Aspire 3', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw'),
 ('HASP002', 'LT002', 'ACER Nitro 5 Tiger', 'https://lh3.googleusercontent.com/fXZQ5-Dps2ru-8lXOuMVr0-Md61rn131O041rNRli8657yKmkLOao90COa2KOkry-coVjpzl4oK9BZn-zRMsoEOJNvnGD38=w500-rw'),
 ('HASP003', 'LT003', 'MacBook Air 2023', 'https://lh3.googleusercontent.com/ynVxOa_n1ROHtX-zLGJOshMz99v5dwEKMf9Ikqj3v4KsCbH75NxVZEkmGjuzhM-_8L023MN3UpRigBFQr2YHLw0ptoox-G0=w500-rw'),
 ('HASP004', 'LT004', 'ASUS TUF Gaming F15', 'https://lh3.googleusercontent.com/RyacFxZhVBMlVbIHzZW5xFcYutS4jZofTji-dBtvqbmlcIDdR1mVtNInpvcoMJ-4KMeFBiZy3BoeiNVEq7PVjHSNqSt3sYP4=w500-rw'),
@@ -118,10 +114,8 @@ INSERT INTO `anhmh` (`IDAnhMH`, `MaMH`, `TenAnh`, `DLAnh`) VALUES
 ('HASP073', 'LT073', 'MSI GF63 Thin', 'https://lh3.googleusercontent.com/zAn8TTfwpvyqeOv9dLbekolioszCdFfyguJRN1XsYHI2OxPm9wPvhTRAPPcPg6Y_6mlgXj1wW5oI1KiwTr2hIEpxczjLaGUC=w500-rw'),
 ('HASP074', 'LT074', 'MSI Raider', 'https://lh3.googleusercontent.com/z1_JlOSk723iTBKfUgcOsk2YdrxY0gFHSdNE5GiznEqKglkEBKkssKDYr8miHOEszpGOc1Cq_ZQsqDQRDnBmmitMQF19E3Yb=w500-rw'),
 ('HASP075', 'LT075', 'MSI Katana 15', 'https://lh3.googleusercontent.com/rStk2E2ARbdre5tR89KQzIQkbbXJm0RdBJKl9MhpVR-WJJOBjhEl7fyP1Vm1sYQjCPIxugzG0J20wpCuXG6GrH0KlCpNon4=w1000-rw'),
-('HASP076', 'LT076', 'LG Gram 2021', 'https://lh3.googleusercontent.com/laD07B8iGpQ5R-ohBroK2sc8lwDDZ4ZAX2c9FtvAOXpUMd77QtFM59stgU4oVaG3-NBLlsyhVxZPtZaPVJsZ9huZvCVcsjnfWg=w1000-rw'),
-('HASP077', 'LT077', 'Dell XPS 13 Plus', 'https://lh3.googleusercontent.com/wJDw_XmJO234DJGRUId-YeZAG-anfR9yq6GyApBXERKSXfCh9wOJqNDtQWmcPOG-56Uo9FtWKJLQgS20I0B9m9-7r4f6Zn7m=w500-rw'),
-('HASP078', 'LT078', 'ACER Aspire 3', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw'),
-('HASP079', 'LT079', 'ACER Aspire 7', 'https://lh3.googleusercontent.com/ITuM-86ObB_Q_pELdb6s3xjIvvECtOl2IxJJ9_4RUSaYmzOMEprg8EOQ-VKdFOeI3SFNL-fpnFL7KQggDoo84bXE2WIB_cDe=w500-rw');
+('HASP076', 'LT076', 'Test', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw'),
+('HASP077', 'LT077', 'Test', 'https://lh3.googleusercontent.com/X6dLuE11w1kexLykZXydnRJdqaddEV0LDWDUXtqWdAoLntmEWp_MHPbpXj-3G9xJ_Mvm7TrpswpnfV0wWJ504ujj5-ju4L6ogA=w500-rw');
 
 -- --------------------------------------------------------
 
@@ -178,7 +172,9 @@ CREATE TABLE `diachinhanhang` (
 INSERT INTO `diachinhanhang` (`MaDC`, `MaKH`, `TenNguoiNhan`, `DiaChi`, `ThanhPho`, `QuanHuyen`, `PhuongXa`, `SoDienThoai`, `Email`) VALUES
 (1, 'KH001', '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]'),
 (2, 'KH013', 'Hồ Hoàng Kha', '2 Nguyễn Đình Chiểu', '37', '414', '7080', '0934833527', 'matcova337@gmail.com'),
-(3, 'KH013', 'Kha', '2 123', '1', '11', '165', '123345678', 'matcova333@gmail.com');
+(3, 'KH013', 'Kha', '2 123', '1', '11', '165', '123345678', 'matcova333@gmail.com'),
+(4, 'KH011', 'Nguyễn Thị Diễm Kiều', '13', '19', '198', '3360', '0392294368', 'tien@gmail.com'),
+(5, 'KH011', 'Phan Minh Tiến', '123', '18', '191', '3247', '0392294368', 'tien@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -967,49 +963,16 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDH`, `MaKH`, `NgayDH`, `TongGiaTri`) VALUES
-('DH001', 'KH001', '2023-10-12', 11990000),
-('DH002', 'KH002', '2023-10-13', 25990000),
-('DH003', 'KH003', '2023-10-14', 32290000),
-('DH004', 'KH004', '2023-10-15', 28690000),
-('DH005', 'KH005', '2023-10-16', 16890000),
-('DH006', 'KH006', '2023-10-17', 23990000),
-('DH007', 'KH001', '2023-10-18', 24690000),
-('DH008', 'KH002', '2023-10-19', 14490000),
-('DH009', 'KH003', '2023-10-10', 17390000),
-('DH010', 'KH004', '2023-10-21', 40890000);
-<<<<<<< HEAD
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hoadon`
---
-
-CREATE TABLE `hoadon` (
-  `MaHD` varchar(5) NOT NULL,
-  `MaNV` varchar(5) NOT NULL,
-  `NgayLap` date NOT NULL,
-  `TongGiaTri` decimal(10,0) DEFAULT NULL,
-  `MaKH` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `hoadon`
---
-
-INSERT INTO `hoadon` (`MaHD`, `MaNV`, `NgayLap`, `TongGiaTri`, `MaKH`) VALUES
-('HD001', 'NV001', '2023-10-12', 11990000, 'KH001'),
-('HD002', 'NV002', '2023-10-13', 25990000, 'KH002'),
-('HD003', 'NV003', '2023-10-14', 32290000, 'KH003'),
-('HD004', 'NV004', '2023-10-15', 28690000, 'KH004'),
-('HD005', 'NV005', '2023-10-16', 16890000, 'KH005'),
-('HD006', 'NV006', '2023-10-17', 23990000, 'KH006'),
-('HD007', 'NV001', '2023-10-18', 24690000, 'KH007'),
-('HD008', 'NV002', '2023-10-19', 14490000, 'KH008'),
-('HD009', 'NV003', '2023-10-10', 17390000, 'KH009'),
-('HD010', 'NV004', '2023-10-21', 40890000, 'KH010');
-=======
->>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
+('DH001', 'KH001', '2023-10-12', '11990000'),
+('DH002', 'KH002', '2023-10-13', '25990000'),
+('DH003', 'KH003', '2023-10-14', '32290000'),
+('DH004', 'KH004', '2023-10-15', '28690000'),
+('DH005', 'KH005', '2023-10-16', '16890000'),
+('DH006', 'KH006', '2023-10-17', '23990000'),
+('DH007', 'KH001', '2023-10-18', '24690000'),
+('DH008', 'KH002', '2023-10-19', '14490000'),
+('DH009', 'KH003', '2023-10-10', '17390000'),
+('DH010', 'KH004', '2023-10-21', '40890000');
 
 -- --------------------------------------------------------
 
@@ -1044,13 +1007,9 @@ INSERT INTO `khachhang` (`MaKH`, `HoTenKH`, `DiaChi`, `Email`, `MatKhau`, `NgayS
 ('KH008', 'Tạ Đình Khánh', '9 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'khanhta837@gmail.com', '123abc', '1995-01-24', 0, '0465422653'),
 ('KH009', 'Huỳnh Vũ Kiên', '10 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'kienhuynh348@gmail.com', '123abc', '1999-11-19', 0, '0254456134'),
 ('KH010', 'Nguyễn Tấn Kiệt', '11 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang', 'tankiet100@gmail.com', '123abc', '1991-06-01', 0, '0353637381'),
-<<<<<<< HEAD
-('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368');
-=======
 ('KH011', 'Phan Minh Tiến', '', 'tien@gmail.com', '$2y$12$8HOcmRqTFYfXJLYH.hbyhugD2.O2eUjExBrJIcQvAKIBerPLUrVHO', '2023-10-30', 1, '0392294368'),
 ('KH012', 'Phan Minh Tiến', '', 'tien2@gmail.com', '$2y$12$k/ajzkIWnNbXJUSc33ykDeGwIfyZUnrkRBUzSmcaIOkaelT05PkgS', '0000-00-00', 0, ''),
 ('KH013', 'Hồ Hoàng Kha', '', 'matcova337@gmail.com', '$2y$12$YY/McYlE0UmfXgSEES9MS.ffUPig/XG53KlLFsf2h6gqqI60cYnNm', '0000-00-00', 0, '');
->>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 
 -- --------------------------------------------------------
 
@@ -1074,10 +1033,10 @@ CREATE TABLE `khuyenmai` (
 --
 
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `MoTaKM`, `GiamGia`, `DieuKien`, `PhamVi`, `NgayBD`, `NgayKT`) VALUES
-('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', 0.20, 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
-('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', 0.25, 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
-('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', 0.00, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
-('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', 0.40, 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
+('KM001', 'Khách hàng thân thiết', 'Giảm giá 20% cho khách hàng đã mua hàng trong 6 tháng gần nhất', '0.20', 'Cần có lịch sử mua hàng trong 6 tháng gần nhất', 'Khách hàng thân thiết', '2023-10-01 00:00:00', '2023-10-11 00:00:00'),
+('KM002', 'Giảm giá nhập học', 'Giảm giá 25% cho khách hàng mua hàng', '0.25', 'Khách hàng là học sinh, sinh viên', 'Toàn bộ cửa hàng', '2023-08-25 00:00:00', '2023-10-10 00:00:00'),
+('KM003', 'Không giảm giá', 'Không giảm giá cho sản phẩm có mã này', '0.00', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-12-01 00:00:00', '2024-01-01 00:00:00'),
+('KM004', 'Xả kho', 'Giảm giá 40% cho tất cả sản phẩm của cửa hàng', '0.40', 'Không có yêu cầu đặc biệt', 'Toàn bộ cửa hàng', '2023-10-30 00:00:00', '2023-11-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1112,11 +1071,11 @@ CREATE TABLE `mathang` (
 --
 
 INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`, `DonGia`, `MaHSX`, `IDAnhMH`, `Mau_SP`, `MoTaMH`, `MaKM`, `CPU`, `RAM`, `LuuTru`, `HDH`, `ManHinh`, `DoHoa`, `PIN`, `KhoiLuong`, `PhuKien`) VALUES
-('LT003', 'MacBook Air 2023', 'BSLT', 10, 32290000, 'DE', 'HASP003', '', 'Không phím số, LED, bảo mật vân tay', 'KM001', 'Apple M2', '1x8GB', '256GB SSD', 'macOS', '15.3\" (2880 x 1864)', NULL, NULL, 1.5, 'Không'),
+('LT003', 'MacBook Air 2023', 'BSLT', 10, 32290000, 'DE', 'HASP003', '', 'Không phím số, LED, bảo mật vân tay', 'KM001', 'Apple M2', '1x8GB', '256GB SSD', 'macOS', '15.3', '', '', 1.5, 'Không'),
 ('LT004', 'ASUS TUF Gaming F15', 'GMLT', 10, 28690000, 'AS', 'HASP004', '', 'Có phím số, RBG, có đèn,, HD webcam', 'KM001', ' Intel Core i7-12700H', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel Iris Xe Graphics', '4 cell 90 Wh', 2.2, 'Không'),
-('LT005', 'Dell Vostro 3530', 'BSLT', 10, 16890000, 'DE', 'HASP005', '', 'Có phím số, không đèn, HD webcam, màn hình chống lóa', 'KM001', 'Intel Core i5-1335U', '1 x 8GB DDR4 2666MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6\" WVA (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.6, 'Không'),
+('LT005', 'Dell Vostro 3530', 'GMLT', 10, 16890000, 'DE', 'HASP005', '', 'Có phím số, không đèn, HD webcam, màn hình chống lóa', 'KM001', 'Intel Core i5-1335U', '1 x 8GB DDR4 2666MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.6, 'Không'),
 ('LT006', 'Dell Inspiron 3530', 'GMLT', 10, 23990000, 'DE', 'HASP006', '', 'Có phím số, LED, không đèn, bảo mật vân tay', 'KM002', 'Intel Core i7-1355U', '2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', ' Windows 11 Home SL + Office Home & Student 2021', '15.6\" WVA (1920 x 1080)', 'GeForce MX550 2GB GDDR6 / Intel Iris Xe Graphics', '4 cell 54 Wh', 1.6, 'Adapter'),
-('LT007', 'HP Pavilion 15', 'BSLT', 10, 24690000, 'HP', 'HASP007', '', 'Có phím số, không đèn, Màn hình chống lóa, HD webcam', 'KM001', 'Intel Core i7-1355U', ' 2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.7, 'Không'),
+('LT007', 'HP Pavilion 15', 'BSLT', 10, 24690000, 'HP', 'HASP007', '', 'Có phím số, không đèn, Màn hình chống lóa, HD webcam', 'KM001', 'Intel Core i7-1355U', ' 2 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6', 'Onboard Intel Iris Xe Graphics', '3 cell 41 Wh', 1.7, 'Không'),
 ('LT008', ' Lenovo IdeaPad Slim 3', 'BSLT', 10, 14490000, 'LE', 'HASP008', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật vân tay', 'KM002', ' Intel Core i5-12450H', '16GB Onboard LPDDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '14\" IPS (1920 x 1080)', 'Onboard Intel UHD Graphics', '47 Wh', 1.4, 'Không'),
 ('LT009', 'Lenovo IdeaPad Gaming 3', 'GMLT', 10, 17390000, 'LE', 'HASP009', '', 'Có phím số, RBG, màn hình chống lóa, HD webcam, bảo mật vân tay', 'KM001', ' Intel Core i5-11320H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home SL', '15.6\" IPS (1920 x 1080)', 'RTX 3050 4GB GDDR6 / Intel Iris Xe Graphics', '3 cell 45 Wh', 2.2, 'Adapter,dây nguồn'),
 ('LT010', 'LG Gram 2023', 'BSLT', 10, 40890000, 'LG', 'HASP010', '', 'Không phím số, không đèn, Màn hình chống lóa, FHD webcam, bảo mật khuôn mặt', 'KM002', ' Intel Core i5-1340P', ' 16GB Onboard LPDDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" OLED (1920 x 1080)', 'Onboard Intel Iris Xe Graphics', '60 Wh', 1, 'Không'),
@@ -1184,9 +1143,7 @@ INSERT INTO `mathang` (`MaMH`, `TenMH`, `MaLMH`, `SoLuong`, `DonGia`, `MaHSX`, `
 ('LT072', 'MSI Cyborg 15', 'GMLT', 10, 22990000, 'MS', 'HASP072', 'Đen', 'Có phím số, không đèn, LED, HD webcam', 'KM002', 'Intel Core i5-12450H', '2 x 8GB DDR5 4800MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '3 cell 54 Wh', 2, 'Balo, Adapter, dây nguồn,...'),
 ('LT073', 'MSI GF63 Thin', 'GMLT', 10, 21490000, 'MS', 'HASP073', 'Đen', 'Không phím số, không đèn, LED, HD webcam', 'KM001', 'Intel Core i5-12450H', '1 x 8GB DDR4 3200MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4050 6GB GDDR6 / Intel UHD Graphics', '3 cell 52 Wh', 1.8, 'Không có'),
 ('LT074', 'MSI Raider', 'GMLT', 1, 106990000, 'MS', 'HASP074', 'Đen', 'Có phím số, RGB, FHD webcam', 'KM002', 'Intel Core i9-13980HX', '2 x 32GB DDR5 5600MHz', '4TB SSD M.2 NVMe /', 'Windows 11 Home', '17\" IPS (2560 x 1600)', 'RTX 4090 16GB GDDR6 / Intel UHD Graphics 770', '4 cell 99 Wh', 3.1, '330W Adapter, dây nguồn, Stealth Trooper Backpack II'),
-('LT075', 'MSI Katana 15', 'GMLT', 5, 31990000, 'MS', 'HASP075', 'Đen', 'Có phím số, không đèn, RGB, HD webcam', 'KM004', 'Intel Core i7-13620H', '2 x 8GB DDR5 5200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 770', '3 cell 54 Wh', 2.2, 'Balo, Adapter, dây nguồn,...'),
-('LT076', 'LG Gram 2021', 'BSLT', 10, 39290000, 'LG', 'HASP076', 'Bạc', 'Có phím số, không đèn, bảo mật vân tay, HD webcam', 'KM001', 'Intel Core i7-1165G7', '16GB DDR4 4266MHz', '256GB SSD M.2 NVMe /', 'Windows 10 Home 64-bit', '16\" IPS (2560 x 1600)', 'Onboard Intel Iris Xe Graphics', '80 Wh', 1.9, 'Không'),
-('LT077', 'Dell XPS 13 Plus', 'BSLT', 5, 49890000, 'DE', 'HASP077', 'Bạc', 'Không phím số, không đèn, LED, bảo mật vân tay, HD webcam', 'KM001', 'Intel Core i5-1340P', '16GB Onboard DDR5 6000MHz', '512GB SSD M.2 NVMe /', 'Windows 11 Home', '13.4\" WVA (3456 x 2160)', 'Onboard Intel Iris Xe Graphics', '3 cell', 1.2, 'Adapter, dây nguồn');
+('LT075', 'MSI Katana 15', 'GMLT', 5, 31990000, 'MS', 'HASP075', 'Đen', 'Có phím số, không đèn, RGB, HD webcam', 'KM004', 'Intel Core i7-13620H', '2 x 8GB DDR5 5200MHz', '1TB SSD M.2 NVMe /', 'Windows 11 Home', '15.6\" IPS (1920 x 1080)', 'RTX 4060 8GB GDDR6 / Intel UHD Graphics 770', '3 cell 54 Wh', 2.2, 'Balo, Adapter, dây nguồn,...');
 
 -- --------------------------------------------------------
 
@@ -1224,20 +1181,38 @@ INSERT INTO `nhanvien` (`MaNV`, `HoTenNV`, `SDT`, `Email`, `DiaChi`, `NgaySinh`,
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
-=======
 -- Table structure for table `order`
 --
 
 CREATE TABLE `order` (
-  `id` varchar(5) NOT NULL,
-  `TenNguoiNhan` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
+  `TenNguoiNhan` text NOT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `address` varchar(500) NOT NULL,
   `total` int(11) NOT NULL,
   `created_time` int(11) NOT NULL,
   `MaKH` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `TenNguoiNhan`, `phone`, `address`, `total`, `created_time`, `MaKH`) VALUES
+(81, 'Phan Minh Tiến', '0392294368', '3247 191 18', 88012500, 1700043694, 'KH011'),
+(82, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 24742500, 1700043931, 'KH011'),
+(83, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 24742500, 1700043940, 'KH011'),
+(84, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 61335000, 1700044015, 'KH011'),
+(85, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 24742500, 1700044030, 'KH011'),
+(86, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 30667500, 1700044230, 'KH011'),
+(87, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 30667500, 1700044288, 'KH011'),
+(88, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 122670000, 1700044580, 'KH011'),
+(89, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 30667500, 1700044764, 'KH011'),
+(90, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 30667500, 1700044830, 'KH011'),
+(91, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 17992500, 1700044869, 'KH011'),
+(92, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 11992500, 1700044893, 'KH011'),
+(93, 'Phan Minh Tiến', '0392294368', '3247 191 18', 30667500, 1700047874, 'KH011'),
+(94, 'Nguyễn Thị Diễm Kiều', '0392294368', '3360 198 19', 10867500, 1700062918, 'KH011');
 
 -- --------------------------------------------------------
 
@@ -1246,17 +1221,38 @@ CREATE TABLE `order` (
 --
 
 CREATE TABLE `order_detail` (
-  `id` varchar(5) NOT NULL,
-  `order_id` varchar(5) NOT NULL,
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `product_id` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `quantity`, `price`, `product_id`) VALUES
+(70, 81, 3, 10867500, 'LT008'),
+(71, 81, 1, 30667500, 'LT010'),
+(72, 81, 1, 24742500, 'LT012'),
+(73, 82, 1, 24742500, 'LT012'),
+(74, 83, 1, 24742500, 'LT012'),
+(75, 84, 2, 30667500, 'LT010'),
+(76, 85, 1, 24742500, 'LT012'),
+(77, 86, 1, 30667500, 'LT010'),
+(78, 87, 1, 30667500, 'LT010'),
+(79, 88, 4, 30667500, 'LT010'),
+(80, 89, 1, 30667500, 'LT010'),
+(81, 90, 1, 30667500, 'LT010'),
+(82, 91, 1, 17992500, 'LT006'),
+(83, 92, 1, 11992500, 'LT014'),
+(84, 93, 1, 30667500, 'LT010'),
+(85, 94, 1, 10867500, 'LT008');
+
 -- --------------------------------------------------------
 
 --
->>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 -- Table structure for table `province`
 --
 
@@ -11991,14 +11987,6 @@ ALTER TABLE `donhang`
   ADD KEY `FK_MaKH_DonHang` (`MaKH`);
 
 --
--- Indexes for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`MaHD`),
-  ADD KEY `FK_MaNV_HoaDon` (`MaNV`),
-  ADD KEY `FK_MaKH_HoaDon` (`MaKH`);
-
---
 -- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
@@ -12027,8 +12015,6 @@ ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
-<<<<<<< HEAD
-=======
 -- Indexes for table `order`
 --
 ALTER TABLE `order`
@@ -12044,7 +12030,6 @@ ALTER TABLE `order_detail`
   ADD KEY `order_detail_ibfk_2` (`product_id`);
 
 --
->>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
 -- Indexes for table `province`
 --
 ALTER TABLE `province`
@@ -12064,13 +12049,25 @@ ALTER TABLE `wards`
 -- AUTO_INCREMENT for table `diachinhanhang`
 --
 ALTER TABLE `diachinhanhang`
-  MODIFY `MaDC` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaDC` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `district`
 --
 ALTER TABLE `district`
   MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=706;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+
+--
+-- AUTO_INCREMENT for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `province`
@@ -12107,36 +12104,20 @@ ALTER TABLE `donhang`
   ADD CONSTRAINT `FK_MaKH_DonHang` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`);
 
 --
--- Constraints for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD CONSTRAINT `FK_MaKH_HoaDon` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`),
-  ADD CONSTRAINT `FK_MaNV_HoaDon` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`);
-
---
 -- Constraints for table `mathang`
 --
 ALTER TABLE `mathang`
-  ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`),
+  ADD CONSTRAINT `FK_IDAnhMH` FOREIGN KEY (`IDAnhMH`) REFERENCES `anhmh` (`IDAnhMH`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_MaHSX` FOREIGN KEY (`MaHSX`) REFERENCES `dmhangsanxuat` (`MaHSX`),
   ADD CONSTRAINT `FK_MaKM_MatHang` FOREIGN KEY (`MaKM`) REFERENCES `khuyenmai` (`MaKM`),
   ADD CONSTRAINT `FK_MaLMH` FOREIGN KEY (`MaLMH`) REFERENCES `dmloaimathang` (`MaLMH`);
-<<<<<<< HEAD
-=======
-
---
--- Constraints for table `order`
---
-ALTER TABLE `order`
-  ADD CONSTRAINT `F_KEY_MaKH1` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `mathang` (`MaMH`) ON DELETE CASCADE ON UPDATE CASCADE;
->>>>>>> 79b45ec83c626dc69cd5519ba20f5a9189b7622e
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `mathang` (`MaMH`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_detail_ibfk_3` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
