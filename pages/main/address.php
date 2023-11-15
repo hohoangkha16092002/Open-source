@@ -68,6 +68,7 @@ if (isset($_SESSION['loggedin'])) {
                             </div>
 
                         </a><a class="css-11g9kr1">
+                        <a class="css-11g9kr1" href="?page=change-password">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18"
                                     class="noti css-9w5ue6" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -77,7 +78,7 @@ if (isset($_SESSION['loggedin'])) {
                                     <path d="M10.5 21H13.5" stroke="#82869E" stroke-width="1.5" stroke-linecap="round"
                                         stroke-linejoin="round"></path>
                                 </svg>
-                                <div class="css-rac23i">Thông báo</div>
+                                <div class="css-rac23i">Đổi mật khẩu</div>
                             </div>
                         </a>
                         <li class="css-1jfhcvk"></li>
