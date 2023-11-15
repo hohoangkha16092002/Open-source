@@ -71,7 +71,6 @@ if (isset($_POST["thanhtoan"])) {
                         if ($key != count($_SESSION['cart'][$info['MaKH']]) - 1) {
                             $insertString .= ",";
                         }
-
                     }
                     $sql_insert_od = "INSERT INTO `order_detail`(`id`, `order_id`, `quantity`, `price`, `product_id`) 
                     VALUES " . $insertString . ";";
