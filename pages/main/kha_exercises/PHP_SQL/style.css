@@ -1,0 +1,79 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: solid 0.5px;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #1257c3;
+  color: white;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.div-left {
+  min-width: 100px;
+  /* Set your desired minimum width */
+  width: 20%;
+  /* Set your desired width percentage */
+  background-color: #f7f7f7;
+  /* Add a background color */
+  padding: 10px;
+  /* Add some padding for spacing */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  /* Add a shadow to separate it visually */
+}
+
+.hang-sua,
+.loai-sua {
+  margin-bottom: 20px;
+  /* Add margin for spacing between categories */
+}
+
+.hang-sua h3,
+.loai-sua h3 {
+  font-size: 18px;
+  /* Increase the font size for category headings */
+  margin-bottom: 10px;
+  /* Add margin below headings */
+}
+
+.hang-sua ul,
+.loai-sua ul {
+  list-style: none;
+  /* Remove bullet points from lists */
+  padding: 0;
+}
+
+.hang-sua li,
+.loai-sua li {
+  margin-bottom: 5px;
+  /* Add margin between list items */
+}
+
+.hang-sua a,
+.loai-sua a {
+  text-decoration: none;
+  /* Remove underlines from category links */
+  color: #333;
+  /* Change link color */
+}
+button {
+  margin: 2%;
+}

@@ -107,7 +107,7 @@
                     $exerciseData = [
                         "Ngô Trung Kiên" => ["kien_exercises", "img/exercise-ntk.jpg"],
                         "Nguyễn Thị Diễm Kiều" => ["pages/main/kieu_exercises", "img/exercise-ntdk.jpg"],
-                        "Hồ Hoàng Kha" => ["kha_exercises", "img/exercise-hhk.jpg"],
+                        "Hồ Hoàng Kha" => ["pages/main/kha_exercises", "img/exercise-hhk.jpg"],
                         "Phùng Thị Phượng" => ["phuong_exercises", "img/exercise-ptp.jpg"],
                         "Phan Minh Tiến" => ["pages/main/tien_exercises", "img/exercise-pmt.jpg"],
                     ];
