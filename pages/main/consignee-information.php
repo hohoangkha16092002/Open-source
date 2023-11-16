@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])) {
+    header('Location: ?page=login');
+}
 
 $sql_province = "SELECT * FROM province";
 $result_province = mysqli_query($conn, $sql_province);
