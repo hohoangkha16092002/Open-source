@@ -8,15 +8,15 @@
 <body>
     <?php
         if(isset($_POST['submit'])){
-            $name = $_POST['name'];
-            $oldIndex = $_POST['oldIndex'];
-            $newIndex = $_POST['newIndex'];
-            $price = $_POST['price'];
+            $ten = $_POST['name'];
+            $chi_so_cu = $_POST['oldIndex'];
+            $chi_so_moi = $_POST['newIndex'];
+            $gia = $_POST['price'];
 
-            if($oldIndex >= 0 and $newIndex > 0){
-                if($newIndex > $oldIndex){
-                    $sumMoney = ($newIndex - $oldIndex) * $price;
-                    $sumMoney = round($sumMoney,2);
+            if($chi_so_cu >= 0 and $chi_so_moi > 0){
+                if($chi_so_moi > $chi_so_cu){
+                    $tong_tien = ($chi_so_moi - $chi_so_cu) * $gia;
+                    $tong_tien = round($tong_tien,2);
                 }
                 else $msg = "Chỉ số mới phải > chỉ số cũ";
             }
@@ -32,7 +32,7 @@
                 <td>Tên chủ hộ:</td>
                 <td>
                     <input type="text" name="name" size="20" value="<?php 
-                        if(isset($name)) echo $name;
+                        if(isset($ten)) echo $ten;
                     ?>" pattern="[A-Za-zÀ-ỹẠ-ỹ\s]+" title="Chỉ nhập chữ (ký tự)" required>
                 </td>
             </tr>
@@ -40,7 +40,7 @@
                 <td>Chỉ số cũ:</td>
                 <td>
                     <input type="number" name="oldIndex" size="20" value="<?php 
-                        if(isset($oldIndex)) echo $oldIndex;
+                        if(isset($chi_so_cu)) echo $chi_so_cu;
                     ?>" step="any">
                     <span>(Kw)</span>
                 </td>
@@ -49,7 +49,7 @@
                 <td>Chỉ số mới:</td>
                 <td>
                     <input type="number" name="newIndex" size="20" value="<?php 
-                        if(isset($newIndex)) echo $newIndex;
+                        if(isset($chi_so_moi)) echo $chi_so_moi;
                     ?>" step="any">
                     <span>(Kw)</span>
                 </td>
@@ -58,7 +58,7 @@
                 <td>Đơn giá:</td>
                 <td>
                     <input type="number" name="price" size="20" value="<?php 
-                        if(isset($price)) echo $price;
+                        if(isset($gia)) echo $gia;
                     ?>" step="any" required>
                     <span>(VNĐ)</span>
                 </td>
@@ -67,7 +67,7 @@
                 <td>Số tiền thanh toán:</td>
                 <td>
                     <input readonly type="number" name="sumMoney" size="20" style="background: pink" value="<?php 
-                        if(isset($sumMoney)) echo $sumMoney;
+                        if(isset($tong_tien)) echo $tong_tien;
                     ?>" step="any">
                     <span>(VNĐ)</span>
                 </td>

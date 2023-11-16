@@ -32,9 +32,9 @@
         }
 
         $input = str_replace(' ', '', $input);
-        $array = explode(",", $input);
-        $oldArray = PrintArray($array);
-        $newArray = PrintArray(Replace($indexReplace, $indexReplaced, $array));
+        $mang = explode(",", $input);
+        $oldArray = PrintArray($mang);
+        $newArray = PrintArray(Replace($indexReplace, $indexReplaced, $mang));
 
         
     }

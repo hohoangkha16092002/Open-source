@@ -22,13 +22,13 @@ if (isset($_POST["submit"])) {
 
     // Thực thi truy vấn
     if (mysqli_query($conn, $sql_insert_address)) {
-        // Nếu thành công, chuyển hướng đến trang checkout
-        header('Location: ?page=checkout');
+        // Nếu thành công, chuyển hướng đến trang address
+        header('Location: ?page=address');
         exit();
     } else {
         // Nếu có lỗi, hiển thị thông báo hoặc xử lý theo ý của bạn
         echo "Error: " . $sql_insert_address . "<br>" . mysqli_error($conn);
-        header('Location: ?page=checkout');
+        header('Location: ?page=address');
     }
 }
 ?>

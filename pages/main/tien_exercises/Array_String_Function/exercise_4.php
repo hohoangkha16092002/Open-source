@@ -10,7 +10,7 @@
 <body>
     <?php
     if (isset($_POST['search'])) {
-        function Search($inputIndexSearch, $array)
+        function timKiem($inputIndexSearch, $array)
         {
             $result = "Không tìm thấy $inputIndexSearch trong mảng";
             for ($i = 0; $i < count($array); $i++) {
@@ -31,9 +31,9 @@
             if (!empty($inputArray) && !empty($inputIndexSearch)) {
                 $inputArray = trim($inputArray);
                 $inputArray = str_replace(' ', '', $inputArray);
-                $array = explode(",", $inputArray);
-                $string = implode("  ", $array);
-                $result = Search($inputIndexSearch, $array);
+                $mang = explode(",", $inputArray);
+                $string = implode("  ", $mang);
+                $result = timKiem($inputIndexSearch, $mang);
 
             } elseif (empty($inputArray)) {
                 $msg = "*Vui lòng nhập mảng.";

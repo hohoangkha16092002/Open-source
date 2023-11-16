@@ -38,10 +38,10 @@
         $fullname = $_GET['fullname'];
         $username = $_GET['username'];
         $email = $_GET['email'];
-        $phone = $_GET['phone'];
+        $sdt = $_GET['phone'];
         $password = $_GET['password'];
         $confirmPassword = $_GET['confirmPassword'];
-        $gender = $_GET['gender'];
+        $gioi_tinh = $_GET['gender'];
 
         $options = [
             'cost => 12',
@@ -60,7 +60,7 @@
                         $msg = "(*) Email đã tồn tại";
                     } else {
                         $sql = "INSERT INTO information (fullname, username, email, phone, password, gender)
-                                VALUES ('$fullname', '$username', '$email', '$phone', '$hashedPassword', '$gender')";
+                                VALUES ('$fullname', '$username', '$email', '$sdt', '$hashedPassword', '$gioi_tinh')";
                         if (mysqli_query($conn, $sql)) {
                             $msg = "Đăng ký thành công.<br> Full Name: $fullname, Email: $email";
                             header("Location: form-login.php");

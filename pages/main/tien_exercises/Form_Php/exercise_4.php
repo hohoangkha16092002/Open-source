@@ -8,25 +8,25 @@
 <body>
     <?php
         if(isset($_POST['submit'])){
-            $math = $_POST['math'];
-            $physics = $_POST['physics'];
-            $chemistry = $_POST['chemistry'];
-            $benchmarks = $_POST['benchmarks'];
+            $toan = $_POST['math'];
+            $ly = $_POST['physics'];
+            $hoa = $_POST['chemistry'];
+            $diem_san = $_POST['benchmarks'];
 
-            if($math > 0 and $physics > 0 and $chemistry > 0 and $math <=10 and $physics <= 10 and $chemistry <=10){
-                $sumMarks = $math + $physics + $chemistry;
-                if($sumMarks >= $benchmarks)
-                    $examResult = "Đậu";
-                else $examResult = "Rớt";
+            if($toan > 0 and $ly > 0 and $hoa > 0 and $toan <=10 and $ly <= 10 and $hoa <=10){
+                $tong_diem = $toan + $ly + $hoa;
+                if($tong_diem >= $diem_san)
+                    $ketqua = "Đậu";
+                else $ketqua = "Rớt";
             }
-            if($math > 10 or $physics > 10 or $chemistry > 10) {
+            if($toan > 10 or $ly > 10 or $hoa > 10) {
                 $msg = "Điểm Toán, Lý, Hóa phải <= 10";
             }
-            if($math == 0 or $physics == 0 or $chemistry == 0){
-                $sumMarks = $math + $physics + $chemistry;
-                $examResult = "Rớt";
+            if($toan == 0 or $ly == 0 or $hoa == 0){
+                $tong_diem = $toan + $ly + $hoa;
+                $ketqua = "Rớt";
             }
-            if($math < 0 or $physics < 0 or $chemistry < 0)
+            if($toan < 0 or $ly < 0 or $hoa < 0)
                 $msg = "Điểm Toán, Lý, Hóa phải >=0";
         }
     ?>
@@ -39,7 +39,7 @@
                 <td>Toán:</td>
                 <td>
                     <input type="number" step="any" name="math" size="20" value="<?php 
-                        if(isset($math)) echo $math;
+                        if(isset($toan)) echo $toan;
                     ?>">
                 </td>
             </tr>
@@ -47,7 +47,7 @@
                 <td>Lý:</td>
                 <td>
                     <input type="number" step="any" name="physics" size="20" value="<?php 
-                        if(isset($physics)) echo $physics;
+                        if(isset($ly)) echo $ly;
                     ?>">
                 </td>
             </tr>
@@ -55,7 +55,7 @@
                 <td>Hóa:</td>
                 <td>
                     <input type="number" step="any" name="chemistry" size="20" value="<?php 
-                        if(isset($chemistry)) echo $chemistry;
+                        if(isset($hoa)) echo $hoa;
                     ?>">
                 </td>
             </tr>
@@ -63,7 +63,7 @@
                 <td>Điểm chuẩn:</td>
                 <td>
                     <input style="color: red;" type="number" step="any" name="benchmarks" size="20" value="<?php 
-                        if(isset($benchmarks)) echo $benchmarks;
+                        if(isset($diem_san)) echo $diem_san;
                     ?>">
                 </td>
             </tr>
@@ -71,7 +71,7 @@
                 <td>Tổng điểm:</td>
                 <td>
                     <input type="number" step="any" name="sumMarks" size="20" readonly value="<?php 
-                        if(isset($sumMarks)) echo $sumMarks;
+                        if(isset($tong_diem)) echo $tong_diem;
                     ?>">
                 </td>
             </tr>
@@ -79,7 +79,7 @@
                 <td>Kết quả thi:</td>
                 <td>
                     <input style="color: red" type="text" name="examResult" size="20" readonly value="<?php 
-                        if(isset($examResult)) echo $examResult;
+                        if(isset($ketqua)) echo $ketqua;
                     ?>">
                 </td>
             </tr>

@@ -8,18 +8,18 @@
 <body>
     <?php
         if(isset($_POST['submit'])){
-            $radius = $_POST['radius'];
+            $chu_vi = $_POST['radius'];
             $pi = 3.14;
 
-            if($radius >= 0){
-                $area = $pi * $radius * $radius;
-                $diameter = $pi * $radius * 2;
+            if($chu_vi >= 0){
+                $dien_tich = $pi * $chu_vi * $chu_vi;
+                $duong_kinh = $pi * $chu_vi * 2;
             }
             else $msg = "Bán kính hình tròn không được âm";
         }
     ?>
     <form action="" name="circle" method="post">
-        <table style="background: beige;">
+        <table style="background: beige;" align="center">
             <tr style="background: orange;">
                 <th colspan="2">DIỆN TÍCH và CHU VI HÌNH TRÒN</th>
             </tr>
@@ -27,7 +27,7 @@
                 <td>Bán kính: </td>
                 <td>
                     <input type="number" name="radius" size="20" value="<?php 
-                        if(isset($radius)) echo $radius;
+                        if(isset($chu_vi)) echo $chu_vi;
                     ?>" step="any">
                 </td>
             </tr>
@@ -35,7 +35,7 @@
                 <td>Diện tích:</td>
                 <td>
                     <input type="text" name="area" size="20" style="background: pink;" readonly value="<?php 
-                        if(isset($area)) echo $area;
+                        if(isset($dien_tich)) echo $dien_tich;
                     ?>">
                 </td>
             </tr>
@@ -43,7 +43,7 @@
                 <td>Chu vi:</td>
                 <td>
                     <input type="text" name="diameter" size="20" style="background: pink;" readonly value="<?php 
-                        if(isset($diameter)) echo $diameter;
+                        if(isset($duong_kinh)) echo $duong_kinh;
                     ?>">
                 </td>
             </tr>

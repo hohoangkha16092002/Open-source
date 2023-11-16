@@ -10,8 +10,8 @@
 <body>
     <?php
     if (isset($_POST['submit'])) {
-        $arr = $_POST['dayso'];
-        $sum = array_sum(explode(",", $arr));
+        $mang = $_POST['dayso'];
+        $tong = array_sum(explode(",", $mang));
     }
     ?>
     <form action="" method="post" name="sum">
@@ -23,8 +23,8 @@
                 <td>Nhập dãy số: </td>
                 <td>
                     <input type="text" name="dayso" value="<?php
-                    if (isset($arr))
-                        echo $arr;
+                    if (isset($mang))
+                        echo $mang;
                     ?>" required>
                     <span style="color: red;">(*)</span>
                 </td>
@@ -39,8 +39,8 @@
                 <td>Tổng dãy số: </td>
                 <td>
                     <input style="color: red; background: greenyellow" type="text" name="sum" size="20" value="<?php
-                    if (isset($sum))
-                        echo $sum;
+                    if (isset($tong))
+                        echo $tong;
                     ?>" readonly>
                 </td>
             </tr>
