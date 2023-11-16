@@ -1,99 +1,21 @@
 <?php
-include("config.php");
-// Check if the user is logged in
 if (isset($_SESSION['loggedin_customer'])) {
-
-    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        $info = mysqli_fetch_assoc($result);
-        if (isset($_POST['submit'])) { // Change to POST meth
-            $old_password = $_POST['old_password'];
-            $new_password = $_POST['newpw'];
-            $confirm_password = $_POST['con_newpw'];
-
-            $options = [
-                'cost' => 12,
-            ];
-            if (preg_match("/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/", $new_password)) {
-                if (password_verify($old_password, $info['MatKhau'])) {
-                    if ($new_password === $confirm_password) {
-                        // Hash the new password
-                        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT, $options);
-
-                        // Update the password in the database
-                        $update_sql = "UPDATE khachhang SET MatKhau = ? WHERE MaKH = ?";
-                        $update_statement = mysqli_prepare($conn, $update_sql);
-                        mysqli_stmt_bind_param($update_statement, "ss", $hashed_password, $_SESSION['MaKH']);
-                        $update_result = mysqli_stmt_execute($update_statement);
-
-
-                        if ($update_result) {
-                            $msg = "Đổi mật khẩu thành công.";
-                        } else {
-                            $msg = "Đổi mật khẩu thất bại : " . mysqli_error($conn);
-                        }
-                    } else {
-                        $msg = "Mật khẩu không khớp";
-                    }
-                } else {
-                    $msg = "Mật khẩu hiện tại không chính xác.";
-                }
-            } else {
-                $msg = "Mật khẩu mới phải chứa ít nhất 1 ký tự viết hoa, 1 số và 1 ký tự đặc biệt.";
-            }
-        }
+    $sql_customer = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result_customer = mysqli_query($conn, $sql_customer);
+    if (mysqli_num_rows($result_customer) > 0) {
+        $info = mysqli_fetch_assoc($result_customer);
     }
 
-    if (isset($_SESSION['loggedin_employee'])) {
-        $sql = "SELECT * FROM nhanvien WHERE MaNV = '" . $_SESSION['MaNV'] . "'";
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
-            $info = mysqli_fetch_assoc($result);
-            if (isset($_POST['submit'])) { // Change to POST meth
-                $old_password = $_POST['old_password'];
-                $new_password = $_POST['newpw'];
-                $confirm_password = $_POST['con_newpw'];
-
-                $options = [
-                    'cost' => 12,
-                ];
-                if (preg_match("/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/", $new_password)) {
-                    if (password_verify($old_password, $info['MatKhau'])) {
-                        if ($new_password === $confirm_password) {
-                            // Hash the new password
-                            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT, $options);
-
-                            // Update the password in the database
-                            $update_sql = "UPDATE nhanvien SET MatKhau = ? WHERE MaKH = ?";
-                            $update_statement = mysqli_prepare($conn, $update_sql);
-                            mysqli_stmt_bind_param($update_statement, "ss", $hashed_password, $_SESSION['MaKH']);
-                            $update_result = mysqli_stmt_execute($update_statement);
-
-
-                            if ($update_result) {
-                                $msg = "Đổi mật khẩu thành công.";
-                            } else {
-                                $msg = "Đổi mật khẩu thất bại : " . mysqli_error($conn);
-                            }
-                        } else {
-                            $msg = "Mật khẩu không khớp";
-                        }
-                    } else {
-                        $msg = "Mật khẩu hiện tại không chính xác.";
-                    }
-                }
-                else {
-                    $msg = "Mật khẩu mới phải chứa ít nhất 1 ký tự viết hoa, 1 số và 1 ký tự đặc biệt.";
-                }
-            }
-        }
+    $sql_order = "SELECT * FROM `order` WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result_order = mysqli_query($conn, $sql_order);
+    if (mysqli_num_rows($result_order) > 0) {
+               
     }
-    // Close the database connection
-    mysqli_close($conn);
 }
-?>
 
+
+
+?>
 
 <div style="background-color: #f8f8fc;">
     <div class="css-gjf6g1">
@@ -137,7 +59,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                             </div>
                         </a>
                         <a class="css-11g9kr1" href="?page=oder-management">
-                            <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
+                            <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M7.5328 3.5625C7.5328 3.14829 7.86859 2.8125 8.2828 2.8125H15.2308C15.645 2.8125 15.9808 3.14829 15.9808 3.5625V3.80501H19.201C19.6152 3.80501 19.951 4.14079 19.951 4.55501V20.4361C19.951 20.8503 19.6152 21.1861 19.201 21.1861H4.3125C3.89829 21.1861 3.5625 20.8503 3.5625 20.4361V4.55501C3.5625 4.14079 3.89829 3.80501 4.3125 3.80501H7.5328V3.5625ZM15.9808 7.53276V5.30501H18.451V19.6861H5.0625V5.30501H7.5328V7.53276C7.5328 7.94698 7.86859 8.28276 8.2828 8.28276H10.0198C10.434 8.28276 10.7698 7.94698 10.7698 7.53276C10.7698 7.30843 11.0628 6.87111 11.7568 6.87111C12.4508 6.87111 12.7438 7.30843 12.7438 7.53276C12.7438 7.94698 13.0796 8.28276 13.4938 8.28276H15.2308C15.645 8.28276 15.9808 7.94698 15.9808 7.53276ZM9.0328 4.3125V6.78276H9.41784C9.7871 5.89836 10.7889 5.37111 11.7568 5.37111C12.7247 5.37111 13.7265 5.89836 14.0957 6.78276H14.4808V4.3125H9.0328ZM15.4476 12.0333C15.7405 11.7404 15.7405 11.2655 15.4476 10.9726C15.1547 10.6797 14.6798 10.6797 14.3869 10.9726L11.0384 14.3211L9.80564 13.0883C9.51275 12.7954 9.03787 12.7954 8.74498 13.0883C8.45209 13.3812 8.45209 13.8561 8.74498 14.149L10.5081 15.9121C10.6487 16.0527 10.8395 16.1318 11.0384 16.1318C11.2373 16.1318 11.4281 16.0527 11.5688 15.9121L15.4476 12.0333Z"
@@ -157,7 +79,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                             </div>
                         </a><a class="css-11g9kr1">
                             <a class="css-11g9kr1" href="?page=change-password">
-                                <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18"
+                                <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18"
                                         class="noti css-9w5ue6" height="18" width="18"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -173,82 +95,80 @@ if (isset($_SESSION['loggedin_customer'])) {
                             <li class="css-1jfhcvk"></li>
                     </ul>
                 </div>
-                <div>
-                </div>
             </div>
             <div class="css-hveu7a">
-                <div class="teko-row css-1qrgscw" style="margin-left: -8px; margin-right: -8px;">
-                    <div class="teko-col teko-col-8 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
-                        <div class="teko-card css-1hlwznm">
-                            <div class="teko-card-body css-0">
-                                <div class="teko-row teko-row-space-between css-1qrgscw">
-                                    <div type="title" class="css-1w9reh3">Đổi mật khẩu</div>
-                                </div>
-                                <form method="post">
-                                    <div>
-                                        <label for="old_password" class="form-input__label css-1270aei">Mật khẩu hiện
-                                            tại</label>
-                                        <input type="password" name="old_password" class="form-input__input css-90j4a3"
-                                            value="">
-                                    </div>
-                                    <div>
-                                        <label for="newpw" class="form-input__label css-1270aei">Mật khẩu mới</label>
-                                        <input type="password" name="newpw" class="form-input__input css-90j4a3"
-                                            value="">
-                                    </div>
-                                    <div>
-                                        <label for="con_newpw" class="form-input__label css-1270aei">Nhập lại mật khẩu
-                                            mới</label>
-                                        <input type="password" name="con_newpw" class="form-input__input css-90j4a3"
-                                            value="">
-                                    </div>
-                                    <br />
-                                    <div class="css-1ago99h">
-                                        <button height="2.5rem" name="submit" color="border" class="css-qpwo5p"
-                                            type="submit" width="">
-                                            <div type="body" name="submit" class="button-text css-zuesqn"
-                                                color="placeholder">Đổi mật khẩu</div>
-                                            <span style="margin-left: 0px;">
-                                                <div class="css-157jl91"></div>
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <div>
-                                    </div>
-                                </form>
-                                <div>
-                                    <?php
-                                    if (isset($msg))
-                                        echo $msg;
+                <?php
+                if (mysqli_num_rows($result_order) <= 0) {
+                    echo '<div class="css-165wheg">
+                            <div class="css-18nh3x2">Quản lý đơn hàng</div>
+                        </div>
+                        <div class="css-48len2">
+                            <div height="200" width="200" class="css-1cp1kxm"><img class="lazyload css-jdz5ak" alt=""
+                                    src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c"
+                                    loading="lazy" decoding="async"></div>
+                            <div class="css-447dxq">Bạn không có đơn hàng nào</div>
+                        </div>';
+                } else {
+                    echo '<div class="css-15xmjhr">
+                    <div class="css-8he5ev">
+                        <div class="card-body css-0">
+                            <div style="min-height: 550px;">
+                                <table class="css-175ywpb">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Ngày mua</th>
+                                            <th class="css-1b1yylg">Sản phẩm</th>
+                                            <th direction="right" class="css-9y787w">Tổng tiền (đ)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>'; 
                                     ?>
-                                </div>
-                                <div class="css-1x6y1s9"></div>
+                                    <?php
+                                        while ($row_order = mysqli_fetch_assoc($result_order)){
+                                            $timestamp = $row_order["created_time"];
+                                            $formattedDate = date('H:i, l d/m/Y', $timestamp);
+                                            $sql_product = "SELECT * FROM `order_detail` WHERE order_id = '".$row_order['id']."'";
+                                            $result_product = mysqli_query($conn, $sql_product);
+                                            
+                                            if(mysqli_num_rows($result_product) > 0) {
+                                                $string_product = "";
+                                                $key = -1;
+                                                while ($row_product = mysqli_fetch_assoc($result_product)) {
+                                                    $sql_info = "SELECT * FROM `mathang` WHERE MaMH = '" . $row_product['product_id'] . "'";
+                                                    $result_info = mysqli_query($conn, $sql_info);
+
+                                                    if(mysqli_num_rows($result_info) > 0) {
+                                                        while ($row_info = mysqli_fetch_assoc($result_info)) {
+                                                            $key++;
+                                                            $string_product .= $row_info["TenMH"];
+                                                            if ($key != mysqli_num_rows($result_product)- 1) {
+                                                                $string_product .= " - ";
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                }
+                                            }
+                                            echo '<tr>
+                                                <td><a href="/account/orders/23111333689960"
+                                                        class="css-66o6dy">'.$row_order['id'].'</a></td>
+                                                <td>'.$formattedDate.'</td>
+                                                <td>
+                                                    <div class="css-vrxw35">'.$string_product.'</div>
+                                                </td>
+                                                <td direction="right" class="css-15bte1a"><span
+                                                        class="css-htm2b9">'.number_format($row_order['total']).'đ</span></td>
+                                            </tr>';
+                                        }
+                                    echo '</tbody>'.
+                                '</table>
                             </div>
                         </div>
                     </div>
-                    <div class="teko-col teko-col-4 css-17ajfcv" style="padding-left: 8px; padding-right: 8px;">
-                        <div class="teko-card css-1hlwznm">
-                            <div class="teko-card-body css-0">
-                                <div class="teko-row teko-row-space-between css-1qrgscw">
-                                    <div type="title" class="css-1w9reh3">Địa chỉ mặc định</div>
-                                </div>
-                                <div type="body" color="textSecondary" class="css-1npqwgp">Bạn chưa có địa chỉ nhận hàng
-                                    mặc định. Vui lòng chọn Thêm địa chỉ nhận hàng.</div>
-                                <div class="css-1veiyrs">
-                                    <div width="100%" color="divider" class="css-yae08c"></div>
-                                </div>
-                                <a class="css-15wdjv3" color="link500" href="?page=consignee-information">
-                                    <svg fill="none" viewBox="0 0 24 24" class="css-zzrru3" color="link500" height="1em"
-                                        width="1em" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M12.75 4C12.75 3.58579 12.4142 3.25 12 3.25C11.5858 3.25 11.25 3.58579 11.25 4V11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H11.25V20C11.25 20.4142 11.5858 20.75 12 20.75C12.4142 20.75 12.75 20.4142 12.75 20V12.75H20C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25H12.75V4Z"
-                                            fill="#82869E"></path>
-                                    </svg>
-                                    <span>Thêm địa chỉ nhận hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>';
+                }
+                ?>
             </div>
         </div>
     </div>
