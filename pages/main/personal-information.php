@@ -6,16 +6,12 @@ if (isset($_SESSION['loggedin_customer'])) {
         $info = mysqli_fetch_assoc($result);
     }
 
-
     if (isset($_POST['update'])) {
         $ho_ten = $_POST['ho_ten'];
         $email = $_POST['email'];
         $sdt = $_POST['sdt'];
         $ngay_sinh = $_POST['ngay_sinh'];
         $sex = $_POST['sex'];
-
-        // Chuyển đổi giới tính thành kiểu bit
-        //$sexBit = ($sex === "1") ? 1 : 0;
 
         $sql = "UPDATE khachhang SET HoTenKH='$ho_ten', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' , GioiTinh='$sex' WHERE  MaKH = '" . $_SESSION['MaKH'] . "'";
         if ($conn->query($sql) === TRUE) {
@@ -47,9 +43,6 @@ if (isset($_SESSION['loggedin_employee'])) {
         $sdt = $_POST['sdt'];
         $ngay_sinh = $_POST['ngay_sinh'];
         $sex = $_POST['sex'];
-
-        // Chuyển đổi giới tính thành kiểu bit
-        //$sexBit = ($sex === "1") ? 1 : 0;
 
         $sql = "UPDATE nhanvien SET HotenNV='$ho_ten', Email='$email', SDT='$sdt', NgaySinh='$ngay_sinh' , GioiTinh='$sex' WHERE  MaNV = '" . $_SESSION['MaNV'] . "'";
         if ($conn->query($sql) === TRUE) {

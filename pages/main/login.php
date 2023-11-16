@@ -84,7 +84,7 @@
         </div>
 
         <div class="option">Bạn chưa có tài khoản? Hãy đăng ký tại <a href="?page=register">đây</a></div>
-        <div class="twitter">
+        <div class="google">
             <a href="#">
               <i class="fab fa-google"></i>
               <span>Đăng nhập với Google</span>

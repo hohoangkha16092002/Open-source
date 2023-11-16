@@ -109,7 +109,7 @@ if (isset($_SESSION['loggedin'])) {
 
                         $sql_province = "SELECT * FROM province WHERE province_id = '" . $thanhpho . "'";
                         $result_province = mysqli_query($conn, $sql_province);
-                        $row_province = mysqli_fetch_assoc($result_province);  // removed [0]
+                        $row_province = mysqli_fetch_assoc($result_province);  
                 
                         $sql_district = "SELECT * FROM district WHERE district_id = '" . $quanhuyen . "'";
                         $result_district = mysqli_query($conn, $sql_district);
@@ -150,7 +150,6 @@ if (isset($_SESSION['loggedin'])) {
                     }
                 }
                 ?>
-
             </div>
         </div>
     </div>

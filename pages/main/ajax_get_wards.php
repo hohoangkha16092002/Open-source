@@ -2,11 +2,8 @@
 require 'config-test.php';
 $district_id = $_GET['district_id'];
 
-// echo $district_id;
-
 $sql = "SELECT * FROM `wards` WHERE `district_id` = '$district_id'";
 $result = mysqli_query($conn, $sql);
-
 
 $data[0] = [
     'id' => null,
