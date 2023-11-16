@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .exercise-body {
-            font-family: Helvetica, sans-serif;
+            font-family: sans-serif, Helvetica, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,7 +16,7 @@
             width: 100%;
             background-color: white;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 2px solid #ccc;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
@@ -27,7 +26,8 @@
         }
 
         .exercise-h2 {
-            color: blue;
+            color: #0000CC;
+            font-family: Georgia;
             margin-bottom: 20px;
         }
 
@@ -46,11 +46,8 @@
             border-radius: 5px;
         }
 
-        .exercise-search-icon {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-20%);
-            cursor: pointer;
+        .exercise-icon {
+            margin-right: 10px;
         }
 
         #exercise-myUL {
@@ -59,16 +56,23 @@
         }
 
         #exercise-myUL li {
+            display: flex;
+            align-items: center;
             margin: 5px 0;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
+        .exercise-image {
+            width: 80px;
+            height: 70px;
+        }
+
         #exercise-myUL li a {
             padding: 12px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             color: black;
             display: block;
             width: 100%;
@@ -81,6 +85,11 @@
             -ms-transform: scale(1.05);
             transform: scale(1.05);
         }
+
+        .list-name {
+            color: #0066CC;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -89,34 +98,29 @@
         <form class="exercise-form" method="post">
             <div class="container">
                 <h2 align="center" class="exercise-h2">Exercise list</h2>
+                <i class="list-name">List name</i>
             </div>
             <ul id="exercise-myUL">
                 <?php
-                // Define an array with exercise names
-                $exerciseNames = array(
-                    "Array_String_Function" => "Ngô Trung Kiên",
-                    "Form_Php" => "Nguyễn Thị Diễm Kiều",
-                    "string" => "Phùng Thị Phượng",
-                    "Crup_app" => "Hồ Hoàng Kha",
-                    "phpMyAdmin" => "Phan Minh Tiến"
-                );
                 if (isset($_POST['submit'])) {
-                    $search = $_POST['search'];
-                    foreach ($exerciseNames as $link => $name) {
-                        if (stripos($name, $search) !== false) {
-                            echo "<li><a href='$link'>$name</a></li>";
-                        }
-                    }
                 } else {
-                    foreach ($exerciseNames as $link => $name) {
-                        echo "<li><a href='$link'>$name</a></li>";
+                    $exerciseData = [
+                        "Ngô Trung Kiên" => ["pages/main/kien_exercises", "img/exercise-ntk.jpg"],
+                        "Nguyễn Thị Diễm Kiều" => ["pages/main/kieu_exercises", "img/exercise-ntdk.jpg"],
+                        "Hồ Hoàng Kha" => ["pages/main/kha_exercises", "img/exercise-hhk.jpg"],
+                        "Phùng Thị Phượng" => ["phuong_exercises", "img/exercise-ptp.jpg"],
+                        "Phan Minh Tiến" => ["pages/main/tien_exercises", "img/exercise-pmt.jpg"],
+                    ];
+
+                    foreach ($exerciseData as $ten => $data) {
+                        $exerciseDir = $data[0];
+                        $imageSrc = $data[1];
+                        echo "<li><img class='exercise-image exercise-icon' src='$imageSrc' alt='Icon' width='80px' height='70px'><a class='list-name' href='$exerciseDir'>$ten</a></li>";
                     }
                 }
                 ?>
             </ul>
-    </div>
-    </form>
+        </form>
     </div>
 </body>
-
 </html>

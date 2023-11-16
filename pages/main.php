@@ -24,7 +24,7 @@
         include 'main/login.php';
     } elseif ($tam == 'register') {
         include 'main/register.php';
-    }elseif ($tam == 'test') {
+    } elseif ($tam == 'search' && isset($_GET['search-input'])) {
         include 'main/search-page.php';
     } elseif ($tam == 'personal-information') {
         include 'main/personal-information.php';
@@ -32,6 +32,24 @@
         include 'main/register.php';
     } elseif ($tam == 'detail' && isset($_GET['maMH'])) {
         include 'main/detail.php';
+    } elseif ($tam == 'cart-page') {
+        include 'main/cart-page.php';
+    } elseif ($tam == 'consignee-information') {
+        include 'main/consignee-information.php';
+    } elseif ($tam == 'address') {
+        include 'main/address.php';
+    } elseif ($tam == 'checkout') {
+        include 'main/checkout.php';
+    } elseif ($tam == 'confirm-logout') {
+        include 'main/confirm-logout.php';
+    } elseif ($tam == 'change-password') {
+        include 'main/change_password.php';
+    } elseif ($tam == 'logout') {
+        include 'main/logout.php';
+    } elseif ($tam == 'ajax_get_district') {
+        include 'main/ajax_get_district.php';
+    } elseif ($tam == 'oder-management') {
+        include 'main/oder-management.php';
     } else {
         include 'main/home.php';
     }

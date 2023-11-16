@@ -135,7 +135,7 @@
     height: 2.5rem;
     padding: 0rem 1.25rem;
     border-radius: 0.25rem;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(20, 53, 195);
     position: relative;
     display: flex;
     -webkit-box-align: center;
@@ -148,6 +148,10 @@
     cursor: not-allowed;
     transition-duration: 80ms;
     transition-property: background-color;
+}
+
+.css-qpwo5p:hover {
+    background-color: rgb(18, 48, 176);
 }
 
 .css-1ago99h {
@@ -292,9 +296,18 @@
     list-style: none;
 }
 
+.css-zzskb3 a{
+    color: black;
+}
+
 .css-11g9kr1 {
     text-decoration: none;
 }
+
+.css-11g9kr1:hover {
+    text-decoration: none;
+}
+
 
 .css-1jfhcvk {
     background-color: rgb(224, 224, 224);
@@ -531,6 +544,7 @@
     fill: rgb(25, 144, 255);
 }
 
+
 .css-17ajfcv a {
     color: #0d6efd;
     -webkit-text-decoration: underline;
@@ -541,4 +555,101 @@
     color: #0d6efd;
     -webkit-text-decoration: underline;
     text-decoration: unset;
+}
+.css-gjf6g1 {
+    margin: 16px auto;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1264px;
+    min-height: 77vh;
+}
+.css-mec48l {
+    border-top: 3px solid rgb(20, 53, 195);
+    position: relative;
+}
+
+.css-nepxcf {
+    display: none;
+    z-index: 1030;
+    position: fixed;
+    bottom: 10rem;
+    right: 3rem;
+    cursor: pointer;
+    -webkit-animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s;
+}
+
+.css-qhcj37 {
+    border-radius: 50%;
+    background-color: #333333;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.08);
+}
+
+.css-nepxcf {
+    display: none;
+    z-index: 1030;
+    position: fixed;
+    bottom: 10rem;
+    right: 3rem;
+    cursor: pointer;
+    -webkit-animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s;
+}
+
+.css-25mhin {
+    z-index: 1030;
+    position: fixed;
+    right: 2.5rem;
+    bottom: 5.6rem;
+    cursor: pointer;
+}
+.css-vj7q1h {
+    cursor: pointer;
+    overflow: visible;
+    line-height: 1rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    text-decoration: none;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(20, 53, 195);
+    margin-bottom: 4px;
+    border-radius: 8px;
+    border: 1px dashed rgb(216, 216, 216);
+}
+
+.css-1fmhjdx {
+    -webkit-mask: url(https://shopfront-cdn.tekoapis.com/static/949377dd1535d300.svg) center center / contain no-repeat;
+    mask: url(https://shopfront-cdn.tekoapis.com/static/949377dd1535d300.svg);
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-color: var(--button-icon-color, #757575);
+}
+.css-1x3u27e {
+    width: 0.4rem;
+    height: 0.4rem;
 }

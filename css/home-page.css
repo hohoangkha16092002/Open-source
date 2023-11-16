@@ -1,3 +1,11 @@
+a {
+  text-decoration: none !important;
+}
+
+a:hover{
+  text-decoration: none !important;
+}
+
 .css-position-relative {
   position: relative;
 }
@@ -74,7 +82,7 @@
   border-radius: 0.5rem;
   background-color: #ffffff;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   width: 12.375rem;
   height: 28.5rem;
   z-index: 980;
@@ -912,6 +920,13 @@ p {
   color: rgb(255, 255, 255);
 }
 
+.css-248siu34 {
+  font-size: 9px;
+  line-height: 18px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
 .css-68cx5s {
   margin-bottom: 0.25rem;
 }
@@ -1529,11 +1544,11 @@ p {
   color: rgb(130, 134, 158);
 }
 
-.css-1y2krk0 {
+.css-1y2krk01 {
   display: flex;
   flex-wrap: wrap;
   column-gap: 2px;
-  place-content: flex-start space-between;
+  place-content: flex-start;
   background: rgb(246, 246, 246);
   padding: 2px 0px;
 }
@@ -1749,9 +1764,10 @@ p {
   -webkit-box-align: center;
   align-items: center;
   border-radius: 0.25rem;
-  background-color: rgb(20, 53, 195);
-  border: none;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(228, 229, 240);
   pointer-events: auto;
+  cursor: pointer;
 }
 
 .css-1t6n552 {
@@ -1811,3 +1827,43 @@ p {
   min-width: unset;
   transition: color 0.3s ease 0s;
 }
+
+
+.css-6pvuc4 {
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+  color: rgb(67, 70, 87);
+  font-weight: 500;
+  text-decoration: unset;
+  font-size: 13px;
+  line-height: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: unset;
+  max-width: unset;
+  min-width: unset;
+  transition: color 0.3s ease 0s;
+}
+
+.css-1t6n552 a,
+.css-19xt07j a{
+  color: black;
+  text-decoration: none;
+}
+
+.css-1t6n552 a:hover,
+.css-19xt07j a:hover
+{
+  color: black;
+  text-decoration: none;
+}
+
+.css-j9nr2k:hover{
+  background-color: rgb(246, 246, 246);
+}
+

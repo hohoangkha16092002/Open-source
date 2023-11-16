@@ -236,17 +236,8 @@
   overflow: hidden;
   line-height: 1rem;
   padding: 0.365rem 0.75rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
   text-align: center;
   background-color: #eeeeee;
@@ -254,23 +245,13 @@
   color: #212121;
   border-width: 1px;
   border-style: solid;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   position: relative;
   height: 36px;
   width: 36px;
   border-radius: 8px;
   padding: 0;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
   border: 0;
   background-color: transparent;
@@ -508,6 +489,10 @@
   -webkit-box-align: center;
   align-items: center;
   position: relative;
+}
+
+.nav-ip-popup-child-main:hover {
+  background-color: #f8f8fc;
 }
 
 .nav-ip-popup-child-main .icon {
@@ -1041,4 +1026,56 @@
   max-width: unset;
   min-width: unset;
   transition: color 0.3s ease 0s;
+}
+
+.css-17ajfcv {
+  border-style: none;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+}
+
+.css-12qbrtd {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 90px;
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  color: #82869E;
+  width: 130px;
+  height: 45px;
+}
+
+.css-1ajy8lg {
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+  color: rgb(130, 134, 158);
+  font-weight: 500;
+  text-decoration: unset;
+  font-size: 13px;
+  line-height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: unset;
+  max-width: unset;
+  min-width: unset;
+  transition: color 0.3s ease 0s;
+}
+
+.css-17ajfcv.teko-col {
+  position: relative;
+  max-width: 100%;
+  min-height: 1px;
 }

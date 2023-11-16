@@ -1,3 +1,10 @@
+body {
+  background-color: #f8f8fc !important;
+  font-family: 'Roboto',sans-serif;
+  line-height: 1.25rem;
+  color: #333333;
+  padding-bottom: 2px;
+}
 .css-rf24tk {
   padding-right: 16px;
   padding-left: 16px;
@@ -46,8 +53,12 @@
 }
 .css-6l7rf5 {
   box-sizing: border-box;
-  margin: 0px 0px 24px;
-  min-width: 0px;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 .css-1hwtax5 {
@@ -542,12 +553,6 @@
   min-width: 0px;
   display: flex;
 }
-.css-1hwtax5 {
-  box-sizing: border-box;
-  margin: 0px 16px 0px 0px;
-  min-width: 0px;
-  width: 75.6%;
-}
 .css-29qdu.teko-row {
   display: flex;
   flex-flow: wrap;
@@ -669,6 +674,8 @@
   overflow: hidden;
   position: relative;
   padding: 0px 1rem;
+  color:black;
+  text-align: left;
 }
 .css-1h28ttq {
   max-height: 631px;
@@ -679,6 +686,9 @@
 .css-1i3ajxp {
   display: flex;
   padding: 12px 16px;
+}
+.css-1i3ajxp:nth-of-type(2n) {
+  background-color: rgb(246, 246, 246);
 }
 .css-1lchwqw {
   margin: 0px;
@@ -699,6 +709,7 @@
   max-width: unset;
   min-width: unset;
   transition: color 0.3s ease 0s;
+
 }
 .css-1geo7k4 {
   margin: 0px;
@@ -790,4 +801,87 @@
 }
 .glide__slides, .glide__track {
   overflow: hidden;
+}
+.css-qx8kls {
+  min-width: 64px;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-right: 12px;
+  border-radius: 4px;
+  background-color: rgb(232, 235, 249);
+}
+.css-1v2cybn img {
+  object-fit: contain;
+}
+.css-oxr6q3 {
+  object-fit: cover;
+  border-radius: 50%;
+}
+img, svg {
+  vertical-align: middle;
+}
+.css-9yb8e7 > * {
+  margin: 0px;
+}
+.css-lwjlcs > :not(:first-of-type) {
+  margin-top: 1rem;
+}
+.css-1cpfnn9 {
+  border-style: none;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+}
+.css-50tizz {
+  border-style: none;
+  border-width: 1px;
+  border-color: unset;
+  opacity: 1;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+}
+.css-15eranj {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+.css-1a6hohg {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+}
+
+.css-1nhnj3v {
+  opacity: 1;
+  padding: 0rem 1.25rem;
+  border-radius: 0.25rem;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(20, 53, 195);
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: none;
+  min-width: 2.5rem;
+  color: rgb(20, 53, 195);
+  width: 100%;
+  cursor: pointer;
+  transition-duration: 80ms;
+  transition-property: background-color;
+  height: 46px;
 }

@@ -693,7 +693,7 @@ a {
   flex-wrap: wrap;
   -webkit-column-gap: 2px;
   column-gap: 2px;
-  place-content: flex-start space-between;
+  place-content: flex-start;
   background: #f6f6f6;
   padding: 2px 0;
 }
