@@ -23,7 +23,8 @@ session_start();
     <link rel="stylesheet" href="css/adress.css">
     <link rel="stylesheet" href="css/consignee-information.css">
     <link rel="stylesheet" href="css/confirm-logout.css">
-    <link rel="stylesheet" href="css/oder-management.css">
+    <link rel="stylesheet" href="css/order-management.css">
+    <link rel="stylesheet" href="css/order-detail.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">

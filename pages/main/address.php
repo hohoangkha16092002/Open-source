@@ -1,6 +1,10 @@
 <?php
 include 'config.php';
-if (isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])) {
+    header('Location: ?page=login');
+}
+
+if (isset($_SESSION['loggedin_customer'])) {
     $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
@@ -50,7 +54,7 @@ if (isset($_SESSION['loggedin'])) {
                                 <div class="css-rac23i">Thông tin tài khoản</div>
                             </div>
                         </a>
-                        <a class="css-11g9kr1" href="?page=oder-management">
+                        <a class="css-11g9kr1" href="?page=order-management">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"

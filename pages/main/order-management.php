@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])) {
+    header('Location: ?page=login');
+}
+
 if (isset($_SESSION['loggedin_customer'])) {
     $sql_customer = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
     $result_customer = mysqli_query($conn, $sql_customer);
@@ -58,7 +62,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                                 <div class="css-rac23i">Thông tin tài khoản</div>
                             </div>
                         </a>
-                        <a class="css-11g9kr1" href="?page=oder-management">
+                        <a class="css-11g9kr1" href="?page=order-management">
                             <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -151,14 +155,15 @@ if (isset($_SESSION['loggedin_customer'])) {
                                                 }
                                             }
                                             echo '<tr>
-                                                <td><a href="/account/orders/23111333689960"
+                                                <td>
+                                                <a href="?page=order-detail&orderID='.$row_order['id'].'"
                                                         class="css-66o6dy">'.$row_order['id'].'</a></td>
                                                 <td>'.$formattedDate.'</td>
                                                 <td>
                                                     <div class="css-vrxw35">'.$string_product.'</div>
                                                 </td>
                                                 <td direction="right" class="css-15bte1a"><span
-                                                        class="css-htm2b9">'.number_format($row_order['total']).'đ</span></td>
+                                                        class="css-htm2b9">'.number_format($row_order['total'], 0, '.', '.').'đ</span></td>
                                             </tr>';
                                         }
                                     echo '</tbody>'.

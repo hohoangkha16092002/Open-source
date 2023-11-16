@@ -1,5 +1,8 @@
 <?php
 include("config.php");
+if (!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])) {
+    header('Location: ?page=login');
+}
 
 // Check if the payment form is submitted
 if (isset($_POST["thanhtoan"])) {
@@ -40,8 +43,20 @@ if (isset($_POST["thanhtoan"])) {
                     $thanhpho = $row['ThanhPho'];
                     $quanhuyen = $row['QuanHuyen'];
                     $phuongxa = $row['PhuongXa'];
-                    $diachi = $phuongxa . ' ' . $quanhuyen . ' ' . $thanhpho;
-
+                    
+                    $sql_province = "SELECT * FROM province WHERE province_id = '" . $thanhpho . "'";
+                    $result_province = mysqli_query($conn, $sql_province);
+                    $row_province = mysqli_fetch_assoc($result_province);  // removed [0]
+                    
+                    $sql_district = "SELECT * FROM district WHERE district_id = '" . $quanhuyen . "'";
+                    $result_district = mysqli_query($conn, $sql_district);
+                    $row_district = mysqli_fetch_assoc($result_district);
+                    
+                    $sql_wards = "SELECT * FROM wards WHERE wards_id = '" . $phuongxa . "'";
+                    $result_wards = mysqli_query($conn, $sql_wards);
+                    $row_wards = mysqli_fetch_assoc($result_wards);
+                    
+                    $diachi = $row['DiaChi'] . ', ' . $row_wards['name'] . ', ' . $row_district['name'] . ', ' . $row_province['name'];
                     $sql_insert_order = "INSERT INTO `order`(`id`,`TenNguoiNhan`, `phone`, `address`, `total`, `created_time`, `MaKH`) 
                     VALUES ('NULL','$tennguoinhan','$sdt','$diachi','$total_money','" . time() . "','$MaKH')";
                     if (mysqli_query($conn, $sql_insert_order)) {
@@ -76,14 +91,14 @@ if (isset($_POST["thanhtoan"])) {
                     VALUES " . $insertString . ";";
                     $result_od = mysqli_query($conn, $sql_insert_od);
 
-                    if($result_od){
+                    if ($result_od) {
                         unset($_SESSION['cart'][$info['MaKH']]); // Clear the cart after successful payment
 
                         echo "
                         <script>
                             setTimeout(function(){
-                                alert('Thanh toán thành công, trở về trang chủ');
-                                window.location.href = '?page=home-page';
+                                alert('Thanh toán thành công, vào giỏ hàng');
+                                window.location.href = '?page=order-management';
                             }, 0);
                         </script>";
                     }
