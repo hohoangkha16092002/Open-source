@@ -1,0 +1,11 @@
+{
+    "name": "admin/open-source",
+    "description": "Nothing",
+    "authors": [
+        {
+            "name": "Kah",
+            "email": "matcova337@gmail.com"
+        }
+    ],
+    "require": {}
+}
