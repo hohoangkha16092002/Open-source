@@ -12,7 +12,7 @@
     if (isset($_POST['submit'])) {
         $input = $_POST['input'];
 
-        function CreateArray($input)
+        function taoMang($input)
         { //Tạo mảng số ngẫu nhiên
             $array = array();
             for ($i = 0; $i < $input; $i++) {
@@ -21,7 +21,7 @@
             return $array;
         }
 
-        function FindMax($array)
+        function timMax($array)
         {
             $max = $array[0];
             foreach ($array as $value) {
@@ -32,7 +32,7 @@
             return $max;
         }
 
-        function FindMin($array)
+        function timMin($array)
         {
             $min = $array[0];
             foreach ($array as $value) {
@@ -43,7 +43,7 @@
             return $min;
         }
 
-        function Sum($array)
+        function tong($array)
         {
             $sum = 0;
             foreach ($array as $value) {
@@ -53,11 +53,11 @@
         }
 
         if ($input > 0) {
-            $createArray = CreateArray($input);
-            $array = implode(" ", $createArray);
-            $max = FindMax($createArray);
-            $min = FindMin($createArray);
-            $sumArray = Sum($createArray);
+            $tao_mang = taoMang($input);
+            $mang = implode(" ", $tao_mang);
+            $max = timMax($tao_mang);
+            $min = timMin($tao_mang);
+            $tong = tong($tao_mang);
         } else {
             $msg = "(*)Số phần tử phải lớn hơn 0";
         }
@@ -91,8 +91,8 @@
                 <td>Mảng:</td>
                 <td>
                     <input size="30" style="background-color: #FF3366;" type="text" name="array" value="<?php
-                    if (isset($array))
-                        echo $array;
+                    if (isset($mang))
+                        echo $mang;
                     ?>">
                 </td>
             </tr>
@@ -118,8 +118,8 @@
                 <td>Tổng mảng:</td>
                 <td>
                     <input readonly size="12" style="background-color: #FF3366;" type="text" name="sumArray" value="<?php
-                    if (isset($sumArray))
-                        echo $sumArray;
+                    if (isset($tong))
+                        echo $tong;
                     ?>">
                 </td>
             </tr>

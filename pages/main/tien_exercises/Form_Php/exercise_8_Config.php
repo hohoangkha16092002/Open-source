@@ -8,46 +8,46 @@
 <body>
     <?php
         if(isset($_POST['send'])){
-            $fullName = $_POST['fullName'];
-            $address = $_POST['address'];
-            $phone = $_POST['phone'];
-            $gender = $_POST['gender'];
-            $country = $_POST['country'];
-            $note = $_POST['note'];
+            $ho_ten = $_POST['fullName'];
+            $dia_chi = $_POST['address'];
+            $sdt = $_POST['phone'];
+            $gioi_tinh = $_POST['gender'];
+            $que_quan = $_POST['country'];
+            $ghi_chu = $_POST['note'];
 
-            switch($country){
+            switch($que_quan){
                 case 'vietNam':
-                    $country = "Việt Nam";
+                    $que_quan = "Việt Nam";
                     break;   
                 case 'lao':
-                    $country = "Lào";
+                    $que_quan = "Lào";
                     break;   
                 case 'campuchia':
-                    $country = "Camphuchia";
+                    $que_quan = "Camphuchia";
                     break;   
                 case 'nhatBan':
-                    $country = "Nhật bản";
+                    $que_quan = "Nhật bản";
                     break;   
                  default:
-                    $country = "Bạn chưa chọn quốc gia nào";
+                    $que_quan = "Bạn chưa chọn quốc gia nào";
                     break;   
             }
 
-            switch($gender){
+            switch($gioi_tinh){
                 case 'male':
-                    $gender = "Nam";
+                    $gioi_tinh = "Nam";
                     break;
                 case 'female':
-                    $gender = "Nữ";
+                    $gioi_tinh = "Nữ";
                     break;
                 default:
-                    $gender = "Bạn chưa chọn giới tính";
+                    $gioi_tinh = "Bạn chưa chọn giới tính";
                     break;
             }
 
-            if(strlen($phone) >= 3){
-                $lastThreeDigits = substr($phone, -3);
-                $phone = substr_replace($phone,'xxx',-3);
+            if(strlen($sdt) >= 3){
+                $lastThreeDigits = substr($sdt, -3);
+                $sdt = substr_replace($sdt,'xxx',-3);
             }
         }
     ?>
@@ -57,19 +57,19 @@
                 <th>Bạn đã nhập thành công, dưới đây là những thông tin bạn đã nhập:</th>
             </tr>
             <tr>
-                <td>Họ tên: <?php if(isset($fullName))  echo $fullName ?></td>
+                <td>Họ tên: <?php if(isset($ho_ten))  echo $ho_ten ?></td>
             </tr>
             <tr>
-                <td>Address: <?php if(isset($address))  echo $address ?></td>
+                <td>Address: <?php if(isset($dia_chi))  echo $dia_chi ?></td>
             </tr>
             <tr>
-                <td>Phone: <?php if(isset($phone))  echo $phone ?></td>
+                <td>Phone: <?php if(isset($sdt))  echo $sdt ?></td>
             </tr>
             <tr>
-                <td>Gender: <?php if(isset($gender))  echo $gender ?></td>
+                <td>Gender: <?php if(isset($gioi_tinh))  echo $gioi_tinh ?></td>
             </tr>
             <tr>
-                <td>Country: <?php if(isset($country))  echo $country ?></td>
+                <td>Country: <?php if(isset($que_quan))  echo $que_quan ?></td>
             </tr>
             <!-- <tr>
                 <td>Các môn đã học:
@@ -82,7 +82,7 @@
                 </td>
             </tr> -->
             <tr>
-                <td>Note: <?php if(isset($note))  echo $note ?></td>
+                <td>Note: <?php if(isset($ghi_chu))  echo $ghi_chu ?></td>
             </tr>
             <tr>
                 <td>

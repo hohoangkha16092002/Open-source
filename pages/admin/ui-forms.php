@@ -62,7 +62,12 @@
     VALUES ('$next_maMH', '$product_name', '$product_type', '$product_numbers', '$product_cost','$product_brand', '$product_image', '$product_color','$product_description', '$product_sale', '$cpu', '$ram', '$memories', '$operating_system','$screen', '$vga', '$pin', '$mass', '$accessory')";
 
     if (mysqli_query($conn, $sql_add_product)) {
-      echo "";
+      echo "<script>
+              setTimeout(function(){
+                  alert('Thêm sản phẩm thành công');
+                  window.location.href = 'pages-blank.php';
+              }, 0);
+          </script>";
     } else {
       echo "Error: " . $sql_add_product . mysqli_error($conn);
     }

@@ -40,7 +40,7 @@
         return $randomNumbers;
     }
 
-    function countElementDivibleBy2($array)
+    function demPhanTuChiaHetCho2($array)
     { //Đếm số lượng các phần tử chẵn trong mảng
         $count = 0;
         foreach ($array as $value) {
@@ -50,7 +50,7 @@
         return $count;
     }
 
-    function countElementless0($array)
+    function demPhanTuItHon0($array)
     { //Đếm số lượng các phần tử < 0 trong mảng
         $count = 0;
         foreach ($array as $value) {
@@ -60,7 +60,7 @@
         return $count;
     }
 
-    function sumElementless0($array)
+    function tongPTNhoHon0($array)
     { //Tổng các phần tử âm
         $sum = 0;
         foreach ($array as $value) {
@@ -70,7 +70,7 @@
         return $sum;
     }
 
-    function findZeros($array)
+    function tim0($array)
     { //In vị trí các phần tử có giá trị = 0
         $positions = array();
         foreach ($array as $key => $value) {
@@ -84,12 +84,12 @@
     if (isset($_POST['submit'])) {
         $input = $_POST['input'];
         if ($input > 0) {
-            $randomArray2 = generateRandomUniqueNumbers($input, -100, 100);
-            $randomArray = generateRandomNumbers($input);
-            $countElementDivibleBy2 = countElementDivibleBy2($randomArray2);
-            $countElementless0 = countElementless0($randomArray2);
-            $sumElementless0 = sumElementless0($randomArray2);
-            $zeroPositions = findZeros($randomArray2);
+            $mang2 = generateRandomUniqueNumbers($input, -100, 100);
+            $mang_nn = generateRandomNumbers($input);
+            $chia_het_cho_2 = demPhanTuChiaHetCho2($mang2);
+            $nho_hon_0 = demPhanTuItHon0($mang2);
+            $tong_pt_nho_hon_0 = tongPTNhoHon0($mang2);
+            $vi_tri_0 = tim0($mang2);
         } else
             $msg = "n không phải là số nguyên dương";
     }
@@ -124,8 +124,8 @@
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <?php
-                    if (isset($randomArray2)) {
-                        echo "Mảng: " . implode(', ', $randomArray2);
+                    if (isset($mang2)) {
+                        echo "Mảng: " . implode(', ', $mang2);
                     }
                     ?>
                 </td>
@@ -133,42 +133,42 @@
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <?php
-                    if (isset($$countElementDivibleBy2))
-                        echo "Số phần tử chãn trong mảng: " . $$countElementDivibleBy2;
+                    if (isset($$chia_het_cho_2))
+                        echo "Số phần tử chãn trong mảng: " . $$chia_het_cho_2;
                     ?>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <?php
-                    if (isset($countElementless0))
-                        echo "Số phần tử < 0 trong mảng: " . $countElementless0;
+                    if (isset($nho_hon_0))
+                        echo "Số phần tử < 0 trong mảng: " . $nho_hon_0;
                     ?>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <?php
-                    if (isset($sumElementless0))
-                        echo "Tổng phần tử < 0 trong mảng: " . $sumElementless0;
+                    if (isset($tong_pt_nho_hon_0))
+                        echo "Tổng phần tử < 0 trong mảng: " . $tong_pt_nho_hon_0;
                     ?>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <?php
-                    if (isset($zeroPositions))
-                        echo "Vị trí của các phần tử có giá trị bằng 0 là: " . implode(', ', $zeroPositions);
+                    if (isset($vi_tri_0))
+                        echo "Vị trí của các phần tử có giá trị bằng 0 là: " . implode(', ', $vi_tri_0);
                     ?>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <?php
-                    if (isset($randomArray2)) {
-                        sort($randomArray2);
+                    if (isset($mang2)) {
+                        sort($mang2);
                         echo "Mảng sau khi đã sắp xếp là: ";
-                        foreach ($randomArray2 as $value) {
+                        foreach ($mang2 as $value) {
                             echo $value . " ";
                         }
                     }

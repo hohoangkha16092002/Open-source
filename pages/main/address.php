@@ -69,30 +69,32 @@ if (isset($_SESSION['loggedin'])) {
                             </div>
 
                         </a><a class="css-11g9kr1">
-                        <a class="css-11g9kr1" href="?page=change-password">
-                            <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18"
-                                    class="noti css-9w5ue6" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.99398 13V9C5.99398 5.686 8.68298 3 12 3C12.7883 2.99961 13.569 3.15449 14.2975 3.4558C15.0259 3.75712 15.6879 4.19897 16.2456 4.75612C16.8033 5.31327 17.2458 5.97481 17.5479 6.70298C17.8499 7.43115 18.0056 8.21168 18.006 9V13C18.006 13.986 18.454 14.919 19.223 15.537L19.532 15.785C20.449 16.521 19.928 18 18.752 18H5.24798C4.07198 18 3.55098 16.521 4.46798 15.785L4.77698 15.537C5.15686 15.2322 5.46344 14.846 5.67408 14.4069C5.88472 13.9678 5.99404 13.487 5.99398 13V13Z"
-                                        stroke="#82869E" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                    <path d="M10.5 21H13.5" stroke="#82869E" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                </svg>
-                                <div class="css-rac23i">Đổi mật khẩu</div>
-                            </div>
-                        </a>
-                        <li class="css-1jfhcvk"></li>
+                            <a class="css-11g9kr1" href="?page=change-password">
+                                <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18"
+                                        class="noti css-9w5ue6" height="18" width="18"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.99398 13V9C5.99398 5.686 8.68298 3 12 3C12.7883 2.99961 13.569 3.15449 14.2975 3.4558C15.0259 3.75712 15.6879 4.19897 16.2456 4.75612C16.8033 5.31327 17.2458 5.97481 17.5479 6.70298C17.8499 7.43115 18.0056 8.21168 18.006 9V13C18.006 13.986 18.454 14.919 19.223 15.537L19.532 15.785C20.449 16.521 19.928 18 18.752 18H5.24798C4.07198 18 3.55098 16.521 4.46798 15.785L4.77698 15.537C5.15686 15.2322 5.46344 14.846 5.67408 14.4069C5.88472 13.9678 5.99404 13.487 5.99398 13V13Z"
+                                            stroke="#82869E" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M10.5 21H13.5" stroke="#82869E" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <div class="css-rac23i">Đổi mật khẩu</div>
+                                </div>
+                            </a>
+                            <li class="css-1jfhcvk"></li>
                     </ul>
                 </div>
             </div>
             <div class="css-hveu7a">
                 <h5>Sổ địa chỉ</h5>
                 <button class="css-vj7q1h"><span size="26" class="css-1fmhjdx"></span>
-                    <a target="_self" class="nav-ip-popup-child" href="?page=consignee-information"></a>
-                    <div data-content-region-name="headerBar" data-track-content="true"
-                        data-content-name="viewNotification" class="nav-ip-popup-child-main">
-                        <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
+                    <a class="nav-ip-popup-child" href="?page=consignee-information">
+                        <div data-content-region-name="headerBar" data-track-content="true"
+                            data-content-name="viewNotification" class="nav-ip-popup-child-main">
+                            <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
+                    </a>
                 </button>
                 <?php
                 $sql_address = "SELECT * FROM `diachinhanhang` WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
@@ -122,11 +124,11 @@ if (isset($_SESSION['loggedin'])) {
                                 <div class="teko-row teko-row-space-between teko-row-middle css-1qrgscwe">
                                     <div class="teko-col css-17ajfcv" style="flex: 0 0 65%;">
                                         <div class="teko-row teko-row-start teko-row-middle css-1qrgscwe">
-                                            <div type="subtitle" class="css-lzq1g0">'.$receiver_name.'</div>
+                                            <div type="subtitle" class="css-lzq1g0">' . $receiver_name . '</div>
                                         </div>
                                         <div type="body" color="textSecondary" class="css-1lihu4j">Địa chỉ: 
-                                        ' . $row_address['DiaChi'] . ", " . $row_wards['name'] . ", " . $row_district['name'] . ", " . $row_province['name'].'</div>
-                                        <div type="body" color="textSecondary" class="css-1npqwgp">Điện thoại: '.$receiver_sdt.'</div>
+                                        ' . $row_address['DiaChi'] . ", " . $row_wards['name'] . ", " . $row_district['name'] . ", " . $row_province['name'] . '</div>
+                                        <div type="body" color="textSecondary" class="css-1npqwgp">Điện thoại: ' . $receiver_sdt . '</div>
                                     </div>
                                     <div class="teko-col css-17ajfcv" style="flex: 0 0 35%;">
                                         <div class="teko-row teko-row-end css-1qrgscwe"><button height="2rem"
@@ -148,7 +150,7 @@ if (isset($_SESSION['loggedin'])) {
                     }
                 }
                 ?>
-                
+
             </div>
         </div>
     </div>

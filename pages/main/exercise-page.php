@@ -106,16 +106,16 @@
                 } else {
                     $exerciseData = [
                         "Ngô Trung Kiên" => ["kien_exercises", "img/exercise-ntk.jpg"],
-                        "Nguyễn Thị Diễm Kiều" => ["kieu_exercises", "img/exercise-ntdk.jpg"],
+                        "Nguyễn Thị Diễm Kiều" => ["pages/main/kieu_exercises", "img/exercise-ntdk.jpg"],
                         "Hồ Hoàng Kha" => ["kha_exercises", "img/exercise-hhk.jpg"],
                         "Phùng Thị Phượng" => ["phuong_exercises", "img/exercise-ptp.jpg"],
                         "Phan Minh Tiến" => ["pages/main/tien_exercises", "img/exercise-pmt.jpg"],
                     ];
 
-                    foreach ($exerciseData as $name => $data) {
+                    foreach ($exerciseData as $ten => $data) {
                         $exerciseDir = $data[0];
                         $imageSrc = $data[1];
-                        echo "<li><img class='exercise-image exercise-icon' src='$imageSrc' alt='Icon' width='80px' height='70px'><a class='list-name' href='$exerciseDir'>$name</a></li>";
+                        echo "<li><img class='exercise-image exercise-icon' src='$imageSrc' alt='Icon' width='80px' height='70px'><a class='list-name' href='$exerciseDir'>$ten</a></li>";
                     }
                 }
                 ?>

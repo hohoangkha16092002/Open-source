@@ -55,11 +55,11 @@
 
         while ($row = $result->fetch_assoc()) {
             $gioiTinh = ($row["Phai"] == 1) ? "Nam" : "Nữ";
-            $gender = ($row["Phai"] == 1) ? "Nữ" : "Nam";
+            $gioi_tinh = ($row["Phai"] == 1) ? "Nữ" : "Nam";
             echo "<tr>";
             echo "<td>" . $row["Ma_khach_hang"] . "</td>";
             echo "<td>" . $row["Ten_khach_hang"] . "</td>";
-            echo "<td>" . $gender .  "</td>";
+            echo "<td>" . $gioi_tinh .  "</td>";
             echo "<td>" . $row["Dia_chi"] . "</td>";
             echo "<td>" . $row["Dien_thoai"] . "</td>";
             echo "<td>" . $row["Email"] . "</td>";

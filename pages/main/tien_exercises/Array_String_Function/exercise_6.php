@@ -51,9 +51,9 @@
         //$inputArray = preg_replace('/[^a-zA-Z0-9, ]/', '', $input);
         $input_nospace = str_replace(' ', '', $input);
 
-        $array = explode(",", $input_nospace);
-        $ascending = PrintArray(Ascending($array));
-        $descending = PrintArray(Descending($array));
+        $mang = explode(",", $input_nospace);
+        $ascending = PrintArray(Ascending($mang));
+        $descending = PrintArray(Descending($mang));
     }
     ?>
     <form action="" name="sort" method="post">
