@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form.html</title>
+  </head>
+  <body>
+    <form method="post" action="configbt8.php" id="myForm">
+      <fieldset>
+        <legend>Enter Your Information</legend>
+        <table>
+          <tr>
+            <td>Fullname</td>
+            <td>
+              <input type="text" name="ho_ten" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>
+              <input type="text" name="dia_chi" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>
+              <input type="number" name="sdt" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gioi_tinh" value="nam" required />Nam
+              <input type="radio" name="gioi_tinh" value="nu" />Nữ
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <select name="que_quan" style="width: 30%">
+                <option value="vietNam">Việt Nam</option>
+                <option value="thailan">Thái Lan</option>
+                <option value="hanquoc">Hàn Quốc</option>
+                <option value="my">Mỹ</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Study</td>
+            <td>
+              <input type="checkbox" name="phpMySQL" value="PHP & MySQL" />PHP &
+              MySQL <input type="checkbox" name="asp" value="ASP.NET" />ASP.NET
+              <input type="checkbox" name="ccna" value="CCNA" />CCNA
+              <input
+                type="checkbox"
+                name="security"
+                value="Security+"
+              />Security+
+            </td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td>
+              <textarea name="ghi_chu" style="width: 90%; height: 60px"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="submit" name="gui" value="Gửi" />
+              <input type="reset" name="huy" value="Hủy" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>
