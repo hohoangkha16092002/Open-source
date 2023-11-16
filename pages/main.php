@@ -48,6 +48,8 @@
         include 'main/logout.php';
     } elseif ($tam == 'ajax_get_district') {
         include 'main/ajax_get_district.php';
+    } elseif ($tam == 'oder-management') {
+        include 'main/oder-management.php';
     } else {
         include 'main/home.php';
     }
