@@ -183,7 +183,7 @@ if (isset($_GET['MaMH'])) {
                                     </div>
                                     <div class="card-body">
                                         <label class="form-label">Loại mặt hàng</label>
-                                        <select class="form-select" name="LoaiMH" readonly>
+                                        <select class="form-select" name="LoaiMH" id="mySelect">
                                             <option value="<?php echo $product['MaLMH']; ?>">
                                                 <?php echo $product['TenLoai']; ?>
                                             </option>
@@ -202,7 +202,7 @@ if (isset($_GET['MaMH'])) {
                                     </div>
                                     <div class="card-body">
                                         <label class="form-label">Hãng sản xuất</label>
-                                        <select class="form-select" name="TenHSX" readonly>
+                                        <select class="form-select" name="TenHSX" id="mySelect1">
                                             <option value="<?php echo $product['MaHSX']; ?>">
                                                 <?php echo $product['TenHSX']; ?>
                                             </option>
@@ -238,7 +238,7 @@ if (isset($_GET['MaMH'])) {
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="form-label">Ảnh sản phẩm</label>
-                                        <select class="form-select" name="AnhMH">
+                                        <select class="form-select" name="AnhMH" id="mySelect2">
                                             <option value="<?php echo $product['IDAnhMH']; ?>">
                                                 <?php echo $product['TenAnh']; ?>
                                             </option>
@@ -260,7 +260,7 @@ if (isset($_GET['MaMH'])) {
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="form-label">Khuyết mãi</label>
-                                        <select class="form-select" name="TenKM">
+                                        <select class="form-select" name="TenKM" id="mySelect3">
                                             <option value="<?php echo $product['MaKM']; ?>">
                                                 <?php echo $product['TenKM']; ?>
                                             </option>
@@ -367,10 +367,15 @@ if (isset($_GET['MaMH'])) {
         </div>
     </div>
 
-    <script src="js/app.js">
-        document.getElementById("mySelect").disabled = true; // Chỉ đọc
+    <script src="js/app.js"></script>
 
-    </script>
+<script>
+    document.getElementById("mySelect").disabled = true;
+    document.getElementById("mySelect1").disabled = true; // Chỉ đọc
+    document.getElementById("mySelect2").disabled = true; // Chỉ đọc
+    document.getElementById("mySelect3").disabled = true; // Chỉ đọc
+    // Chỉ đọc
+  </script>
 </body>
 
 </html>
