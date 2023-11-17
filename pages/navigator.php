@@ -649,5 +649,9 @@ if (isset($_GET['search'])) {
                     productPortfolioPopup.style.visibility = "hidden";
                 }
             });
+            // document.getElementById('search-link').addEventListener('click', function () {
+            //     var searchKeyword = document.getElementById('search-input').value;
+            //     window.location.href = '?page=search&search-product=' + searchKeyword;
+            // });
         </script>
     </div>
