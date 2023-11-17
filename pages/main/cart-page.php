@@ -219,7 +219,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                                                 $product_image = $rows_cart['DLAnh'];
                                                 $product_id = $rows_cart['MaMH'];
                                                 $product_sale = $rows_cart['GiamGia'];
-                                                $quantity = $_SESSION['cart'][$info['MaKH']][$product_id];
+                                                $quantity = abs($_SESSION['cart'][$info['MaKH']][$product_id]);
                                                 $price_sale = $product_price - $product_price * $product_sale;
                                                 $money = ($product_price - $product_price * $product_sale) * $quantity; //Số tiền còn lại
                                                 $sale_rate = $product_sale * 100; //% khuyến mãi
