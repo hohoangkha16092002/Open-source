@@ -1,20 +1,27 @@
 <?php
-include 'config.php';
 if (!isset($_SESSION['loggedin_customer']) and !isset($_SESSION['loggedin_employee'])) {
     header('Location: ?page=login');
 }
 
 if (isset($_SESSION['loggedin_customer'])) {
-    $sql = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) > 0) {
-        $info = mysqli_fetch_assoc($result);
+    $sql_customer = "SELECT * FROM khachhang WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result_customer = mysqli_query($conn, $sql_customer);
+    if (mysqli_num_rows($result_customer) > 0) {
+        $info = mysqli_fetch_assoc($result_customer);
+    }
+
+    $sql_order = "SELECT * FROM `order` WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
+    $result_order = mysqli_query($conn, $sql_order);
+    if (mysqli_num_rows($result_order) > 0) {
+               
     }
 }
 
+
+
 ?>
 
-<div>
+<div style="background-color: #f8f8fc;">
     <div class="css-gjf6g1">
         <div class="css-z54kij">
             <div class="css-66d1qu">
@@ -44,7 +51,8 @@ if (isset($_SESSION['loggedin_customer'])) {
                             </h5>
                         </div>
                     </div>
-                    <ul class="css-zzskb3"><a class="css-11g9kr1" href="?page=personal-information">
+                    <ul class="css-zzskb3">
+                        <a class="css-11g9kr1" href="?page=personal-information">
                             <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -55,7 +63,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                             </div>
                         </a>
                         <a class="css-11g9kr1" href="?page=order-management">
-                            <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
+                            <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M7.5328 3.5625C7.5328 3.14829 7.86859 2.8125 8.2828 2.8125H15.2308C15.645 2.8125 15.9808 3.14829 15.9808 3.5625V3.80501H19.201C19.6152 3.80501 19.951 4.14079 19.951 4.55501V20.4361C19.951 20.8503 19.6152 21.1861 19.201 21.1861H4.3125C3.89829 21.1861 3.5625 20.8503 3.5625 20.4361V4.55501C3.5625 4.14079 3.89829 3.80501 4.3125 3.80501H7.5328V3.5625ZM15.9808 7.53276V5.30501H18.451V19.6861H5.0625V5.30501H7.5328V7.53276C7.5328 7.94698 7.86859 8.28276 8.2828 8.28276H10.0198C10.434 8.28276 10.7698 7.94698 10.7698 7.53276C10.7698 7.30843 11.0628 6.87111 11.7568 6.87111C12.4508 6.87111 12.7438 7.30843 12.7438 7.53276C12.7438 7.94698 13.0796 8.28276 13.4938 8.28276H15.2308C15.645 8.28276 15.9808 7.94698 15.9808 7.53276ZM9.0328 4.3125V6.78276H9.41784C9.7871 5.89836 10.7889 5.37111 11.7568 5.37111C12.7247 5.37111 13.7265 5.89836 14.0957 6.78276H14.4808V4.3125H9.0328ZM15.4476 12.0333C15.7405 11.7404 15.7405 11.2655 15.4476 10.9726C15.1547 10.6797 14.6798 10.6797 14.3869 10.9726L11.0384 14.3211L9.80564 13.0883C9.51275 12.7954 9.03787 12.7954 8.74498 13.0883C8.45209 13.3812 8.45209 13.8561 8.74498 14.149L10.5081 15.9121C10.6487 16.0527 10.8395 16.1318 11.0384 16.1318C11.2373 16.1318 11.4281 16.0527 11.5688 15.9121L15.4476 12.0333Z"
@@ -63,8 +71,9 @@ if (isset($_SESSION['loggedin_customer'])) {
                                 </svg>
                                 <div class="css-rac23i">Quản lý đơn hàng</div>
                             </div>
-                        </a><a class="css-11g9kr1">
-                            <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
+                        </a>
+                        <a class="css-11g9kr1" href="?page=address">
+                            <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M11.6957 2.75C9.09299 2.75 6.35871 4.72035 6.35871 8.08696C6.35871 8.84669 6.67432 9.80604 7.22598 10.8727C7.76947 11.9236 8.50271 13.0046 9.24942 13.9876C9.99415 14.968 10.7407 15.8358 11.302 16.4592C11.4469 16.6202 11.5792 16.7646 11.6957 16.8901C11.8121 16.7646 11.9444 16.6202 12.0894 16.4592C12.6506 15.8358 13.3972 14.968 14.1419 13.9876C14.8886 13.0046 15.6219 11.9236 16.1654 10.8727C16.717 9.80604 17.0326 8.84669 17.0326 8.08696C17.0326 4.72035 14.2983 2.75 11.6957 2.75ZM11.6957 17.9783C11.1633 18.5065 11.1632 18.5064 11.163 18.5063L11.1627 18.5059L11.1615 18.5048L11.1576 18.5008L11.1432 18.4862L11.0896 18.4313C11.0432 18.3835 10.9758 18.3138 10.8905 18.2241C10.72 18.0447 10.4776 17.7854 10.1872 17.4628C9.60714 16.8185 8.83197 15.9178 8.05496 14.895C7.27993 13.8747 6.49143 12.7177 5.89362 11.5618C5.30398 10.4217 4.85871 9.20548 4.85871 8.08696C4.85871 3.74922 8.41486 1.25 11.6957 1.25C14.9765 1.25 18.5326 3.74922 18.5326 8.08696C18.5326 9.20548 18.0874 10.4217 17.4977 11.5618C16.8999 12.7177 16.1114 13.8747 15.3364 14.895C14.5594 15.9178 13.7842 16.8185 13.2041 17.4628C12.9137 17.7854 12.6713 18.0447 12.5008 18.2241C12.4155 18.3138 12.3482 18.3835 12.3017 18.4313L12.2481 18.4862L12.2338 18.5008L12.2298 18.5048L12.2287 18.5059L12.2283 18.5063C12.2282 18.5064 12.2281 18.5065 11.6957 17.9783ZM11.6957 17.9783L12.2281 18.5065C12.0873 18.6484 11.8956 18.7283 11.6957 18.7283C11.4957 18.7283 11.3041 18.6484 11.1633 18.5065L11.6957 17.9783ZM17.4472 15.2423C17.8177 15.057 18.2682 15.2072 18.4534 15.5777L20.3385 19.3479C20.9203 20.5114 20.0742 21.8805 18.7733 21.8805H4.61804C3.31712 21.8805 2.47101 20.5114 3.05279 19.3479L4.93788 15.5777C5.12313 15.2072 5.57363 15.057 5.94411 15.2423C6.3146 15.4275 6.46477 15.878 6.27952 16.2485L4.39443 20.0187C4.31132 20.1849 4.4322 20.3805 4.61804 20.3805H18.7733C18.9591 20.3805 19.08 20.1849 18.9969 20.0187L17.1118 16.2485C16.9266 15.878 17.0767 15.4275 17.4472 15.2423ZM10.7065 8.08679C10.7065 7.5405 11.1494 7.09766 11.6957 7.09766C12.2419 7.09766 12.6848 7.54051 12.6848 8.08679C12.6848 8.63307 12.2419 9.07592 11.6957 9.07592C11.1494 9.07592 10.7065 8.63307 10.7065 8.08679ZM11.6957 5.59766C10.321 5.59766 9.20654 6.71208 9.20654 8.08679C9.20654 9.4615 10.321 10.5759 11.6957 10.5759C13.0704 10.5759 14.1848 9.4615 14.1848 8.08679C14.1848 6.71208 13.0704 5.59766 11.6957 5.59766Z"
@@ -72,7 +81,6 @@ if (isset($_SESSION['loggedin_customer'])) {
                                 </svg>
                                 <div class="css-rac23i">Sổ địa chỉ</div>
                             </div>
-
                         </a><a class="css-11g9kr1">
                             <a class="css-11g9kr1" href="?page=change-password">
                                 <div class="css-1itrv06"><svg fill="none" viewBox="0 0 24 24" size="18"
@@ -93,69 +101,79 @@ if (isset($_SESSION['loggedin_customer'])) {
                 </div>
             </div>
             <div class="css-hveu7a">
-                <h5>Sổ địa chỉ</h5>
-                <button class="css-vj7q1h"><span size="26" class="css-1fmhjdx"></span>
-                    <a class="nav-ip-popup-child" href="?page=consignee-information">
-                        <div data-content-region-name="headerBar" data-track-content="true"
-                            data-content-name="viewNotification" class="nav-ip-popup-child-main">
-                            <div class="spacer css-1x3u27e"></div>Thêm địa chỉ mới
-                    </a>
-                </button>
                 <?php
-                $sql_address = "SELECT * FROM `diachinhanhang` WHERE MaKH = '" . $_SESSION['MaKH'] . "'";
-                $result_address = mysqli_query($conn, $sql_address);
-                if (mysqli_num_rows($result_address) > 0) {
-                    while ($row_address = mysqli_fetch_assoc($result_address)) {
-                        $receiver_name = $row_address['TenNguoiNhan'];
-                        $receiver_sdt = $row_address['SoDienThoai'];
-                        $thanhpho = $row_address['ThanhPho'];
-                        $quanhuyen = $row_address['QuanHuyen'];
-                        $phuongxa = $row_address['PhuongXa'];
-
-                        $sql_province = "SELECT * FROM province WHERE province_id = '" . $thanhpho . "'";
-                        $result_province = mysqli_query($conn, $sql_province);
-                        $row_province = mysqli_fetch_assoc($result_province);  
-                
-                        $sql_district = "SELECT * FROM district WHERE district_id = '" . $quanhuyen . "'";
-                        $result_district = mysqli_query($conn, $sql_district);
-                        $row_district = mysqli_fetch_assoc($result_district);
-
-                        $sql_wards = "SELECT * FROM wards WHERE wards_id = '" . $phuongxa . "'";
-                        $result_wards = mysqli_query($conn, $sql_wards);
-                        $row_wards = mysqli_fetch_assoc($result_wards);
-
-                        echo '<div class="teko-card css-8mjjgr">
-                            <div class="teko-card-body css-0">
-                                <div class="teko-row teko-row-space-between teko-row-middle css-1qrgscwe">
-                                    <div class="teko-col css-17ajfcv" style="flex: 0 0 65%;">
-                                        <div class="teko-row teko-row-start teko-row-middle css-1qrgscwe">
-                                            <div type="subtitle" class="css-lzq1g0">' . $receiver_name . '</div>
-                                        </div>
-                                        <div type="body" color="textSecondary" class="css-1lihu4j">Địa chỉ: 
-                                        ' . $row_address['DiaChi'] . ", " . $row_wards['name'] . ", " . $row_district['name'] . ", " . $row_province['name'] . '</div>
-                                        <div type="body" color="textSecondary" class="css-1npqwgp">Điện thoại: ' . $receiver_sdt . '</div>
-                                    </div>
-                                    <div class="teko-col css-17ajfcv" style="flex: 0 0 35%;">
-                                        <div class="teko-row teko-row-end css-1qrgscwe"><button height="2rem"
-                                                class="css-1j6k1oa" type="button">
-                                                <div type="body" color="error500" class="css-1sjnqcx">Chỉnh sửa</div><span
-                                                    style="margin-left: 0px;">
-                                                    <div class="css-157jl91"></div>
-                                                </span>
-                                            </button><button height="2rem" class="css-1wblz1b" type="button">
-                                                <div type="body" color="textPrimary" class="css-ughm7k">Xóa</div><span
-                                                    style="margin-left: 0px;">
-                                                    <div class="css-157jl91"></div>
-                                                </span>
-                                            </button></div>
-                                    </div>
-                                </div>
-                            </div>
+                if (mysqli_num_rows($result_order) <= 0) {
+                    echo '<div class="css-165wheg">
+                            <div class="css-18nh3x2">Quản lý đơn hàng</div>
+                        </div>
+                        <div class="css-48len2">
+                            <div height="200" width="200" class="css-1cp1kxm"><img class="lazyload css-jdz5ak" alt=""
+                                    src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c"
+                                    loading="lazy" decoding="async"></div>
+                            <div class="css-447dxq">Bạn không có đơn hàng nào</div>
                         </div>';
-                    }
+                } else {
+                    echo '<div class="css-15xmjhr">
+                    <div class="css-8he5ev">
+                        <div class="card-body css-0">
+                            <div style="min-height: 550px;">
+                                <table class="css-175ywpb">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Ngày mua</th>
+                                            <th class="css-1b1yylg">Sản phẩm</th>
+                                            <th direction="right" class="css-9y787w">Tổng tiền (đ)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>'; 
+                                    ?>
+                                    <?php
+                                        while ($row_order = mysqli_fetch_assoc($result_order)){
+                                            $timestamp = $row_order["created_time"];
+                                            $formattedDate = date('H:i, l d/m/Y', $timestamp);
+                                            $sql_product = "SELECT * FROM `order_detail` WHERE order_id = '".$row_order['id']."'";
+                                            $result_product = mysqli_query($conn, $sql_product);
+                                            
+                                            if(mysqli_num_rows($result_product) > 0) {
+                                                $string_product = "";
+                                                $key = -1;
+                                                while ($row_product = mysqli_fetch_assoc($result_product)) {
+                                                    $sql_info = "SELECT * FROM `mathang` WHERE MaMH = '" . $row_product['product_id'] . "'";
+                                                    $result_info = mysqli_query($conn, $sql_info);
+
+                                                    if(mysqli_num_rows($result_info) > 0) {
+                                                        while ($row_info = mysqli_fetch_assoc($result_info)) {
+                                                            $key++;
+                                                            $string_product .= $row_info["TenMH"];
+                                                            if ($key != mysqli_num_rows($result_product)- 1) {
+                                                                $string_product .= " - ";
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                }
+                                            }
+                                            echo '<tr>
+                                                <td>
+                                                <a href="?page=order-detail&orderID='.$row_order['id'].'"
+                                                        class="css-66o6dy">'.$row_order['id'].'</a></td>
+                                                <td>'.$formattedDate.'</td>
+                                                <td>
+                                                    <div class="css-vrxw35">'.$string_product.'</div>
+                                                </td>
+                                                <td direction="right" class="css-15bte1a"><span
+                                                        class="css-htm2b9">'.number_format($row_order['total'], 0, '.', '.').'đ</span></td>
+                                            </tr>';
+                                        }
+                                    echo '</tbody>'.
+                                '</table>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
                 }
                 ?>
             </div>
         </div>
     </div>
-</div>

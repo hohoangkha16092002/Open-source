@@ -58,7 +58,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                                 <div class="css-rac23i">Thông tin tài khoản</div>
                             </div>
                         </a>
-                        <a class="css-11g9kr1" href="?page=oder-management">
+                        <a class="css-11g9kr1" href="?page=order-management">
                             <div class="css-1tj8dpi"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
                                     height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"

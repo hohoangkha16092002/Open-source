@@ -10,26 +10,27 @@ $product_type = "";
                     <div class="css-position-relative">
                         <div class="home-page--main-child-left-main" width="12.375rem" height="28.5rem">
                             <a class="home-page--main-child-left-main-child" href="?page=search&search-input=<?php echo urlencode($product_type); ?>">
-                                <div class="home-page--category-child">
-                                    <div class="css-w22-h22">
-                                        <div height="100%" width="100%" class="home-page--category-child-icon">
-                                            <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw" loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                <a class="home-page--main-child-left-main-child" href="?page=search&search-input=<?php echo urlencode($product_type); ?>">
+                                    <div class="home-page--category-child">
+                                        <div class="css-w22-h22">
+                                            <div height="100%" width="100%" class="home-page--category-child-icon">
+                                                <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw" loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                                <img src="https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw" loading="lazy" decoding="async" style="width: 100%; height: 100%;">
+                                            </div>
                                         </div>
+                                        <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
+                                            Laptop</div>
                                     </div>
-                                    <div type="caption" class="home-page--category-child-goods" style="flex: 1 1 0%;">
-                                        Laptop</div>
-                                </div>
-                            </a>
-                            <?php
+                                </a>
+                                <?php
+                                // ======== Begin In danh sách loại mặt hàng =========
+                                $sql_products_type = "SELECT * FROM dmloaimathang";
+                                $result_products_type = mysqli_query($conn, $sql_products_type);
 
-                            // ======== Begin In danh sách loại mặt hàng =========
-                            $sql_products_type = "SELECT * FROM dmloaimathang";
-                            $result_products_type = mysqli_query($conn, $sql_products_type);
-
-                            while ($row_products_type = mysqli_fetch_array($result_products_type)) {
-                                $MaLMH = $row_products_type["MaLMH"];
-                                $TenLoai = $row_products_type["TenLoai"];
-                                echo '<a class="home-page--main-child-left-main-child"
+                                while ($row_products_type = mysqli_fetch_array($result_products_type)) {
+                                    $MaLMH = $row_products_type["MaLMH"];
+                                    $TenLoai = $row_products_type["TenLoai"];
+                                    echo '<a class="home-page--main-child-left-main-child"
                                 href="?page=search&search-input=' . $TenLoai . '">
                                 <div class="home-page--category-child">
                                     <div class="css-w22-h22">
@@ -42,17 +43,16 @@ $product_type = "";
                                         ' . $TenLoai . '</div>
                                 </div>
                             </a>';
-                            }
-                            // ======== End In danh sách loại mặt hàng =========
+                                }
+                                // ======== End In danh sách loại mặt hàng =========
+                                // ======== Begin In danh sách hãng sản xuất =========
+                                $sql_products_brands = "SELECT * FROM dmhangsanxuat";
+                                $result_products_brands = mysqli_query($conn, $sql_products_brands);
 
-                            // ======== Begin In danh sách hãng sản xuất =========
-                            $sql_products_brands = "SELECT * FROM dmhangsanxuat";
-                            $result_products_brands = mysqli_query($conn, $sql_products_brands);
-
-                            while ($row_products_brands = mysqli_fetch_array($result_products_brands)) {
-                                $MaHSX = $row_products_brands["MaHSX"];
-                                $TenHSX = $row_products_brands["TenHSX"];
-                                echo '<a class="home-page--main-child-left-main-child"
+                                while ($row_products_brands = mysqli_fetch_array($result_products_brands)) {
+                                    $MaHSX = $row_products_brands["MaHSX"];
+                                    $TenHSX = $row_products_brands["TenHSX"];
+                                    echo '<a class="home-page--main-child-left-main-child"
                                 href="?page=search&search-input=' . $TenHSX . '">
                                 <div class="home-page--category-child">
                                     <div class="css-w22-h22">
@@ -65,10 +65,9 @@ $product_type = "";
                                         ' . $TenHSX . '</div>
                                 </div>
                             </a>';
-                            }
-                            // ======== End In danh sách hãng sản xuất =========
-
-                            ?>
+                                }
+                                // ======== End In danh sách hãng sản xuất =========
+                                ?>
                         </div>
                     </div><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC4zIiBkPSJNMCAwSDI0QzM3LjI1NDggMCA0OCAxMC43NDUyIDQ4IDI0QzQ4IDM3LjI1NDggMzcuMjU0OCA0OCAyNCA0OEgwVjBaIiBmaWxsPSIjMUIxRDI5Ii8+CjxwYXRoIGQ9Ik0yNi41IDE4TDIwLjUgMjRMMjYuNSAzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="" class="home-page--back-icon">
                 </div>
@@ -320,6 +319,101 @@ $product_type = "";
                                         join khuyenmai on `mathang`.MaKM = khuyenmai.MaKM
                                         join anhmh on mathang.MaMH = anhmh.MaMH";
                                         $result_products = mysqli_query($conn, $sql_products);
+
+                                        // $products = array(); // Mảng để lưu trữ thông tin về sản phẩm
+
+                                        // if (mysqli_num_rows($result_products) > 0) {
+                                        //     while ($row_products = mysqli_fetch_assoc($result_products)) {
+                                        //         if ($row_products["MaHSX"] == "AC") {
+                                        //             $product_name = $row_products['TenMH'];
+                                        //             $product_price = $row_products["DonGia"];
+                                        //             $product_brand = $row_products["TenHSX"];
+                                        //             $product_image = $row_products['DLAnh'];
+                                        //             $product_id = $row_products['MaMH'];
+                                        //             $price_sale = $product_price - $product_price * $product_sale - 500000;
+                                        //             $sale_rate = $product_sale * 100;
+                                        //             $save_price = $product_price - $price_sale;
+                                        //             $price_sale_format = number_format($price_sale, 0, '.', '.');
+                                        //             $product_price_format = number_format($product_price, 0, '.', '.');
+                                        //             $save_price_format = number_format($save_price, 0, '.', '.');
+
+                                        //             // Thêm thông tin sản phẩm vào mảng
+                                        //             $products[] = array(
+                                        //                 'name' => $product_name,
+                                        //                 'price' => $product_price,
+                                        //                 'brand' => $product_brand,
+                                        //                 'image' => $product_image,
+                                        //                 'id' => $product_id,
+                                        //                 'price_sale' => $price_sale_format,
+                                        //                 'product_price' => $product_price_format,
+                                        //                 'sale_rate' => $sale_rate,
+                                        //                 'save_price' => $save_price_format
+                                        //             );
+                                        //         }
+                                        //     }
+                                        //     // Hiển thị thông tin sản phẩm từ mảng
+                                        //     foreach ($products as $product) {
+                                        //         echo "<div class='home-page--glide__slide glide__slide--active'
+                                        //         style='height: unset; width: 179.2px; margin-right: 5px; margin-left: 5px;'>
+                                        //         <div class='css-1ei4kcr'>
+                                        //             <div class='product-card css-1msrncq' data-content-region-name='hotDeal'
+                                        //                 data-track-content='true' data-content-name='230803500'
+                                        //                 data-content-target='productDetail'><a target='_self'
+                                        //                     class='css-pxdb0j'
+                                        //                     href='?page=detail&maMH=" . $product['id'] . "'>
+                                        //                     <div class='css-4rhdrh'>
+                                        //                         <div class='css-1v97aik'>
+                                        //                             <div class='css-798fc'>
+                                        //                                 <div height='100%' width='100%' class='css-1uzm8bv'>
+                                        //                                     <img src='" . $product['image'] . "'
+                                        //                                         alt='" . $product['name'] . "'
+                                        //                                         style='width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0px; left: 0px;'>
+                                        //                                 </div>
+                                        //                             </div>
+                                        //                             <div class='css-14q2k9d'>
+                                        //                                 <div class='css-zb7zul'>
+                                        //                                     <div class='css-1bqeu8f'>TIẾT KIỆM</div>
+                                        //                                     <div class='css-1rdv2qd'>" . $product['save_price'] . "&nbsp;₫</div>
+                                        //                                 </div>
+                                        //                             </div>
+                                        //                         </div>
+                                        //                         <div class='css-68cx5s'>
+                                        //                             <div type='body' color='textSecondary'
+                                        //                                 class='product-brand-name css-90n0z6'
+                                        //                                 style='text-transform: uppercase; display: inline;'>
+                                        //                                 " . $product['brand'] . "</div>
+                                        //                         </div>
+                                        //                         <div class='css-1ybkowq'>
+                                        //                             <div type='caption'
+                                        //                                 class='att-product-card-title css-1uunp2d'
+                                        //                                 color='textPrimary'>
+                                        //                                 <h3 title='" . $product['name'] . "'
+                                        //                                     class='css-1xdyrhj'>" . $product['name'] . "</h3>
+                                        //                             </div>
+                                        //                         </div>
+                                        //                         <div class='css-kgkvir'>
+                                        //                             <div class='css-1co26wt'>
+                                        //                                 <div type='subtitle'
+                                        //                                     class='att-product-detail-latest-price css-do31rh'
+                                        //                                     color='primary500'>" . $product['price_sale'] . "&nbsp;₫</div>
+                                        //                                 <div class='css-3mjppt'>
+                                        //                                     <div type='caption'
+                                        //                                         class='att-product-detail-retail-price css-18z00w6'
+                                        //                                         color='textSecondary'>" . $product['product_price'] . "&nbsp;₫</div>
+                                        //                                     <div type='caption' color='primary500'
+                                        //                                         class='css-2rwx6s'>-" . $product['sale_rate'] . "%</div>
+                                        //                                 </div>
+                                        //                             </div>
+                                        //                         </div>
+                                        //                     </div>
+                                        //                 </a>
+                                        //             </div>
+                                        //         </div>
+                                        //     </div>";
+                                        //     }
+
+                                        // }
+
 
                                         if (mysqli_num_rows($result_products) > 0) {
                                             while ($row_products = mysqli_fetch_assoc($result_products)) {
@@ -674,38 +768,36 @@ $product_type = "";
                     echo "<div class='css-59raa2' align='center'>
                             <div class='css-1sdem05'>
                                 <div class='css-19xt07j'>";
+                    if ($_GET['op_page'] > 1) {
+                        echo "<a href=" . $_SERVER['PHP_SELF'] . '?op_page=' . ($_GET['op_page'] - 1) . ">
+                                    <div class='css-j9nr2k'>
+                                        <i class='fa-solid fa-angle-left'></i>
+                                    </div>
+                                </a>";
+                    }
 
-                                    if ($_GET['op_page'] > 1) {
-                                        echo "<a href=" . $_SERVER['PHP_SELF'] . '?op_page=' . ($_GET['op_page'] - 1) . ">
-                                        <div class='css-j9nr2k'>
-                                            <i class='fa-solid fa-angle-left'></i>
-                                        </div>
+                    for ($i = 1; $i <= $maxPage; $i++) {
+                        if ($i == $_GET['op_page']) {
+                            echo "<a href='#' class='css-j9nr2k' style='background-color: blue;'>
+                                        $i
                                     </a>";
-                                    }
+                        } else {
+                            echo "<a href=" . $_SERVER["PHP_SELF"] . "?op_page=$i class='css-j9nr2k'>
+                                    $i
+                                </a>";
+                        }
+                    }
 
-                                    for ($i = 1; $i <= $maxPage; $i++) {
-                                        if ($i == $_GET['op_page']) {
-                                            echo "<a href='#' class='css-j9nr2k' style='background-color: blue;'>
-                                            $i
-                                        </a>";
-                                        } else {
-                                            echo "<a href=" . $_SERVER["PHP_SELF"] . "?op_page=$i class='css-j9nr2k'>
-                                            $i
-                                        </a>";
-                                        }
-                                    }
-
-                                    if ($_GET['op_page'] < $maxPage) {
-                                        echo "<a href=" . $_SERVER['PHP_SELF'] . "?op_page=" . ($_GET['op_page'] + 1) . ">
-                                        <div class='css-j9nr2k'>
-                                            <i class='fa-solid fa-angle-right'></i>
-                                        </div>
-                                    </a>";
-                            }
-                            echo '</div>
-                            </div>
-                        </div>';
-
+                    if ($_GET['op_page'] < $maxPage) {
+                        echo "<a href=" . $_SERVER['PHP_SELF'] . "?op_page=" . ($_GET['op_page'] + 1) . ">
+                                    <div class='css-j9nr2k'>
+                                        <i class='fa-solid fa-angle-right'></i>
+                                    </div>
+                                </a>";
+                    }
+                    echo '</div>
+                        </div>
+                    </div>';
                     ?>
                 </div>
             </div>
