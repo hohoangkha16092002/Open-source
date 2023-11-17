@@ -321,7 +321,7 @@ if (isset($_GET['search'])) {
                                                                     </div>
                                                                     <div type="body" class="popup-text">Thông tin tài khoản</div>
                                                                 </div>
-                                                            </a><a target="_self" class="nav-ip-popup-child" href="?page=oder-management">
+                                                            </a><a target="_self" class="nav-ip-popup-child" href="?page=order-management">
                                                                 <div data-content-region-name="headerBar" data-track-content="true"
                                                                     data-content-name="viewOrder" class="nav-ip-popup-child-main">
                                                                     <div class="icon"><svg fill="none" viewBox="0 0 24 24" size="18" class="css-9w5ue6"
@@ -649,5 +649,9 @@ if (isset($_GET['search'])) {
                     productPortfolioPopup.style.visibility = "hidden";
                 }
             });
+            // document.getElementById('search-link').addEventListener('click', function () {
+            //     var searchKeyword = document.getElementById('search-input').value;
+            //     window.location.href = '?page=search&search-product=' + searchKeyword;
+            // });
         </script>
     </div>

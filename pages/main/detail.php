@@ -8,16 +8,29 @@ if ($conn->connect_error) {
 if (isset($_GET['maMH'])) {
   $maMH = $_GET['maMH'];
 
-  $sql = "SELECT mathang.*, dmhangsanxuat.TenHSX, dmloaimathang.TenLoai, anhmh.DLAnh 
+  $sql = "SELECT *
         FROM `mathang`
         JOIN dmhangsanxuat ON mathang.MaHSX = dmhangsanxuat.MaHSX
         JOIN dmloaimathang ON mathang.MaLMH = dmloaimathang.MaLMH
+        join khuyenmai on `mathang`.MaKM = khuyenmai.MaKM
         JOIN anhmh ON mathang.MaMH = anhmh.MaMH
         WHERE mathang.MaMH = '$maMH'";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
+    $product_name = $row['TenMH'];
+    $product_price = $row["DonGia"];
+    $product_brand = $row["TenHSX"];
+    $product_image = $row['DLAnh'];
+    $product_id = $row['MaMH'];
+    $product_sale = $row['GiamGia'];
+    $price_sale = $product_price - $product_price * $product_sale;
+    $sale_rate = $product_sale * 100;
+    $save_price = $product_price - $price_sale;
+    $price_sale_format = number_format($price_sale, 0, '.', '.');
+    $product_price_format = number_format($product_price, 0, '.', '.');
+    $save_price_format = number_format($save_price, 0, '.', '.');
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -33,7 +46,7 @@ if (isset($_GET['maMH'])) {
     <body>
       <div class="css-rf24tk">
         <div class="css-0">
-          <div class="css-tqzoy9"><a href="/" class="breadcrumb-item css-1s8chay">
+          <div class="css-tqzoy9"><a href="?page=home" class="breadcrumb-item css-1s8chay">
               <div type="body" class="css-kwe6s1"><svg fill="none" viewBox="0 0 24 24" size="24" class="css-26qhcs"
                   color="placeholder" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,7 +58,7 @@ if (isset($_GET['maMH'])) {
                 height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.49976 19.0001L15.4998 12.0001L8.49976 5.00012" stroke="currentColor" stroke-width="1.5"
                   stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></div><a href="https://phongvu.vn/p/dien-gia-dung" class="breadcrumb-item css-1s8chay">
+              </svg></div><a href="?page=search&search-input=<?php echo $row['TenHSX'] ?>" class="breadcrumb-item css-1s8chay">
               <div type="body" class="css-kwe6s1">
                 <?php echo $row['TenHSX']; ?>
               </div>
@@ -54,7 +67,7 @@ if (isset($_GET['maMH'])) {
                 height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.49976 19.0001L15.4998 12.0001L8.49976 5.00012" stroke="currentColor" stroke-width="1.5"
                   stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></div><a href="/c/do-gia-dung-thiet-bi-gia-dinh" class="breadcrumb-item css-1s8chay">
+              </svg></div><a href="?page=search&search-input=<?php echo $row['TenLoai'] ?>" class="breadcrumb-item css-1s8chay">
               <div type="body" class="css-kwe6s1">
                 <?php echo $row['TenLoai']; ?>
               </div>
@@ -120,12 +133,12 @@ if (isset($_GET['maMH'])) {
                     <div class="css-qmrpdk"></div>
                     <div class="css-2zf5gn">
                       <div type="title" class="att-product-detail-latest-price css-roachw" color="primary500">
-                        <?php echo number_format($row['DonGia'], 0, '.', '.'); ?>₫
+                        <?php echo $price_sale_format; ?>₫
                       </div>
                       <div class="css-3mjppt">
                         <div type="caption" class="att-product-detail-retail-price css-18z00w6" color="textSecondary">
-                          4.990.000₫</div>
-                        <div type="caption" color="primary500" class="css-2rwx6s">-50.1%</div>
+                          <?php echo $product_price_format ?>₫</div>
+                        <div type="caption" color="primary500" class="css-2rwx6s">-<?php echo $sale_rate ?>%</div>
                       </div>
                     </div>
                     <div class="css-1veiyrs">
@@ -157,8 +170,8 @@ if (isset($_GET['maMH'])) {
                     <form action="?page=cart-page&action=add" method="post">
                       <div class="css-f7zc9t">
                         <div class="css-yp9swi">
-                          <input size="20"
-                            type="text" class="css-1nhnj3v" value="1" name="quantity[<?php echo $row['MaMH'] ?>]">
+                          <input size="20" type="text" class="css-1nhnj3v" value="1"
+                            name="quantity[<?php echo $row['MaMH'] ?>]">
                           <div type="subtitle" class="css-fdtrln"></div>
                         </div>
                         <div class="css-yp9swi">
