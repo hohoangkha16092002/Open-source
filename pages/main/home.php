@@ -699,6 +699,7 @@ $product_type = "";
                             <?php
                             $sql_products = "SELECT * FROM `mathang`
                             join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
+                            join khuyenmai on `mathang`.MaKM = khuyenmai.MaKM
                             join anhmh on mathang.MaMH = anhmh.MaMH";
                             $result_products = mysqli_query($conn, $sql_products);
                             if (mysqli_num_rows($result_products) <> 0) {
@@ -708,6 +709,7 @@ $product_type = "";
                                     $product_brand = $row_products["TenHSX"];
                                     $product_image = $row_products['DLAnh'];
                                     $product_id = $row_products['MaMH'];
+                                    $product_sale = $row_products['GiamGia'];
                                     $price_sale = $product_price - $product_price * $product_sale;
                                     $sale_rate = $product_sale * 100;
                                     $save_price = $product_price - $price_sale;
@@ -906,34 +908,34 @@ $product_type = "";
                     echo "<div class='css-59raa2' align='center'>
                             <div class='css-1sdem05'>
                                 <div class='css-19xt07j'>";
-                                if ($_GET['op_page'] > 1) {
-                                    echo "<a href=" . $_SERVER['PHP_SELF'] . '?op_page=' . ($_GET['op_page'] - 1) . ">
+                    if ($_GET['op_page'] > 1) {
+                        echo "<a href=" . $_SERVER['PHP_SELF'] . '?op_page=' . ($_GET['op_page'] - 1) . ">
                                     <div class='css-j9nr2k'>
                                         <i class='fa-solid fa-angle-left'></i>
                                     </div>
                                 </a>";
-                                }
+                    }
 
-                                for ($i = 1; $i <= $maxPage; $i++) {
-                                    if ($i == $_GET['op_page']) {
-                                        echo "<a href='#' class='css-j9nr2k' style='background-color: blue;'>
+                    for ($i = 1; $i <= $maxPage; $i++) {
+                        if ($i == $_GET['op_page']) {
+                            echo "<a href='#' class='css-j9nr2k' style='background-color: blue;'>
                                         $i
                                     </a>";
-                                } else {
-                                    echo "<a href=" . $_SERVER["PHP_SELF"] . "?op_page=$i class='css-j9nr2k'>
+                        } else {
+                            echo "<a href=" . $_SERVER["PHP_SELF"] . "?op_page=$i class='css-j9nr2k'>
                                     $i
                                 </a>";
-                                }
-                                }
+                        }
+                    }
 
-                                if ($_GET['op_page'] < $maxPage) {
-                                    echo "<a href=" . $_SERVER['PHP_SELF'] . "?op_page=" . ($_GET['op_page'] + 1) . ">
+                    if ($_GET['op_page'] < $maxPage) {
+                        echo "<a href=" . $_SERVER['PHP_SELF'] . "?op_page=" . ($_GET['op_page'] + 1) . ">
                                     <div class='css-j9nr2k'>
                                         <i class='fa-solid fa-angle-right'></i>
                                     </div>
                                 </a>";
-                            }
-                        echo '</div>
+                    }
+                    echo '</div>
                         </div>
                     </div>';
                     ?>

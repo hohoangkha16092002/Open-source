@@ -28,7 +28,7 @@ if (isset($_GET['filter'])) {
     <div style="background-color: #ececec;">
         <div class="css-rf24tk">
             <div class="css-tqzoy9">
-                <a href="/" class="breadcrumb-item css-1s8chay">
+                <a href="?page=home" class="breadcrumb-item css-1s8chay">
                     <div type="body" class="css-kwe6s1"><svg fill="none" viewBox="0 0 24 24" size="24"
                             class="css-26qhcs" color="placeholder" height="24" width="24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -41,9 +41,7 @@ if (isset($_GET['filter'])) {
                         color="placeholder" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.49976 19.0001L15.4998 12.0001L8.49976 5.00012" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg></div><a href="/c/epson-ecotank" class="breadcrumb-item css-1s8chay">
-                    <div type="body" class="css-kwe6s1">Thiết bị văn phòng</div>
-                </a>
+                    </svg></div>
             </div>
         </div>
         <form method="post">
@@ -418,11 +416,11 @@ if (isset($_GET['filter'])) {
                                                    <div class='css-kgkvir'>
                                                        <div class='css-1co26wt'>
                                                            <div type='subtitle' class='att-product-detail-latest-price css-do31rh'
-                                                               color='primary500'>$product_price_format.₫</div>
+                                                               color='primary500'>$price_sale_format.₫</div>
                                                            <div class='css-3mjppt'>
                                                                <div type='caption'
                                                                    class='att-product-detail-retail-price css-18z00w6'
-                                                                   color='textSecondary'>$price_sale_format&nbsp;₫</div>
+                                                                   color='textSecondary'>$product_price_format&nbsp;₫</div>
                                                                <div type='caption' color='primary500' class='css-2rwx6s'>$sale_rate%
                                                                </div>
                                                            </div>
