@@ -97,7 +97,7 @@ if (isset($_POST["thanhtoan"])) {
                         echo "
                         <script>
                             setTimeout(function(){
-                                alert('Thanh toán thành công, vào giỏ hàng');
+                                alert('Đặt hàng thành công, vào giỏ hàng');
                                 window.location.href = '?page=order-management';
                             }, 0);
                         </script>";
@@ -282,14 +282,11 @@ if (isset($_POST["thanhtoan"])) {
                                     <div data-content-region-name="paymentMethod" data-track-content="true"
                                         data-content-name="VNPAY_GATEWAY" data-content-target="VNPAY_GATEWAY"
                                         class="css-1014eaz" style="height: 100%;">
-                                        <div type="subtitle" class="css-yukwon">Thanh toán VNPAY-QR<span
+                                        <div type="subtitle" class="css-yukwon">Thanh toán khi nhận hàng<span
                                                 style="padding-left: 5px;"><span class="css-1q01xub">
                                                     <div type="caption" color="white" class="css-143zsia">Khuyên dùng
                                                     </div>
                                                 </span></span></div>
-                                        <div type="body" color="textSecondary" class="css-ah9bk2">Thanh toán qua
-                                            Internet
-                                            Banking, Visa, Master, JCB, VNPAY-QR</div>
                                         <div type="body" class="css-1dqxh16"></div>
                                         <div class="css-18wywdr"></div><span class="css-mpv07g"><svg fill="none"
                                                 viewBox="0 0 24 24" size="20" class="css-1kpmq" color="#ffffff"
@@ -297,17 +294,6 @@ if (isset($_POST["thanhtoan"])) {
                                                 <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E" stroke-width="1.5"
                                                     stroke-linecap="round" stroke-linejoin="round"></path>
                                             </svg></span>
-                                    </div>
-                                </div>
-                                <div class="teko-col teko-col-6 css-17ajfcv"
-                                    style="padding-left: 8px; padding-right: 8px;">
-                                    <div data-content-region-name="paymentMethod" data-track-content="true"
-                                        data-content-name="COD" data-content-target="COD" class="css-64rk53"
-                                        style="height: 100%;">
-                                        <div type="subtitle" class="css-yukwon">Thanh toán khi nhận hàng<span
-                                                style="padding-left: 5px;"></span></div>
-                                        <div type="body" color="textSecondary" class="css-ah9bk2"></div>
-                                        <div type="body" class="css-1dqxh16"></div>
                                     </div>
                                 </div>
                                 <div class="teko-col teko-col-6 css-17ajfcv"
@@ -506,7 +492,7 @@ if (isset($_POST["thanhtoan"])) {
                                         <div data-content-region-name="bottomCheckOut" data-track-content="true"
                                             data-content-name="checkout" class="css-0">
 
-                                            <input name="thanhtoan" value="THANH TOÁN" color="white"
+                                            <input name="thanhtoan" value="ĐẶT HÀNG" color="white"
                                                 class="att-checkout-button css-v463h2" type="submit">
 
 
