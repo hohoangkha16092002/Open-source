@@ -245,23 +245,6 @@ if (isset($_POST["submit"])) {
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="teko-row teko-row-end css-1qrgscw">
-                            <div class="teko-row teko-form-item css-iu028d">
-                                <div class="teko-col teko-form-item-control css-rznjps">
-                                    <div class="teko-form-item-control-input">
-                                        <div class="teko-form-item-control-input-content"><label value="false" id="isDefault" class="check-box css-1u2186j">
-                                                <div class="css-l24w9c"><input type="checkbox" class="css-lc01j1">
-                                                    <div class="checkbox-inner css-gfk8lf"><svg fill="none" viewBox="0 0 24 24" size="12" class="css-u5ggi9" color="transparent" height="12" width="12" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 12.4545L9.375 17L19 7" stroke="#82869E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        </svg></div>
-                                                </div>
-                                                <div type="body" class="checkbox-label css-6r3s23" style="flex: 1 1 0%;">Đặt làm mặc định</div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="teko-row teko-row-end css-1mfzix3">
                             <a name="cancel_click" height="2.5rem" color="primary500" class="css-125hckg"
                                 href="javascript:window.history.back()">Hủy bỏ

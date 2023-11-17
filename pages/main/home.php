@@ -46,7 +46,7 @@ $product_type = "";
                             </a>';
                             }
                             // ======== End In danh sách loại mặt hàng =========
-                            
+
                             // ======== Begin In danh sách hãng sản xuất =========
                             $sql_products_brands = "SELECT * FROM dmhangsanxuat";
                             $result_products_brands = mysqli_query($conn, $sql_products_brands);
@@ -69,7 +69,7 @@ $product_type = "";
                             </a>';
                             }
                             // ======== End In danh sách hãng sản xuất =========
-                            
+
                             ?>
                         </div>
                     </div><img
@@ -431,7 +431,7 @@ $product_type = "";
                                         join dmhangsanxuat on `mathang`.MaHSX = dmhangsanxuat.MaHSX
                                         join khuyenmai on `mathang`.MaKM = khuyenmai.MaKM
                                         join anhmh on mathang.MaMH = anhmh.MaMH";
-                                        $result_products = mysqli_query($conn, $sql_products);                                 
+                                        $result_products = mysqli_query($conn, $sql_products);
 
                                         if (mysqli_num_rows($result_products) > 0) {
                                             while ($row_products = mysqli_fetch_assoc($result_products)) {
@@ -846,8 +846,39 @@ $product_type = "";
                     ?>
                 </div>
             </div>
+            <!-- <div class="css-59raa2">
+                <div class="css-1sdem05">
+                    <div class="css-19xt07j">
+                        <div color="primary500" class="css-duo9ue" disabled=""><svg fill="none" viewBox="0 0 24 24"
+                                size="16" class="css-26qhcs" color="placeholder" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.5 5L8.5 12L15.5 19" stroke="#82869E" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                        <div color="primary500" class="css-j9nr2k">
+                            <div type="subtitle" color="white" class="css-1t6n552">1</div>
+                        </div>
+                        <div color="primary500" class="css-rk91ax"><svg fill="none" viewBox="0 0 24 24" size="16"
+                                class="css-26qhcs" color="placeholder" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.5 19L15.5 12L8.5 5" stroke="#82869E" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                    </div>
+                </div>
+            </div> -->
         </div>
         <script>
+            // $(document).ready(function () {
+            //     // Thời gian chuyển đổi giữa các slide (đơn vị là mili giây)
+            //     var interval = 10; // 3 giây
+
+            //     // Tự động chuyển slide
+            //     $('.carousel').carousel({
+            //         interval: interval
+            //     });
+            // });
+
             // Set the date we're counting down to
             var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
 
