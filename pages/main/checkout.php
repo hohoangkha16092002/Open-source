@@ -287,9 +287,6 @@ if (isset($_POST["thanhtoan"])) {
                                                     <div type="caption" color="white" class="css-143zsia">Khuyên dùng
                                                     </div>
                                                 </span></span></div>
-                                        <div type="body" color="textSecondary" class="css-ah9bk2">Thanh toán qua
-                                            Internet
-                                            Banking, Visa, Master, JCB, VNPAY-QR</div>
                                         <div type="body" class="css-1dqxh16"></div>
                                         <div class="css-18wywdr"></div><span class="css-mpv07g"><svg fill="none"
                                                 viewBox="0 0 24 24" size="20" class="css-1kpmq" color="#ffffff"
