@@ -3,5 +3,5 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "quan_ly_ban_sua";
+$dbname = "quanly_ban_sua";
 ?>
