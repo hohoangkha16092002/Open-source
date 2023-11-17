@@ -170,7 +170,7 @@ if (isset($_GET['maMH'])) {
                     <form action="?page=cart-page&action=add" method="post">
                       <div class="css-f7zc9t">
                         <div class="css-yp9swi">
-                          <input size="20" type="text" class="css-1nhnj3v" value="1"
+                          <input size="20" type="number" class="css-1nhnj3v" value="1"
                             name="quantity[<?php echo $row['MaMH'] ?>]">
                           <div type="subtitle" class="css-fdtrln"></div>
                         </div>
