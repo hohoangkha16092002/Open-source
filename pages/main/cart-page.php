@@ -65,6 +65,9 @@ if (isset($_SESSION['loggedin_customer'])) {
                 echo "Lỗi trong truy vấn SQL: " . mysqli_error($conn);
             }
         }
+        // else {
+        //     echo "Giỏ hàng trống";
+        // }
     }
 }
 
@@ -222,7 +225,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                                                 $sale_rate = $product_sale * 100; //% khuyến mãi
                                                 $save_price = $product_price - $price_sale; //Số tiền tiết kiệm
                                         
-                                                $total_money += $money; //Tính tổng tiền của tất cả sản phẩm
+                                                $total_money += $money; //Tính tổng  tiền của tất cả sản phẩm
                                                 $price_sale_format = number_format($price_sale, 0, '.', '.');
                                                 $product_price_format = number_format($product_price, 0, '.', '.');
                                                 $save_price_format = number_format($save_price, 0, '.', '.');

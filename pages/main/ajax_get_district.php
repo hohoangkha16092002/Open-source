@@ -1,6 +1,8 @@
 <?php
 require 'config-test.php';
 $province_id = $_GET['province_id'];
+//$province_id = 1;
+//echo $province_id;
 
 $sql = "SELECT * FROM `district` WHERE `province_id` = '$province_id'";
 $result = mysqli_query($conn, $sql);
