@@ -292,7 +292,7 @@ if (isset($_SESSION['loggedin_customer'])) {
                                                                                 class="wrap-input-number css-1edkzvw">
                                                                                 <div class="rc-input-number">
                                                                                     <div class="rc-input-number-input-wrap">
-                                                                                        <input name="quantity[' . $product_id . ']" class="rc-input-number-input"
+                                                                                        <input type="number" name="quantity[' . $product_id . ']" class="rc-input-number-input"
                                                                                         value="' . $quantity . '">
                                                                                     </div>
                                                                                 </div>
