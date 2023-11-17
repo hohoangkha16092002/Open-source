@@ -1,4 +1,5 @@
 <?php
+$product_type = "";
 if (isset($_GET['timKiem'])) {
     $search = $_GET['search-input'];
 }
@@ -68,8 +69,8 @@ if (isset($_GET['search'])) {
                                 <div class="" style="width: 204px; border-radius: 0.5rem;">
                                     <div class="" style=" position: relative;">
                                         <div class="nav-product-subnav-main" width="12.375rem" height="28.5rem">
-                                            <a data-testid="TekoLink" target="_self" class="nav-products"
-                                                href="/c/laptop">
+                                            <a data-testid="TekoLink" class="nav-products"
+                                                href="?page=search&search-input=<?php echo urlencode($product_type); ?>">
                                                 <div class="css-73wobg">
                                                     <div class="css-b1gs45">
                                                         <div height="100%" width="100%" class="css-b6tybp"><img
